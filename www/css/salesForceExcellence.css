@@ -1,0 +1,433 @@
+.top-icon img {
+    width: 30.17vw;
+    height: 11.17vw;
+}
+.landing-wrapper {
+    background-color: #f4f4f4;
+    float: left;
+    padding-bottom: 3.7vw;
+}
+.top-icon {
+    padding: 4.81vw 7.22vw 0;
+}
+.user-detail {
+    padding-top: 5.5vw;
+    padding-left: 7.22vw;
+    padding-bottom: 4.33vw;
+}
+.welcome-user {
+    font-size: 0.813rem;
+    font-family: OpenSans;
+    font-weight: 500;
+    color: #414042;
+}
+.landing-lists .item-one img {
+    width: 13.52vw;
+    height: 14.26vw;
+}
+.landing-lists {
+    padding: 3.15vw;
+}
+.list-item {
+    padding: 2.5vw 6.11vw;
+    background-color: #fff;
+    margin-bottom: 1.3vw;
+}
+.item-one {
+    float: left;
+    width: 15%;
+}
+.item-two {
+    float: left;
+    width: 81%;
+    position: relative;
+    top: 5vw;
+    padding-left: 10.56vw;
+    padding-right: 18.5vw;
+}
+.item-two .list-desc {
+    font-family: OpenSans;
+    font-weight: 700;
+    font-size: 0.665rem;
+    color:#414042;
+}
+.item-three {
+    float: left;
+    position: relative;
+    top: 5vw;
+}
+.item-three img {
+    height: 4vw;
+    width: 2.85vw;
+    vertical-align: top;
+}
+.landing-lists,
+.list-item {
+    float: left;
+    display: block;
+    width: 100%;
+}
+.user-detail img,
+.list-item.list-item-tab,
+.welcome-user-details,
+.list-subtext,
+.welcome-user-name,
+.searchIcon {
+    display: none;
+}
+@media screen and (min-width: 980px) {
+    .welcome-user {
+        display: none;
+    }
+    .landing-wrapper {
+        background-color: #fff;
+    }
+    .top-icon img {
+        width: 17.31vw;
+        height: 6.76vw;
+    }
+    .user-detail img,
+    .list-item.list-item-tab,
+    .welcome-user-details,
+    .list-subtext,
+    .welcome-user-name,
+    .searchIcon {
+        display: block;
+    }
+    .user-detail img {
+        float: left;
+    }
+    .user-detail .welcome-user-name {
+      padding-left: 1.95vw;
+    float: left;
+    padding-top: 0.5vw;
+    font-size: 1.800rem;
+    font-weight: 700;
+    }
+    .welcome-user-details {
+       padding-left: 0;
+    float: left;
+    padding-top: 0.3vw;
+    font-size: 0.850rem;
+    font-weight: 700;
+    position: relative;
+    top: 3.5vw;
+    right: 20vw;
+    }
+    .welcome-user-details span {
+        color: #a33f66;
+    }
+    .user-detail {
+        float: left;
+        padding-left: 5.47vw;
+        padding: 5.47vw;
+        padding-bottom: 6.72vw;
+    }
+    .landing-lists {
+        padding: 0vw 6.17vw 0 3.17vw;
+        clear: both;
+    }
+    .list-item {
+        padding-left: 2.15vw;
+        padding-right: 0;
+        padding-top: 0;
+        padding-bottom: 0;
+        width: 33%;
+        margin-bottom: 4.14vw;
+    }
+    .landing-lists .item-one img {
+        width: 5.08vw;
+        height: 5.08vw;
+    }
+    .landing-lists {
+        width: 100%;
+    }
+    .item-three {
+        display: none;
+    }
+    .item-one {
+        width: 25%;
+        padding: 0 1.55vw;
+    }
+    .item-two {
+        padding: 0;
+        width: 100%;
+        top: 0;
+        padding-left: 0.6vw;
+    }
+    .item-two .list-desc {
+        font-size: 1.09rem;
+    }
+    .list-item.list-item-border {
+        border-right: 2px solid #ccc;
+    }
+    .right-side {
+        float: left;
+        width: 75%;
+        padding-left: 1.29vw;
+    }
+    .left-side {
+        clear: both;
+    }
+    .list-subtext {
+        font-size: 0.850rem;
+        font-weight: 500;
+        padding-right: 0.9vw;
+        padding-top: 0.5vw;
+    }
+    .list-item.list-item-tab.list-item-border {
+        clear: left;
+    }
+    .searchIcon {
+        background-repeat: no-repeat;
+    margin-left: 2.03vw;
+    position: relative;
+    top: 2.03vw;
+    }
+    .searchIcon input {
+        border: none;
+        padding-left: 1.17vw;
+    }
+    .top-icon{
+        padding-left: 6.25vw;
+    }
+}
+/* performance css */
+.gescode{
+margin-bottom: 3vw;
+    font-size: 0.833rem;
+    font-weight: 500;
+    font-family: OpenSans;
+}
+.expenseGes-content{
+padding-left: 2.78vw;
+    padding-top: 3.89vw;
+    float: left;
+    width: 100%;
+    padding-right: 2.78vw;
+        padding-bottom: 3.89vw;
+}
+.select-summary {
+    width: 100%;
+    float: left;
+    background-color: #fff;
+    border-radius: 3px;
+    padding: 0vw 4.63vw 4.07vw;
+    box-shadow: 0 0 10px #eeeeee;
+    margin-bottom: 18.98vw;
+    margin-top: 3.89vw;
+}
+.select-summary h4.summary-head {
+    font-size: 0.833rem;
+    color: #414042;
+    font-weight: 700;
+    padding-top: 5.28vw;
+    margin: 0;
+}
+.select-summary p {
+    padding-top: 5.56vw;
+    font-size: 0.729rem;
+    color: #414042;
+}
+.select-summary p label {
+    float: right;
+    font-weight: bold;
+}
+.scoreRange{
+        border: 8px solid #9c2757;
+    border-radius: 50%;
+    width: 25vw;
+    height: 25vw;
+    margin: 0 auto;
+    text-align: center;
+}
+.scoreRange span:first-of-type{
+    line-height: 1;
+    padding-top: 5vw;
+    display: inline-block;
+}
+
+/* incentive css */
+.select-summary .right-content label{
+padding-top: 6.39vw;
+    font-size: 0.729rem;
+    color: #414042;
+}
+
+.doc-save-button button{
+    width: 90.56vw;
+    height: 14.35vw;
+    font-family: OpenSans;
+    font-size: 1.042rem;
+    background: #9c2757;
+    border: none;
+    color: #fff;
+    font-weight: 500;
+}
+.doc-save-button{
+text-align: center;
+    position: absolute;
+  bottom: 8.19vw;
+    left: 0;
+    right: 0;
+  }
+
+.selSummary {
+    width: 100%;
+    float: left;
+    background-color: #fff;
+    border-radius: 3px;
+    padding: 6.07vw 4.63vw 6.07vw;
+    box-shadow: 0 0 10px #eeeeee;
+    margin-top: 3.89vw;
+}
+
+.selSummary p {
+     font-size: 0.833rem;
+    color: #414042;
+     font-weight: bold;
+     
+}
+.selSummary label {
+    float: right;
+    font-weight: 400;
+    font-size: 0.729rem;
+   
+}
+
+/* incentive calculator */
+/* 
+.custom-slider.rzslider .rz-pointer {
+  width: 8px;
+  height: 16px;
+  top: auto; 
+  bottom: 0;
+  background-color: #333;
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+}
+
+.custom-slider.rzslider .rz-pointer:after {
+  display: none;
+}
+
+.custom-slider.rzslider .rz-bubble {
+  bottom: 14px;
+}
+
+.custom-slider.rzslider .rz-limit {
+  font-weight: bold;
+}
+
+.custom-slider.rzslider .rz-tick {
+  width: 1px;
+  height: 10px;
+  margin-left: 4px;
+  border-radius: 0;
+  background: #ffe4d1;
+  top: -1px;
+}
+
+.custom-slider.rzslider .rz-selection{
+    background: #0db9f0;
+   
+}
+
+.custom-slider.rzslider .rz-bar{
+height: 12px;
+}
+
+ .rzslider span{
+    font-size: 10px;
+    padding:  0;
+ }
+ .custom-slider.rzslider .rz-limit.rz-ceil{
+    left:  auto!important;
+    right:  0!important;
+ } */
+/* .custom-slider.rzslider .rz-tick {
+  position: absolute;
+  top: -20px;
+  transform: translate(-50%, 0) !important;
+  background:  red;
+}
+ */
+/* 
+ .custom-slider.rzslider .rz-bubble {
+    bottom: -20px;
+}
+.rzslider .rz-bar-wrapper{
+    padding: 0;
+    visibility: visible !important;
+   
+} */
+/* .custom-slider.rzslider .rz-limit.rz-ceil + span{
+    left:  0!important;
+} */
+
+
+
+.slideSummary{
+ width: 100%;
+    float: left;
+    background-color: #fff;
+    border-radius: 3px;
+    padding: 6.07vw 4.63vw 6.07vw;
+    box-shadow: 0 0 10px #eeeeee;
+    
+}
+.expenseGes-content:first-child .slideSummary{
+ margin-top: 3.89vw;
+}
+.expenseGes-content:last-child .slideSummary{
+ margin-bottom: 3.89vw;
+}
+.slideSummary h2{
+    padding-bottom: 2vw;
+}
+.slideSummary h2, .slideSummary .incValue{
+ font-size: 0.833rem;
+    color: #414042;
+     font-family: OpenSans;
+ }
+ .slideSummary .cValue{
+     font-weight: 700;
+     font-size: 0.833rem;
+    font-family: OpenSans;
+   margin-top: 6vw;
+ }
+ .slideSummary .incValue label{
+    font-weight: normal;
+ }
+.custom-slider.rzslider .rz-selection{
+    background-color: #9c2757;
+   
+}
+
+.custom-slider.rzslider .rz-bar{
+height: 10px;
+}
+.rzslider .rz-bar-wrapper{
+    visibility: visible !important;
+   
+} 
+.rzslider .rz-pointer{
+    background-color: #9c2757;
+        outline: none;
+}
+.rzslider .rz-pointer.rz-active:after{
+    background-color: #fff!important;
+}
+ .rzslider span{
+    font-size: 12px;
+}
+span.rz-bubble.rz-limit.rz-ceil {
+    left: auto !important;
+    right:0;
+}
+.rzslider .rz-pointer{
+    top: -2px !important;
+}
+.rzslider .rz-bar-wrapper{
+    padding-top: 25px !important;
+}

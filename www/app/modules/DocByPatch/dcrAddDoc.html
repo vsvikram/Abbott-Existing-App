@@ -1,0 +1,94 @@
+<transparent-screen></transparent-screen>
+<div class="row">
+    <div class="mob-header">
+        <abw-header data-abwheader-config="abwheaderConfig"></abw-header>
+    </div>
+    <div class="view-container container-fluid">
+        <div class="dcrAddDoc-wrapper page-wrap content-wrapper">
+            <div class="pink-color" ng-init="init()">
+                <div class="back-head-wrapper">
+                    <a href  ng-click="navigateBack()"><i class="back-head-arrow">&nbsp;</i></a>
+                    <div class="back-head-content">
+                        <span ng-class="{active:leftActive}" >{{dcrDate|date:"d MMM y"}}</span>
+                        <span ng-class="{active:rightActive}" >ADD A {{custName}}</span>
+                    </div>
+                </div>
+
+                <div class="dcrDoc-wrpper">
+                    <!--All DropDowns-->
+                    <div class="dcrDoc-info">
+
+                        <!--By Patch-->
+
+                        <div>
+                            <md-input-container class="patchContainer">
+                                <md-select  class="dropDownIcon dropDownStyleChange fontRobotoMedium noOutline" ng-model="docSearchFilter"  ng-change="onChangePatchValue();" placeholder="By Patch" ng-click=OnPatchChange()>
+                                    <md-option  ng-value="patches.Name" ng-repeat="patches in patchNew | unique | orderBy: 'Name'">{{patches.Name}}</md-option>
+                                </md-select>
+                            </md-input-container>
+                            <!--<select class="dropdown" ng-model="docSearchFilter" ng-change="onChangePatchValue();">-->
+                            <!--<option class="dropdown-wrapper" ng-repeat="patches in patchList | unique | orderBy: 'Name'">{{patches.Name}}</option>-->
+                            <!--</select>-->
+                            <!--<div class="planForTheDay textBesideFilterBox"> By Patch </div>-->
+
+                            <!--By Name-->
+
+                            <md-input-container class="patchContainer">
+                                <md-select  class="dropDownIcon dropDownStyleChange fontRobotoMedium noOutline" ng-model="docSearchFilter"  ng-change="showArray()" placeholder="By Name">
+                                    <md-option  ng-value="index.Account__r.Name" ng-repeat="index in doctorList | unique | orderBy: 'Account__r.Name'">{{index.Account__r.Name}}</md-option>
+                                </md-select>
+                            </md-input-container>
+                            <!--<select class="dropdown" ng-model="docSearchFilter" ng-change="showArray()">-->
+                            <!--<option class="dropdown-wrapper" ng-repeat="index in arrayUsed | unique | orderBy: 'Account__r.Name'">{{index.Account__r.Name}}</option>-->
+                            <!--</select>-->
+                            <!--<div class="planForTheDay textBesideFilterBox"> By Name </div>-->
+
+                        </div>
+
+                        <!--Data-->
+
+                        <div class="doctors-wrap" ng-repeat="index in filteredArrayPatch=(doctorList | filter:{ Patch_Name__c: docSearchFilter }: true | orderBy: 'Account__r.Name')">
+                            <div class="dcrDoc-list-item">
+                                <div class="dcrDoc-side">
+                                    <div class="dcrDoc-item-two">
+                                        <div class="dcrDoc-list-sub">
+                                            <span>{{ index.Account__r.Customer_Code__c }}</span>
+                                            <span>{{ index.Account__r.Name }}</span>
+                                        </div>
+                                        <p ng-show="custType!='Activity'" class="dcrDoc-list-desc"><add-brand-text brand="index"></add-brand-text></p>
+                                    </div>
+                                    <div class="dcrDoc-item-three">
+                                        <input type="checkbox" ng-model="index.selected" ng-change="showValue(index, this)" id="patchSearch{{$index}}"><label for="patchSearch{{$index}}"></label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="doctors-wrap" ng-repeat="index2 in filteredArraySearch | orderBy: 'Account__r.Name'">
+                            <div class="dcrDoc-list-item">
+                                <div class="dcrDoc-side">
+                                    <div class="dcrDoc-item-two">
+                                        <div class="dcrDoc-list-sub">
+                                            <span>{{ index2.Account__r.Customer_Code__c }}</span>
+                                            <span>{{ index2.Account__r.Name }}</span>
+                                        </div>
+                                        <p ng-show="custType!='Activity'" class="dcrDoc-list-desc"><add-brand-text brand="index2"></add-brand-text></p>
+                                    </div>
+                                    <div class="dcrDoc-item-three">
+                                        <input type="checkbox" ng-model="selectedValues2[index.Account__r.Name]" ng-change="showValue(index2)" id="nameSearch{{$index}}"><label for="nameSearch{{$index}}"></label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--ADD Button-->
+
+                        <div class="doc-add-button" ng-click="addDoctor()">
+                            <button>ADD</button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

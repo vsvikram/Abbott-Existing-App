@@ -1,0 +1,23 @@
+<div>
+    <div class="popup" >
+        <div class="popup-body">
+             
+            <div class="popup-content">
+ 
+                
+                <div   class="checkingBox">{{Brands}}
+                <select
+class="brandSelWidth entercall-inputfields dropDownIcon" ng-model="brandName"
+ ng-options="b.Name as b.Name for b in ngDialogData.Brands"
+>
+<option value="">Select Brand</option>
+</select>
+                </div>
+                <div class="popBtns">
+                <button class="ok-btn" ng-click="confirm(brandName)">{{ngDialogData.addButton}}</button>
+                <button class="cancel-btn" ng-click="confirm()">{{ngDialogData.cancelButton}}</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

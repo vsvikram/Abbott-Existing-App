@@ -1,0 +1,9 @@
+.back-head-arrow { background-repeat: no-repeat; background-position: center; background-size: 4.63vw; position: absolute; width: 4.63vw; top: 0; left: 1.85vw; bottom: 0; }
+.back-head-wrapper { height: 15vw; border-bottom: 1px solid #c2c2c2; text-align: center; display: table; width: 100%; position: relative; background-color: #ffffff; z-index: 300; }
+.back-head-content { display: inline-block; display: table-cell; text-align: center; margin: 0 auto; vertical-align: middle;text-transform:uppercase; }
+.back-head-content span { position:relative; display: inline-block; font-size: 0.688rem; color:#2b2b2b; font-weight: bold; padding-left: 2.1vw; padding-right:2.1vw;}
+.back-head-content .active {  color: #9c2756;  }
+.back-head-content .active:before { background: #9c2756 !important;  }
+/*.back-head-content span:last-of-type { padding-left: 2.1vw; position: relative; }*/
+.back-head-content span:before {content: '';height: 3.7vw;width: 0.3vw;background: #000;position: absolute;left: -0.6vw;top: 0;bottom: 0;margin: auto;}
+.back-head-content span:first-of-type:before{display:none;}

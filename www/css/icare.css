@@ -1,0 +1,42 @@
+/* Activities or Icare */
+.iCare-content-wrapper { width: 100%; float: left; padding: 3.89vw 3.8vw 3.24vw 2.78vw; }
+.iCare-box { float:left ; background: #fff; font-size: 0.625rem; padding-left: 3.7vw; padding-right: 2.7vw; padding-top: 5vw; color: #8a8a8b; }
+.iCare-box .activity-group { margin-bottom: 4.63vw; }
+.iCare-box b { color: #000; }
+.iCare-box .dropdown div, .iCare-box .dropdown .title { width: 100%; }
+.comment-group textarea { border: none; font-size: 0.625rem; font-weight: 500; width: 68vw; background-size: cover; border-bottom: none; background-position: center; height: 18.74vw; background-repeat: no-repeat; background-color: transparent; line-height: 1.5; resize: none; padding: 0; display: inline-block; float: right; margin-top: 3vw; }
+.comment-group { clear: both; float: left; width: 100%; padding-bottom:5vw;}
+.comment-group p { display: inline-block; float: left; margin-top: 6.19vw; }
+.iCare-content-wrapper .butn-wrapper { position: absolute; width: 94%; bottom: 4vw; }
+/*CampClinic */
+.campClinic-content-wrapper { font-size: 0.625rem; width: 100%; float: left; padding: 3.89vw 3.8vw 3.24vw 2.78vw; position: relative; color: #8a8a8b; }
+.campClinic-content {width: 100%;background: #fff;padding-left: 3.7vw;float: left;padding-right: 2.7vw;padding-top: 5vw;padding-bottom: 4.63vw;}
+.campClinic-content label { font-weight: normal; }
+.campClinic-content b { color: #000; }
+.activity-group { margin-bottom: 4.63vw }
+.campClinic-content .dropdown div, .campClinic-content .dropdown .title { width: 100%; }
+.brand-group { }
+.select-group, .input-group, .inputSelect-group { position: relative; padding-top: 4.41vw; clear: both; width: 100% }
+.select-group select, .input-group input { width: 49.63vw; float: right; border: none; background: transparent; border-bottom: 1px solid #d1d1d1; }
+.input-group input  { width: 52.78vw; }
+.select-group::before, .inputSelect-select::before { content: ' '; position: absolute; width: 2.85vw; height: 2.85vw; background-size: 100%; background-repeat: no-repeat; right: 1vw; bottom: 2vw; }
+.add-more-button { margin-top: 1.89vw; }
+.inputSelect-group select { width: 33.33vw; }
+.inputSelect-select { position: relative; display: inline-block; }
+.inputSelect-wrap { float: right; }
+.inputSelect-group input { margin-left: 4.26vw; width: 9.26vw; margin-right: 1.85vw;  border: none; background: transparent; border-bottom: 1px solid #d1d1d1; }
+.inputSelect-group select {  border: none; background: transparent; border-bottom: 1px solid #d1d1d1; }
+.campClinic-content select, .campClinic-content input { color: #000; }
+.iCare-box .activity-group >p {
+    font-size: 0.765rem;
+    font-family: OpenSans;
+}
+.comment-group textarea{font-size: 0.765rem;}
+.comment-group p{font-size: 0.765rem; font-family: openSans; }
+.select-group.removeArr:before {
+    display: none;
+}
+.docAtt{width: 38% !important;}
+.activity-doctors-count{width: 61% !important;}
+.buttonIcon {position:relative;}
+.buttonIcon .iCare-content-wrapper .dcr-button{padding:0;}

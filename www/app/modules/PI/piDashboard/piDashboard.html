@@ -1,0 +1,29 @@
+<transparent-screen></transparent-screen>
+<div class="sub-head-wrap">
+    <h2 class="sub-head">{{ selectedBrand.EBRAND_NAME__c }} <span class="footnote"> {{ date }} </span></h2>
+</div>
+<div class="clearfix"></div>
+<div ng-if="! trends">Loading...</div>
+<div class="content-box">
+    <div ng-if="trends">
+        <div class="dashboard-col" ng-repeat="trend in trends">
+            <div class="dbc-content" ng-click="navigateScreen(trend.stateToGo,'')" ng-class="trend.state == 'down' ?  'dbc-down' : 'dbc-up'">
+                <div class="dbc-trend-wrap">
+                    <div class="circle">
+                        <round-progress max="roundProgConfig.max" current="trend.value" color="{{ trend.value >= defaultThreshold ?  '#3abc00' : '#f05b43'}}" bgcolor={{roundProgConfig.bgcolor}} radius={{roundProgConfig.radius}} stroke={{roundProgConfig.stroke}} semi="roundProgConfig.semi" rounded="roundProgConfig.rounded" clockwise="roundProgConfig.clockwise" responsive="roundProgConfig.responsive" duration={{roundProgConfig.duration}} animation={{roundProgConfig.animation}} animation-delay="roundProgConfig.animationDelay">                    
+                        </round-progress>                
+                        <div class="circle-value">
+                            <strong>{{trend.value}}<i>%</i></strong>
+                        </div>
+                    </div>
+                    <div class="dbc-trend">
+                        <span class="dbc-trend-icon animated" ng-class="{bounceInDown:trend.state=='down', bounceInUp:trend.state=='up'}"></span>
+                    </div>
+                </div>
+                <div class="dbs-label">
+                    <span>{{trend.label}}</span>
+                </div>
+            </div>             
+        </div> 
+    </div> 
+</div>

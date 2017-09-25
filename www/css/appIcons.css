@@ -1,0 +1,1113 @@
+.slideMenuIcons {
+    width: 1.5em;
+    height: 1.5em;
+    line-height: 1.5em;
+    float: left;
+}
+
+.headerLogoParent {
+    /*padding: 0px 0.5em;
+	left: 0px;
+	position: absolute;*/
+    width: 3em;
+    height: 2.5em;
+    float: left;
+    /*line-height: 2em;*/
+}
+
+.logoutIconContainer {
+    /*padding: 0px 0.5em;*/
+    float: right;
+    width: 3em;
+    height: 2.8em;
+    /*line-height: 2em;*/
+}
+
+.headerLeftSideIconContainer {
+    padding: 0px 0.5em;
+    width: 3em;
+    height: 3em;
+    float: left;
+}
+
+.lockIconContainer {
+    margin-top: 0.4em;
+    padding: 0px 0.5em;
+    right: 3em;
+    position: absolute;
+    width: 3em;
+    height: 2em;
+    line-height: 2em;
+    border-right-style: groove;
+    border-right-color: rgba(127, 127, 127, 0.2);
+    border-right-width: 1px;
+}
+
+.headerIconsbase {
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+}
+
+.homeModuleIcons {
+    width: 2.5em;
+    height: 2.5em;
+    background-size: cover !important;
+    display: inline-block;
+}
+
+.mtpCalenderIcon {
+    margin-top: 0.3em;
+    float: right;
+    height: 2em;
+    width: 2em;
+    margin-right: 3%;
+    background-size: cover !important;
+}
+
+.mtpSortIcon {
+    height: 1.4em;
+    width: 1.4em;
+    background-size: cover !important;
+    float: right;
+}
+
+.dcrModuleIcons {
+    background-size: 2em 2em;
+    width: 2em;
+    height: 2em;
+    line-height: 2em;
+    float: left;
+    background-size: cover !important;
+}
+
+.enterCallIcon {
+    height: 1.4em;
+    width: 1.4em;
+    background-size: cover !important;
+}
+
+@media screen and (max-width: 320px) { /* 1x */
+
+    .loaderImg {
+        background: url("../resources/images/1x/Preloader.gif") no-repeat center center;
+        position: absolute;
+        left: 40%;
+        right: 40%;
+        top: 30%;
+        bottom: 40%;
+        height: 30%;
+        width: 20%;
+    }
+
+    /*search icon*/
+    .searchIcon {
+        background: url("../resources/images/1x/search-icon.png") no-repeat right;
+        background-size: 1.5em 1.5em;
+    }
+
+    /*Drop Down Icon */
+
+    .dropDownIcon {
+        background: url("../resources/images/1x/DropdownIcon.png") no-repeat right;
+        background-size: 1.5em 1.5em;
+        background-position: 86vw;
+    }
+
+    /* MTP Calendar Icon */
+    .fc-prev-button {
+        background: url("../resources/images/1x/PrevMonth.png") no-repeat left center;
+        background-size: 2em 2em;
+    }
+
+    .fc-next-button {
+        background: url("../resources/images/1x/NextMonth.png") no-repeat left center;
+        background-size: 2em 2em;
+    }
+
+    .fc-back-button {
+        background: url("../resources/images/1x/BackArrow.png") no-repeat left center;
+        background-size: 2em 2em;
+        width: 7em;
+    }
+
+    .fc-back-button-dcr {
+        background: url("../resources/images/1x/BackArrow.png") no-repeat left center;
+        background-size: 2em 2em;
+        width: 7em;
+    }
+
+    .fc-forward-button {
+        background: url("../resources/images/1x/BackArrow.png") no-repeat left center;
+        background-size: 2em 2em;
+        -webkit-transform: scaleX(-1);
+        filter: FlipH;
+    }
+
+    .menuSyncIcon {
+        background: url("../resources/images/1x/MenuSync.png") no-repeat center center;
+        background-size: 1.5em 1.5em;
+        width: 1.5em;
+        height: 1.5em;
+        line-height: 1.5em;
+        display: inline-block;
+    }
+
+    .slideMenuIcons {
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: 1.5em 1.5em;
+    }
+
+        .slideMenuIcons.menuHomeIconSelected {
+            background-image: url("../resources/images/1x/MenuHomeAct.png");
+        }
+
+        .slideMenuIcons.menuHomeIcon {
+            background-image: url("../resources/images/1x/MenuHomeInact.png");
+        }
+
+        .slideMenuIcons.menuMTPIconSelected {
+            background-image: url("../resources/images/1x/MenuMTPAct.png");
+        }
+
+        .slideMenuIcons.menuMTPIcon {
+            background-image: url("../resources/images/1x/MenuMTPInact.png");
+        }
+
+        .slideMenuIcons.menuDCRIconSelected {
+            background-image: url("../resources/images/1x/MenuDCRAct.png");
+        }
+
+        .slideMenuIcons.menuDCRIcon {
+            background-image: url("../resources/images/1x/MenuDCRInact.png");
+        }
+
+        .slideMenuIcons.menuMyLeaveIconSelected {
+            background-image: url("../resources/images/1x/MenuMyLeaveAct.png");
+        }
+
+        .slideMenuIcons.menuMyLeaveIcon {
+            background-image: url("../resources/images/1x/MenuMyLeaveInact.png");
+        }
+
+        .slideMenuIcons.menuHelpdeskIconSelected {
+            background-image: url("../resources/images/1x/MenuHelpAct.png");
+        }
+
+        .slideMenuIcons.menuHelpdeskIcon {
+            background-image: url("../resources/images/1x/MenuHelpInact.png");
+        }
+
+        .slideMenuIcons.menuHelpdeskIcon {
+            background-image: url("../resources/images/1x/MenuHelpInact.png");
+        }
+
+        .slideMenuIcons.showPresentations {
+            background-image: url("../resources/images/2x/show-presentations-unselected.png");
+            background-size: 70%;
+        }
+
+        .slideMenuIcons.showPresentationsSelected {
+            background-image: url("../resources/images/2x/show-presentations.png");
+            background-size: 70%;
+        }
+
+    .syncIcon {
+        left: 0px;
+        background: url("../resources/images/1x/Sync.png") no-repeat center center;
+        background-size: 2em 2em;
+    }
+
+    .backIcon {
+        left: 0px;
+        background: url("../resources/images/1x/BackArrow.png") no-repeat center center;
+        background-size: 2em 2em;
+        width: 3em;
+    }
+
+    .menuIcon {
+        left: 0px;
+        background: url("../resources/images/1x/MenuIcon.png") no-repeat center center;
+        background-size: 2em 2em;
+    }
+
+    .headerLogoParent.headerlogo {
+        background: url("../resources/images/1x/HeaderLogo.png") no-repeat center center;
+        background-size: 6em 2em;
+        width: 6em;
+        left: 3em;
+    }
+
+    .lockIcon {
+        background: url("../resources/images/1x/DCRLock.png") no-repeat center center;
+        background-size: 2em 2em;
+    }
+
+    .logoutIcon {
+        background: url("../resources/images/1x/LogOut.png") no-repeat center center;
+        background-size: 1.5em 1.5em;
+    }
+
+    /*Sort Icon*/
+    .mtpSortIcon.sortIconAscending {
+        background: url("../resources/images/1x/Sorticon.png") no-repeat center;
+    }
+
+    .mtpSortIcon.sortIconDescending {
+        background: url("../resources/images/1x/Sorticon.png") no-repeat center;
+        -webkit-transform: scaleY(-1);
+        filter: FlipV;
+    }
+
+    /* DCR Icon */
+    .homeModuleIcons.dcrIcon {
+        background: url("../resources/images/1x/DCR.png") no-repeat center;
+    }
+
+    .homeModuleIcons.dcrIconRollover {
+        background: url("../resources/images/1x/DCR.png") no-repeat left center;
+    }
+
+    .homeModuleIcons.calIcon {
+        background: url("../resources/images/1x/Calender.png") no-repeat left center;
+    }
+
+    .dcrModuleIcons.dcrRadioButtonActive {
+        background: url("../resources/images/1x/RadoAct.png") no-repeat left center;
+    }
+
+    .dcrModuleIcons.dcrRadioButtonInactive {
+        background: url("../resources/images/1x/RadoInAct.png") no-repeat left center;
+    }
+
+    .dcrModuleIcons.dcrCheckButtonActive {
+        background: url("../img/icons/green-tick.png") no-repeat left center;
+    }
+
+    .dcrModuleIcons.dcrCheckButtonInactive {
+        background: url("../img/icons/black-box.png") no-repeat left center;
+    }
+
+    .dcrModuleIcons.dcrAddDoc {
+        background: url("../resources/images/1x/AddDoctor.png") no-repeat left center;
+    }
+
+    .dcrModuleIcons.showPresentations {
+        background: url("../resources/images/1x/show-presentations.png") no-repeat left center / contain !important;
+        zoom: 0.85;
+    }
+
+    .dcrModuleIcons.dcrTrashIcon {
+        background: url("../resources/images/1x/TrashIcon.png") no-repeat left center;
+    }
+
+    .dcrModuleIcons.dcrremoveIcon {
+        background: url("../resources/images/1x/add-doctor-new.png") no-repeat left center;
+    }
+
+    .dcrModuleIcons.dcrSliderPrevArrow {
+        background: url("../resources/images/1x/SliderPrevArrow.png") no-repeat left center;
+    }
+
+    .dcrModuleIcons.dcrSliderNextArrow {
+        background: url("../resources/images/1x/SliderNextArrow.png") no-repeat left center;
+    }
+
+    .dcrModuleIcons.dcrDeleteIcon {
+        background: url("../resources/images/1x/DeleteIcon.png") no-repeat left center;
+    }
+
+    /* MTP icon */
+    .homeModuleIcons.mtpIcon {
+        background: url("../resources/images/1x/MTP.png") no-repeat left center;
+    }
+
+    .homeModuleIcons.mtpIconRollover {
+        background: url("../resources/images/1x/MTP.png") no-repeat left center;
+    }
+
+    /* SFE icon */
+    .homeModuleIcons.sfeIcon {
+        background: url("../resources/images/1x/SEF36x36.png") no-repeat left center;
+    }
+
+    .homeModuleIcons.sfeIconRollover {
+        background: url("../resources/images/1sx/SEF36x36.png") no-repeat left center;
+    }
+
+    .homeModuleIcons.pmIcon {
+        background: url("../resources/images/1x/Performance_36x36.png") no-repeat left center;
+    }
+
+    .homeModuleIcons.dcmIcon {
+        background: url("../resources/images/1x/Doctorcall_36x36.png") no-repeat left center;
+    }
+
+    .homeModuleIcons.imIcon {
+        background: url("../resources/images/1x/Incentives_36x36.png") no-repeat left center;
+    }
+
+    .homeModuleIcons.smIcon {
+        background: url("../resources/images/1x/Sales_36x36.png") no-repeat left center;
+    }
+
+    /* My Leave */
+    .homeModuleIcons.myLeaveIcon {
+        background: url("../resources/images/1x/MyLeave.png") no-repeat left center;
+    }
+
+    .homeModuleIcons.myLeaveIconRollover {
+        background: url("../resources/images/1x/MyLeave.png") no-repeat left center;
+    }
+
+    /*Helpdesk*/
+    .homeModuleIcons.helpdeskIcon {
+        background: url("../resources/images/1x/Helpdesk.png") no-repeat left center;
+    }
+
+    .homeModuleIcons.helpDeskIconRollover {
+        background: url("../resources/images/1x/Helpdesk.png") no-repeat left center;
+    }
+
+    /*calender icon*/
+    .calenderPic {
+        background: url("../resources/images/1x/Calender.png") no-repeat right center;
+        background-size: 1.5em 1.5em;
+    }
+
+    .kgPic {
+        background: url("../resources/images/1x/KG-icon-30x30.png") no-repeat right center;
+        background-size: 1.5em 1.5em;
+    }
+
+    /*Enter call details*/
+    .addIcon {
+        background: url("../img/icons/add-more.png")no-repeat;
+    }
+
+    .removeIcon {
+        background: url("../resources/images/1x/RemoveIcon.png") no-repeat left center;
+    }
+
+    .editIcon {
+        background: url("../resources/images/1x/EditIcon.png") no-repeat left center;
+    }
+
+    .doneIcon {
+        background: url("../resources/images/1x/DoneIcon.png") no-repeat left center;
+    }
+
+    .deleteIcon {
+        background: url(../img/icons/red-delete.png)no-repeat;
+    }
+
+    .arrowLeftIcon {
+        background: url("../resources/images/1x/arrow-left.png") no-repeat center center / contain;
+    }
+
+    .arrowRightIcon {
+        background: url("../resources/images/1x/arrow-right.png") no-repeat center center / contain;
+    }
+
+    input[type=checkbox] + label {
+        background: url("../img/icons/black-box.png") no-repeat left center;
+        display: inline-block;
+        width: 1.5em;
+        height: 1.5em;
+        background-size: cover !important;
+        margin-bottom: 0px;
+    }
+
+    input[type=checkbox]:checked + label {
+        background: url("../img/icons/green-tick.png") no-repeat left center;
+        height: 1.5em;
+        width: 1.5em;
+        display: inline-block;
+        background-size: cover !important;
+        margin-bottom: 0px;
+    }
+}
+
+@media screen and (min-width: 321px) and (max-width: 720px) { /* 2x */
+
+    .loaderImg {
+        background: url("../resources/images/2x/Preloader.gif") no-repeat center center;
+        position: absolute;
+        left: 40%;
+        right: 40%;
+        top: 30%;
+        bottom: 40%;
+        height: 30%;
+        width: 20%;
+    }
+
+    /*forward button*/
+    .fc-forward-button {
+        background: url("../resources/images/2x/BackArrow.png") no-repeat left center;
+        background-size: 2em 2em;
+        -webkit-transform: scaleX(-1);
+        filter: FlipH;
+    }
+
+    /*search icon*/
+    .searchIcon {
+        background: url("../resources/images/1x/search-icon.png") no-repeat right;
+        background-size: 1.5em 1.5em;
+    }
+
+    /*Drop Down Icon*/
+
+    .dropDownIcon {
+        background: url("../resources/images/2x/DropdownIcon.png") no-repeat right;
+        background-size: 1.5em 1.5em;
+        background-position: 86vw;
+    }
+
+    /* MTP Calendar Icon */
+    .fc-prev-button {
+        background: url("../resources/images/2x/PrevMonth.png") no-repeat left center;
+        background-size: 2em 2em;
+    }
+
+    .fc-next-button {
+        background: url("../resources/images/2x/NextMonth.png") no-repeat left center;
+        background-size: 2em 2em;
+    }
+
+    .fc-back-button {
+        background: url("../resources/images/2x/BackArrow.png") no-repeat left center;
+        background-size: 2em 2em;
+        width: 3em;
+    }
+
+    .fc-back-button-dcr {
+        background: url("../resources/images/2x/BackArrow.png") no-repeat left center;
+        background-size: 2em 2em;
+        width: 7em;
+    }
+
+    .menuSyncIcon {
+        background: url("../resources/images/2x/MenuSync.png") no-repeat center center;
+        background-size: 1.5em 1.5em;
+        width: 1.5em;
+        height: 1.5em;
+        line-height: 1.5em;
+        display: inline-block;
+    }
+
+    .slideMenuIcons {
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: 1.5em 1.5em;
+    }
+
+        .slideMenuIcons.menuHomeIconSelected {
+            background-image: url("../resources/images/2x/MenuHomeAct.png");
+        }
+
+        .slideMenuIcons.menuHomeIcon {
+            background-image: url("../resources/images/2x/MenuHomeInact.png");
+        }
+
+        .slideMenuIcons.menuMTPIconSelected {
+            background-image: url("../resources/images/2x/MenuMTPAct.png");
+        }
+
+        .slideMenuIcons.menuMTPIcon {
+            background-image: url("../resources/images/2x/MenuMTPInact.png");
+        }
+
+        .slideMenuIcons.menuDCRIconSelected {
+            background-image: url("../resources/images/2x/MenuDCRAct.png");
+        }
+
+        .slideMenuIcons.menuDCRIcon {
+            background-image: url("../resources/images/2x/MenuDCRInact.png");
+        }
+
+        .slideMenuIcons.menuMyLeaveIconSelected {
+            background-image: url("../resources/images/2x/MenuMyLeaveAct.png");
+        }
+
+        .slideMenuIcons.menuMyLeaveIcon {
+            background-image: url("../resources/images/2x/MenuMyLeaveInact.png");
+        }
+
+        .slideMenuIcons.menuHelpdeskIconSelected {
+            background-image: url("../resources/images/2x/MenuHelpAct.png");
+        }
+
+        .slideMenuIcons.menuHelpdeskIcon {
+            background-image: url("../resources/images/2x/MenuHelpInact.png");
+        }
+
+        .slideMenuIcons.showPresentations {
+            background-image: url("../resources/images/2x/show-presentations-unselected.png");
+            background-size: 70%;
+        }
+
+        .slideMenuIcons.showPresentationsSelected {
+            background-image: url("../resources/images/2x/show-presentations.png");
+            background-size: 70%;
+        }
+
+    .syncIcon {
+        left: 0px;
+        background: url("../resources/images/2x/Sync.png") no-repeat center center;
+        background-size: 2em 2em;
+    }
+
+    .backIcon {
+        left: 0px;
+        background: url("../resources/images/2x/BackArrow.png") no-repeat center center;
+        background-size: 2em 2em;
+        width: 3em;
+    }
+
+    .menuIcon {
+        left: 0px;
+        background: url("../resources/images/2x/MenuIcon.png") no-repeat center center;
+        background-size: 2em 2em;
+    }
+
+    .headerLogoParent.headerlogo {
+        background: url("../resources/images/2x/HeaderLogo.png") no-repeat center center;
+        background-size: 6em auto;
+        width: 6em;
+        left: 3em;
+    }
+
+    .lockIcon {
+        background: url("../resources/images/2x/DCRLock.png") no-repeat center center;
+        background-size: 2em 2em;
+    }
+
+    .logoutIcon {
+        background: url("../resources/images/2x/LogOut.png") no-repeat center center;
+        background-size: 2em 2em;
+    }
+
+    /*Sort Icon*/
+    .mtpSortIcon.sortIconAscending {
+        background: url("../resources/images/2x/Sorticon.png") no-repeat center;
+    }
+
+    .mtpSortIcon.sortIconDescending {
+        background: url("../resources/images/2x/Sorticon.png") no-repeat center;
+        -webkit-transform: scaleY(-1);
+        filter: FlipV;
+        background-size: 2em 2em;
+    }
+
+    /* DCR Icon */
+    .homeModuleIcons.dcrIcon {
+        background: url("../resources/images/2x/DCR.png") no-repeat left center;
+    }
+
+    .homeModuleIcons.dcrIconRollover {
+        background: url("../resources/images/2x/DCR.png") no-repeat left center;
+    }
+
+    .homeModuleIcons.calIcon {
+        background: url("../resources/images/2x/Calender.png") no-repeat left center;
+    }
+
+    .dcrModuleIcons.dcrRadioButtonActive {
+        background: url("../resources/images/2x/RadoAct.png") no-repeat left center;
+    }
+
+    .dcrModuleIcons.dcrRadioButtonInactive {
+        background: url("../resources/images/2x/RadoInAct.png") no-repeat left center;
+    }
+
+    .dcrModuleIcons.dcrCheckButtonActive {
+         background: url("../img/icons/green-tick.png") no-repeat left center;
+    }
+
+    .dcrModuleIcons.dcrCheckButtonInactive {
+        background: url("../img/icons/black-box.png") no-repeat left center;
+    }
+
+    .dcrModuleIcons.dcrAddDoc {
+        background: url("../resources/images/2x/add-doctor-new.png") no-repeat left center;
+    }
+
+    .dcrModuleIcons.showPresentations {
+        background: url("../resources/images/2x/show-presentations.png") no-repeat left center / contain !important;
+        zoom: 0.85;
+    }
+
+    .dcrModuleIcons.dcrTrashIcon {
+        background: url("../resources/images/2x/TrashIcon.png") no-repeat left center;
+    }
+
+    .dcrModuleIcons.dcrremoveIcon {
+        background: url("../resources/images/2x/removeIcon.png") no-repeat left center;
+    }
+
+    .dcrModuleIcons.dcrSliderPrevArrow {
+        background: url("../resources/images/2x/SliderPrevArrow.png") no-repeat left center;
+    }
+
+    .dcrModuleIcons.dcrSliderNextArrow {
+        background: url("../resources/images/2x/SliderNextArrow.png") no-repeat left center;
+    }
+
+    .dcrModuleIcons.dcrDeleteIcon {
+        background: url("../resources/images/2x/DeleteIcon.png") no-repeat left center;
+    }
+
+    /* MTP icon */
+    .homeModuleIcons.mtpIcon {
+        background: url("../resources/images/2x/MTP.png") no-repeat left center;
+    }
+
+    .homeModuleIcons.mtpIconRollover {
+        background: url("../resources/images/2x/MTP.png") no-repeat left center;
+    }
+
+    /* My Leave */
+    .homeModuleIcons.myLeaveIcon {
+        background: url("../resources/images/2x/MyLeave.png") no-repeat left center;
+    }
+
+    .homeModuleIcons.myLeaveIconRollover {
+        background: url("../resources/images/2x/MyLeave.png") no-repeat left center;
+    }
+
+    /* SFE icon */
+    .homeModuleIcons.sfeIcon {
+        background: url("../resources/images/2x/SEF72x72.png") no-repeat left center;
+    }
+
+    .homeModuleIcons.sfeIconRollover {
+        background: url("../resources/images/2x/SEF72x72.png") no-repeat left center;
+    }
+
+    .homeModuleIcons.pmIcon {
+        background: url("../resources/images/2x/Performance_72x72.png") no-repeat left center;
+    }
+
+    .homeModuleIcons.dcmIcon {
+        background: url("../resources/images/2x/Doctorcall_72x72.png") no-repeat left center;
+    }
+
+    .homeModuleIcons.imIcon {
+        background: url("../resources/images/2x/Incentives_72x72.png") no-repeat left center;
+    }
+
+    .homeModuleIcons.smIcon {
+        background: url("../resources/images/2x/Sales_72x72.png") no-repeat left center;
+    }
+
+    /*Helpdesk*/
+    .homeModuleIcons.helpdeskIcon {
+        background: url("../resources/images/2x/Helpdesk.png") no-repeat left center;
+    }
+
+    .homeModuleIcons.helpDeskIconRollover {
+        background: url("../resources/images/2x/Helpdesk.png") no-repeat left center;
+    }
+
+    /*Calender Icon*/
+    .calenderPic {
+        background: url("../resources/images/2x/Calender.png") no-repeat right center;
+        background-size: 2em 2em;
+    }
+
+    .kgPic {
+        background: url("../resources/images/2x/KG-icon-60x60.png") no-repeat right center;
+        background-size: 2em 2em;
+    }
+
+    /*Enter call details*/
+    .addIcon {
+            background: url("../img/icons/add-more.png")no-repeat;
+    }
+
+    .removeIcon {
+        background: url("../resources/images/2x/RemoveIcon.png") no-repeat left center;
+    }
+
+    .editIcon {
+        background: url("../resources/images/2x/EditIcon.png") no-repeat left center;
+    }
+
+    .doneIcon {
+        background: url("../resources/images/2x/DoneIcon.png") no-repeat left center;
+    }
+
+    .deleteIcon {
+        background: url(../img/icons/red-delete.png)no-repeat;
+    }
+
+    .arrowLeftIcon {
+        background: url("../resources/images/2x/arrow-left.png") no-repeat center center / contain;
+    }
+
+    .arrowRightIcon {
+        background: url("../resources/images/2x/arrow-right.png") no-repeat center center / contain;
+    }
+
+    input[type=checkbox] + label {
+        background: url("../img/icons/black-box.png") no-repeat left center;
+        display: inline-block;
+        width: 1.5em;
+        height: 1.5em;
+        background-size: cover !important;
+        margin-bottom: 0px;
+    }
+
+    input[type=checkbox]:checked + label {
+       background: url("../img/icons/green-tick.png") no-repeat left center;
+        height: 1.5em;
+        width: 1.5em;
+        display: inline-block;
+        background-size: cover !important;
+        margin-bottom: 0px;
+    }
+}
+
+@media screen and (min-width: 721px) {
+
+    .loaderImg {
+        background: url("../resources/images/3x/Preloader.gif") no-repeat center center;
+        position: absolute;
+        left: 40%;
+        right: 40%;
+        top: 30%;
+        bottom: 40%;
+        height: 30%;
+        width: 20%;
+    }
+
+    /*forward button*/
+    .fc-forward-button {
+        background: url("../resources/images/3x/BackArrow.png") no-repeat left center;
+        background-size: 2em 2em;
+        -webkit-transform: scaleX(-1);
+        filter: FlipH;
+    }
+
+    /*search icon*/
+    .searchIcon {
+        background: url("../resources/images/1x/search-icon.png") no-repeat right;
+        background-size: 1.5em 1.5em;
+    }
+
+    /*Drop Down Icon*/
+    .dropDownIcon {
+        background: url("../resources/images/1x/DropdownIcon.png") no-repeat right;
+        background-size: 1.5em 1.5em;
+        background-position: 86vw;
+    }
+    /* MTP Calendar Icon */
+    .fc-prev-button {
+        background: url("../resources/images/3x/PrevMonth.png") no-repeat left center;
+        background-size: 2em 2em;
+    }
+
+    .fc-next-button {
+        background: url("../resources/images/3x/NextMonth.png") no-repeat left center;
+        background-size: 2em 2em;
+    }
+
+    .fc-back-button {
+        background: url("../resources/images/3x/BackArrow.png") no-repeat left center;
+        background-size: 2em 2em;
+        width: 3em;
+    }
+
+    .fc-back-button-dcr {
+        background: url("../resources/images/3x/BackArrow.png") no-repeat left center;
+        background-size: 2em 2em;
+        width: 7em;
+    }
+
+    .menuSyncIcon {
+        background: url("../resources/images/3x/MenuSync.png") no-repeat center center;
+        background-size: 1.5em 1.5em;
+        width: 1.5em;
+        height: 1.5em;
+        line-height: 1.5em;
+        display: inline-block;
+    }
+
+    .slideMenuIcons {
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: 1.5em 1.5em;
+    }
+
+        .slideMenuIcons.menuHomeIconSelected {
+            background-image: url("../resources/images/3x/MenuHomeAct.png");
+        }
+
+        .slideMenuIcons.menuHomeIcon {
+            background-image: url("../resources/images/3x/MenuHomeInact.png");
+        }
+
+        .slideMenuIcons.menuMTPIconSelected {
+            background-image: url("../resources/images/3x/MenuMTPAct.png");
+        }
+
+        .slideMenuIcons.menuMTPIcon {
+            background-image: url("../resources/images/3x/MenuMTPInact.png");
+        }
+
+        .slideMenuIcons.menuDCRIconSelected {
+            background-image: url("../resources/images/3x/MenuDCRAct.png");
+        }
+
+        .slideMenuIcons.menuDCRIcon {
+            background-image: url("../resources/images/3x/MenuDCRInact.png");
+        }
+
+        .slideMenuIcons.menuMyLeaveIconSelected {
+            background-image: url("../resources/images/3x/MenuMyLeaveAct.png");
+        }
+
+        .slideMenuIcons.menuMyLeaveIcon {
+            background-image: url("../resources/images/3x/MenuMyLeaveInact.png");
+        }
+
+        .slideMenuIcons.menuHelpdeskIconSelected {
+            background-image: url("../resources/images/3x/MenuHelpAct.png");
+        }
+
+        .slideMenuIcons.menuHelpdeskIcon {
+            background-image: url("../resources/images/3x/MenuHelpInact.png");
+        }
+
+        .slideMenuIcons.showPresentations {
+            background-image: url("../resources/images/2x/show-presentations-unselected.png");
+            background-size: 70%;
+        }
+
+        .slideMenuIcons.showPresentationsSelected {
+            background-image: url("../resources/images/2x/show-presentations.png");
+            background-size: 70%;
+        }
+
+    .syncIcon {
+        left: 0px;
+        background: url("../resources/images/3x/Sync.png") no-repeat center center;
+        background-size: 2em 2em;
+    }
+
+    .backIcon {
+        left: 0px;
+        background: url("../resources/images/3x/BackArrow.png") no-repeat center center;
+        background-size: 2em 2em;
+        width: 3em;
+    }
+
+    .menuIcon {
+        left: 0px;
+        background: url("../resources/images/3x/MenuIcon.png") no-repeat center center;
+        background-size: 2em 2em;
+    }
+
+    .headerLogoParent.headerlogo {
+        background: url("../resources/images/3x/HeaderLogo.png") no-repeat center center;
+        background-size: 6em auto;
+        width: 6em;
+        left: 3em;
+    }
+
+    .lockIcon {
+        background: url("../resources/images/3x/DCRLock.png") no-repeat center center;
+        background-size: 2em 2em;
+    }
+
+    .logoutIcon {
+        background: url("../resources/images/3x/LogOut.png") no-repeat center center;
+        background-size: 2.5em 2.5em;
+    }
+
+    /*Sort Icon*/
+    .mtpSortIcon.sortIconAscending {
+        background: url("../resources/images/3x/Sorticon.png") no-repeat center;
+    }
+
+    .mtpSortIcon.sortIconDescending {
+        background: url("../resources/images/3x/Sorticon.png") no-repeat center;
+        -webkit-transform: scaleY(-1);
+        filter: FlipV;
+    }
+
+    /* DCR Icon */
+    .homeModuleIcons.dcrIcon {
+        background: url("../resources/images/3x/DCR.png") no-repeat left center;
+    }
+
+    .homeModuleIcons.dcrIconRollover {
+        background: url("../resources/images/3x/DCR.png") no-repeat left center;
+    }
+
+    .homeModuleIcons.calIcon {
+        background: url("../resources/images/3x/Calender.png") no-repeat left center;
+    }
+
+    .dcrModuleIcons.dcrRadioButtonActive {
+        background: url("../resources/images/3x/RadoAct.png") no-repeat left center;
+    }
+
+    .dcrModuleIcons.dcrRadioButtonInactive {
+        background: url("../resources/images/3x/RadoInAct.png") no-repeat left center;
+    }
+
+    .dcrModuleIcons.dcrCheckButtonActive {
+         background: url("../img/icons/green-tick.png") no-repeat left center;
+    }
+
+    .dcrModuleIcons.dcrCheckButtonInactive {
+        background: url("../img/icons/black-box.png") no-repeat left center;
+    }
+
+    .dcrModuleIcons.dcrAddDoc {
+        background: url("../resources/images/3x/add-doctor-new.png") no-repeat left center;
+    }
+
+    .dcrModuleIcons.showPresentations {
+        background: url("../resources/images/3x/show-presentations.png") no-repeat left center / contain !important;
+        zoom: 0.85;
+    }
+
+    .dcrModuleIcons.dcrTrashIcon {
+        background: url("../resources/images/3x/TrashIcon.png") no-repeat left center;
+    }
+
+    .dcrModuleIcons.dcrremoveIcon {
+        background: url("../resources/images/3x/removeIcon.png") no-repeat left center;
+    }
+
+    .dcrModuleIcons.dcrSliderPrevArrow {
+        background: url("../resources/images/3x/SliderPrevArrow.png") no-repeat left center;
+    }
+
+    .dcrModuleIcons.dcrSliderNextArrow {
+        background: url("../resources/images/3x/SliderNextArrow.png") no-repeat left center;
+    }
+
+    .dcrModuleIcons.dcrDeleteIcon {
+        background: url("../resources/images/3x/DeleteIcon.png") no-repeat left center;
+    }
+
+    /* MTP icon */
+    .homeModuleIcons.mtpIcon {
+        background: url("../resources/images/3x/MTP.png") no-repeat left center;
+    }
+
+    .homeModuleIcons.mtpIconRollover {
+        background: url("../resources/images/3x/MTP.png") no-repeat left center;
+    }
+
+    /* My Leave */
+    .homeModuleIcons.myLeaveIcon {
+        background: url("../resources/images/3x/MyLeave.png") no-repeat left center;
+    }
+
+    .homeModuleIcons.myLeaveIconRollover {
+        background: url("../resources/images/3x/MyLeave.png") no-repeat left center;
+    }
+    /* SFE icon */
+    .homeModuleIcons.sfeIcon {
+        background: url("../resources/images/3x/SEF108x108.png") no-repeat left center;
+    }
+
+    .homeModuleIcons.sfeIconRollover {
+        background: url("../resources/images/3x/SEF108x108.png") no-repeat left center;
+    }
+
+    .homeModuleIcons.pmIcon {
+        background: url("../resources/images/3x/Performance_108x108.png") no-repeat left center;
+    }
+
+    .homeModuleIcons.dcmIcon {
+        background: url("../resources/images/3x/Doctorcall_108x108.png") no-repeat left center;
+    }
+
+    .homeModuleIcons.imIcon {
+        background: url("../resources/images/3x/Incentives_108x108.png") no-repeat left center;
+    }
+
+    .homeModuleIcons.smIcon {
+        background: url("../resources/images/3x/Sales_108x108.png") no-repeat left center;
+    }
+
+
+    /*Helpdesk*/
+    .homeModuleIcons.helpdeskIcon {
+        background: url("../resources/images/3x/Helpdesk.png") no-repeat left center;
+    }
+
+    .homeModuleIcons.helpDeskIconRollover {
+        background: url("../resources/images/3x/Helpdesk.png") no-repeat left center;
+    }
+
+    /*calender icon*/
+    .calenderPic {
+        background: url("../resources/images/3x/Calender.png") no-repeat right center;
+        background-size: 2.5em 2.5em;
+    }
+
+    .kgPic {
+        background: url("../resources/images/2x/KG-icon-60x60.png") no-repeat right center;
+        background-size: 2.5em 2.5em;
+    }
+
+    /*Enter call details*/
+    .addIcon {
+        background: url("../img/icons/add-more.png")no-repeat;
+    }
+
+    .removeIcon {
+        background: url("../resources/images/3x/RemoveIcon.png") no-repeat left center;
+    }
+
+    .editIcon {
+        background: url("../resources/images/3x/EditIcon.png") no-repeat left center;
+    }
+
+    .doneIcon {
+        background: url("../resources/images/3x/DoneIcon.png") no-repeat left center;
+    }
+
+    .deleteIcon {
+        background: url(../img/icons/red-delete.png)no-repeat;
+    }
+
+    .arrowLeftIcon {
+        background: url("../resources/images/3x/arrow-left.png") no-repeat center center / contain;
+    }
+
+    .arrowRightIcon {
+        background: url("../resources/images/3x/arrow-right.png") no-repeat center center / contain;
+    }
+
+    input[type=checkbox] + label {
+        background: url("../img/icons/black-box.png") no-repeat left center;
+        display: inline-block;
+        width: 1.5em;
+        height: 1.5em;
+        background-size: cover !important;
+        margin-bottom: 0px;
+    }
+
+    input[type=checkbox]:checked + label {
+        background: url("../img/icons/green-tick.png") no-repeat left center;
+        height: 1.5em;
+        width: 1.5em;
+        display: inline-block;
+        background-size: cover !important;
+        margin-bottom: 0px;
+    }
+}
+
+@media (min-width: 960px) {
+    body {
+        font-size: 18px;
+    }
+}

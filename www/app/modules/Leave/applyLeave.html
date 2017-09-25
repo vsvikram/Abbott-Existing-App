@@ -1,0 +1,113 @@
+<div class="row" ng-init="init()">
+    <div class="mob-header">
+        <abw-header data-abwheader-config="abwheaderConfig"></abw-header>
+    </div>
+    <transparent-screen></transparent-screen>
+
+    <div class="view-container container-fluid ">
+    <div class="page-leave page-wrap">
+        <module-nav config='config'></module-nav>
+        <div class='leaveError' ng-show="errorOccurred|| dateErrorOccurred" ng-bind="errorMessage"></div>
+        <div class="leave-wrapper content-wrapper">
+            <div class="leave-apply  push-bottom" style="bottom: {{pagePush}}px">
+                <div class="select-wrap">
+                    <select ng-model="selectedLabel" ng-change="runValidationAndClearErrors()" > <!-- ng-model="selectedModel" -->
+                        <option ng-repeat="label in labels">{{label}}</option>
+                    </select>
+                </div>
+                <div class="leave-reason" >
+                    <div class="input-row">
+                        <div class="input-field">
+                            <h4>From</h4>
+                            <div class="start-date">
+                                <label for="fromDate" class="leave-date">{{ viewFromDate }}
+                                <input id="fromDate" type="date"
+                                       ng-model="fromDate"
+                                       ng-change="calculateTotalDays()">
+                                </label>
+                                <!--<span class="input-group-btn">-->
+                                <!--<button type="button" class="btn btn-default" ng-click="">-->
+                                <!--<i class="glyphicon glyphicon-calendar"></i>-->
+                                <!--</button>-->
+                                <!--</span>-->
+                            </div>
+                        </div>
+                        <div class="input-field">
+                            <h4>To</h4>
+                            <div class="end-date">
+                                <label for="toDate" class="leave-date">{{ viewToDate }}
+                                    <input type="date" id="toDate" ng-model="toDate" ng-change="calculateTotalDays()">
+                                </label>
+
+                                <!--<span class="input-group-btn">-->
+                                <!--<button type="button" class="btn btn-default" ng-click="">-->
+                                <!--<i class="glyphicon glyphicon-calendar"></i>-->
+                                <!--</button>-->
+                                <!--</span>-->
+                            </div>
+                        </div>
+                    </div>
+                    <div class="input-row">
+                        <div class="input-field">
+                            <h4>Total days</h4>
+                            <input type="text" value= '{{prependZeroOnSingleDigits(totalDays)}}' name="days" disabled>
+                        </div>
+                        <div class="input-field">
+                            <h4>Place</h4>
+                            <div class="place-select">
+                                <select ng-model="placeSelected" >
+                                    <option value="" >- NONE -</option>
+                                    <option ng-repeat="place in dataModel.places">{{place}}</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="input-row">
+                        <div class="input-field">
+                            <h4>Approver</h4>
+                            <input type="text" name="approver" ng-model="dataModel.approver.name" disabled>
+                        </div>
+                        <div class="input-field">
+                            <h4>Leaving HQ</h4>
+                            <div class="radio-btn">
+                                <label class="ng-binding">
+                                    <input type="radio" name="hq" ng-model="leavingHq" value='yes'><i></i>Yes
+                                </label>
+                            </div>
+                            <div class="radio-btn">
+                                <label class="ng-binding">
+                                    <input type="radio" name="hq" ng-model="leavingHq" value='no'><i></i>No
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="input-row">
+                        <h4>Reason</h4>
+                        <div class="textarea">
+                            <div class="textarea-content">
+                                <textarea rows="2" cols="60" ng-model='reason' maxlength="112"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="butn-wrapper">
+                        <button class="butn" ng-click="onApply()">APPLY</button>
+                        <span class="cncl-leave" onclick="javascript:window.history.back()">Cancel</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="popup" ng-show="showPopup">
+        <div class="popup-body">
+            <span ng-click="showPopup = !showPopup" class="popup-close">
+                <img src="{{iconsPath}}close-button-filter.png">
+            </span>
+            <div class="popup-content">
+                <p>Leave has been successfully applied.</span></p>
+                <button class="ok-btn" ng-click="showPopup = !showPopup">OK</button>
+            </div>
+        </div>
+    </div>
+</div>
+    </div>
+

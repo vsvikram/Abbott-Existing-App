@@ -1,0 +1,18 @@
+<transparent-screen></transparent-screen>
+<div class="chartWrapper">
+    <div class="content-box" ng-repeat="chart in charts" data-render-chart="chart">
+        <h4 class="chart-title" ng-if="chart.chartTitle">{{chart.chartTitle}}</h4>
+        <svg></svg>
+        <div class="content-box progress sales" ng-if="chart.showProgress">
+        <h4 class="chart-title">{{progressbar.title}}</h4>
+        <div class="progress-bar">
+            <div class="progression" style="width:{{progressbar.progession}}%;">&nbsp;
+                <div class="progress-value" >
+                   {{progressbar.progession}}%
+                </div>
+            </div>
+        </div>
+        <h4 class="progress-title">{{progressbar.axis}}</h3>
+    </div> 
+    </div>
+</div>

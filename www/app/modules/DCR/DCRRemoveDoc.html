@@ -1,0 +1,28 @@
+<div class="ngdialog-message" style="margin-bottom: 0px;">
+	<div class="popup-header" style="background-color:#EDEDED;padding-bottom: 0em;border-top-left-radius: 10px;border-top-right-radius: 10px;">
+		{{locale.Remove}} {{removePopUpLabel}}
+	</div>
+	<div class="fontRobotoLight" style="color:#666666;font-size:.8em;background-color:#EDEDED;">
+		{{removeCustomerSubTitleText}}
+	</div>
+	<div class="confirmation-popup-body" style="height:12em;overflow-y:auto" >
+		<table class="table">
+			<tr data-ng-repeat="x in removeDoctorInfoDetail">
+				<td style="width:6%;">
+				<input type="checkbox" id="data{{$index}}"
+				ng-model="x.isTicked"  ng-change="removedDoc($index)"/>
+				<label for="data{{$index}}"></label></td>
+				<td style="padding-left: 0px;text-align: left;"><span>{{ x.name}}</span></td>
+			</tr>
+		</table>
+	</div>
+</div>
+<div class="ngdialog-buttons" style="display: inline;">
+	<button type="button" class="ngdialog-button ngdialog-button-primary confirmation-popup-button" style="width:49%;" ng-click="closeThisDialog('button')">
+		{{locale.Cancel}}
+	</button>
+	<button type="button" class="ngdialog-button ngdialog-button-secondary confirmation-popup-button" style="width:49%;" ng-click="removeDoctor()">
+		{{locale.Remove}}
+	</button>
+</div>
+

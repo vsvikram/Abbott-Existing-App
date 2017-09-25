@@ -1,0 +1,17 @@
+<div class="col-xs-12 col-sm-12 col-md-12- col-lg-12 side-menu-container">
+    <nav class="nav-panel-container nav-panel-container-background col-xs-4 col-sm-4 col-md-4 col-lg-4" data-ng-show=status>
+        <div class="row nav-options-list">
+            <ul>
+                <li data-ng-repeat="option in options | orderBy : 'order'" abbott-touchstart="obj.over=true" abbott-touchend="obj.over=false; onSelection($index);" ng-class="{'nav-panel-container-background': option.selected==false, 'nav-panel-container-background-active': option.selected==true}" data-ng-click="navigateToSegment(option.state)" data-ng-hide="option.disabled">
+                    <span class="slideMenuIcons" ng-class="{'{{option.icon}}': option.selected==false, '{{option.iconSelected}}': option.selected==true}"></span>
+                    <span class="fontRobotoRegular nav-panel-label">{{option.title}}</span>
+                </li>
+            </ul>
+        </div>
+        <div class="row nav-panel-sync-master-button" data-ng-click="manualMasterSync();">
+            <span class="menuSyncIcon"></span>
+            <span class="fontRobotoRegular">Sync Data</span>
+        </div>
+    </nav>
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 nav-blur-div" data-ng-click="toggleMenu()"></div>
+</div>

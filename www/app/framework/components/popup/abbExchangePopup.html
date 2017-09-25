@@ -1,0 +1,45 @@
+<div class="page-abbExchange popup">
+    <div class="popup-body">
+        <span ng-click="confirm()" class="popup-close"><img src="img/icons/close-button-filter.png"></span>
+        <div class="popup-content">
+            <div class="appCard-popupContent app-card">
+                <div class="card-img">
+                    <img ng-src={{ngDialogData.appCard.Icon__c}} class="app-card-img">
+                </div>
+                <div class="card-details">
+                    <p class="app-name" ng-click="openPopup()">{{ngDialogData.appCard.Name}}</p>
+                    <p class="app-date">{{ngDialogData.appCard.Date__c}}</p>
+                    <div class="star-ratings">
+                        <span class="star-ratings" ng-repeat="i in ngDialogData.appCard.ratingArray">
+                        <span class="rated-star">&nbsp;</span>
+                        </span>
+                        <span class="star-ratings" ng-repeat="i in ngDialogData.appCard.halfRatingArray">
+                          <span class="half-rated-star">&nbsp;</span>
+                        </span>
+                        <span class="star-ratings" ng-repeat="i in ngDialogData.appCard.ratedArray">
+                        <span class="rating-star">&nbsp;</span>
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <div class="popBtns">
+                <!--button class="ok-btn" ng-if="okBtn">{{okBtn}}</button>
+                <button class="ok-btn" ng-if="okBtn">{{okBtn}}</button-->
+                <!--<a class="ok-btn button" ng-if="ngDialogData.appCard.isInstalled" ng-href="{{ngDialogData.appCard.Playstore_url__c}}">Open</a>-->
+                <a class="ok-btn button" ng-if="ngDialogData.appCard.isInstalled" ng-click="openApp(ngDialogData.appCard.Package_Name__c)">Open</a>
+                <a class="ok-btn button" ng-if="!ngDialogData.appCard.isInstalled" ng-href="{{ngDialogData.appCard.Playstore_url__c}}" ng-click="confirm()">Install</a>
+                <a class="cancel-btn button" ng-if="ngDialogData.appCard.isInstalled" ng-href="{{ngDialogData.appCard.Playstore_url__c}}" ng-click="confirm()">Uninstall</a>
+                <!--<button class="cancel-btn" ng-click="close()" ng-if="noBtn">{{noBtn}}</button>-->
+            </div>
+            <div class="appCard-popupDesc">
+                <div class="popupDesc">
+                    <p ng-class="{active:moreActive}" class="appPopup-desc">{{ngDialogData.appCard.Description__c}}</p>
+                    <div class="clearfix"></div>
+                    <p class="links-wrapper">
+                        <span ng-click="moreBtn()" ng-hide="moreActive">More</span>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

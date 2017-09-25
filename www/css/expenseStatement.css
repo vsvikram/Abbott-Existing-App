@@ -1,0 +1,229 @@
+.expenseStatement-wrapper .back-head-content span{
+    color: #9c2756;
+}
+
+.top-statement-date {
+    padding-left: 2.78vw;
+    padding-top: 3.89vw;
+    float: left;
+    width: 100%;
+    padding-right: 2.78vw;
+    padding-bottom: 5.74vw;
+    display: table;
+}
+
+.top-statement-date .left-statement .statementOne {
+    font-size: 0.833rem;
+    font-weight: 500;
+    font-family: OpenSans;
+    color: #414042;
+}
+
+
+.top-statement-date .left-statement .statementTwo {
+    font-size: 0.625rem;
+    font-weight: 500;
+    font-family: OpenSans;
+    color: #8a8a8b
+}
+
+.top-statement-date .left-statement {
+    float: left;
+}
+
+.top-statement-date .right-statement img {
+    height: 5.09vw;
+    width: 5.09vw;
+    float: right;
+}
+
+.right-statement {
+    display: table-cell;
+    vertical-align: middle;
+    padding-right: 3.98vw;
+}
+
+.statement-contents {
+    width: 100%;
+    height: 100%;
+    float: left;
+    padding-left: 3.24vw;
+    padding-right: 3.24vw;
+    padding-top: 3.7vw;
+    padding-bottom: 1.48vw;
+    background-color: #f4f4f4;
+}
+
+.statement-details {
+    padding-top: 3.52vw;
+    background-color: #fff;
+    margin-bottom: 1.76vw;
+}
+
+.statement-contents .row .statement-txts:last-child {
+    border-right: none;
+}
+
+.statement-contents .statement-txts .statement-head-txt {
+    font-size: 0.958rem;
+    font-family: OpenSans;
+    font-weight: bold;
+    color: #414042;
+}
+
+.statement-contents .statement-txts .statement-subHead-txt {
+    font-size: 0.729rem;
+    font-family: OpenSans;
+    font-weight: 400;
+    color: #8a8a8b;
+}
+
+.statement-contents .statement-txts .statement-last-txt {
+    font-size: 1.250rem;
+    font-family: OpenSans;
+    font-weight: 500;
+    color: #9c2757;
+}
+
+.statement-contents .row {
+    margin: 0;
+}
+
+.statement-contents .statement-inside-contents {
+    padding-left: 3.39vw;
+    padding-right: 3.39vw;
+}
+
+.statement-contents .statement-txts {
+    padding-left: 6.11vw;
+    padding-right: 2vw;
+    border-right: 1px solid rgba(138, 138, 139, 0.19);
+    margin-bottom: 4.81vw;
+}
+
+.statement-center-lines {
+    border-bottom: 1px solid #cacaca;
+    border-top: 1px solid #cacaca;
+    text-align: center;
+    margin: 0 3.7vw;
+    padding: 2.96vw 0;
+}
+
+.statement-center-lines p {
+    font-size: 0.729rem;
+    font-family: OpenSans;
+    font-weight: 500;
+}
+
+.statement-amount {
+    padding-top: 5.09vw;
+}
+
+.statement-amount .row {
+    margin: 0;
+}
+
+.statement-amount .row .statement-amount-contents {
+    padding-left: 1.2vw;
+    padding-right: 1.2vw;
+    padding-bottom: 5.37vw;
+}
+
+.statement-amount .statement-amount-contents .statement-head-txt {
+    font-size: 0.667rem;
+    font-family: OpenSans;
+    font-weight: normal;
+    color: #8a8a8b;
+}
+
+.statement-amount .statement-amount-contents .statement-subHead-txt {
+    font-size: 0.625rem;
+    font-family: OpenSans;
+    font-weight: 500;
+    color: #414042;
+}
+
+.state-details {
+    padding: 0 0 5vw 0;
+    display: table;
+    width: 100%;
+}
+
+.state-details p {
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+    font-family: OpenSans;
+    font-weight: 500;
+    font-size: 0.729rem;
+    color: #9c2757;
+    text-decoration: underline;
+}
+
+.expenseStatement-wrapper .statement-contents .state-details-image {
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position: right;
+    position: absolute;
+    width: 5vw;
+    height: 7vw;
+    bottom: 4.35vw;
+    right: 2.96vw;
+}
+
+.detailState {
+    position: relative;
+}
+
+.state-list-item {
+    width: 100%;
+    display: block;
+    padding-left: 4.26vw;
+    padding-right: 3.52vw;
+}
+
+.state-side {
+    display: block;
+    width: 100%;
+    padding-top: 4.93vw;
+    padding-bottom: 4.93vw;
+    border-bottom: 1px solid #cacaca;
+}
+
+.state-list-item:last-child .state-side {
+    border-bottom: none;
+}
+
+.state-item-three {
+    display: inline-block;
+    float: right;
+}
+
+.state-item-three img {
+    height: 3.15vw;
+    width: 1.5vw;
+}
+
+.state-item-two {
+    display: inline-block;
+}
+
+.expenseStatement-wrapper .statement-contents .statement-arrow-wrap:after {
+    background-repeat: no-repeat;
+    content: ' ';
+    width: 3vw;
+    height: 3vw;
+    background-size: 100%;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: 4.07vw auto;
+}
+
+.expenseStatement-wrapper .statement-contents .statement-arrow-wrap {
+    position: relative;
+}
+
+.back-head-content span:first-of-type:before {
+    display: none;
+}

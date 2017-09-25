@@ -1,0 +1,174 @@
+<div class="common-height buttonIcon" ng-controller="DCRActivityController" ng-init="init()">   
+    <div ng-disabled="disableEdit"  ng-if="currentActivity && currentActivity.Type =='Symposia'" class="campClinic-content-wrapper content-wrapper">
+        <div class="campClinic-content">
+            <div class="activity-group">
+                <p>{{locale.ActivityType+" "}}: <b>{{currentActivity.ActivityName}}</b></p>
+            </div>
+            <span class="dropName">{{locale.JointFieldWork}}</span>
+            <span class="activity-jointfieldwrk-select"> <dropdown-multiselect model="$parent.selectedSupervisorIds" options="listOfSupervisors"></dropdown-multiselect> </span>
+            <div class="supSelect">
+                <div  ng-repeat="selectedSupervisor in selectedSupervisorIds">
+                    <span> {{selectedSupervisor.name}} </span>
+                    <span><label class="dcrModuleIcons dcrDeleteIcon cross" ng-disabled="disableEdit"  ng-click="disableEdit || deselectItemsFromList(selectedSupervisor)"></label></span>
+                </div>
+            </div>
+            <!-- Add Brand Campaign section start
+            <button class="fontRobotoLight addIcon enterCallIcon addEditBtns noOutline" ng-disabled="disableEdit" ng-click="addBrand()">
+                {{locale.AddBrand}}
+            </button>
+            <button class="fontRobotoLight enterCallIcon editBtns addEditBtns noOutline deleteIcon" ng-class="iconCls" ng-disabled="disableEdit" ng-click="removeBrand()">
+                {{locale.RemoveBrand}}
+            </button> -->
+            <div class="select-group">
+                <label> {{locale.Brand}}:</label>
+                <select ng-disabled="disableEdit" ng-model="b.brandName" ng-change="getMaterialCampaign(b,'{{b.brandName}}')" ng-options="brandlist.Name as brandlist.Name for brandlist in BrandsList">
+                    <option value=""></option>
+                </select>
+            </div>
+            <div class="select-group">
+                <label> {{locale.Campaign}}: </label>
+                <select ng-disabled="disableEdit" ng-model="b.campaignId" ng-change="onCampaignChange(b.campaignId)" ng-options="c.Id as c.Name for c in brandData.Campaigns[b.brandName]">
+                    <option value=""></option>
+                </select>
+            </div>
+            <div class="select-group removeArr">
+            <label>{{locale.CorporateInitiative}}</label>
+                <div data-ng-repeat="c in customerData_from_dcr.corporateInitiatives track by c.Id">
+                    <input ng-model="b.corporateInitiative[c.Id]" ng-disabled="disableEdit" type="checkbox" id="data{{$index}}" />
+                    <label ng-hide="isEditable" for="data{{$index}}"></label><span class="activity-corporate-text">{{c.Name}}</span>
+                </div>
+                <div ng-if="corporateNotAvailable">
+                    {{locale.NoDataAvailable}}
+                </div>
+            </div>
+            <div ng-show="b.isApplicableLaboratory"  class="select-group">
+                <label>{{locale.Laboratory}}:</label>
+                <select ng-disabled="disableEdit" class="activity-select entercall-inputfields dropDownIcon" style="width: 100% !important;" ng-model="b.laboratoryName" ng-options="lab as lab for lab in brandData.Laboratory[b.campaignId]">
+                    <option value=""></option>
+                </select>
+            </div>
+            <div ng-show="b.isApplicableLaboratory"  class="input-group">
+                <label> {{locale.NoOfPatientsScreened}}:</label>
+                <input scroll-page-up="layout-wrapper" only-digits type="text"  class="activityTextWidth" ng-disabled="disableEdit" pattern="\d*" ng-model="b.noOfPaients"/>
+            </div>
+            <div ng-show="b.isApplicableLaboratory"  class="input-group">
+                <label> {{locale.HonorariumAmount}}:</label>
+                <input scroll-page-up="layout-wrapper" only-digits type="text"  class="activityTextWidth" ng-disabled="disableEdit" pattern="\d*" ng-model="b.honorariumAmt"/>
+            </div>
+            <div ng-show="b.isApplicableLaboratory"  class="input-group">
+                <label>{{locale.AnyOtherCost}}:</label>
+                <input scroll-page-up="layout-wrapper" only-digits type="text"  class="activityTextWidth" ng-disabled="disableEdit" pattern="\d*" ng-model="b.anyOtherCost"/>
+            </div>
+            <!-- Add Brand Campaign section end -->
+            <!-- Add customer section start-->
+            <div class="input-group">
+                <label>{{locale.AddCustomer}}</label>
+                <button class=" addIcon addEditBtns noOutline adBtn activity-addcustomer" ng-disabled="disableEdit" ng-click="addCustomersRows(b)">
+                     {{locale.AddCustomer}}
+                </button>
+                <div class="custDetail"><label>{{locale.CustomerDetails}}</label></div>
+                <table>
+                    <thead>
+                    <tr class="activity-customer-tablehd">
+                        <td class="activity-patch-col" ng-class="{'laboratory-patch': b.isApplicableLaboratory}">{{locale.Patch}}</td>
+                        <td class="activity-quantity-col" ng-class="{'laboratory-name': b.isApplicableLaboratory}">{{locale.Name}}</td>
+                        <td class="activity-quantity-col" ng-class="{'laboratory-type': b.isApplicableLaboratory}">{{locale.Type}}</td>
+                        <td ng-show="b.isApplicableLaboratory" class="laboratory-field">{{locale.Laboratory}}</td>
+                        <td ng-show="b.isApplicableLaboratory" class="laboratory-additionalFields">{{locale.NoOfPatientsScreened}}</td>
+                        <td ng-show="b.isApplicableLaboratory" class="laboratory-additionalFields">{{locale.HonorariumAmount}}</td>
+                        <td ng-show="b.isApplicableLaboratory" class="laboratory-additionalFields">{{locale.AnyOtherCost}}</td>
+                        <td class="activity-action-col" ng-class="{'laboratory-action': b.isApplicableLaboratory}">{{locale.Action}}</td>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr class="entercall-trows" ng-repeat="c in b.Customers">
+                        <td class="entrcall-colborder activity-quantity-col" ng-class="{'laboratory-patch': b.isApplicableLaboratory}" valign="top">{{c.patch}}</td>
+                        <td class="entrcall-colborder activity-quantity-col" ng-class="{'laboratory-name': b.isApplicableLaboratory}" valign="top">{{c.customerName}}</td>
+                        <td class="entrcall-colborder activity-quantity-col" ng-class="{'laboratory-type': b.isApplicableLaboratory}" valign="top">{{c.customerType}}</td>
+                        <td ng-show="b.isApplicableLaboratory" class="entrcall-colborder laboratory-field" valign="top">
+                            <select ng-disabled="disableEdit" class="activity-select entercall-inputfields dropDownIcon" style="width: 100% !important;" ng-model="c.laboratoryCustomer" ng-options="lab as lab for lab in brandData.Laboratory[b.campaignId]">
+                                <option value=""></option>
+                            </select></td>
+                        <td ng-show="b.isApplicableLaboratory" class="entrcall-colborder laboratory-additionalFields" valign="top">
+                            <input scroll-page-up="layout-wrapper" only-digits type="text"  class="activityTextWidth" ng-disabled="disableEdit" mpattern="\d*" ng-model="c.noOfPaients"/>
+                        </td>
+                        <td ng-show="b.isApplicableLaboratory" class="entrcall-colborder laboratory-additionalFields" valign="top">
+                            <input scroll-page-up="layout-wrapper" only-digits type="text"  class="activityTextWidth" ng-disabled="disableEdit" pattern="\d*" ng-model="c.honorariumAmt"/>
+                        </td>
+                        <td ng-show="b.isApplicableLaboratory" class="entrcall-colborder laboratory-additionalFields" valign="top">
+                            <input scroll-page-up="layout-wrapper" only-digits type="text"  class="activityTextWidth" ng-disabled="disableEdit" pattern="\d*" ng-model="c.anyOtherCost"/>
+                        </td>
+                        <td class="entrcall-colborder activity-action-col" ng-class="{'laboratory-action': b.isApplicableLaboratory}" valign="top"><span ng-disabled="disableEdit" ng-click="disableEdit || delCustomerRow(b,c)" class="enterCallIcon removeIcon entercall-delrow"></span></td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+            <!-- Add customer section end-->
+            <!-- Add Input Material section start-->
+            <div class="inputSelect-group">
+                <label class="docAtt">{{locale.ListOfInputBasedOnBrand}}</label>
+                <i class="add-more-button"  ng-disabled="disableEdit" ng-click="addMaterialRows(b)">&nbsp;</i>
+                <div class="inputSelect-wrap" ng-repeat="mr in b.Materials">
+                    <div class="inputSelect-select">
+                        <select ng-disabled="disableEdit" ng-model="mr.materialCode" ng-options="m.Id as (m.Material_Name__c+'(Qty:'+m.In_Hand_Quantity__c+')') for m in brandData.Materials[b.brandName] | filter: (!disableEdit || '') && {Active__c: true}" ng-change="onMaterialChange(b.Materials, mr,'{{mr.materialCode}}')">
+                            <option value=""></option>
+                        </select>
+                    </div>
+                    <input scroll-page-up="layout-wrapper" ng-disabled="!mr.materialCode || disableEdit"class="activity-quantity-col entercall-inputfields" only-digits type="text" pattern="\d*" ng-model="mr.Quantity"/>
+                    <i class="enterCallIcon removeIcon entercall-delrow" ng-disabled="disableEdit" ng-click="disableEdit || delMaterialRow(b, mr)">&nbsp;</i>
+                </div>
+            </div>
+            <!-- Add Input Material section End-->
+            <!-- remarks section Start -->
+            <div class="input-group">
+                <label class="docAtt">{{locale.NoOfPatients}}/{{locale.DoctorsAttended}}:</label>
+                <input scroll-page-up="layout-wrapper" only-digits type="text" pattern="\d*" class="activity-doctors-count" ng-disabled="disableEdit" ng-model="b.NoOfDoctors"/>
+            </div>
+            <div class="input-group">
+                <label>{{locale.NoOfNewPatients}}</label>
+                <input scroll-page-up="layout-wrapper" only-digits type="text" pattern="\d*" class="activity-speaker-name" ng-disabled="disableEdit" ng-model="b.Patients_Initiated__c"/>
+            </div>
+            <div class="input-group">
+                <label>{{locale.OtherParticipants}}:</label>
+                <input scroll-page-up="layout-wrapper" only-digits type="text" class="activity-speaker-name" ng-disabled="disableEdit" pattern="\d*" ng-model="b.Other_Participants__c"/>
+            </div>
+            <div class="input-group">
+                <label>{{locale.NameOfSpeaker}}:</label>
+                <input scroll-page-up="layout-wrapper" type="text"  maxlength="100" class="activity-speaker-name" ng-disabled="disableEdit" ng-model="b.Speaker"/>
+            </div>
+            <div class="comment-group">
+                <p>{{locale.Remarks}}</p>
+                <textarea scroll-page-up="layout-wrapper" ng-disabled="disableEdit" ng-model="b.remarks" placeholder="{{!disableEdit && locale.freeTextPlaceholder || locale.blank}}" maxlength="255"></textarea>
+            </div>
+            <!-- remarks section End -->
+        </div>
+        <div class="dcrModuleIcons dcrSliderPrevArrow activity-prev-arrow" ng-show="prevArrowVisible" ng-click="prevButtonClicked()"></div>
+        <div class="dcrModuleIcons dcrSliderNextArrow activity-next-arrow" ng-show="nextArrowVisible" ng-click="nextButtonClicked()"></div>
+        <div class="butn-wrapper"><button ng-click="save()" ng-disabled="disableEdit">{{locale.Save}}</button></div>
+    </div>
+
+    <div ng-if="currentActivity && currentActivity.Type!='Symposia'">
+        <div class="iCare-content-wrapper">
+            <div class="iCare-box">
+                <div class="activity-group">
+                    <p>{{locale.ActivityType+" "}}: <b>{{currentActivity.ActivityName}}</b></p>
+                </div>
+                <span class="dropName">{{locale.JointActivity}}</span>
+                <span class="activity-jointfieldwrk-select"> <dropdown-multiselect model="$parent.selectedSupervisorIds" options="listOfSupervisors"></dropdown-multiselect> </span>
+                <div class="supSelect">
+                    <div  ng-repeat="selectedSupervisor in selectedSupervisorIds">
+                        <span> {{selectedSupervisor.name}} </span>
+                        <span><label class="dcrModuleIcons dcrDeleteIcon cross" ng-disabled="disableEdit"  ng-click="disableEdit || deselectItemsFromList(selectedSupervisor)"></label></span>
+                    </div>
+                </div>
+                <div class="comment-group">
+                    <p>{{locale.Remarks}}</p>
+                    <textarea maxlength="255" ng-model="b.comments" ng-disabled="disableEdit" placeholder="{{!disableEdit && locale.freeTextPlaceholder || locale.blank}}"></textarea>
+                </div>
+            </div>
+            <div class="dcr-button">
+                <div class="butn-wrapper"><button ng-click="save()" ng-disabled="disableEdit">{{locale.Save}}</button></div>
+            </div>
+        </div>
+    </div>
+</div>

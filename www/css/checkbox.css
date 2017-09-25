@@ -1,0 +1,4 @@
+input[type="radio"],input[type="checkbox"] { display: none; }
+input[type="radio"] + i,input[type="checkbox"] + i { display: inline-block; width: 4.17vw; height: 4.17vw; margin: -1px 2.13vw 0 0; vertical-align: middle; cursor: pointer; border: 1px solid #999; background-color: transparent; }
+input[type="radio"]:checked + i ,input[type="checkbox"]:checked + i{background-repeat: no-repeat; background-size: 65%; background-position: 0.75vw 0.8vw; border: 1px solid #9c2757;}
+

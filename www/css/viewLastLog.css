@@ -1,0 +1,77 @@
+
+
+.tabulation2 {
+
+		background-color: rgba(109, 167, 171, 0.32);
+		width: 100%;
+		height: 2.5em;
+		border-collapse: collapse;
+		border-spacing: 0;
+	}
+
+.viewLastLog .space1
+{
+width:50%;
+
+color:white;
+
+}
+.viewLastLog .click
+{
+width:10em !important;
+padding:0em !important;
+background-color: #0eb4d6;
+font-size: 0.9em !important;
+border-radius: 0.5em;
+color:white;
+width:8em;
+height:1.8em;
+}
+.viewLastLog .module
+{
+ border-bottom: 0.1em solid rgba(0, 0, 0, 0.08);
+ width:100%;
+}
+
+a{
+	style:none;
+	color:white;
+	text-decoration: none;
+}
+a:hover{
+	style:none;
+	color:white;
+	text-decoration: none;	
+}
+
+.viewLastLog .data
+{
+width:100%;
+border-collapse:collapse;
+font-size:0.831em;
+}
+
+.viewLastLog .click1
+{
+margin-right: 1em;
+font-size: 0.9em !important;
+padding:0em !important;
+width:12em !important;
+height:1.8em;
+background-color: #0eb4d6;
+border-radius: 0.5em;
+color:white;
+width: 14.6em;
+font-size:0.813em;
+padding:0em;
+}
+.viewLastLog .datetime
+{
+color:#00E5FF;
+font-size:0.831em;
+}
+.viewLastLog .tabulation7
+{
+width:95%;
+}
+

@@ -1,0 +1,487 @@
+﻿<!DOCTYPE html>
+<html ng-app="AbbottMobile">
+
+<head>
+    <meta charset="utf-8" />
+    <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+    <meta name="format-detection" content="telephone=no" />
+    <title>Abbott World</title>
+    <!-- Styles -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="theme-color" content="#9c2757" />
+    <link rel="icon" sizes="192x192" href="img/icons/icon-192x192.png">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <!-- <meta name="theme-color" content="#9c2757" /> -->
+    <link rel="apple-touch-icon" href="assets/img/icons/icon-192x192.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="img/icons/icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="img/icons/icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="img/icons/icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="img/icons/icon-180x180.png">
+    <!-- Links for Library Stylesheets -->
+    <link rel="stylesheet" href="css/libs/angular-material.min.css" />
+    <link rel="stylesheet" href="css/libs/animate.min.css" />
+    <link rel="stylesheet" href="css/libs/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/libs/jquery.scrollbar.css" />
+    <!-- Links for Global Stylesheets -->
+    <link rel="stylesheet" href="css/fonts.css">
+    <link rel="stylesheet" href="css/icons.css">
+    <link rel="stylesheet" href="css/app-cards.css">
+    <link rel="stylesheet" href="css/global.css">
+
+    <link rel="stylesheet" href="css/header.css" />
+    <link rel="stylesheet" href="css/back-head.css" />
+    <link rel="stylesheet" href="css/mtpDayCalendar.css" />
+    <link rel="stylesheet" href="css/sideNewMenu.css" />
+    <link rel="stylesheet" href="css/homeNew.css" />
+    <link rel="stylesheet" href="css/LandingPage.css" />
+    <link rel="stylesheet" href="css/abbExchange.css" />
+    <link rel="stylesheet" href="css/popUp.css" />
+    <link rel="stylesheet" href="css/leave-page.css" />
+    <link rel="stylesheet" href="css/onePoint.css" />
+    <link rel="stylesheet" href="css/checkbox.css" />
+    <link rel="stylesheet" href="css/selectbox.css" />
+    <link rel="stylesheet" href="css/dcrAddDoc.css" />
+
+
+    <!-- old Styles -->
+    <link rel="stylesheet" href="libs/dialog/ngDialog.min.css" />
+    <link rel="stylesheet" href="libs/dialog/ngDialog-theme-default.min.css" />
+    <link rel="stylesheet" href="libs/dialog/ngDialog-custom.css" />
+    <link rel="stylesheet" href="libs/slider/rzslider.css" />
+    <link rel="stylesheet" href="libs/charts/angular-chart.css" />
+    <link rel="stylesheet" href="libs/calendar/fullcalendar.css" />
+    <link rel="stylesheet" href="css/DCRCalendar.css" />
+    <link rel="stylesheet" href="css/layout.css" />
+    <link rel="stylesheet" href="css/appIcons.css" />
+    <link rel="stylesheet" href="css/slideMenu.css" />
+    <link rel="stylesheet" href="css/home.css" />    
+    <link rel="stylesheet" href="css/dcrActivity.css" />
+    <link rel="stylesheet" href="css/dcrActivitySelection.css" />
+    <link rel="stylesheet" href="css/createDCRTabPanes.css" />
+    <link rel="stylesheet" href="css/dropdownMultiselect.css" />
+    <link rel="stylesheet" href="css/AddDoc.css" />
+    <link rel="stylesheet" href="css/enterCallDetails.css" />
+    <link rel="stylesheet" href="css/DCRKeyMessages.css" />
+    <link rel="stylesheet" href="css/othersCompetitorInfo.css" />
+    <link rel="stylesheet" href="css/dcrOthersPOB.css" />
+    <link rel="stylesheet" href="css/DCROthersMedicalQuery.css" />
+    <link rel="stylesheet" href="css/DCROthersFollowUpActivity.css" />
+    <link rel="stylesheet" href="css/summary.css" />
+    <link rel="stylesheet" href="css/dcrSummary.css" />
+    <link rel="stylesheet" href="css/disclaimerPopup.css" />
+    <!--
+    <link rel="stylesheet" href="css/support.css" />
+    <link rel="stylesheet" href="css/viewLastLog.css" />
+    -->
+    <link rel="stylesheet" href="css/othersCorporateInitiative.css" />
+    <link rel="stylesheet" href="app/modules/Media/styles/media.css" />
+    <link rel="stylesheet" href="app/modules/Media/styles/presentation-item.css" />
+    <link rel="stylesheet" href="app/modules/Media/styles/product-presentation-popup.css" />
+    <link rel="stylesheet" href="app/modules/LockScreen/styles/lock-screen.css" />
+    <link rel="stylesheet" href="css/progress-popup.css" />
+    <link rel="stylesheet" href="css/SFE.css" />
+    <link rel="stylesheet" href="css/expense.css" />
+    <link rel="stylesheet" href="css/notification.css" />
+    <link rel="stylesheet" href="css/FileExpense.css" />
+    <link rel="stylesheet" href="css/ExpenseUpload.css" />
+    <link rel="stylesheet" href="css/expenseStatement.css" />
+    <link rel="stylesheet" href="css/Expense-Error.css" />
+	<!-- New Styles -->
+	<link rel="stylesheet" href="css/salesForceExcellence.css" />
+	<!-- New Styles -->
+    <link rel="stylesheet" href="css/DCR.css" />
+    <link rel="stylesheet" href="css/DCRList.css" />
+    <link rel="stylesheet" href="css/icare.css" />
+	<link rel="stylesheet" href="css/DCREnterCallDetails.css" />
+    <!-- PI Module Specific CSS: Start -->
+    <link rel="stylesheet" type="text/css" href="css/PI/style.css">
+    <link rel="stylesheet" type="text/css" href="css/PI/claims.css">
+    <link rel="stylesheet" type="text/css" href="css/PI/home.css">
+    <link rel="stylesheet" type="text/css" href="css/PI/filter.css">
+    <link rel="stylesheet" type="text/css" href="css/PI/footer.css">
+    <link rel="stylesheet" type="text/css" href="css/PI/header.css">
+    <link rel="stylesheet" type="text/css" href="css/PI/sales.css">
+    <link rel="stylesheet" type="text/css" href="css/PI/doc.css">
+    <link rel="stylesheet" type="text/css" href="css/libs/ng-scrollable.min.css">
+    <!-- PI Module Specific CSS: End -->
+
+
+    <title>Abbott Mobile application</title>
+
+</head>
+
+<body>
+    <!--
+Order of js files
+libraries
+module
+run
+models
+services
+factories
+messages
+handlers
+filters
+directives
+controllers
+-->
+
+    <script>
+        var isMobile = false;
+        if (/Android/.test(navigator.userAgent) || /iPhone/.test(navigator.userAgent)) {
+            isMobile = true;
+        }
+        var isiPad = /iPad/.test(navigator.userAgent)
+            //alert(isiPad);
+    </script>
+    <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
+    <script type="text/javascript" charset="utf-8" src="libs/jQuery/jquery.js"></script>
+    <script type="text/javascript" charset="utf-8" src="libs/force/forcetk.mobilesdk.js"></script>
+    <script type="text/javascript" charset="utf-8" src="libs/force/forceMobile.js"></script>
+
+    <!-- Libraries -->
+    <script src="libs/angular/angular.min.js"></script>
+    <script src="libs/angular/ng-cordova.min.js"></script>
+
+    <script src="libs/angular/angular-animate.min.js"></script>
+    <script src="libs/angular/angular-aria.min.js"></script>
+    <script src="libs/angular/angular-route.min.js"></script>
+    <script src="libs/angular/angular-ui-bootstrap.js"></script>
+    <script src="libs/ng-scrollable/ng-scrollable.js"></script>    
+    <script src="libs/angular/angular-messages.min.js"></script>
+    <script src="libs/angular/angular-material.min.js"></script>
+    <script src="libs/bootstrap/js/bootstrap.min.js"></script>
+    <script src="libs/dialog/ngDialog.min.js"></script>
+    <script src="libs/d3/d3.js"></script>
+    <script src="libs/angular/angular-ui-router.min.js"></script>
+    <script src="libs/ng-infinite-scroll/ng-infinite-scroll.min.js"></script>
+    <script src="libs/round-progress/roundProgress.min.js"></script>
+
+    <script src="libs/calendar/moment.min.js"></script>
+    <script src="libs/calendar/calendar.js"></script>
+    <script src="libs/calendar/hammer.js"></script>
+    <script src="libs/calendar/jquery.hammer.js"></script>
+    <script src="libs/calendar/fullcalendar.js"></script>
+    <script src="libs/slider/rzslider.js"></script>
+    <script src="libs/charts/Chart.js"></script>
+    <script src="libs/charts/angular-chart.js"></script>
+    <script src="libs/charts/ridge-speedometer.js"></script>
+    <script src="libs/angular/angular.hammer.min.js"></script>
+    <script src="libs/angular/angular-moment.min.js"></script>
+    <script src="libs/launcher/Launcher.js"></script>
+    <script src="libs/storage/storage.min.js"></script>
+
+    <!-- App start up -->
+    <script src="app/module.js"></script>
+    <script src="app/framework/services/utils.js"></script>
+    <script src="app/run.js"></script>
+
+    <!-- Components -->
+    <script src="app/framework/components/sideMenu/sideMenu.js"></script>
+
+    <!-- New works -->
+    <script src="app/framework/components/sideMenu/sideNewMenu.js"></script>
+    <!-- New works -->
+
+    <!--<script src="app/framework/components/tabs/tabs.js"></script>
+<script src="app/framework/components/tabs/dirty-checking.js"></script>-->
+    <script src="app/framework/components/transparentScreen/transparentScreen.js"></script>
+    <script src="app/framework/components/navigationBar/navigationBar.js"></script>
+    <script src="app/modules/AppConfig/appConfig.js"></script>
+    
+    <script src="app/framework/components/dropdownMultiselect/dropdownMultiselect.js"></script>
+    <script src="app/framework/components/Filters/unique.js"></script>
+    <script src="app/framework/components/Filters/abbottFilters.js"></script>
+    <script src="app/framework/components/scrollBottom/scrollBottom.js"></script>
+    <script src="app/framework/components/Filters/onlyDigits.js"></script>
+    <script src="app/framework/components/Filters/orderByIndex.js"></script>
+    <script src="app/framework/components/Slider/slider.js"></script>
+    <script src="app/framework/components/ModuleNavigation/moduleNavigation.js"></script>
+
+    <!-- New works -->
+    <script src="app/framework/components/MTPDayCalendar/mtpDayCalendar.js"></script>
+    <script src="app/framework/components/MTPDayCalendar/mtpMonthHeader.js"></script>
+    <script src="app/framework/components/abwHeader/abwheader.js"></script>
+    <script src="app/modules/LandingPage/LandingPage.js"></script>
+    <script src="app/modules/AbbExchange/abbExchange.js"></script>
+
+    <!-- New works -->
+
+    <!-- Services -->
+    <script src="app/framework/services/abbottQueries.js"></script>
+    <script src="app/framework/services/abbottConfigService.js"></script>
+    <script src="app/framework/services/abbottConstants.js"></script>
+    <script src="app/framework/services/menuStatus.js"></script>
+    <script src="app/framework/services/navigationService.js"></script>
+    <script src="app/framework/services/popupService.js"></script>
+    <script src="app/framework/services/statusDCRActivty.js"></script>
+    <script src="app/framework/services/publisher-service.js"></script>
+    <script src="app/framework/services/dcrHelperService.js"></script>
+    <script src="app/framework/services/database-manager.js"></script>
+    <script src="app/framework/services/user-preferences.js"></script>
+    <script src="app/framework/services/sfdc-account.js"></script>
+    <script src="app/framework/services/location-service.js"></script>
+    <script src="app/framework/services/uploadDataService.js"></script>
+    <script src="app/framework/services/sync-log.js"></script>
+    <script src="app/framework/services/piRESTService.js"></script>
+    <script src="app/framework/services/PIService.js"></script>
+    <script src="app/framework/services/leaveService.js"></script>
+    <script src="app/framework/services/abbExchangeService.js"></script>
+    <script src="app/framework/services/abbottQueries.js"></script>
+    <script src="app/framework/services/statusDCRActivty.js"></script>
+    <script src="app/framework/services/dcrService.js"></script>
+
+    <script src="app/framework/services/models/entity-model.js"></script>
+    <script src="app/framework/services/models/dcr-model.js"></script>
+    <script src="app/framework/services/models/mtp-appointment-details1-model.js"></script>
+    <script src="app/framework/services/models/mtp-appointment-details2-model.js"></script>
+    <script src="app/framework/services/models/target-model.js"></script>
+    <script src="app/framework/services/models/user-model.js"></script>
+    <script src="app/framework/services/models/target-user-model.js"></script>
+    <script src="app/framework/services/models/green-flag-model.js"></script>
+    <script src="app/framework/services/models/leave-request-approved-user-model.js"></script>
+    <script src="app/framework/services/models/leave-request-pending-user-model.js"></script>
+    <script src="app/framework/services/models/leave-request-holiday-user-model.js"></script>
+    <script src="app/framework/services/models/mtp-details-model.js"></script>
+    <script src="app/framework/services/models/last-visit-model.js"></script>
+    <script src="app/framework/services/models/full-day-activity-model.js"></script>
+    <script src="app/framework/services/models/half-day-activity-model.js"></script>
+    <script src="app/framework/services/models/jfw-other-roles-model.js"></script>
+    <script src="app/framework/services/models/divisionwise-competitors-model.js"></script>
+    <script src="app/framework/services/models/dcr-brand-activity-model.js"></script>
+    <script src="app/framework/services/models/mtp-model.js"></script>
+    <script src="app/framework/services/models/dcr-junction-model.js"></script>
+    <script src="app/framework/services/models/dcr-drop-model.js"></script>
+    <script src="app/framework/services/models/divisionwise-brand-model.js"></script>
+    <script src="app/framework/services/models/divisionwise-brand-presentation-model.js"></script>
+    <script src="app/framework/services/models/material-lot-model.js"></script>
+    <script src="app/framework/services/models/campaign-model.js"></script>
+    <script src="app/framework/services/models/campaign-brand-activity-model.js"></script>
+    <script src="app/framework/services/models/key-message-model.js"></script>
+    <script src="app/framework/services/models/dcr-key-message-model.js"></script>
+    <script src="app/framework/services/models/dcr-followup-activity-model.js"></script>
+    <script src="app/framework/services/models/dcr-jfw-model.js"></script>
+    <script src="app/framework/services/models/assigment-detail-model.js"></script>
+    <script src="app/framework/services/models/new-customer-model.js"></script>
+    <script src="app/framework/services/models/division-model.js"></script>
+    <script src="app/framework/services/models/dcr-locking-model.js"></script>
+    <script src="app/framework/services/models/dcr-unlock-reason-model.js"></script>
+    <script src="app/framework/services/models/dcr-locked-status-model.js"></script>
+    <script src="app/framework/services/models/mtp-remove-config-model.js"></script>
+    <script src="app/framework/services/models/activity-selection-model.js"></script>
+    <script src="app/framework/services/models/brand-activity-model.js"></script>
+    <script src="app/framework/services/models/reportee-jfw-model.js"></script>
+    <script src="app/framework/services/models/patch-model.js"></script>
+    <script src="app/framework/services/models/device-model.js"></script>
+    <script src="app/framework/services/models/dcr-kpi-data-model.js"></script>
+    <script src="app/framework/services/models/presentation-model.js"></script>
+    <script src="app/framework/services/models/mobile-device-inventory-model.js"></script>
+    <script src="app/framework/services/models/material-transaction-model.js"></script>
+    <script src="app/framework/services/models/territory-model.js"></script>
+    <script src="app/framework/services/models/user-territory-model.js"></script>
+    <script src="app/framework/services/models/sfc-master-model.js"></script>
+    <script src="app/framework/services/models/sfc-fare-model.js"></script>
+    <script src="app/framework/services/models/sfc-assignment-model.js"></script>
+    <script src="app/framework/services/models/patch-market-junction-model.js"></script>
+    <script src="app/framework/services/models/expense-model.js"></script>
+    <script src="app/framework/services/models/daily-allowance-master-model.js"></script>
+    <script src="app/framework/services/models/daily-allowance-fare-model.js"></script>
+    <script src="app/framework/services/models/expense-details-model.js"></script>
+    <script src="app/framework/services/models/expense-sap-codes-model.js"></script>
+    <script src="app/framework/services/models/other-expenses-model.js"></script>
+    <script src="app/framework/services/models/other-expense-earning-model.js"></script>
+    <script src="app/framework/services/models/leave-request-model.js"></script>
+    <script src="app/framework/services/models/attachment-model.js"></script>
+    <script src="app/framework/services/models/associated-app-model.js"></script>
+    <script src="app/framework/services/models/notification-model.js"></script>
+    <script src="app/framework/services/models/notification-read-model.js"></script>
+    <script src="app/framework/services/models/dcr-leave-model.js"></script>
+
+        <script src="app/framework/services/models/dcr-schedule-summary.js"></script>
+
+    <script src="app/framework/services/collections/utils/query.js"></script>
+    <script src="app/framework/services/collections/utils/query-cursor.js"></script>
+    <script src="app/framework/services/collections/entity-collection.js"></script>
+    <script src="app/framework/services/collections/dcr-collection.js"></script>
+    <script src="app/framework/services/collections/mtp-appointment-details1-collection.js"></script>
+    <script src="app/framework/services/collections/mtp-appointment-details2-collection.js"></script>
+    <script src="app/framework/services/collections/target-collection.js"></script>
+    <script src="app/framework/services/collections/user-collection.js"></script>
+    <script src="app/framework/services/collections/target-user-collection.js"></script>
+    <script src="app/framework/services/collections/green-flag-collection.js"></script>
+    <script src="app/framework/services/collections/leave-request-approved-user-collection.js"></script>
+    <script src="app/framework/services/collections/leave-request-pending-user-collection.js"></script>
+    <script src="app/framework/services/collections/leave-request-holiday-user-collection.js"></script>
+    <script src="app/framework/services/collections/mtp-details-collection.js"></script>
+    <script src="app/framework/services/collections/last-visit-collection.js"></script>
+    <script src="app/framework/services/collections/full-day-activity-collection.js"></script>
+    <script src="app/framework/services/collections/half-day-activity-collection.js"></script>
+    <script src="app/framework/services/collections/jfw-other-roles-collection.js"></script>
+    <script src="app/framework/services/collections/divisionwise-competitors-collection.js"></script>
+    <script src="app/framework/services/collections/dcr-brand-activity-collection.js"></script>
+    <script src="app/framework/services/collections/mtp-collection.js"></script>
+    <script src="app/framework/services/collections/dcr-junction-collection.js"></script>
+    <script src="app/framework/services/collections/dcr-drop-collection.js"></script>
+    <script src="app/framework/services/collections/divisionwise-brand-collection.js"></script>
+    <script src="app/framework/services/collections/divisionwise-brand-presentation-collection.js"></script>
+    <script src="app/framework/services/collections/material-lot-collection.js"></script>
+    <script src="app/framework/services/collections/campaign-collection.js"></script>
+    <script src="app/framework/services/collections/campaign-brand-activity-collection.js"></script>
+    <script src="app/framework/services/collections/key-message-collection.js"></script>
+    <script src="app/framework/services/collections/dcr-key-message-collection.js"></script>
+    <script src="app/framework/services/collections/dcr-followup-activity-collection.js"></script>
+    <script src="app/framework/services/collections/dcr-jfw-collection.js"></script>
+    <script src="app/framework/services/collections/assigment-detail-collection.js"></script>
+    <script src="app/framework/services/collections/new-customer-collection.js"></script>
+    <script src="app/framework/services/collections/division-collection.js"></script>
+    <script src="app/framework/services/collections/dcr-locking-collection.js"></script>
+    <script src="app/framework/services/collections/dcr-unlock-reason-collection.js"></script>
+    <script src="app/framework/services/collections/dcr-locked-status-collection.js"></script>
+    <script src="app/framework/services/collections/mtp-remove-config-collection.js"></script>
+    <script src="app/framework/services/collections/activity-selection-collection.js"></script>
+    <script src="app/framework/services/collections/brand-activity-collection.js"></script>
+    <script src="app/framework/services/collections/reportee-jfw-collection.js"></script>
+    <script src="app/framework/services/collections/patch-collection.js"></script>
+    <script src="app/framework/services/collections/device-collection.js"></script>
+    <script src="app/framework/services/collections/dcr-kpi-data-collection.js"></script>
+    <script src="app/framework/services/collections/presentation-collection.js"></script>
+    <script src="app/framework/services/collections/mobile-device-inventory-collection.js"></script>
+    <script src="app/framework/services/collections/material-transaction-collection.js"></script>
+    <script src="app/framework/services/collections/territory-collection.js"></script>
+    <script src="app/framework/services/collections/user-territory-collection.js"></script>
+    <script src="app/framework/services/collections/sfc-master-collection.js"></script>
+    <script src="app/framework/services/collections/sfc-fare-collection.js"></script>
+    <script src="app/framework/services/collections/sfc-assignment-collection.js"></script>
+    <script src="app/framework/services/collections/patch-market-junction-collection.js"></script>
+    <script src="app/framework/services/collections/expense-collection.js"></script>
+    <script src="app/framework/services/collections/daily-allowance-master-collection.js"></script>
+    <script src="app/framework/services/collections/daily-allowance-fare-collection.js"></script>
+    <script src="app/framework/services/collections/expense-details-collection.js"></script>
+    <script src="app/framework/services/collections/expense-sap-codes-collection.js"></script>
+    <script src="app/framework/services/collections/other-expenses-collection.js"></script>
+    <script src="app/framework/services/collections/other-expense-earning-collection.js"></script>
+    <script src="app/framework/services/collections/leave-request-collection.js"></script>
+    <script src="app/framework/services/collections/attachment-collection.js"></script>
+    <script src="app/framework/services/collections/associated-app-collection.js"></script>
+    <script src="app/framework/services/collections/notification-collection.js"></script>
+    <script src="app/framework/services/collections/notification-read-collection.js"></script>
+	<script src="app/framework/services/collections/dcr-leave-collection.js"></script>
+    <script src="app/framework/services/sfeService.js"></script>
+
+        <script src="app/framework/services/collections/dcr-schedule-summary-collection.js"></script>
+        
+    <!-- App modules -->
+    <script src="app/modules/Home/HomeController.js"></script>
+    <script src="app/modules/DCR/DCRCalendarController.js"></script>
+    <script src="app/modules/DCR/DCRActivitySelectionController.js"></script>    
+    <script src="app/modules/DCR/DCRCreateController.js"></script>
+    <script src="app/modules/DCR/DCRActivityController.js"></script>
+    <script src="app/modules/DCR/DCRListController.js"></script>
+    <script src="app/modules/DCR/DCREnterCallDetailsController.js"></script>
+    <script src="app/modules/DCR/DCRCreateOthersLandingController.js"></script>
+    <script src="app/modules/DCR/DCRCreateOthersController.js"></script>
+    <script src="app/modules/DCR/DCROthersCompetitorInfoController.js"></script>
+    <script src="app/modules/DCR/DCRKeyMessagesController.js"></script>
+    <script src="app/modules/DCR/summaryController.js"></script>
+    <script src="app/modules/MTP/goto-dcr-validator.factory.js"></script>
+    <script src="app/modules/MTP/goto-dcr.factory.js"></script>    
+    <script src="app/modules/MTP/MTPListController.js"></script>
+    <script src="app/modules/DocByPatch/AddDocController.js"></script>
+    <script src="app/modules/DCR/DCROthersPOBController.js"></script>
+    <script src="app/modules/DCR/DCROthersCorporateInitiativeController.js"></script>
+    <script src="app/modules/DCR/DCROthersMedicalQueryController.js"></script>
+    <script src="app/modules/DCR/DCROthersFollowUpActivityController.js"></script>
+    <script src="app/modules/Leave/LeaveHomeController.js"></script>
+    <script src="app/modules/Leave/leaveSummaryController.js"></script>
+    <script src="app/modules/Leave/applyLeaveController.js"></script>
+    <script src="app/modules/Leave/organizationalLeaveController.js"></script>
+    <script src="app/modules/Leave/leavePolicyController.js"></script>
+    <script src="app/modules/Leave/leaveDetailsController.js"></script>
+    <script src="app/modules/Helpdesk/HelpdeskLandingController.js"></script>
+    <script src="app/modules/Helpdesk/HelpdeskCreateController.js"></script>
+    <script src="app/modules/Helpdesk/SupportController.js"></script>
+    <script src="app/modules/Helpdesk/ViewLastLogController.js"></script>
+    <script src="app/modules/Helpdesk/FullSyncController.js"></script>
+
+    <script src="app/modules/SFE/SFEHomeController.js"></script>
+    <script src="app/modules/SFE/incentiveMatricsController.js"></script>
+    <script src="app/modules/SFE/doctorCallMatricsController.js"></script>
+    <script src="app/modules/SFE/missedDoctorCallDetailsController.js"></script>
+    <script src="app/modules/SFE/incentiveCalculatorController.js"></script>
+    <script src="app/modules/SFE/salesMatricsController.js"></script>
+    <script src="app/modules/SFE/performanceMatricsController.js"></script>
+
+    <script src="app/modules/LockScreen/providers/dcr-lock.service.js"></script>
+
+    <script src="app/modules/Media/media.module.js"></script>
+    <script src="app/modules/Media/providers/presentation-viewer-base.factory.js"></script>
+    <script src="app/modules/Media/providers/presentation-viewer.factory.js"></script>
+    <script src="app/modules/Media/providers/file-manager.factory.js"></script>
+    <script src="app/modules/Media/providers/presentation-file-manager.factory.js"></script>
+    <script src="app/modules/Media/providers/presentation-loader-states.constant.js"></script>
+    <script src="app/modules/Media/providers/presentation-loader.factory.js"></script>
+    <script src="app/modules/Media/providers/loader-manager.service.js"></script>
+    <script src="app/modules/Media/providers/presentations-multi-loader.service.js"></script>
+    <script src="app/modules/Media/providers/presentation-error-popup.service.js"></script>
+    <script src="app/framework/services/spinner.service.js"></script>
+    <script src="app/modules/Media/controllers/media.controller.js"></script>
+    <script src="app/modules/Media/providers/product-presentation-popup.service.js"></script>
+    <script src="app/modules/Media/directives/presentation-item.directive.js"></script>
+    <script src="app/modules/Media/directives/product-presentation-popup.directive.js"></script>
+    <script src="app/modules/Media/directives/track-highlight-on-click.directive.js"></script>
+    <script src="app/modules/Media/controllers/presentation-item.controller.js"></script>
+    <script src="app/modules/Media/providers/kpi-collector.service.js"></script>
+    <script src="app/modules/Media/controllers/product-presentation-popup.controller.js"></script>
+
+    <script src="app/modules/Expense/getDateService.js"></script>
+    <script src="app/modules/Expense/ViewExpenseController.js"></script>
+    <script src="app/modules/Expense/FileExpenseController.js"></script>
+    <script src="app/modules/Expense/ExpenseUploadController.js"></script>
+
+	<script src="app/modules/DCR/DCRCreateTabPanes.js"></script>
+    <!-- PI Module Script Starts Here -->
+
+    <script type="text/javascript" src="app/modules/PI/piHome/piHome.js"></script>
+    <script type="text/javascript" src="app/modules/PI/piDashboard/piDashboard.js"></script>
+    <script type="text/javascript" src="app/framework/components/PIFilter/filter.js"></script>
+    <script type="text/javascript" src="app/framework/components/PIHeader/headerDirective.js"></script>   
+    <script type="text/javascript" src="app/modules/PI/doctorCoverage/doc.js"></script>
+    <script type="text/javascript" src="app/modules/PI/doctorCoverage/zone/zone.js"></script>
+    <script type="text/javascript" src="app/modules/PI/doctorCoverage/area/area.js"></script>
+    <script type="text/javascript" src="app/modules/PI/doctorCoverage/territory/territory.js"></script>
+    <script type="text/javascript" src="app/modules/PI/salesTarget/sales.js"></script>
+    <script type="text/javascript" src="app/modules/PI/salesTarget/zone/zone.js"></script>
+    <script type="text/javascript" src="app/modules/PI/salesTarget/area/area.js"></script>
+    <script type="text/javascript" src="app/modules/PI/salesTarget/territory/territory.js"></script>
+    <script type="text/javascript" src="app/modules/PI/claims/claims.js"></script>
+    <script type="text/javascript" src="app/modules/PI/claims/zone/zone.js"></script>
+    <script type="text/javascript" src="app/modules/PI/claims/area/area.js"></script>
+    <script type="text/javascript" src="app/modules/PI/claims/claimsTerritory/claimsTerritory.js"></script>
+    <script type="text/javascript" src="app/modules/PI/priSecondary/priSecondary.js"></script>
+    <script type="text/javascript" src="app/modules/PI/successConcent/successConcent.js"></script>
+    <script type="text/javascript" src="app/modules/PI/imsEi/imsEi.js"></script>
+    <script type="text/javascript" src="app/modules/PI/common/customChartThemeService.js"></script>
+    <script type="text/javascript" src="app/modules/PI/common/chartConfigService.js"></script>
+    <script type="text/javascript" src="app/modules/PI/common/commonDirective.js"></script>
+    <script type="text/javascript" src="app/modules/PI/common/chartTypeConstant.js"></script>
+    <script type="text/javascript" src="app/modules/PI/common/dashboardStateService.js"></script>
+    <script type="text/javascript" src="app/modules/PI/common/PISalesTargetService.js"></script>
+    <script type="text/javascript" src="app/modules/PI/common/PIDocterCoverageService.js"></script>
+    <script type="text/javascript" src="app/modules/PI/common/netWorkingService.js"></script>
+    <script type="text/javascript" src="app/modules/PI/common/roundProgressService.js"></script>
+    <script type="text/javascript" src="app/modules/PI/common/userDetailService.js"></script>
+    <script type="text/javascript" src="app/framework/components/PIFooter/footerDirective.js"></script>
+    <script type="text/javascript" src="app/framework/components/PIFooter/doc_coverage_footer.js"></script>    
+
+    <!-- PI Module Script Ends Here -->
+
+    <div class="container-fluid">
+        <div ui-view data-ng-cloak></div>
+    </div>
+</body>
+
+</html>

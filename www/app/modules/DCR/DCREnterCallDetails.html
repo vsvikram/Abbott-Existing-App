@@ -1,0 +1,241 @@
+<!--
+<transparent-screen></transparent-screen>
+<navigation-bar is-hidden=false left-side-icon="back" header-title="{{headerTitle}}"
+previous-screen-name="{{locale.CreateDCR}}" is-display-header-title=true
+is-display-logged-in-user=true></navigation-bar>
+
+<div class="entrCall-height" ng-init="init()">
+   <div class="entrcall-subheader zPositionAbove">
+       <div class="col-xs-6 col-sm-6 v-center">
+           <div class="content">
+               <div>
+                   {{doctorName}} {{doctorLocation}}
+               </div>
+               <div class="entrcall-desg">
+                   {{doctorDesg}}
+               </div>
+           </div>
+       </div>
+       <div class="col-xs-6 col-sm-6 rightContent v-center">
+           <div class="content">
+               <button class="fontRobotoLight enterCallIcon editBtns addEditBtns noOutline" ng-class="iconCls"
+                                        ng-disabled="disableEdit" ng-click="editBrandDetails()" ng-hide="delBrandRows.length == 0">
+               {{buttonText}}
+               </button>
+               <button class="fontRobotoLight addIcon enterCallIcon addEditBtns noOutline" ng-disabled="disableEdit"
+                   ng-click="addBrand(); addBrandClick = true">
+                   {{locale.AddBrand}}
+               </button>
+
+           </div>
+           <br/>
+       </div>
+   </div>
+
+   <div class="entrcall-table-header zPositionAbove">
+       <table class="entrcall-header-table">
+           <tr class="fontRobotoMedium entrcall-theader">
+               <td class="entrcall-brandCol">{{locale.Brand}}</td>
+               <td ng-if="customerType == 'Doctor'" class="entrcall-matQuanCol"><span class="entrcall-hMatCol">{{locale.Material}}</span><span
+               class="entrcall-hQuantCol">{{locale.Quantity}}</span></td>
+               <td ng-if="customerType == 'Doctor'" class="entrcall-campCol">{{locale.Campaign}}</td>
+               <td ng-if="customerType == 'Chemist'" class="entrcall-starterwidth"><span class="chemist-starterpack">{{locale.StarterPack}}</span><span
+               class="chemist-quantity">{{locale.Quantity}}</span></td>
+               <td ng-if="customerType == 'Doctor'" class="entrcall-rxCol">{{locale.RxMonth}}</td>
+           </tr>
+       </table>
+   </div>
+
+   <div ng-hide="noDataFoundHtml" class="entrcall-table-scroll" scroll-bottom="rows"
+   add-brand-clicked="{{addBrandClick}}">
+       <table cellpadding="10" class="entrcall-table table-striped">
+           <tbody ng-show="!noDataFoundHtml" style="overflow-y: scroll">
+
+               <tr class="entercall-trows fontRobotoLight" ng-repeat="r in rows | filter:{ status_b: '!d' }">
+                   <td class="entrcall-brandCol" valign="top">
+                   <input ng-model="r.checked" type="checkbox" id="{{rows.indexOf(r)}}"
+                   ng-change="brandChecked(this,r,r.checked)"/>
+                   <label ng-hide="isEditable" for="{{rows.indexOf(r)}}"></label>
+                   <select
+                   class="brandSelWidth entercall-inputfields dropDownIcon" ng-model="r.brandName"
+                   ng-change="getMaterialCampaign(r,'{{r.brandName}}')" ng-options="b.Name as b.Name for b in Brands"
+                   ng-class="{'entrcall-nonEditsel': isEditable}" ng-disabled="isEditable">
+                       <option value=""></option>
+                   </select></td>
+
+                   <td class="entrcall-colborder entrcall-matQuanCol" valign="top"
+                   ng-class="{'entrcall-starterwidth': customerType == 'Chemist'}">
+                   <div class="addicon-container">
+                       <span ng-hide="isEditable" ng-click="addMaterialRow(r)"
+                       ng-class="{'chemistAddIcon': customerType == 'Chemist'}"
+                       class="addIcon enterCallIcon entercall-material"></span>
+                   </div>
+                   <div class="material-container" ng-repeat="mr in r.materialRows | filter:{ status_m: '!d' }">
+                       <div class="material-innercontainer">
+                           <span ng-hide="isEditable" ng-click="delMaterialRow(r,mr)"
+                           class="enterCallIcon removeIcon entercall-delrow"></span>
+                       </div>
+                       <select ng-disabled="isEditable" ng-hide="isEditable"
+                       class="materialSelWidth entercall-inputfields dropDownIcon" ng-model="mr.materialCode"
+                       ng-options="m.Id as (m.Material_Name__c+'(Qty:'+m.In_Hand_Quantity__c+')') for m in Materials[r.brandName] | filter: (!disableEdit || '') && {Active__c: true}"
+                       ng-change="onMaterialChange(r, mr,'{{mr.materialCode}}')">
+                           <option value=""></option>
+                       </select>
+                       <span class="entrcall-materialName" ng-show="isEditable">{{mr.materialName}}</span>
+                       <input scroll-page-up="entrcall-table-scroll" ng-disabled="!mr.materialCode"
+                       ng-class="{'entrcall-nonEditsel': isEditable}" class="entercall-qnty entercall-inputfields"
+                       only-digits type="text" pattern="\d*" ng-model="mr.Quantity"/>
+                   </div></td>
+
+                   <td ng-if="customerType == 'Doctor'" class="entrcall-colborder entrcall-campCol" valign="top">
+                       <span
+                   ng-hide="isEditable" ng-click="addCampaignRow(r)" class="addIcon enterCallIcon entercall-material"></span>
+                   <div class="campaignBtmBorder" ng-class="{'labortoryCampaignSeparator': mc.isApplicableLaboratory}"
+                   ng-repeat="mc in r.campaignRows | filter:{ status_c: '!d' }">
+                       <span ng-hide="isEditable" ng-click="delCampaignRow(r,mc)"
+                       class="enterCallIcon removeIcon entercall-delrow"></span>
+                       <select ng-disabled="isEditable" ng-hide="isEditable" ng-class="{'entrcall-nonEditsel': isEditable}"
+                       class="campaignSelWidth entercall-inputfields dropDownIcon" ng-model="mc.campaignId"
+                       ng-options="c.Id as c.Name for c in Campaigns[r.brandName]"
+                       ng-change="onCampaignChange(r, mc,'{{mc.campaignId}}')">
+                           <option value=""></option>
+                       </select>
+                       <span class="entrcall-campaignName" ng-show="isEditable">{{mc.campaignName}}</span>
+                       <div ng-show="mc.isApplicableLaboratory" style="width:100%; overflow: auto;">
+                           <span style="width: 35%; font-size: 0.8em;"
+                           class="col-xs-4 col-sm-4 col-md-4 col-lg-4 noPadding campaignActivityLaboratory"> {{locale.Laboratory}}: </span>
+                           <span style="width: 59%; padding: 3%;" class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
+                               <select ng-class="{'entrcall-nonEditsel': isEditable}" ng-disabled="disableEdit"
+                               class="activity-select entercall-inputfields dropDownIcon" style="width: 100% !important;"
+                               ng-model="mc.laboratoryName" ng-options="lab as lab for lab in Laboratory[mc.campaignId]">
+                                   <option value=""></option>
+                               </select> </span>
+                       </div>
+                       <div ng-show="mc.isApplicableLaboratory" style="width:100%; overflow: auto;">
+                           <span style="width: 35%; font-size: 0.8em;" class="col-xs-2 col-sm-2 col-md-2 col-lg-2 noPadding"> {{locale.NoOfPatientsScreened}}: </span>
+                           <span style="width: 59%; padding: 3%;font-size: 0.8em;" class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+                               <input ng-class="{'entrcall-nonEditsel': isEditable}" scroll-page-up="layout-wrapper" only-digits
+                               type="text" class="activityTextWidth" ng-disabled="disableEdit || isEditable" pattern="\d*"
+                               ng-model="mc.noOfPaients"/>
+                           </span>
+                       </div>
+                   </div></td>
+
+                   <td ng-if="customerType == 'Doctor'" class="entrcall-rxCol" valign="top">
+                   <input scroll-page-up="entrcall-table-scroll" ng-disabled="isEditable"
+                   class="entercall-rxmonth entercall-inputfields" only-digits type="text" pattern="\d*" ng-model="r.rx"
+                   ng-class="{'entrcall-nonEditsel': isEditable}"/>
+                   </td>
+               </tr>
+           </tbody>
+
+       </table>
+   </div>
+
+   <div ng-show="noDataFoundHtml">
+       {{locale.NoDataAvailable}}
+   </div>
+
+   <nav class="navbar navbar-default entrcall-bottom-footer">
+       <div class="col-xs-6 col-sm-6 v-center">
+           <div class="content fontRobotoLight common-lstvisit">
+               {{locale.LastVisitDate}}: {{lastVisitDate}}
+           </div>
+       </div>
+       <div class="col-xs-6 col-sm-6 rightContent v-center">
+           <div class="content">
+               <button ng-click="saveEnterCallDetails();" ng-disabled="disableEdit" class="footer-save-button noOutline">
+                   {{locale.Save}}
+               </button>
+           </div>
+       </div>
+   </nav>
+</div>
+-->
+<transparent-screen></transparent-screen>
+<div class="row">
+    <div class="mob-header">
+        <abw-header data-abwheader-config="abwheaderConfig"></abw-header>
+    </div>
+    <div class="tab-header">
+
+    </div>
+    <div class="view-container container-fluid" ng-init="initforParent()">
+        <div class="point-wrapper page-wrap">
+            <div class="back-head-wrapper">
+                <i class="back-head-arrow" ng-click="backButton()">&nbsp;</i>
+                <div class="back-head-content">
+                    <span>{{selectedDCRDate |date:"d MMM y"}}</span>
+                    <span>{{headerTitle}}</span>
+                </div>
+            </div>
+            <div class="callDetails-content-wrapper content-wrapper" ng-hide="noDataFoundHtml" scroll-bottom="rows"
+                 add-brand-clicked="{{addBrandClick}}">
+                <div class="brand-wrap" ng-repeat="r in rows | filter:{ status_b: '!d' }">
+                    <h3>{{ r.brandName }}</h3>
+                    <div class="enterDetailSpace">
+                        <label>Input</label>
+
+                        <div class="inputSelect-group" ng-repeat="mr in r.materialRows | filter:{ status_m: '!d' }">
+                            <div class="inputSelect-wrap">
+                                <div class="inputSelect-select">
+                                    <select ng-disabled="isEditable" ng-hide="isEditable" ng-model="mr.materialCode"
+                                            ng-options="m.Id as (m.Material_Name__c+'(Qty:'+m.In_Hand_Quantity__c+')') for m in Materials[r.brandName] | filter: (!disableEdit || '') && {Active__c: true}"
+                                            ng-change="onMaterialChange(r, mr,'{{mr.materialCode}}')">
+                                        <option value=""></option>
+                                    </select>
+                                </div>
+                                <input scroll-page-up="entrcall-table-scroll" ng-disabled="!mr.materialCode"
+                                       ng-class="{'entrcall-nonEditsel': isEditable}" class="entercall-qnty entercall-inputfields"
+                                       only-digits type="text" pattern="\d*" ng-model="mr.Quantity"/>
+
+                                <i class="delete-row-button" ng-hide="isEditable" ng-click="delMaterialRow(r,mr)">&nbsp;</i>
+                            </div>
+                        </div>
+                        <i class="add-more-button" ng-hide="isEditable" ng-click="addMaterialRow(r)">&nbsp;</i>
+                    </div>
+                    <div class="enterDetailSpace">
+                        <label>{{locale.Campaign}}</label>
+
+                        <div class="inputSelect-group" ng-if="customerType == 'Doctor'" ng-repeat="mc in r.campaignRows | filter:{ status_c: '!d' }">
+                            <div class="inputSelect-wrap">
+                                <div class="inputSelect-select">
+                                    <select ng-disabled="isEditable" ng-hide="isEditable" ng-class="{'entrcall-nonEditsel': isEditable}"
+                                            ng-model="mc.campaignId"
+                                            ng-options="c.Id as c.Name for c in Campaigns[r.brandName]"
+                                            ng-change="onCampaignChange(r, mc,'{{mc.campaignId}}')">
+                                        <option value=""></option>
+                                    </select>
+                                </div>
+                                <i class="delete-row-button" ng-hide="isEditable" ng-click="delCampaignRow(r,mc)">&nbsp;</i>
+                            </div>
+                            <div class="inputSelect-group"  ng-show="mc.isApplicableLaboratory" >
+                                <label> {{locale.Laboratory}}</label>
+                                <div class="inputSelect-select">
+                                    <select ng-class="{'entrcall-nonEditsel': isEditable}" ng-disabled="disableEdit"
+                                            ng-model="mc.laboratoryName" ng-options="lab as lab for lab in Laboratory[mc.campaignId]">
+                                        <option value=""></option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="inputSelect-group" ng-show="mc.isApplicableLaboratory">
+                                <label> {{locale.NoOfPatientsScreened}}</label>
+                                <div class="inputSelect-wrap">
+                                    <input ng-class="{'entrcall-nonEditsel': isEditable}" scroll-page-up="layout-wrapper" only-digits
+                                           type="text" ng-disabled="disableEdit || isEditable" pattern="\d*"
+                                           ng-model="mc.noOfPaients"/>
+                                </div>
+                            </div>
+                        </div>
+                        <i class="add-more-button" ng-hide="isEditable" ng-click="addCampaignRow(r)">&nbsp;</i>
+                    </div>
+                </div>
+
+                <div class="butn-wrapper">
+                    <button ng-click="saveEnterCallDetailsBrands();" ng-disabled="disableEdit">{{locale.Save}}</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>

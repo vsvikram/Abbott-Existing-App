@@ -1,0 +1,12 @@
+<html>
+	<body>
+		<script>
+			if (window.opener.forceBrowser && window.opener.forceBrowser.oauthCallback) {
+				window.opener.forceBrowser.oauthCallback(window.location.href);
+			} else if (window.opener.oauthCallback) {
+				window.opener.oauthCallback(window.location.href);
+			}
+			window.close();
+		</script>
+	</body>
+</html>

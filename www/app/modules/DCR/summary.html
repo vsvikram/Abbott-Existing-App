@@ -1,0 +1,102 @@
+<div class="dcrSummary-wrapper page-wrap content-wrapper" ng-app="myApp" ng-init="init()" ng-controller="summaryController">
+	<div class="summary-wrapper">
+		<div class="summaryContents">
+			<div class="summary-head">
+				<p>{{locale.Doctors}}</p>
+			</div>
+			<div class="summary" ng-if="detailInfoDoctors.length!=0">
+				<div class="summaryLists-list-item" ng-repeat="doctor in detailInfoDoctors" >
+					<div class="summaryLists-side">
+						<div class="summaryLists-item-two">
+							<p class="summaryLists-list-desc">{{locale.DoctorTitle}} {{doctor.name}}</p>
+							<!--<p>{{doctor.mobileNumber}}</p>-->
+							<div class="summaryLists-list-sub">
+								<span>{{doctor.designation}}</span>
+								<span>{{doctor.mobileNumber}}</span>
+								<!--<p class="summaryDesc">JFW:Lorem Ipsum</p>-->
+								<p class="summaryDesc">JFW: {{doctor.dcrJFWNames}}</p>
+							</div>
+						</div>
+						<div class="summaryLists-item-check">
+							<span>{{doctor.customerCode}}</span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="summaryContents">
+			<div class="summary-head">
+				<p>{{locale.Chemists}}</p>
+			</div>
+			<div class="summary" ng-if="detailInfoChemists.length!=0">
+				<div class="summaryLists-list-item" ng-repeat="chemist in detailInfoChemists">
+					<div class="summaryLists-side">
+						<div class="summaryLists-item-two">
+							<p class="summaryLists-list-desc">{{locale.DoctorTitle}} {{ chemist.name }}</p>
+							<div class="summaryLists-list-sub">
+								<p class="summaryDesc">Patch name : {{chemist.patch}}</p>
+								<!--<p class="summaryDesc">JFW:Lorem Ipsum</p>-->
+								<p class="summaryDesc">JFW: {{chemist.dcrJFWNames}}</p>
+							</div>
+						</div>
+						<div class="summaryLists-item-check">
+							<span>{{ chemist.customerCode }}</span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="summaryContents">
+			<div class="summary-head">
+				<p>{{locale.Stockists}}</p>
+			</div>
+			<div class="summary" ng-if="detailInfoStockists.length!=0">
+				<div class="summaryLists-list-item" ng-repeat="stockist in detailInfoStockists">
+					<div class="summaryLists-side">
+						<div class="summaryLists-item-two">
+							<p class="summaryLists-list-desc">{{locale.DoctorTitle}} {{ stockist.name }}</p>
+							<div class="summaryLists-list-sub">
+								<p class="summaryDesc">Patch name : {{stockist.patch}}</p>
+								<!--<p class="summaryDesc">JFW: Lorem Ipsum</p>-->
+								<p class="summaryDesc">JFW: {{stockist.dcrJFWNames}}</p>
+							</div>
+						</div>
+						<div class="summaryLists-item-check">
+							<span>{{ stockist.customerCode }}</span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="summaryContents">
+			<div class="summary-head" ng-if="activityArray.length!=0">
+				<p><span>{{locale.Activity}}:</span><span>{{activityString}}</span></p>
+			</div>
+			<div class="summary">
+				<!--<p>{{locale.ActivityDetails}}({{activityDetailsDataLength}})</p>-->
+				<div class="summaryLists-list-item" ng-if="activityDetailsDataLength!=0" ng-repeat="(key, value) in activityDetailsData" >
+					<div class="summaryLists-side">
+						<div class="summaryLists-item-two">
+							<!--<p class="summaryLists-list-desc">{{locale.DoctorTitle}} {{doctor.name}}</p>-->
+							<!--<p>{{doctor.mobileNumber}}</p>-->
+							<div class="summaryLists-list-sub">
+								<span>{{ key }}</span>
+								<span>{{ value.campaign }}</span>
+								<!--<p class="summaryDesc">JFW:Lorem Ipsum</p>-->
+								<!--<p class="summaryDesc">JFW: {{doctor.dcrJFWNames}}</p>-->
+							</div>
+						</div>
+						<div ng-repeat="data in value.corpInitiative track by data.id">
+							{{ data.name }}
+						</div>
+
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="summarySubmit" >
+			<button ng-click="saveSummary()" ng-disabled="disableEdit == true">{{locale.Submit}}</button>
+		</div>
+	</div>
+</div>

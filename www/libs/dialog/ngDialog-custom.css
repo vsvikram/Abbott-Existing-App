@@ -1,0 +1,44 @@
+.popup-header {
+	font-size: 1.2em;
+	font-weight:bold;
+	padding: 0.5em 0.5em;
+}
+
+.confirmation-popup-body {
+	font-size: 1em;
+	padding-left: 0.5em;
+	padding-right: 0.5em;
+	padding-bottom: 0.5em;
+}
+
+.ngdialog.ngdialog-theme-default .ngdialog-content {
+    display: none;
+  	padding: 0px;
+  	width: 100%!important;
+}
+
+.normal-popup-body {
+	font-size: 1em;
+	padding: 1em;
+	word-wrap: break-word;
+}
+
+.confirmation-popup-button {
+	width:48%;
+	font-weight: bold;	
+}
+
+.normal-popup-button {
+	width:100%;
+	font-weight: bold;
+	border: none !important;
+    border-bottom-right-radius: 10px !important;
+}
+
+.popover-body {
+	font-size: 1em;
+	padding: 0.5em;
+	width: 100%;
+	display: -webkit-box;
+	text-align: left;
+}

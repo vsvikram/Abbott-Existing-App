@@ -1,0 +1,77 @@
+.expense-wrapper .back-head-content span:last-of-type { color: #9c2756; }
+.expense-content-wrapper { background-color: #f4f4f4; padding: 3vw; float: left; width: 100%; }
+.allowance-box {  background-color: #f7ca39; padding-top: 2.78vw; float: left;
+    width: 100%; }
+
+.allowance-box .check { padding-bottom: 3.7vw;}
+.allowance-wrapper { margin-top: 1.26vw; }
+.allowance-wrapper h3, .fare-wrapper h3, .misc-wrapper h3 { font-size: 0.813rem; margin-bottom: 4.26vw; }
+.allowance-box label b { color: #414042; font-weight: bold; display: block; line-height: 1; }
+.allowance-box .check, .fare-chart .check { width: 33.33%; display: inline-block; position: relative; float: left; text-align: center; padding-left:2.06vw;    }
+.allowance-box input[type="radio"], .fare-chart input[type="radio"] { display: none; }
+.allowance-box input[type="radio"]+label { font-size: 0.750rem; color: #87723e; padding-left: 5.67vw; position: relative; text-align: left; font-weight: 400; line-height: 1.3; }
+.allowance-box input[type="radio"]+label span, .fare-chart input[type="radio"]+label span { display: inline-block; width: 4.17vw; height: 4.17vw; vertical-align: middle; background-size: 4.17vw; position: absolute; left: 0; top: 0; }
+.fare-chart input[type="radio"]+label span { left: 2.7vw; }
+.fare-wrapper, .misc-wrapper { float: left; width: 100%; }
+.fare-wrapper h3 { margin-top: 6.67vw; }
+.fare-chart { background: #fff; padding-left: 3.24vw; padding-right: 3.24vw; float: left; width: 100%; margin-bottom: 2vw; }
+.fare-chart .chart-head { font-size: 0.813em; color: #f7ca39; padding-top: 5.19vw; padding-bottom: 4.91vw; border-bottom: 1px solid #f9f9f9; clear: both; float: left; width: 100%; }
+.chart-info { padding-top: 2.78vw; clear: both; float: left; width: 100%; }
+.chart-info div { display: inline-block; float: left; font-size: 0.813rem; width: 33.333%; text-align: center; margin-bottom: 4.17vw; }
+.chart-info>div:first-of-type, .chart-info>div:nth-of-type(2) { border-right: 1px solid #f9f9f9; }
+.chart-info .fare span:first-of-type, .chart-info .distance span:first-of-type, .chart-info .mode span:first-of-type { display: block; color: #9d9d9e; font-size: 0.625rem; }
+.chart-radio { font-size: 0.688rem; color: #787779; clear: both; float: left; width: 100%; background: #f9f9f9; padding-top: 5.56vw; padding-bottom: 4vw; margin-bottom: 4.63vw; }
+.chart-radio .check label { font-size: 0.688rem; font-weight: normal; }
+.add-more-button { display: inline-block; float: right; clear: both; background-repeat: no-repeat; background-size: 100%; background-position: center; margin-top: 3.89vw;  }
+.add-more-button { margin-top: 1.89vw; }
+.misc-wrapper h3 { margin-top: 2.59vw; }
+.misc-content label { font-size: 0.625rem; display: block; font-weight: normal; margin-bottom: -0.5vw; }
+.misc-content input { border: none; border-bottom: 1px solid #d1d1d1; background: transparent; width: 39.81vw; font-size: 0.625rem; font-weight: 500; }
+.misc-content textarea { border: none; font-size: 0.625rem; font-weight: 500; }
+.misc-content select { border-radius: 0; border: none; background: transparent; border-bottom: 1px solid #d1d1d1; width: 39.81vw; font-size: 0.625rem; font-weight: 500; }
+.desc-group, .amount-group { display: inline-block; float: left; }
+/*.amount-group { float: right; }
+.reason-group { clear: both; padding-top: 5.56vw;  
+}
+*/
+.desc-group { position: relative; }
+.desc-group::before { content: ' '; position: absolute; width: 3.15vw; height: 2.04vw; background-size: 100%; background-repeat: no-repeat; right: 1vw; bottom: 2vw; }
+.fare-select { float: left; width: 50%; position: relative; }
+.fare-select select { border: none; outline: none; }
+.fare-select label { font-weight: normal; color: #9d9d9e; }
+.fare-select::before { content: ' '; position: absolute; width: 3.15vw; height: 2.04vw; background-size: 100%; background-repeat: no-repeat; right: 1vw; bottom: 2vw; }
+.fare-select:nth-of-type(2) label { margin-left: 9.44vw; }
+.remove-icon{display: inline-block; float: right; background-repeat: no-repeat; background-size: 100%;  background-position: center;  height: 6.48vw;  width: 6.48vw;     margin: 0px 5px 20px 5px; }
+.add-icon{display: inline-block; float: right; background-repeat: no-repeat; background-size: 100%;  background-position: center;  height: 6.48vw;  width: 6.48vw;     margin: 0px 5px 20px 5px;}
+
+/* **  */
+.misc-content.add-more-content.ng-scope > .amount-group {
+    float: right;
+    margin-bottom: 0px;
+}
+.reason-group { clear: both; padding-top: 5.56vw; padding-bottom: 5.56vw; 
+}
+.allowance-box .check
+{ text-align: left;
+  padding:1.78vw 2.30vw;
+}
+.chart-info div
+{    min-height: 10vw;
+}
+/*22/9/17*/
+.chart-info>div:first-of-type, .chart-info>div:nth-of-type(2)
+{ border-right: 1px solid #E8E2E2;
+}
+.fare-chart .chart-head
+{border-bottom: 1px solid #E8E2E2;
+}
+.chart-head .fare-select:first-child > select
+{ width:75%;
+}
+.fare-select select {
+    background-color: white;
+}
+.allowance-box  input[type="radio"] + label span,
+.fare-chart  input[type="radio"] + label span
+{    background-size: 100% 100%;
+}

@@ -1,0 +1,27 @@
+<transparent-screen></transparent-screen>
+<navigation-bar is-hidden=false
+                left-side-icon="menu"
+                is-display-header-title=true
+                is-display-logged-in-user=true
+                header-title="Media"
+>
+</navigation-bar>
+<section id="media" class="mtp-list-container" track-highlight-on-click>
+  <header>
+    <button type="button" class="btn btn-primary download-all" ng-click="media.downloadAll()"
+            ng-bind="media.locale.DownloadAll">
+    </button>
+  </header>
+  <article class="scroll-content">
+    <ul class="list-group"
+        infinite-scroll="media.loadMorePresentations()"
+        infinite-scroll-parent
+        infinite-scroll-distance="1"
+        infinite-scroll-disabled="media.isAllFetched"
+    >
+      <presentation-item ng-repeat="presentationInfo in media.presentations track by $index "
+                         presentation-info="presentationInfo">
+      </presentation-item>
+    </ul>
+  </article>
+</section>

@@ -1,0 +1,165 @@
+/* Home Mobile */
+.page-abbExchange { background-color: #f4f4f4; position: relative; }
+.abb-exchange-wrapper { padding: 6.67vw 2.78vw; float: left; width:100%; }
+.sort-wrapper, .filter-wrapper { display: inline-block; font-size: 0.7rem; width: 25vw; padding-left: 9vw; background-repeat: no-repeat; background-position: 9% 41%; background-size: 5.84vw; }
+.sort-wrapper {
+    padding-left: 11vw;
+    background-position: 14%;
+}
+.filter-wrapper { border-right: 1px solid #c3c3c3;    background-position: 7%; width: 27vw; }
+.filter-wrapper div:nth-of-type(2) span { color: #22b2b2b; }
+.sort-wrapper div:nth-of-type(2) span { color: #2b2b2b; font-weight: 500; }
+.sort-wrapper div:first-of-type span, .filter-wrapper div:first-of-type span { color: #9c2757; font-weight: 600; }
+.fs-wrapper { float: right; }
+.abb-exchange-search { display: none; }
+.sortPage.sort-wrapper, .filterPage.filter-wrapper { width: 100%; position: absolute; top: 0; left: 0; height: 90vh; background: #fff; z-index: 200; padding: 0; }
+.sortPage.sort-wrapper > div:first-of-type, .sortPage.sort-wrapper > div:nth-of-type(2), .sortPage .sort-settings div { height: 15.28vw; line-height: 15.28vw; font-size: 0.813rem; }
+.sortPage.sort-wrapper > div:nth-of-type(2), .sortPage .sort-settings div { height: 12.04vw; line-height: 12.04vw; }
+.sortPage > div:first-of-type { border-bottom: 1px solid #cecece; }
+.sortPage .sort-settings div { padding-left: 4.63vw; font-weight: 500; color:#414042; }
+.sortPage.sort-wrapper div:first-of-type span { color: #333; font-weight: 500; }
+.sortPage.sort-wrapper > div span, .sortPage.sort-wrapper > div span { margin-left: 4.63vw; }
+ .sort-head-active:before {
+    content: '';
+    position: absolute;
+    background-color: #9c2757;
+    width: 4.63vw;
+    height: 1.11vw;
+    bottom: 2vw;
+    left: 4.5vw;
+    }
+    .sort-head{position:relative;}
+.sortPage.sort-wrapper > div:nth-of-type(2):before { content: ''; position: absolute; background-color: #9c2757; width: 4.63vw; height: 1.11vw; bottom: 1.5vw; left: 4.5vw; }
+.sortPage.sort-wrapper > div:nth-of-type(2) { position: relative; }
+.filterPage.filter-wrapper > div:first-of-type, .filterPage.filter-wrapper > div:nth-of-type(2) { display: none; }
+.filterPage .filter-settings .panel-head h4, .filterPage .filter-settings .panel-content div { font-size: 0.813rem; `height: 13.89vw; line-height: 13.89vw; margin-left: 4.81vw; }
+ .filterPage .filter-settings .panel-head h4 {     font-weight: bold; color:#414042; }
+.filterPage .filter-settings .panel { margin: 0; clear: both; box-shadow: none;}
+.filterPage .filter-settings .panel-head { background-repeat: no-repeat; background-position: 94%; background-size: 3.7vw; position: relative; }
+.filterPage .filter-settings .panel-head.active { background-position: 94%; border: none; }
+.filterPage .filter-settings .panel-head { color: #444; cursor: pointer; width: 100%; text-align: left; border: none; outline: none; transition: 0.4s; border-bottom: 1px solid #cecece; }
+.filterPage .filter-settings .panel:last-of-type .panel-head { border: none; }
+.filterPage .filter-settings .panel-content { padding: 0 18px; font-weight: normal; font-size: 1rem; max-height: 0; overflow: hidden; transition: max-height 0.2s ease-out; }
+.filterPage .filter-settings .panel-head.active + .panel-content { max-height: none; }
+.filterPage .filter-settings .panel-head.active:before { content: ''; position: absolute; background-color: #9c2757; width: 4.63vw; height: 1.11vw; bottom: 2vw; left: 4.5vw; }
+.filterPage .filter-head { float: left; width: 100%;     border-bottom: 1px solid #cecece; position: relative; }
+.filterPage .filter-head .app-title { font-size: 0.813rem; line-height: 13.89vw; margin-left: 15vw; font-weight:500; display: inline-block; float: left; color:#414042; }
+.filterPage .filter-head .links-wrapper { display: inline-block; float: right; font-weight:500; height: 13.89vw; line-height: 13.89vw; margin-right: 4.81vw; }
+.filterPage .filter-settings .panel-head { border: none; }
+.filterPage .apply-btn-wrapper, .sortPage .apply-btn-wrapper, .sortPage .filter-head, .filterPage .filter-head { display: block; }
+.filterPage .apply-btn-wrapper, .sortPage .apply-btn-wrapper { margin-right: 4.81vw; margin-left: 4.81vw; position: absolute; width: 90%; bottom: 10vw; }
+.sortPage .apply-btn-wrapper { padding-left: 0!important; }
+.sortPage .apply-btn-wrapper div { height: auto; line-height: normal; padding-left: 0; color: #fff;}
+.app-card-count { position: fixed; bottom: 1.48vw; font-size: 0.625rem; display: table;  background: rgba(0, 0, 0, 0.7); color: #fff; width: 28.7vw; text-align: center; height: 6.3vw; left: 0; right: 0; margin: auto; border-radius: 20px; }
+.app-card-count div { display: table-cell; vertical-align: middle; }
+.app-card-count div span { font-weight: bold; }
+.page-abbExchange .popBtns { float: right; padding-right:2.35vw; padding-left:2.75vw; }
+.page-abbExchange .appCard-popupDesc { float: left; }
+.page-abbExchange .popupDesc {
+    background: #f8f8f8;
+    margin-left: -5.09vw;
+    margin-right: -5.09vw;
+    margin-top: 3.7vw;
+    border-top: 1px solid #d9d9d9;
+    font-size: 0.622rem !important;
+    text-align: left;
+    padding:4.63vw;
+}
+.page-abbExchange .popup-body {
+	padding-bottom: 0;
+}
+.page-abbExchange .popupDesc p {
+	padding-top: 0;
+}
+.page-abbExchange .popupDesc .links-wrapper {
+	padding-bottom: 0;
+	    margin-top: 2.63vw;
+	    float:none;
+}
+	.page-abbExchange .popupDesc .appPopup-desc {
+    max-height: 20vw;
+    padding: 0 !important;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-weight: normal;
+}
+	.page-abbExchange .popupDesc .appPopup-desc.active {
+    max-height: none;
+}
+
+.page-abbExchange .links-wrapper span { font-size:0.688rem !important;
+    text-decoration: underline;
+    color: #9c2756;
+    font-weight: bold; }
+.page-abbExchange .popup-body .app-name { font-size: 0.750rem; display: inline-block; float: left; padding:0; font-weight: 500; overflow: visible; max-width: 80%; white-space: nowrap; text-overflow: ellipsis; }
+.page-abbExchange .popup-body .app-date {font-size: 0.5rem;clear: both;text-align: left; padding-bottom:0 !important;}
+.page-abbExchange .popup-body .star-ratings { text-align: left; }
+.page-abbExchange .popWraps { display: none; }
+.page-abbExchange .popup-body { margin-top: 0; }
+.page-abbExchange .popup-body .appCard-popupContent {
+	margin-bottom: 0.52vw;
+	margin-top: 1.5vw;
+}
+.page-abbExchange .popup-body .card-img img { padding: 0; }
+.page-abbExchange .popup-body .card-details{ padding-top: 2vw; }
+.panel-content ul {
+    list-style-type: none;
+    padding-left: 0;
+    font-size: 0.813rem;
+    line-height: 8.89vw;
+}
+.back-head-arrow { background-repeat: no-repeat; background-position: center; background-size: 4.63vw; position: absolute; width: 4.63vw; top: 0; left: 1.85vw; bottom: 0; }
+.sortPage .sort-settings > div:first-of-type {
+    height: 15.28vw;
+    line-height: 15.28vw;
+    font-size: 0.813rem;
+    border-bottom: 1px solid #cecece;
+    position:relative;
+}
+.sortPage .sort-settings > div:first-of-type span {
+margin-left: 10.5vw;
+}
+a.ok-btn.button {
+    color:#fff;
+    text-decoration: none;
+}
+a.cancel-btn.button {
+    text-decoration: none;
+}
+.abbExchange-wrapper .back-head-arrow {
+    left:3.85vw;
+}
+.panel-content ul li.active {
+    color: #9c2756
+}
+
+
+/*Home Tablet*/
+@media screen
+and (min-width:980px) {
+	.app-card-wrapper { white-space: normal; }
+	.abb-exchange-search { display: block; padding-left: 4.78vw; background-repeat: no-repeat; background-position: 2.2%; background-color: #fff; }
+	.abb-exchange-search input { width: 100%; outline: none; border: none; height: 5.94vw; font-size: 1rem; }
+	.abb-exchange-wrapper { padding: 2.5vw 1.95vw; }
+	.sort-wrapper, .filter-wrapper { font-size: 0.875rem; width: 10.94vw; background-position: 5%; background-size: 2.42vw; padding-left: 4vw; margin-left: 2vw; }
+	.abb-exchange-wrapper .app-card { width: 29.2vw; margin-right: 0.7vw; }
+	.abb-exchange-wrapper .card-details { background-position: 90% 20%; padding-top: 1.2vw; }
+	.filter-settings { width: 17.66vw; border-radius: 0.7vw; right: 15.5vw; top: 4vw; padding: 1vw; background-color: #fff; position: absolute; z-index: 1; box-shadow: 0px 0px 57px 0px rgba(0, 0, 0, 0.23); }
+	.filter-settings .panel { margin: 0; }
+	.filter-settings .panel-head { background-repeat: no-repeat; background-position: 90%; background-size: 0.78vw; position: relative; }
+	.filter-settings .panel-head.active { background-position: 90%; border: none; }
+	.filter-settings .panel-head h4 { font-size: 1rem; }
+	.filter-settings .panel-head h4, .filter-settings .panel-content div { height: 4.06vw; line-height: 4.06vw; }
+	.filter-settings .panel-head { color: #444; cursor: pointer; width: 100%; text-align: left; border: none; outline: none; transition: 0.4s; border-bottom: 1px solid #cecece; }
+	.filter-settings .panel:last-of-type .panel-head { border: none; }
+	.filter-settings .panel-content { padding: 0 18px; font-weight: normal; font-size: 1rem; max-height: 0; overflow: hidden; transition: max-height 0.2s ease-out; }
+	.filter-settings .panel-head.active + .panel-content { max-height: none; }
+	.filter-settings .panel-head.active:before { content: ''; position: absolute; background-color: #9c2757; width: 2.5vw; height: 0.38vw; bottom: 0; }
+	.sort-settings { width: 13.13vw; position: absolute; background: #fff; z-index: 1; padding: 1vw; box-shadow: 0px 0px 57px 0px rgba(0, 0, 0, 0.23); right: 2.5vw; border-radius: 0.7vw; top: 3.7vw; }
+	.sort-settings div { height: 4.06vw; border-bottom: 1px solid #e3e3e3; font-size: 1rem; line-height: 4.06vw; font-weight: 500; }
+	.sort-settings div:last-of-type { border: none; }
+	.sort-settings:before, .filter-settings:before { position: absolute; content: ''; top: -0.8vw; width: 0; height: 0; border-style: solid; right: 2vw; border-width: 0 10px 10px 10px; border-color: transparent transparent #ffffff transparent; }
+	.abb-exchange-head { position: relative; }
+	.apply-btn-wrapper {display: none;  }
+	.filter-head { display: none; }
+}

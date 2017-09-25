@@ -1,0 +1,39 @@
+<form novalidate name="frmDCRUnlock">
+
+	<div class="ngdialog-message">
+		<div class="popup-header" style="background-color:#EDEDED;padding-bottom: 0em;border-top-left-radius: 10px;border-top-right-radius: 10px;">
+			{{locale.RequestDCRUnlock}}
+		</div>
+
+		<div class="confirmation-popup-body" style="height:8em;overflow-y:scroll" >
+			<div>
+				<div>
+					<table>
+						<tr>
+							<td><select required class="dropDownStyleChange dropDownIcon fontRobotoLight" style="width:100%;margin-top:0.3em;margin-bottom:0.3em;font-size:1em;border-radius: 0.75em;" ng-model="selectedlockOptions"
+							name="ddlSelectedlockOptions" ng-options="lockOptions for lockOptions in listOfLockOptions" placeholder="{{locale.Reason}}"></select></td>
+						</tr>
+						<tr>
+							<td><textarea required scroll-page-up="ngdialog" class="fontRobotoLight ng-required" style="width:100%" ng-disabled="disableEdit" ng-model="comments" name="txtComments" placeholder="{{locale.Comments}}"></textarea></td>
+						</tr>
+						<tr>
+							<td>
+							<div class="fontRobotoLight">
+								{{locale.SyncMessageForDCRUnlockPopup}}
+							</div></td>
+						</tr>
+					</table>
+				</div>
+			</div>
+
+		</div>
+	</div>
+	<div class="ngdialog-buttons" style="display: flex;">
+		<button type="button" class="ngdialog-button ngdialog-button-primary confirmation-popup-button" style="width:49%;" ng-click="closeThisDialog('button')">
+			{{locale.Cancel}}
+		</button>
+		<button type="submit" class="ngdialog-button ngdialog-button-secondary confirmation-popup-button" style="width:49%;" ng-click="addSyncUpdate(frmDCRUnlock.$valid,selectedlockOptions,comments)"	>
+			{{locale.Sync}}
+		</button>
+	</div>
+</form>

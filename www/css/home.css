@@ -1,0 +1,415 @@
+#home{
+	height: 100%;
+	font-size: 24px;
+	line-height: normal;
+	-webkit-user-select: none;
+}
+#home button{
+	border: none;
+}
+#home p{
+	margin-bottom: 0;
+}
+.column{
+  display: -webkit-flex;
+  -webkit-flex-direction: column;
+}
+.space-between{
+  display: -webkit-flex;
+  -webkit-justify-content: space-between;
+}
+.cropped{
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  overflow: hidden;
+  word-break: break-all;
+}
+#home .main-info{
+	-webkit-flex: 1;
+	padding: 1em;
+	background: #E8E5E5 url('../resources/images/2x/home/noise.png') repeat;
+	background-size: 36px 32px;
+}
+#home .logo{
+  width: 4.5em;
+  height: 1.5em;
+  margin: -0.5em 0;
+}
+#home .sync{
+	width: 1.5em;
+    height: 1.5em;
+	background: url('../resources/images/2x/home/sync.png') no-repeat;
+	background-size: contain;
+	padding: 0;
+}
+#home .user-info{
+  -webkit-align-items: flex-end;
+}
+#home .welcome{
+	color: #17324a;
+	-webkit-justify-content: flex-end;
+}
+#home .welcome .title{
+	font-size: 0.8em;
+	text-transform: uppercase;
+}
+#home .name{
+	color: #3e87d0;
+	font-size: 1.2em;
+}
+#home .welcome .additional{
+	min-height: 1.1em;
+	font-size: 0.6em;
+}
+#home .calls-to-go{
+	display: -webkit-flex;
+	-webkit-align-items: center;
+}
+#home .calls-count-holder{
+	position: relative;
+}
+#home .calls-count{
+	font-size: 5em;
+	line-height: 0.8em;
+	color: #3e87d0;
+	position: relative;
+	z-index: 2;
+	text-align: center;
+	letter-spacing: -0.08em;
+}
+#home .circle{
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	-webkit-transform: translate3d(-50%, -50%, 0);
+	width: 6em;
+	height: 6em;
+	border-radius: 50%;
+	background-color: #b7006a;
+	z-index: 1;
+}
+#home .calls-to-go .title{
+	font-size: 0.8em;
+	color: #3e87d0;
+	width: 2.5em;
+	margin-left: 1em;
+}
+#home nav{
+	display: -webkit-flex;
+	height: calc(100% / 3);
+}
+#home nav a{
+	-webkit-align-items: center;
+	-webkit-justify-content: flex-end;
+  -webkit-flex: 1;
+  margin: 0;
+  color: white;
+  -webkit-user-select: none;
+  -webkit-touch-callout: none;
+}
+#home nav span{
+	font-size: 1em;
+	 margin: .5em 0;
+	line-height: 1em;
+	text-align: center;
+	text-transform: uppercase;
+}
+#home nav icon{
+	background-size: contain;
+	background-repeat: no-repeat;
+}
+#home .mtp{
+	position: relative;
+	background-color: #FFD100;
+}
+
+#home .sfe{
+	position: relative;
+	background-color: #800080;
+}
+
+#home .sfe icon{
+	width: 2em;
+    height: 2em;
+	background-image: url('../resources/images/2x/SEF72x72.png')
+}
+
+#home .mtp icon{
+	width: 2em;
+	height: 2em;
+	background-image: url('../resources/images/2x/home/mtp.png')
+}
+#home .dcr{
+	position: relative;
+	background-color: #AA0061;
+}
+#home .dcr icon{
+	width: 2em;
+	height: 2em;
+	background-image: url('../resources/images/2x/home/dcr.png')
+}
+#home .media{
+	background-color: #EEB33B;
+}
+#home .media icon{
+	margin-left: 5px;
+	width: 2em;
+	height: 2em;
+	background-image: url('../resources/images/2x/home/media.png')
+}
+#home .my-leave{
+	background-color: #009A17;
+}
+#home .my-leave icon{
+	width: 2em;
+    height: 2em;
+	background-image: url('../resources/images/2x/home/my-leave.png')
+}
+#home footer{
+	padding: 0.5em 1em;
+	-webkit-align-items: center;
+}
+#home .time{
+	font-size: 0.8em;
+	color: #3e87d0;
+}
+#home .date{
+	font-size: 0.4em;
+	color: #3e87d0;
+}
+#home .helpdesk,
+#home .logout{
+	font-size: 0.7em;
+	color: #3e87d0;
+	background-color: transparent;
+	-webkit-user-select: none;
+  -webkit-touch-callout: none;
+}
+#home .logout{
+	-webkit-appearance: none;
+	text-align: left;
+	padding: 0;
+}
+#home .logout:after,
+#home .helpdesk:after{
+	content: '';
+	display: inline-block;
+	margin-left: 0.25em;
+	width: 0.86666666666667em;
+	height: 0.9em;
+	background: url('../resources/images/2x/home/helpdesk.png') no-repeat;
+	background-size: contain;
+}
+#home .logout:after{
+	background-image: url('../resources/images/2x/LogOut.png');
+	width: 0.9em;
+	-webkit-transform: translate3d(0, 0.15em, 0);
+}
+#home .highlight-element.pseudo-active{
+	opacity: 0.5;
+}
+#home .lock-icon{
+	position: absolute;
+	height: 1em;
+	width: 1em;
+	right: 0.2em;
+    top: 0.2em;
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-size: contain;
+	opacity: 0.7;
+}
+#home .lock-icon.status-locked{
+	background-image: url('../resources/images/2x/home/lock.png');
+}
+#home .lock-icon.status-unlocked{
+	background-image: url('../resources/images/2x/home/unlock.png');
+}
+
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px)  {
+	#home{
+		height: 100%;
+		font-size: 24px;
+	}
+	#home .main-info{
+		padding: 2em;
+		background-size: 36px 32px;
+	}
+	#home .logo{
+	  width: 6em;
+	  height: 2em;
+	}
+	#home .sync{
+		width: 45px;
+		height: 60px;
+	}
+	#home .welcome .title{
+		font-size: 1.66666666666667em;
+	}
+	#home .name{
+		font-size: 2.25em;
+	}
+	#home .welcome .additional{
+		min-height: 1.1em;
+	}
+	#home .calls-count{
+		font-size: 9em;
+		line-height: 0.8em;
+	}
+	#home .circle{
+		width: 6em;
+		height: 6em;
+	}
+	#home .calls-to-go .title{
+		font-size: 1.25em;
+		width: 2.5em;
+	}
+	#home nav{
+		height: calc(100% / 3);
+	}
+
+	#home nav span{
+		font-size: 1.5em;
+		margin: 1em 0;
+		line-height: 1em;
+	}
+	#home .sfe icon{
+		width: 92px;
+		height: 92px;
+		background-image: url('../resources/images/2x/SEF72x72.png')
+	}
+
+	#home .mtp icon{
+		width: 75px;
+		height: 80px;
+		background-image: url('../resources/images/2x/home/mtp.png')
+	}
+	#home .dcr{
+		position: relative;
+	}
+	#home .dcr icon{
+		width: 102px;
+		height: 81px;
+		background-image: url('../resources/images/2x/home/dcr.png')
+	}
+	#home .media icon{
+		margin-left: 5px;
+		width: 80px;
+		height: 75px;
+	}
+	#home .my-leave icon{
+		width: 85px;
+		height: 84px;
+	}
+	#home footer{
+		padding: 1em 2em;
+	}
+	#home .time{
+		font-size: 1.5em;
+	}
+	#home .date{
+		font-size: 0.75em;
+	}
+	#home .helpdesk,
+	#home .logout{
+		font-size: 1.25em;
+	}
+	#home .logout:after,
+	#home .helpdesk:after{
+		margin-left: 0.25em;
+		width: 0.86666666666667em;
+		height: 0.9em;
+	}
+	#home .logout:after{
+		width: 0.9em;
+	}
+	#home .lock-icon{
+		height: 40px;
+		width: 40px;
+		right: 10px;
+		top: 10px;
+	}
+}
+
+@media only screen and (min-device-width : 481px) and (max-device-width:540px){
+	#home .welcome .title{
+		font-size: 0.6em;
+	}
+	#home .name{
+		font-size: 1em;
+	}
+	#home .welcome .additional{
+		min-height: 1.1em;
+		font-size: 0.4em;
+	}
+
+	#home .calls-count{
+		font-size: 3.5em;
+		line-height: 0.8em;
+	}
+}
+
+@media only screen and (max-device-width:480px){
+	#home .welcome .title{
+		font-size: 0.4em;
+	}
+	#home .name{
+		font-size: 0.75em;
+	}
+	#home .welcome .additional{
+		min-height: 0.85em;
+		font-size: 0.3em;
+	}
+
+	#home .calls-count{
+		font-size: 2.6em;
+		line-height: 0.6em;
+	}
+	#home .main-info {
+        padding: 0.75em 1em;
+    }
+    #home .logo{
+      width: 4em;
+      height: 1.5em;
+      margin: -0.5em 0;
+    }
+}
+
+.disclaimer-button{
+    margin: 0 10px 0 0!important;
+    border-radius: 5px!important;
+    box-shadow: 2px 2px 2px 2px rgba(216, 255, 0, 0.2);
+  }
+
+
+ * {
+    -webkit-user-select: none;
+    user-select: none;
+  }
+
+ input, textarea {
+ 	-webkit-user-select: auto;
+    user-select: auto;
+ }
+
+ .busyIndicatorText {
+	position: absolute;
+     top: 64%;
+     margin: 0px auto;
+     text-align: center;
+     width: 100%;
+ }
+
+  .busyIndicatorText  span{
+  	background-color:#fff;
+  	font-size: 1.2em;
+  	padding: 0.2em;
+  	border-radius: 0.1em;
+  }
+
+  .no-padding-margin{
+    padding:0;
+    margin:0;
+
+  }

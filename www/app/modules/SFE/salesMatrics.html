@@ -1,0 +1,357 @@
+<!-- <transparent-screen></transparent-screen>
+<navigation-bar is-hidden=false header-title="{{locale.salesMatrics}}"
+	left-side-icon="back" previous-screen-name="{{locale.SFE}}"
+	is-display-header-title=true is-display-logged-in-user=true></navigation-bar>
+<div style="overflow: scroll;"	class="fullHeight appContent container-fluid" ng-init="init()">
+	<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 noPadding userSelectCont row"
+		ng-class="{'userSelectCont': userType=='ZBM' || userType=='ABM'}">
+		<div ng-if="userType=='ZBM'"
+			class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+			<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 noPadding rightAlign">
+				<label> {{locale.ABMUser}} </label>
+			</div>
+			<div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
+				<select ng-init="$parent.selectedABM = ABMUsers[0]"
+					class="dropDownIcon userDropdown fontRobotoMedium noOutline performanceTable full-width"
+					ng-model="$parent.selectedABM"
+					ng-options="user as user|formatter for user in ABMUsers"
+					ng-change="onSelectABMChange()"></select>
+			</div>
+		</div>
+		<div ng-if="TBMUsers.length>0"
+			class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+			<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 noPadding rightAlign">
+				<label>{{locale.TBMUser}} </label>
+			</div>
+			<div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
+				<select ng-init="$parent.selectedTBM = TBMUsers[0]"
+					class="dropDownIcon userDropdown fontRobotoMedium noOutline performanceTable  full-width"
+					ng-model="$parent.selectedTBM"
+					ng-options="user as user|formatter for user in TBMUsers"
+					ng-change="onSelectTBMChange()"></select>
+			</div>
+		</div>
+	</div>
+	<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-center row">
+		<h2>{{updationDate | date:"MMMM ''''yy" }}</h2>
+	</div>
+
+	<div class="row fullHeight linechart">
+		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+			<canvas id="line" class="chart chart-line" chart-data="midData"
+				chart-labels="labels" chart-series="series" chart-options="options"></canvas>
+		</div>
+		<div class="doughnut-legend">{{locale.primarySales}} - {{locale.midMonth}}</div>
+	</div>
+	<div class="spacingDiv"></div>
+	<div class="row fullHeight linechart">
+		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+			<canvas id="line" class="chart chart-line" chart-data="endData"
+				chart-labels="labels" chart-series="series" chart-options="options" ></canvas>
+		</div>
+		<div class="doughnut-legend">{{locale.primarySales}}</div>
+	</div>
+	<div class="spacingDiv"></div>
+	<div class="row linechart">
+		<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6" id="speedometerChart">
+			<canvas id="doughnut" class="chart chart-doughnut"
+	  			chart-data="p1TargetData" chart-labels="doughnutLabels" chart-colours="DoughnutColours">
+			</canvas> 
+			<div>
+				<ridge-speedometer x-val="p1TargetData" x-conf="{
+										wobble : false,
+										backgroundColor : 'white',
+										markerColor : 'black',
+										smallTickColor : 'gray',
+										smallTickIncrement : 2,
+										largeTickColor : 'black',
+										max : 140,
+										endOfWarningDegree : 220,
+										endOfNormalDegree : 280,
+										warningColor : 'rgb(0, 255, 0)',
+										normalColor : 'rgb(255, 0, 0)'
+									}"/>
+			</div>
+			<div class="doughnut-legend">{{locale.p1Target}}: {{P1Target | currency: locale.currency+' ' }}{{locale.lakhs}}</br>
+				{{locale.p1Sales}}: {{P1_Sales/100000 | currency: locale.currency+' ' }}{{locale.lakhs}}</div>
+		</div>
+		<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+			<canvas id="doughnut" class="chart chart-doughnut"
+	  			chart-data="p2TargetData" chart-labels="doughnutLabels" chart-colours="DoughnutColours">
+			</canvas> 
+			<div>
+				<ridge-speedometer x-val="p2TargetData" x-conf="{
+										wobble : false,
+										backgroundColor : 'white',
+										markerColor : 'black',
+										smallTickColor : 'gray',
+										smallTickIncrement : 2,
+										largeTickColor : 'black',
+										max : 140,
+										endOfWarningDegree : 220,
+										endOfNormalDegree : 280,
+										warningColor : 'rgb(0, 255, 0)',
+										normalColor : 'rgb(255, 0, 0)'
+									}"/>
+			</div>
+			<div class="doughnut-legend">{{locale.p2Target}}: {{P2Target | currency: locale.currency+' ' }}{{locale.lakhs}}</br>
+				{{locale.p2Sales}}: {{P2_Sales/100000 | currency: locale.currency+' ' }}{{locale.lakhs}}</div>
+		</div>
+	</div>
+	<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+		<div class="dcrContainerHeight noPadding row">
+
+			<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+				<div class="halfHeight">
+					<div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 noPadding">
+						<div class="btn noOutline sfeBtn dcmBtnMargin smBtn drakgray">
+							<div>
+								<label>{{locale.totalSales}}</label>
+							</div>
+							<p class="MTP">{{locale.currency}}  {{convertToLakhs(TotalSales)}}</p>
+						</div>
+					</div>
+					<div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 noPadding">
+						<div class="btn noOutline sfeBtn dcmBtnMargin smBtn khaki">
+							<div>
+								<label>{{locale.p1Sales}}</label>
+							</div>
+							<p>{{locale.currency}}  {{convertToLakhs(P1_Sales)}}</p>
+						</div>
+					</div>
+					<div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 noPadding">
+						<div
+							class="btn noOutline sfeBtn dcmBtnMargin smBtn dcmButtonColor">
+							<div>
+								<label>{{locale.p2Sales}}</label>
+							</div>
+							<p>{{locale.currency}}  {{convertToLakhs(P2_Sales)}}</p>
+						</div>
+					</div>
+					<div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 noPadding">
+						<div
+								class="btn noOutline sfeBtn dcmBtnMargin smBtn cyan">
+							<div>
+								<label>{{locale.totalPending}}</label>
+							</div>
+							<p>{{locale.currency}}  {{convertToLakhs(TotalPending)}}</p>
+						</div>
+					</div>
+				</div>
+				<div class="halfHeight">
+					<div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 noPadding">
+						<div class="btn noOutline sfeBtn dcmBtnMargin smBtn imButtonColor">
+							<div>
+								<label>{{locale.totalGoodsReturn}}</label>
+							</div>
+							<p>{{locale.currency}}  {{convertToLakhs(TotalGoodsReturn)}}</p>
+						</div>
+					</div>
+
+					<div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 noPadding">
+						<div class="btn noOutline sfeBtn dcmBtnMargin smBtn pmButtonColor">
+							<div>
+								<label>{{locale.p1GoodsReturn}}</label>
+							</div>
+							<p>{{locale.currency}}  {{convertToLakhs(p1GoodsReturn)}}</p>
+						</div>
+					</div>
+
+					<div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 noPadding">
+						<div class="btn noOutline sfeBtn dcmBtnMargin smBtn smButtonColor">
+							<div>
+								<label>{{locale.p2GoodsReturn}}</label>
+							</div>
+							<p>{{locale.currency}}  {{convertToLakhs(p2GoodsReturn)}}</p>
+						</div>
+					</div>
+					<div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 noPadding"></div>
+				</div>
+			</div>
+			<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-right disclaimer">{{locale.salesason}} {{updationDate | date : 'dd/MM/yyyy'}}</div>
+		</div>
+	</div>
+</div> -->
+
+<!--New Ui Changes Starts Here-->
+<div class="row">
+    <div class="mob-header">
+        <abw-header data-abwheader-config="abwheaderConfig"></abw-header>
+    </div>
+    <transparent-screen></transparent-screen>
+    <div class="view-container">
+        <module-nav config='config'></module-nav>
+        <div style="overflow: scroll;" class="content-wrapper sales-wrapper container-fluid" ng-init="init()">
+            <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 noPadding userSelectCont row" ng-class="{'userSelectCont': userType=='ZBM' || userType=='ABM'}">
+                <div ng-if="userType=='ZBM'" class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                    <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 noPadding rightAlign">
+                        <label class="userSelectLabel"> {{locale.ABMUser}} </label>
+                    </div>
+                    <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
+                        <select ng-init="$parent.selectedABM = ABMUsers[0]" class="dropDownIcon userDropdown fontRobotoMedium noOutline performanceTable full-width" ng-model="$parent.selectedABM" ng-options="user as user|formatter for user in ABMUsers" ng-change="onSelectABMChange()"></select>
+                    </div>
+                </div>
+                <div ng-if="TBMUsers.length>0" class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                    <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 noPadding ">
+                        <label class="userSelectLabel">{{locale.TBMUser}} </label>
+                    </div>
+                    <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
+                        <select ng-init="$parent.selectedTBM = TBMUsers[0]" class="dropDownIcon userDropdown fontRobotoMedium noOutline performanceTable  full-width" ng-model="$parent.selectedTBM" ng-options="user as user|formatter for user in TBMUsers" ng-change="onSelectTBMChange()"></select>
+                    </div>
+                </div>
+            </div>
+                </div>
+            <div class="lineGraph-wrapper">
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-center row">
+                    <h2>{{updationDate | date:"MMMM ''''yy" }}</h2>
+                </div>
+                <div class="row fullHeight linechart">
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                        <canvas id="line" class="chart chart-line" chart-data="endData" chart-labels="labels" chart-series="series" chart-options="options"></canvas>
+                    </div>
+                    <div class="doughnut-legend">{{locale.primarySales}}</div>
+                </div>
+            </div>
+
+
+            <!-- 	<div class="row fullHeight linechart">
+		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+			<canvas id="line" class="chart chart-line" chart-data="midData"
+				chart-labels="labels" chart-series="series" chart-options="options"></canvas>
+		</div>
+		<div class="doughnut-legend">{{locale.primarySales}} - {{locale.midMonth}}</div>
+	</div>
+	<div class="spacingDiv"></div> -->
+
+            <div class="spacingDiv"></div>
+            <div class="row linechart">
+                <div class="speedometer-wrapper">
+                    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6" id="speedometerChart">
+                        <!--<canvas id="doughnut" class="chart chart-doughnut"-->
+                        <!--chart-data="p1TargetData" chart-labels="doughnutLabels" chart-colours="DoughnutColours">-->
+                        <!--</canvas> -->
+                        <div>
+                            <ridge-speedometer x-val="p1TargetData" x-conf="{
+										wobble : false,
+										backgroundColor : 'white',
+										markerColor : 'black',
+										smallTickColor : 'gray',
+										smallTickIncrement : 2,
+										largeTickColor : 'black',
+										max : 140,
+										endOfWarningDegree : 220,
+										endOfNormalDegree : 280,
+										warningColor : 'rgb(0, 255, 0)',
+										normalColor : 'rgb(255, 0, 0)'
+									}" />
+                        </div>
+                        <div class="doughnut-legend">{{locale.p1Target}}: {{P1Target | currency: locale.currency+' ' }}{{locale.lakhs}}</br>
+                            {{locale.p1Sales}}: {{P1_Sales/100000 | currency: locale.currency+' ' }}{{locale.lakhs}}</div>
+                    </div>
+                </div>
+                <div class="speedometer-wrapper">
+                    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                    <!--<canvas id="doughnut" class="chart chart-doughnut"-->
+                    <!--chart-data="p2TargetData" chart-labels="doughnutLabels" chart-colours="DoughnutColours">-->
+                    <!--</canvas> -->
+                    <div>
+                        <ridge-speedometer x-val="p2TargetData" x-conf="{
+										wobble : false,
+										backgroundColor : 'white',
+										markerColor : 'black',
+										smallTickColor : 'gray',
+										smallTickIncrement : 2,
+										largeTickColor : 'black',
+										max : 140,
+										endOfWarningDegree : 220,
+										endOfNormalDegree : 280,
+										warningColor : 'rgb(0, 255, 0)',
+										normalColor : 'rgb(255, 0, 0)'
+									}" />
+                    </div>
+                    <div class="doughnut-legend">{{locale.p2Target}}: {{P2Target | currency: locale.currency+' ' }}{{locale.lakhs}}</br>
+                        {{locale.p2Sales}}: {{P2_Sales/100000 | currency: locale.currency+' ' }}{{locale.lakhs}}</div>
+                </div>
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <div class="row">
+                <div class="selSummary">
+                    <div>
+                        <div class="left-content">
+                            <p class="ng-binding">{{locale.totalSales}}</p>
+                        </div>
+                        <div class="right-content">
+                            <label class="ng-binding">{{locale.currency}} {{convertToLakhs(TotalSales)}}</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="selSummary">
+                    <div>
+                        <div class="left-content">
+                            <p class="ng-binding">{{locale.p1Sales}}</p>
+                        </div>
+                        <div class="right-content">
+                            <label class="ng-binding">{{locale.currency}} {{convertToLakhs(P1_Sales)}}</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="selSummary">
+                    <div>
+                        <div class="left-content">
+                            <p class="ng-binding">{{locale.p2Sales}}</p>
+                        </div>
+                        <div class="right-content">
+                            <label class="ng-binding">{{locale.currency}} {{convertToLakhs(P2_Sales)}}</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="selSummary">
+                    <div>
+                        <div class="left-content">
+                            <p class="ng-binding">{{locale.totalPending}}</p>
+                        </div>
+                        <div class="right-content">
+                            <label class="ng-binding">{{locale.currency}} {{convertToLakhs(TotalPending)}}</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="selSummary">
+                    <div>
+                        <div class="left-content">
+                            <p class="ng-binding">{{locale.totalGoodsReturn}}</p>
+                        </div>
+                        <div class="right-content">
+                            <label class="ng-binding">{{locale.currency}} {{convertToLakhs(TotalGoodsReturn)}}</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="selSummary">
+                    <div>
+                        <div class="left-content">
+                            <p class="ng-binding">{{locale.p1GoodsReturn}}</p>
+                        </div>
+                        <div class="right-content">
+                            <label class="ng-binding">{{locale.currency}} {{convertToLakhs(p1GoodsReturn)}}</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="selSummary">
+                    <div >
+                        <div class="left-content">
+                            <p class="ng-binding">{{locale.p2GoodsReturn}}</p>
+                        </div>
+                        <div class="right-content">
+                            <label class="ng-binding">{{locale.currency}} {{convertToLakhs(p2GoodsReturn)}}</label>
+                        </div>
+                    </div>
+                </div>
+                    </div>
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-right disclaimer">{{locale.salesason}} {{updationDate | date : 'dd/MM/yyyy'}}</div>
+            </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--New Ui Changes Starts Here-->

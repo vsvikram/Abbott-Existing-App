@@ -1,0 +1,60 @@
+<section class="filter-section animated" ng-class='{slideInRight:openDashboardFilter, slideOutRight:openDashboardFilter === false}'>
+    <div class="filter-head-wrapper">
+        <div class="filter-head">
+            <h3>Filters</h3>
+        </div>
+        <div class="filter-close" ng-click="closeDashboardFilter()">
+            <img src="assets/img/icons/close-button-filter.png">
+        </div>
+    </div>
+    <div class="filter-content-wrapper" data-perfect-scroll>
+        <div class="filter-content">
+            <div class="filter-title">
+                <h4>ZONE</h4>
+                <p class="clear-button">Clear</p>
+            </div>
+            <div class="filter-condition">
+                    <div class="filter-unit" data-ng-click="applyFilter('zone','zone1')">
+                        <input type="checkbox" id="zone1">
+                        <label for="zone1">Zone 1</label>
+                    </div>
+                    <div class="filter-unit" data-ng-click="applyFilter('zone','zone2')">
+                        <input type="checkbox" id="zone2">
+                        <label for="zone2">Zone 2</label>
+                    </div>
+            </div>
+        </div>
+        <div class="filter-content">
+            <div class="filter-title">
+                <h4>AREA</h4>
+                <p class="clear-button">Clear</p>
+            </div>
+            <div class="filter-condition">
+                    <div class="filter-unit" data-ng-click="applyFilter('area','area1')">
+                        <input type="checkbox" id="li1">
+                        <label for="li1">Area 1</label>
+                    </div>
+                    <div class="filter-unit" data-ng-click="applyFilter('area','area2')">
+                        <input type="checkbox" id="li2">
+                        <label for="li2">Area 2</label>
+                    </div>
+            </div>
+        </div>
+        <div class="filter-content">
+            <div class="filter-title">
+                <h4>TERRITORY</h4>
+                <p class="clear-button">Clear</p>
+            </div>
+            <div class="filter-condition">
+                    <div class="filter-unit" data-ng-click="applyFilter('territory','territory1')">
+                        <input type="checkbox" id="t1">
+                        <label for="t1">Territory 1</label>
+                    </div>
+                    <div class="filter-unit" data-ng-click="applyFilter('territory','territory2')">
+                        <input type="checkbox" id="t2">
+                        <label for="t2">Territory 2</label>
+                    </div>
+            </div>
+        </div>
+    </div>
+</section>

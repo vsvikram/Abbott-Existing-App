@@ -1,0 +1,27 @@
+<div class='btn-group' data-ng-class='{open: open, jfwSelectField: customerType=="Doctor"}'>
+    <button class='btn btn-small selectMainHead'>
+        <span class="select fontSizeAdjustment fontRobotoLight" ng-if="model.length!=0">{{model.length}} {{locale.Selected}}</span>
+          <span class="select fontSizeAdjustment fontRobotoLight" ng-if="model.length==0">{{buttonDefaultText}}</span>
+    </button>
+    <button class='btn btn-small dropdown-toggle dropdownIcon' ng-disable="disableEdit" data-ng-click='openDropdown()'>
+        <span class='caret'></span>
+    </button>
+    <ul class='dropdown-menu dropdownAdjustment' aria-labelledby='dropdownMenu'>
+        <li data-ng-repeat="option in noneOptions | orderBy:['designation','name'] | unique" ng-if="!isNonFieldWork">
+            <a data-ng-click='toggleSelectItem(option)' class="selectOptions">
+                <span data-ng-class='getClassName(option)' class="imageAdjustment" aria-hidden='true'></span>
+                <span class="optionNames">{{option.name}}</span>
+            </a>
+            <div class="seperator"></div>
+        </li>
+        <li data-ng-repeat="option in options | orderBy:['designation','name'] | unique">
+            <a data-ng-click='toggleSelectItem(option)' class="selectOptions">
+                <span data-ng-class='getClassName(option)' class="imageAdjustment" aria-hidden='true'></span>
+                <!--<span ng-if="$index==0 && !isNonFieldWork" class="optionNames">{{option.name}}</span>-->
+                <!--<span ng-if="($index>0 && !isNonFieldWork) || isNonFieldWork" class="optionNames">{{option.name}}{{option.designation ? "("+option.designation +")" : ''}}</span>-->
+                <span class="optionNames">{{option.name}}{{option.designation ? "("+option.designation +")" : ''}}</span>
+            </a>
+            <div class="seperator"></div>
+        </li>
+    </ul>
+</div>

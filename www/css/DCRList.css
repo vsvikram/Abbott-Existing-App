@@ -1,0 +1,42 @@
+
+.dcrList-wrapper{
+	    background-color: #f4f4f4;
+}
+.arrow-wrap{
+	padding-right: 2.98vw;
+	padding-left: 2.98vw;
+	float:left;
+	width:100%;
+
+}
+.dcrList-list-item{
+	width: 100%;
+	display: block;
+	background-color: #fff;
+   margin-top: 2.78vw;
+}
+.dcrList-side{
+	    display: block;
+    width: 100%;
+    padding-left: 6.85vw;
+    padding-right: 4.81vw;
+    padding-bottom: 6.94vw;
+    padding-top: 6.94vw;
+
+}
+.dcrList-item-three{
+  display: inline-block;
+    float: right;
+}
+.dcrList-item-three img{
+  height: 3.15vw;
+    width: 1.5vw;
+}
+.dcrList-item-two{
+    display: inline-block;
+}
+.dcrList-list-desc{
+font-size: 0.938rem;
+    font-family: OpenSans;
+    font-weight: bold;
+}

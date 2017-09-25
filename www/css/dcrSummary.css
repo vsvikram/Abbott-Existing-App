@@ -1,0 +1,120 @@
+.dcrSummary-wrapper{
+      background-color: #f4f4f4;
+        padding-bottom: 29vw;
+}
+.summary{
+      clear: both;
+  padding-right: 2.78vw;
+  padding-left: 2.78vw;
+
+}
+.summary-head{
+  padding: 4.63vw 6.76vw;
+}
+.summary-head p{
+font-size: 0.833rem;
+    font-family: OpenSans;
+    font-weight: 700;
+    color: #9c2757;
+}
+.summaryLists-list-item{
+  width: 100%;
+  display: block; 
+  background-color: #fff;
+ padding-left: 2.52vw;
+     padding-right: 2.52vw;
+     padding-top: 4.63vw;
+}
+.summaryLists-side{
+      display: block;
+    width: 100%;
+    border-bottom: 1px solid #c2c2c2;
+ padding-bottom: 4.63vw;
+    
+}
+.summaryLists-item-check{
+  display: inline-block;
+    float: right;
+    font-size: 0.833rem;
+    font-family: OpenSans;
+    font-weight: bold;
+    color: #f9db87;
+}
+
+.summaryLists-item-two{
+    display: inline-block;
+    position: relative;
+}
+.summaryLists-list-desc{
+font-size: 0.833rem;
+    font-family: OpenSans;
+    font-weight: bold;
+    color: #414042;
+}
+.summaryDesc{
+  font-size: 0.729rem;
+  font-family: OpenSans;
+  font-weight: 400;
+  color: #8a8a8b;
+}
+.summary .summaryLists-list-item:last-child .summaryLists-side {
+    border: none;
+}
+
+.summaryLists-list-sub span{
+  font-size: 0.729rem;
+  font-family: OpenSans;
+  font-weight: 400;
+  color: #8a8a8b;
+      display: inline-block;
+    padding-right: 5vw;
+        position: relative;
+}
+/*.summaryLists-list-sub{
+  position: relative;
+
+}*/
+.summaryLists-list-sub span:first-of-type:before{
+  content: '';
+      height: 3.5vw;
+      width: 0.28vw;
+      background: #8a8a8b;
+      position: absolute;
+      right: 1.6vw;
+      top: 0;
+      bottom: 0;
+      margin: auto;
+}
+.dcrDocList-image {
+ background-repeat: no-repeat;
+    background-size: 100%;
+    background-position: right;
+    position: absolute;
+    width: 3.5vw;
+    height: 7vw;
+        bottom: -9vw;
+    right: 2.96vw;
+}
+
+
+.summarySubmit button{
+    width: 90.56vw;
+    height: 14.35vw;
+    font-family: OpenSans;
+    font-size: 1.042rem;
+    background: #9c2757;
+    border: none;
+    color: #fff;
+    font-weight: 500;
+}
+.summarySubmit{
+text-align: center;
+    position: absolute;
+  bottom: 8.19vw;
+    left: 0;
+    right: 0;
+  }
+.popup-content p{
+  padding-bottom: 10.63vw !important;
+}
+

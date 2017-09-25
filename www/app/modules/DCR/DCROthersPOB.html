@@ -1,0 +1,38 @@
+<div class="common-height" ng-controller="DCROthersPOBController" ng-init="init()">
+	<!-- <header class="header"> -->
+	<div class="pob-table-headcont zPositionAbove">
+		<table class="pob-table">
+			<tr class="fontRobotoRegular pob-header-row">
+				<th class="brandCol">{{locale.Brand}}</th>
+				<th class="POBCol">{{locale.POBRs}}</th>
+			</tr>
+		</table>
+	</div>
+	<!-- </header> -->
+
+	<div class="pob-table-listcont">
+		<table class="pob-table">
+			<tr class="fontRobotoLight pob-table-row" ng-repeat="item in compInfoDetails">
+				<td class="brandCol">{{item.brandName}}</td>
+				<td class="POBCol">
+				<input only-digits type="text" pattern="\d*" ng-model="item.POB" scroll-page-up="pob-table-listcont"/>
+				</td>
+			</tr>
+		</table>
+	</div>
+
+	<nav class="navbar navbar-default pob-footer">
+		<div class="col-xs-6 col-sm-6 v-center">
+			<div class="content fontRobotoLight common-lstvisit">
+				{{docInfoText}}
+			</div>
+		</div>
+		<div class="col-xs-6 col-sm-6 rightContent v-center">
+			<div class="content">
+				<button ng-click="saveCompInfo()" class="pob-footer-savebtn">
+					{{locale.Save}}
+				</button>
+			</div>
+		</div>
+	</nav>
+</div>

@@ -1,0 +1,61 @@
+<div class="common-height"  ng-controller="DCROthersFollowUpActivityController" ng-init="init()">
+	<div class="followup-table-headcont zPositionAbove">
+		<table class="followup-table">
+			<tr class="fontRobotoRegular followup-header-row">
+				<td class="followup-subject-col">{{locale.Subject}}</td>
+				<td class="followup-date-col">{{locale.Date}}</td>
+				<td class="followup-comment-col">{{locale.Comment}}</td>
+				<td class="followup-action-col">{{locale.Action}}</td>
+			</tr>
+		</table>
+	</div>
+
+	<div class="followup-table-listcont">
+		<table class="followup-listheader">
+			<tr class="fontRobotoLight followup-listheader-row">
+				<td class="followup-subject-col">
+				<input scroll-page-up="followup-table-listcont" type="text" ng-model="defaultSubject" class="inputbox1 subjectCol" placeholder="{{!disableEdit && locale.freeTextPlaceholder || locale.blank}}">
+				</td>
+				<td class="followup-date-col">
+				<input for="datepick" class="followup-date calenderIcon" style="height:2em;width:10em;" type="date" ng-model="defaultDate">
+				</td>
+				<td class="followup-comment-col">
+				<input scroll-page-up="followup-table-listcont" type="text" ng-model="defaultComment" class="inputbox3 " placeholder="{{!disableEdit && locale.freeTextPlaceholder || locale.blank}}"/>
+				</td>
+				<td class="followup-action-col"><div data-index="{{$index}}" type="button" class="addIcon followup-addicon" ng-disabled="disableEdit" ng-click="disableEdit || addRow()" value="Add"></div><div data-index="{{$index}}" type="button" class="deleteIcon followup-deleteicon" ng-disabled="disableEdit" ng-click="disableEdit || clearRow()"></div></td>
+			</tr>
+		</table>
+		<div class="followup-list">
+			<table class="followup-listtable">
+				<tr valign="top" ng-repeat="rowContent in dataArray" class="fontRobotoLight followup-listheader-row">
+					<td class="followup-subject-col">
+					<input scroll-page-up="followup-table-listcont" type="text" id="subject" ng-model="rowContent.Subject__c" class="inputbox1" placeholder="{{!disableEdit && locale.freeTextPlaceholder || locale.blank}}">
+					</td>
+					<td class="followup-date-col">
+					<div id="Date" class="date-div" >{{rowContent.Date__c | date:'d/M/yyyy'}}</div>
+					</td>
+					<td class="followup-comment-col">
+					<input scroll-page-up="followup-table-listcont" type="text" id="Comment" ng-model="rowContent.Comment__c" class="inputbox3" placeholder="{{!disableEdit && locale.freeTextPlaceholder || locale.blank}}"/>
+					</td>
+					<td class="followup-action-col"><div type="button" class="removeIcon followup-removeicon" ng-click="removeRow($index)" value="remove"></div></td>
+				</tr>
+			</table>
+		</div>
+	</div>
+	<nav class="navbar navbar-default followup-footer">
+		<div class="col-xs-6 col-sm-6 v-center">
+			<div class="content fontRobotoLight common-lstvisit">
+				{{docInfoText}}
+			</div>
+		</div>
+		<div class="col-xs-6 col-sm-6 rightContent v-center">
+			<div class="content">
+				<button ng-click="saveCompInfo()" class="followup-savebtn">
+					{{locale.Save}}
+				</button>
+			</div>
+		</div>
+	</nav>
+
+</div>
+

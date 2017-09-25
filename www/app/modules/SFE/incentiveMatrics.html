@@ -1,0 +1,151 @@
+<!--<transparent-screen></transparent-screen>
+<navigation-bar is-hidden=false
+	header-title="{{locale.incentiveMatrics}}" left-side-icon="back"
+	previous-screen-name="{{locale.SFE}}" is-display-header-title=true
+	is-display-logged-in-user=true></navigation-bar>
+<div class="fullDiv appContent" ng-init="init()">
+	<div class="row midDivFull">
+		<div class="container-fluid performnaceMatrixCont">
+			<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 noPadding userSelectCont"
+			ng-class="{'userSelectCont': userType=='ZBM' || userType=='ABM'}">
+				<div ng-if="userType=='ZBM'"
+				class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+					<div
+					class="col-xs-4 col-sm-4 col-md-4 col-lg-4 noPadding rightAlign">
+						<label> {{locale.ABMUser}} </label>
+					</div>
+					<div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
+						<select ng-init="$parent.selectedABM = ABMUsers[0]"
+							class="dropDownIcon userDropdown fontRobotoMedium noOutline performanceTable full-width"
+							ng-model="$parent.selectedABM"
+							ng-options="user as user|formatter for user in ABMUsers"
+							ng-change="onSelectABMChange()"></select>
+					</div>
+				</div>
+				<div ng-if="TBMUsers.length>0"
+				class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+					<div
+					class="col-xs-4 col-sm-4 col-md-4 col-lg-4 noPadding rightAlign">
+						<label>{{locale.TBMUser}} </label>
+					</div>
+					<div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
+						<select ng-init="$parent.selectedTBM = TBMUsers[0]"
+							class="dropDownIcon userDropdown fontRobotoMedium noOutline performanceTable  full-width"
+							ng-model="$parent.selectedTBM"
+							ng-options="user as user|formatter for user in TBMUsers"
+							ng-change="onSelectTBMChange()"></select>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+				<div class="col-xs-5 col-sm-5 col-md-5 col-lg-5 dcmLabel">
+					<label>{{locale.eligible}} {{previousMonth}}</label>
+				</div>
+				<div class="col-xs-7 col-sm-7 col-md-7 col-lg-7 dcmValueContainer">
+					<div class="col-xs-11 col-sm-11 col-md-11 col-lg-11 dcmValue">{{eligibleCurrentMonth | currency: locale.currency+' '}}</div>
+					<div class="col-xs-1 col-sm-1 col-md-1 col-lg-1"></div>
+				</div>
+			</div>
+			<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+				<div class="col-xs-5 col-sm-5 col-md-5 col-lg-5 dcmLabel">
+					<label>{{locale.earned}} {{twoMonthBack}}</label>
+				</div>
+				<div class="col-xs-7 col-sm-7 col-md-7 col-lg-7 dcmValueContainer">
+					<div class="col-xs-11 col-sm-11 col-md-11 col-lg-11 dcmValue">{{earnedPreviousMonth | currency: locale.currency+' '}}</div>
+					<div class="col-xs-1 col-sm-1 col-md-1 col-lg-1"></div>
+				</div>
+			</div>
+			<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+				<div class="col-xs-5 col-sm-5 col-md-5 col-lg-5 dcmLabel">
+					<label>{{locale.earned}} {{locale.YTD}}</label>
+				</div>
+				<div class="col-xs-7 col-sm-7 col-md-7 col-lg-7 dcmValueContainer">
+					<div class="col-xs-11 col-sm-11 col-md-11 col-lg-11 dcmValue">{{earnedYTD | currency: locale.currency+' '}}</div>
+					<div class="col-xs-1 col-sm-1 col-md-1 col-lg-1"></div>
+				</div>
+			</div>
+
+		</div>
+
+	<div>
+		<button class="btn incentiveCalculatorBtn" ng-click="navigateToIncentiveCalculator()">{{locale.incentiveCalculator}}</button>
+	</div>
+	</div>
+</div>-->
+<!--New Changes Starts here-->
+<div class="row">
+	<div class="mob-header">
+		<abw-header data-abwheader-config="abwheaderConfig"></abw-header>
+	</div>
+	<transparent-screen></transparent-screen>
+	<div class="view-container">
+		<module-nav config='config'></module-nav>
+		<div class="incentive-wrapper page-wrap" ng-init="init()">
+			<div class="incentive-lists content-wrapper">
+				<div class="expenseGes-content">
+					<div class="selSummary" ng-if="userType=='ZBM'">
+						<div class="row">
+							<div class="col-xs-4 left-content">
+								<p>{{locale.ABMUser}}</p>
+							</div>
+							<div class="col-xs-8 right-content">
+								<label>
+									<select ng-init="$parent.selectedABM = ABMUsers[0]" class="dropDownIcon userDropdown fontRobotoMedium noOutline performanceTable full-width" ng-model="$parent.selectedABM" ng-options="user as user|formatter for user in ABMUsers" ng-change="onSelectABMChange()"></select>
+								</label>
+							</div>
+						</div>
+					</div>
+					<div class="selSummary" ng-if="TBMUsers.length>0">
+						<div class="row">
+							<div class="col-xs-4 left-content">
+								<p>{{locale.TBMUser}}</p>
+							</div>
+							<div class="col-xs-8 right-content">
+								<label>
+									<select ng-init="$parent.selectedTBM = TBMUsers[0]" class="dropDownIcon userDropdown fontRobotoMedium noOutline performanceTable  full-width" ng-model="$parent.selectedTBM" ng-options="user as user|formatter for user in TBMUsers" ng-change="onSelectTBMChange()"></select>
+								</label>
+							</div>
+						</div>
+					</div>
+					<div class="selSummary">
+						<div class="row">
+							<div class="col-xs-6 left-content">
+								<p>{{locale.eligible}} {{previousMonth}}</p>
+							</div>
+							<div class="col-xs-6 right-content">
+								<label>{{eligibleCurrentMonth | currency: locale.currency+' '}}</label>
+							</div>
+						</div>
+					</div>
+					<div class="selSummary">
+						<div class="row">
+							<div class="col-xs-6 left-content">
+								<p>{{locale.earned}} {{twoMonthBack}}</p>
+							</div>
+							<div class="col-xs-6 right-content">
+								<label>{{earnedPreviousMonth | currency: locale.currency+' '}}</label>
+							</div>
+
+						</div>
+					</div>
+					<div class="selSummary">
+						<div class="row">
+							<div class="col-xs-6 left-content">
+								<p>{{locale.earned}} {{locale.YTD}}</p>
+							</div>
+							<div class="col-xs-6 right-content">
+								<label>{{earnedYTD | currency: locale.currency+' '}}</label>
+							</div>
+
+						</div>
+					</div>
+					<div class="doc-save-button" ng-click="navigateToIncentiveCalculator()">
+						<button>{{locale.incentiveCalculator}}</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!--Mew Changes Ends Here-->

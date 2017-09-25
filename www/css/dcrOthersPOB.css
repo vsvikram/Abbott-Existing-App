@@ -1,0 +1,104 @@
+.pob-table-headcont {
+	height: 13%;
+}
+
+.pob-table {
+	height:100%;
+	width:100%;
+}
+
+.pob-header-row {
+	background-color: #0EB4D6;
+	height: 100%;
+	color:#FFFFFF;
+	font-size:0.813em;
+}
+
+.brandCol{
+	width:25%;
+}
+.POBCol{
+	width:75%;
+}
+
+.pob-table-listcont {
+	height:72%;
+	overflow-y: auto;
+	width:100%
+}
+
+.pob-table-row {
+   font-size: .9em;
+   border-bottom: 1px solid #EDEDED;
+   color: #666666;
+   height: 3em;
+}
+
+.pob-table-row td, .pob-header-row th {
+	padding-left:0.5em;
+}
+
+.pob-footer {
+	background-color:white;
+	border:none;
+	height: 15%;
+	min-height:0px;
+}
+
+.pob-footer-savebtn {
+	background: #0EB4D6;
+    border-radius: 0.4em;
+    border: none;
+    color: #ffffff;
+    width: 50%;
+    float:right;
+    height: 2.5em;
+    margin-left: 0.2em;
+    margin-right: 0.2em;
+    font-size: 0.813em;
+}
+
+.myTable { 
+    width: 100%;
+    background-color: white;
+    //border-collapse: collapse; 
+	height:2em;
+	table-layout:fixed:
+	}
+.myTable th {
+    padding: 0.5em;
+    border: 0em solid rgba(0, 0, 0, 0);
+ }
+.myTable td, .myTable th {
+    background-color: #0eb4d6;
+    color: white;
+    width: 0em;
+	padding: 0.5em;
+	font-size:.813em;
+}
+
+#footer
+{
+position: absolute; 
+bottom: 3em;
+padding-left:1%;
+
+}
+#click
+{
+
+background-color: #0eb4d6;
+color: white;
+position:absolute;
+bottom: 3em;
+right:2%;
+width:10em;
+}
+#box
+{
+height: 1.562em;
+}
+
+.dcr-others-height {
+	height:87%;
+}

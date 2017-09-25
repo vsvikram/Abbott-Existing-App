@@ -1,0 +1,61 @@
+:root {
+    font-size: 4.45vw;
+}
+
+body {
+    font-size: 1rem;
+    font-family: 'OpenSans';
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+    margin: 0;
+    padding: 0;
+}
+
+.pi-view-container {
+    height: calc(100vh - (17.78vw + 13.89vw));
+    overflow-y: auto;
+    overflow-x: hidden;
+    background-color: #f4f4f4;
+    padding: 0 4.44vw;
+}
+
+.sub-head-wrap {
+    float: left;
+    width: 100%;
+    padding-top: 6vw;
+    padding-bottom: 2vw;
+}
+
+.sub-head-wrap .sub-head {
+    font-size: 1.250rem;
+    font-family: 'OpenSans';
+    font-weight: 500;
+    color: #9c2757;
+}
+
+.footnote{
+    color:rgba(0,0,0,0.7);
+    font-family: 'OpenSans';
+    font-size: 0.500rem;
+    font-weight: normal;
+}
+
+.content-box {
+    float: left;
+    width: 100%;
+    box-shadow: 0px 0px 9px 0px rgba(0, 0, 0, 0.05);
+    background-color: #ffffff;
+    border-radius: 0.5vw;
+    margin-bottom: 4.44vw;
+}
+
+.animated {
+    animation-duration: 0.5s;
+}

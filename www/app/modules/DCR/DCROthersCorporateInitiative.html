@@ -1,0 +1,31 @@
+<div class="common-height" ng-controller="DCROthersCorporateInitiativeController" ng-init="init()">
+	<div class="corpinit-container">
+		<table class="corpinit-table">
+			<tr class="corpinit-table-row fontRobotoLight" data-ng-repeat="x in compInfoDetail track by x.corpInitiativeId">
+				<td class="corpinit-checkboxcol">
+				<input type="checkbox" id="data{{$index}}" ng-model="x.isTicked"  ng-change="onChange({{$index}})"/>
+				<label for="data{{$index}}"></label></td>
+				<td><span>{{ x.corpInitiativeName}}</span></td>
+			</tr>
+		</table>
+		<div class="corpinit-nodata" ng-if="corpDataNotAvailable">
+			{{locale.NoDataAvailable}}
+		</div>
+	</div>
+
+	<nav class="navbar navbar-default corpinit-footer">
+		<div class="col-xs-6 col-sm-6 v-center">
+			<div class="content fontRobotoLight common-lstvisit">
+				{{docInfoText}}
+			</div>
+		</div>
+		<div class="col-xs-6 col-sm-6 rightContent v-center">
+			<div class="content">
+				<button ng-click="saveCompInfo()" class="corpinit-footer-savebtn">
+					{{locale.Save}}
+				</button>
+			</div>
+		</div>
+	</nav>
+</div>
+

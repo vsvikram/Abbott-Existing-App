@@ -1,0 +1,14 @@
+<div class="row">
+    <div class="col-xs-12">
+        <pi-header header-config="HeaderConfig"></pi-header>
+        <div class="row">
+                <div class="col-xs-12" style="padding-left: 0;padding-right: 0">
+                    <div class="pi-view-container">
+                    <ui-view></ui-view>
+                </div>
+            </div>
+        </div>
+        <scrollingfooter ng-if="showNormalFooter" brand-arr="brandArr"></scrollingfooter>
+        <doccoveragefooter  ng-if="! showNormalFooter"></doccoveragefooter>
+    </div>
+</div>

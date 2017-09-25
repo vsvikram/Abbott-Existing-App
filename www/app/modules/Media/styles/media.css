@@ -1,0 +1,32 @@
+#media{
+  display: -webkit-flex;
+  -webkit-flex-direction: column;
+  -webkit-user-select: none;
+}
+#media header{
+  display: -webkit-flex;
+  -webkit-justify-content: flex-end;
+  font-size: 15px;
+  padding: 0.5em 1em;
+  border-bottom: 1px solid rgb(94, 204, 225);
+  background-color: #eee;
+}
+#media button:active{
+  opacity: 0.6;
+}
+#media article{
+  -webkit-flex: 1;
+  margin: 0;
+}
+#media .scroll-content{
+  position: relative;
+  overflow: auto;
+  overflow-x: hidden;
+  -webkit-overflow-scrolling: touch;
+}
+#media .download-all{
+  width: 8em;
+}
+#media .list-group{
+  margin-bottom: 0;
+}

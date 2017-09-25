@@ -1,0 +1,58 @@
+.app-card { height: 17.96vw; width: 46.5vw; background: #fff; display: inline-block; float: left; }
+.app-card-wrapper { clear: both; float: left; margin-top: 3.2vw; }
+.app-card:nth-child(odd) { margin-right: 1.39vw; }
+.app-card { margin-top: 1.67vw; }
+.card-img { width: 30%; height: 100%; position: relative; display: inline-block; float: left; }
+.card-img img { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 100%; text-align: center; padding: 2vw; border-radius: 4.2vw; overflow: hidden;}
+.card-details { width: 70%; height: 100%; display: inline-block; float: left; }
+.app-name { font-size: 0.68rem; display: inline-block; float: left; color:#414042; font-weight: 500; overflow: hidden; max-width: 80%; white-space: nowrap; text-overflow: ellipsis; }
+.app-date { font-size: 0.45rem; clear: both; color:#414042; }
+.app-status {font-size: 0.375rem;color: #4bae4a;float: right;margin-top: -1.7vw; font-weight:500;}
+.dot-img { background-repeat: no-repeat; background-size: 50%; position: absolute; top: 3vw; right: 2vw; }
+.dot-img img { max-width: 100%; max-height: 100%; }
+.card-details { padding: 3.52vw 2.78vw  3.15vw 2.78vw; background-repeat: no-repeat; background-size: 1.8%; background-position: 90% 25%; position: relative; }
+.star-ratings img { width: 2.31vw; }
+//.star-ratings{float:left; width:100%;}
+.card-details .status{clear:both;}
+.rated-star, .half-rated-star,
+.rating-star {background-size: 100%;background-repeat: no-repeat;background-position: 5%;padding: 0.65vw;float: left;line-height: 4vw;margin-right: 0.3vw;}
+.dots-menu { width: 30vw; background: #fff; padding: 2.04vw; position: absolute; top: 0; box-shadow: 0px 0px 57px 0px rgba(0, 0, 0, 0.23); }
+.dots-menu div span { color: #414042; font-weight:500; font-size: 0.7rem; height: 8.19vw; line-height: 8.19vw; display: block; padding-left: 1vw; }
+.dots-menu div:last-of-type span { border-top: 1px solid #d9d9d9 }
+@media screen 
+and (min-width:980px) {
+	.app-card:nth-child(odd) { margin-right: 0.63vw; }
+	.app-card-wrapper { margin-top: 0; overflow-x: scroll; width: 100%; white-space: nowrap; }
+	.app-card { height: 9.38vw; width: 24.38vw; float: none; margin-right: 0.78vw; }
+	.app-name { font-size: 1.313rem; }
+	.app-date { font-size: 0.875rem; }
+	.star-ratings img { width: 1.17vw; }
+	.dot-img { top: 1.5vw; right: 1.5vw; background-size: 90%; }
+	.card-details { padding: 1.95vw 1.41vw 1.72vw 0.72vw; background-repeat: no-repeat; background-size: 1.7%; background-position: 84% 30%; }
+	.app-status { font-size: 0.750rem; margin-top: -0.4vw; }
+	.card-img img { padding: 1vw; }
+	.rated-star,
+	.rating-star { background-size: 100%; background-repeat: no-repeat; background-position: 5%; padding: 0.46vw; }
+	.dots-menu { width: 12.66vw; padding: 0; right: 0 }
+	.dots-menu div { text-align: center; }
+	.dots-menu div span{ color: #414042; font-size: 1rem; height: 5.63vw; line-height: 5.63vw; display: block; }
+	
+}
+.app-card-toggle {
+    position: absolute;
+    left: 0;
+    top:0;
+    width: 100%;
+    z-index: 100;
+    height: 100%;
+        background-color: transparent;
+    display: none;
+}
+
+.app-card-toggle.active{
+	display: block;
+}
+
+.dots-menu{
+	z-index: 150;
+}

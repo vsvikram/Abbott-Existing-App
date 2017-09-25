@@ -1,0 +1,48 @@
+.callDetails-content-wrapper { font-size: 0.625rem; width: 100%; float: left; padding: 3.89vw 3.8vw 3.24vw 2.78vw; color: #8a8a8b;padding-bottom: 30vw; }
+.brand-wrap { width: 100%; background: #fff; padding-left: 3.7vw; float: left; padding-right: 2.7vw; padding-top: 5vw; padding-bottom: 4.63vw; margin-bottom: 1.85vw; }
+.brand-wrap h3 { font-size: 0.813rem; color: #000; padding-bottom:2vw;}
+.inputSelect-group select { width: 35.93vw; }
+.inputSelect-select { position: relative; display: inline-block; }
+.inputSelect-wrap { float: right; }
+.inputSelect-group input { margin-left: 4.26vw; width: 9.26vw; margin-right: 1.85vw; border: none; background: transparent; border-bottom: 1px solid #d1d1d1; }
+.inputSelect-group select { border: none; background: transparent; border-bottom: 1px solid #d1d1d1; }
+.callDetails-content-wrapper label { font-weight: normal; width:18%;}
+.add-more-button, .delete-row-button { display: inline-block; float: right; background-repeat: no-repeat; background-size: 100%; background-position: center; height: 3.33vw; width: 3.33vw; margin-top: 0 !important; }
+.delete-row-button { margin-right: 3.19vw; margin-left: 3.19vw; }
+.select-group, .inputSelect-group { position: relative; padding-top: 0; clear: both; width: 100% }
+.select-group select { width: 53vw; margin-left: 5vw; border: none; background: transparent; border-bottom: 1px solid #d1d1d1; }
+.inputSelect-select::before { content: ' '; position: absolute; width: 3.15vw; height: 2.04vw; background-size: 100%; background-repeat: no-repeat; right: 1vw; bottom: 2vw; }
+.brand-wrap select, .brand-wrap input { color: #000; }
+.check-group { padding-top: 10.19vw; }
+.check-group .check-btn { display: inline-block; margin-left: 3.24vw; }
+.callDetails-content-wrapper .butn-wrapper { position: absolute; width: 94%; bottom: 4vw; }
+.enterDetailSpace {    width: 100%; display: block; margin-bottom: 3vw;}
+.enterDetailSpace .inputSelect-group {
+    padding: 1vw 0;
+    width: auto;
+    clear: none;
+    display: inline-block;
+}
+.chemistWrapper .brandLists{    width: 100%;
+                                padding-left: 3.7vw;
+                                float: left;
+                                padding-right: 2.7vw;
+                                padding-top: 3vw;
+                                margin-bottom: 1.85vw;}
+.chemistWrapper .brandLists .inputSelect-select{width: 88%;}
+.chemistWrapper .brandLists .inputSelect-group select{ width: 100%; margin-bottom: 1vw;}
+ .chemistWrapper .brandLists .inputSelect-select .entercall-material{margin-top: 2vw;}
+ .chemistItems .inputSelect-wrap{width:100%;}
+ .chemistItems .inputSelect-select{ width: 100%; position: relative;}
+ .chemistItems .inputSelect-select::before{right: 22vw;}
+ .chemistItems .inputSelect-select select{float: left; display: inline-block; width: 70% !important;}
+ .chemistItems .inputSelect-select input{display: inline-block; float: left; margin-top: 1vw;}
+  .chemistItems .inputSelect-select .delete-row-button{ position: absolute; bottom: 0;}
+ .dcrDoc-wrpper .form-section .pobSpace{ padding: 4vw 0; }
+ .enterDetailSpace .inputSelect-select select{padding-right:4vw;}
+ .enterDetailSpace .inputSelect-wrap.inputSet   {transform: translate(27%);}
+ .enterDetailSpace .plus-btn > .add-more-button{position:absolute;}
+  .enterDetailSpace label + .inputSelect-group {
+     transform: none !important;
+ }
+  .enterDetailSpace .inputSelect-group{ transform: translate(27%);}

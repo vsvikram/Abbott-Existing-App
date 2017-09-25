@@ -1,0 +1,194 @@
+.searchIcon{
+ position:absolute;
+}
+
+
+span.expenseFiled {
+        font-size: 0.7rem;
+        font-weight: bold;
+        color: #40EF09;
+        position: absolute;
+        left: 10px;
+        top: 13px;
+}
+
+.expense {
+    height : 87%
+}
+
+.expense .searchbar {
+    height:3em;
+}
+
+.expense .searchbar .form-group {
+    margin-bottom:0.3em;
+    padding-top: 0.1em;
+}
+
+.expense .mainContent {
+    height: 100%;
+}
+
+.tableheader {
+    height: 3em; background-color: #0EB4D6;
+    color: #FFFFFF;
+    font-size: 0.9em;
+ }
+
+.expense .mainContent .tablebody {
+    height: calc(100% - 3em);
+    overflow-y: auto;;
+}
+
+.expense .mainContent .tablebody .even-row {
+   background: #f9f9f9;
+   padding-top: 0.5em;
+   padding-bottom: 0.5em;
+}
+
+.expensetab {
+    width: 50%;
+    height: 87%;
+    margin: 2% 22%;
+    box-shadow: 5px 5px 5px #888888;
+    background-color: #A4ADA8;
+}
+
+.ModalDialog{
+    color: #1B27D8;
+    float: right;
+    margin: 0.5em 1em;
+    border-bottom: solid 2px #000000;
+    display: inline;
+}
+
+body {
+  // Set the padding of the results window to 10px.
+  padding: 10px;
+}
+
+.modal-dialog {
+    position:fixed;
+    //width:auto;  // uncomment to make the width based on the left/right attributes.
+    margin:auto;
+    left:0px;
+    right:0px;
+    top:0px;
+    bottom:0px;
+}
+
+.modal-dialog .modal-content {
+      position:absolute;
+      left:10px;
+      right:10px;
+      top:10px;
+      bottom:10px;
+}
+
+.modal-dialog .modal-content .modal-header {
+        height:55px;
+}
+
+.modal-dialog .modal-content .modal-body {
+	      position: absolute;
+	      top: 0;
+	      bottom: 0;
+        left:0;
+        right:0;
+	      margin-top: 55px; // .modal-header height
+	      margin-bottom: 80px;  // .modal-footer height
+}
+
+.addRow{
+     color: #1B27D8;
+}
+ .expense-submission .panel-heading{
+      background-color: #9bb1d9;
+      height:25px;
+      font-size: 0.7em;
+      color: #FFF;
+      font-weight: bold;
+      padding: 4px 15px;
+}
+
+.initialpanel{
+      margin-top: 3.5em;
+}
+
+ .expense-submission .panel-body{
+     padding: 0px;
+ }
+
+ .expensebody{
+    width: 100%;
+    overflow: auto;
+}
+
+.expense-submission .expenseheader{
+         /*height: 3em;*/
+         background-color: #D4D7D8;
+         color: #131212;
+         font-size: 0.7em;
+         padding-top: 0.3em;
+         font-weight: bold;
+}
+
+.expense-submission .expenseInfo{
+      margin-top: 0.3em;
+      width: 100%;
+ }
+
+ .expense-title{
+    /*padding:0.5em 0;*/
+ }
+
+ .viewFareDiv{
+    margin:0.5em 0;
+ }
+
+ .viewFareBtn {
+    float: right;
+    padding:0;
+ }
+
+.actionBtn{
+	margin: 7px auto;
+}
+
+.centeredButton .btn.centered{
+   width:25%;
+   display:block;
+   margin: 0 auto;
+}
+
+.btn-expense{
+    margin-bottom:1em;
+    }
+/* added by GS*/
+.img-container{
+  /* height: 75px;*/
+   overflow: hidden;
+   float: left;
+}
+.img-container > img {
+     height: calc(100vh - 75vh);
+     width: 100%;
+     background-size: 100% 100%;
+     background-position: center;
+}
+
+
+input.customSelection.submitted.ng-invalid
+{
+  border:1px solid red;
+}
+
+.panel-heading .accordion-toggle:after {
+    font-family: 'Glyphicons Halflings';
+    content: "\e114";
+    float: right;
+    color: grey;
+}
+.panel-heading .accordion-toggle.collapsed:after {
+    content: "\e080";
+}

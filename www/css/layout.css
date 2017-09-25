@@ -1,0 +1,203 @@
+button:focus {outline: none !important;}
+select:focus {outline: none !important;}  
+textarea:focus {outline: none !important;}  
+
+@font-face {
+	font-family: 'RobotoLight';
+	src: url('../resources/fonts/Roboto-Light.ttf');
+}
+
+@font-face {
+	font-family: 'RobotoMedium';
+	src: url('../resources/fonts/Roboto-Medium.ttf');
+}
+
+@font-face {
+	font-family: 'RobotoRegular';
+	src: url('../resources/fonts/Roboto-Regular.ttf');
+}
+
+@font-face {
+	font-family: 'RobotoThin';
+	src: url('../resources/fonts/Roboto-Thin.ttf');
+}
+
+.fontRobotoLight {
+	font-family: RobotoLight;
+	-webkit-user-select: none;
+}
+
+.fontRobotoMedium {
+	font-family: RobotoMedium;
+	-webkit-user-select: none;
+}
+
+.fontRobotoRegular {
+	font-family: RobotoRegular;
+	-webkit-user-select: none;
+}
+
+.fontRobotoThin {
+	font-family: RobotoThin;
+	-webkit-user-select: none;
+}
+
+html, body {
+  height: 100%;  
+}
+
+.layout-wrapper {
+  height: 100%;
+  min-height: 100%;  
+}
+
+.appContent {
+	padding: 0;
+    height: calc(100% - 3em);
+}
+
+.noPadding {
+	padding: 0;
+}
+
+.headerRow {
+   
+    /*padding-bottom: 0.5em;
+    text-align: center;*/
+}
+
+.navbarHeader {
+    background: white;
+    border-bottom-color: rgb(94, 204, 225);
+    border-bottom-width: medium;
+    border-bottom-style: solid;
+    height: 100%; 
+    display:table-cell;
+    vertical-align:middle;
+}
+
+.navbar-height {
+	height: 13%;
+	width:100%;
+	display:table;
+}
+
+.headerLoggedInUserContainer {
+	padding: 0px 0.5em;
+	right: 3em;
+	position: absolute;
+	height: 2em;
+	border-right-style: groove;
+	border-right-color: rgba(127, 127, 127, 0.2);
+	border-right-width: 1px;
+	margin-top: .4em;
+}
+
+.headerLoggedInUserLabel {
+	font-size: 0.7em;
+	color: #666666;
+	display: inline;
+	float: right;
+}
+
+.headerLoggedInUserName {
+	font-size: 0.9em;
+	color: #0eb4d6;
+    display: block;
+}
+
+.headerTitle {
+	font-size: 1em;
+    color: #666666;
+    position: absolute;
+    left:40%;
+    right:40%;
+    height: 2em;
+    line-height: 3em;   
+    white-space: nowrap; 
+}
+
+.headerBackScreenName {
+	font-size: 1em;
+	padding: 0px 0.5em;
+	position: absolute;
+	height: 2em;
+	line-height: 3em;
+	left: 2em;
+}
+
+.noOutline {
+	outline: none !important;
+}
+
+.loaderDiv {
+	position: absolute;
+	text-align:center;
+    width: 100%;
+    height: 100%;
+}
+
+.zPositionAbove {
+	z-index: 1000 !important;
+  	position: relative;
+}
+
+.transition-up.ng-enter {
+	-webkit-animation: slideUp 0.2s both ease-in;
+	animation: slideUp 0.2s both ease-in;
+}
+
+.transition-up.ng-leave {
+	-webkit-animation: slideDown 0.2s both ease-in;
+	animation: slideDown 0.2s both ease-in;
+}
+
+@-webkit-keyframes slideInRight {
+	from {
+		-webkit-transform: translateY(100%);
+	}
+	to {
+		-webkit-transform: translateX(0);
+	}
+}
+
+.disclaimer-container{
+	/*height: 100%;*/
+	background-color:#fff;
+}
+
+.disclaimer-content{
+	/*height: calc(100% - 110px);*/
+	overflow: scroll;
+	padding: 58px 0;
+}
+
+.disclaimer-footer{
+	padding: 10px 0 10px 0;
+	position:fixed;
+	bottom: 0;
+	left:0;
+	width: 100%;
+	background-color:#fff;
+	z-index: 2;
+}
+
+.disclaimer-header{
+	border-bottom: 2px solid #000;
+	position:fixed;
+	top: 0;
+	left:0;
+	width: 100%;
+	background-color:#fff;
+	z-index: 2;
+	padding: 10px 0 10px 0;
+}
+
+.ng-submitted .ng-invalid, .ng-invalid {
+    border: 1px solid red;
+}
+
+.form-noborder {
+    border:none;
+}
+

@@ -1,0 +1,22 @@
+.dropdown { position: relative; display: inline-block; width: 100%; height: 40px; z-index: 500; }
+.dropdown.open { z-index: 500; }
+.dropdown div, .dropdown .title { position: absolute; left: 0px; width: 47.04vw; height: 13.52vw;  line-height: 49px; background-color: #f7ca39; border-radius: 3px; border: none; outline: none; font-size: 0.729rem; font-weight: 700; color: #414042; padding: 0 4.26vw 0 5.91vw; }
+.dropdown div { background-color: #f4f4f4; outline: none; padding: 0 4.35vw; font-weight: normal; }
+.dropdown div span { border-bottom: 1px solid #dadada; display: block; padding-left: 1.3vw;}
+.dropdown .dropdown-wrapper div:last-of-type span { border-bottom: none; padding-bottom: 1.02vw; }
+.dropdown div:hover { background: #ccc; }
+.dropdown .dropdown-wrapper { box-shadow: none; background-color: transparent; }
+/*.dropdown.open .dropdown-wrapper{box-shadow: 0px 0px 38px 0px rgba(0, 0, 0, 0.16);}*/
+.dropdown .title:hover { font-weight: bold; }
+.dropdown div.selected { font-weight: bold; }
+.dropdown div.ng-hide { display: block !important; top: 0px !important; box-shadow: none; background-color: transparent; border-bottom: none; }
+.dropdown div.ng-hide span { border-bottom: none; }
+.dropdown .clickscreen { position: fixed; top: 0px; left: 0px; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.01); opacity: 0.2; z-index: -1; }
+.dropdown .clickscreen.ng-hide { display: none !important; opacity: 0; cursor: auto !important; }
+.dropdown-wrapper div:last-of-type{
+box-shadow: 0px 0px 38px 0px rgba(0, 0, 0, 0.16);
+}
+.dropdown-wrapper div.ng-hide:last-of-type{
+box-shadow: none;
+}.select-wrap { width: 100%; float: left; position: relative; }
+.select-wrap:after { content: ''; background-repeat: no-repeat; background-size: 100%; position: absolute; right: 4.17vw; width: 3.24vw; top: 50%; height: 2.67vw; z-index: 501; }

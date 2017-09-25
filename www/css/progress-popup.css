@@ -1,0 +1,21 @@
+.ngdialog-message.progress-sync{
+  padding: 15px;
+}
+
+.progress-sync .progress-bar{
+  height: 20px;
+}
+.progress-sync .popup-header{
+  padding: 0;
+  font-weight: normal;
+  font-size: 1.1em;
+  margin-bottom: 15px;
+}
+.progress-sync .progress{
+  margin-bottom: 15px;
+}
+.progress-sync .collection-name{
+  margin: 0;
+  text-align: left;
+  font-size: 0.7em;
+}

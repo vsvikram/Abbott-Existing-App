@@ -1,0 +1,80 @@
+<transparent-screen></transparent-screen>
+<div class="row">
+
+	<div class="mob-header">
+		<abw-header data-abwheader-config="abwheaderConfig"></abw-header>
+	</div>
+	<div class="view-container container-fluid">
+		<div class="pink-color" ng-init="init()">
+			<div class="back-head-wrapper">
+				<a href ng-click="navigateBackPage()"><i class="back-head-arrow">&nbsp;</i></a>
+				<div class="back-head-content">
+					<span ng-class="{active:leftActive}">{{dcrDate|date:"d MMM y"}}</span>
+					<span ng-class="{active:rightActive}">ADD A {{custName}}</span>
+				</div>
+			</div>
+			<div class="dcrAddDoc-wrapper page-wrap ">
+
+				<div class="dcrDoc-wrpper content-wrapper">
+					<!--All DropDowns-->
+					<div class="dcrDoc-info">
+						<div ng-if="userType=='ZBM'" class="planForTheDay SelectFilterTextArea"> ZONE </div>
+						<div ng-if="userType=='ABM'" class="planForTheDay SelectFilterTextArea"> AREA </div>
+						<div class="selectFilterSelectTag" style="padding-left:0%">
+							<!--For ZBM User-->
+							<md-input-container class="mdContainer" ng-show="userType=='ZBM'">
+								<md-select class="dropDownIcon dropDownStyleChange fontRobotoMedium noOutline" ng-show="userType=='ZBM'" ng-model="selectedABM" ng-change="userChangeRecorded(selectedABM)" placeholder="Select Area Business Manager">
+									<div class="dropdown-wrapper">
+										<md-option ng-value="user" ng-repeat="user in ABMUsers | orderBy:'Territory__c.toString()'">{{(user.Territory__c+'('+user.User__r.Name+')')}}</md-option>
+									</div>
+								</md-select>
+							</md-input-container>
+							<!--<select ng-if="userType=='ZBM'" class="dropDownIcon dropDownStyleChange fontRobotoMedium noOutline" style="width:10em;margin-left:0;font-size:1em;border-radius: 0.75em" ng-model="selectedABM"-->
+							<!--ng-options="user as (user.Territory__c+'('+user.User__r.Name+')') for user in ABMUsers | orderBy:'Territory__c.toString()'" ng-change="userChangeRecorded(selectedABM)">-->
+							<!--<option value=""></option>-->
+							<!--&lt;!&ndash; <option class="fontRobotoMedium" ng-model="ABMIndex" ng-if="userType=='ZBM'" ng-repeat="option in ABMUsers track by option.Territory__c | orderBy:'Territory__c'">{{option.User__r.Name}}({{option.Territory__c}})</option>&ndash;&gt;-->
+							<!--</select>-->
+							<!--For ABM User-->
+							<md-input-container class="mdContainer" ng-show="userType=='ABM' && TBMUsers.length>0">
+								<md-select class="dropDownIcon dropDownStyleChange fontRobotoMedium noOutline" ng-show="userType=='ABM' && TBMUsers.length>0" ng-model="selectedTBM" ng-change="userChangeRecorded(selectedTBM)" placeholder="Select Territory Business Manager">
+									<md-option ng-value="user" ng-repeat="user in  TBMUsers | orderBy:'Territory__c.toString()'">{{(user.Territory__c+'('+user.User__r.Name+')')}}</md-option>
+								</md-select>
+							</md-input-container>
+
+
+							<!--<select ng-if="userType=='ABM' && TBMUsers.length>0" class="dropDownIcon dropDownStyleChange fontRobotoMedium noOutline" style="width:10em;margin-left:0;font-size:1em;border-radius: 0.75em" ng-model="selectedTBM"-->
+							<!--ng-options="user as (user.Territory__c+'('+user.User__r.Name+')') for user in TBMUsers | orderBy:'Territory__c.toString()'" ng-change="userChangeRecorded(selectedTBM)">-->
+							<!--<option value=""></option>-->
+							<!--&lt;!&ndash; <option class="fontRobotoMedium" ng-if="userType=='ABM' && TBMUsers.length>0" ng-model="TBMIndex" ng-repeat="option in TBMUsers | unique | orderBy:'toString()'">{{option}}</option> &ndash;&gt;-->
+							<!--</select>-->
+						</div>
+
+						<!--ZBM User after selecting ABM User-->
+						<div ng-show="userType=='ZBM' && abmSelected" class="col-xs-6 noPaddingRight">
+							<md-input-container class="mdContainer">
+
+								<md-select class="dropDownIcon dropDownStyleChange fontRobotoMedium noOutline" ng-model="tbmSelected" ng-change="tbmChangeRecorded(tbmSelected)" placeholder="Select Territory Business Manager">
+
+									<md-option ng-value="user" ng-repeat="user in TBMUsers | orderBy:'Territory__c.toString()'">{{(user.Territory__c+'('+user.User__r.Name+')')}}</md-option>
+
+								</md-select>
+
+							</md-input-container>
+
+							<!--<select class="dropDownIcon docSearchFilterDropDown fontRobotoMedium noOutline" ng-model="tbmSelected"-->
+							<!--ng-options="user as (user.Territory__c+'('+user.User__r.Name+')') for user in TBMUsers | orderBy:'Territory__c.toString()'" ng-change="tbmChangeRecorded(tbmSelected)">-->
+							<!--<option value=""></option>-->
+							<!--&lt;!&ndash; <option class="fontRobotoMedium" ng-repeat="option in TBMUsers | unique | orderBy:'toString()'">{{option}}</option> &ndash;&gt;-->
+							<!--</select>-->
+							<div class="planForTheDay textBesideFilterBox"> {{locale.TBMUser}} </div>
+
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="doc-add-button" ng-click="navigateToaddDoc()">
+			<button>SUBMIT</button>
+		</div>
+	</div>
+</div>

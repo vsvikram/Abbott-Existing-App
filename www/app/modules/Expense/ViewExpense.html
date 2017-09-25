@@ -1,0 +1,259 @@
+<div class="row">
+    <div class="mob-header">
+        <abw-header data-abwheader-config="abwheaderConfig"></abw-header>
+    </div>
+    <div class="tab-header">
+    </div>
+
+    <div class="expenseStatement-wrapper page-wrap">
+        <div class="back-head-wrapper">
+            <i class="back-head-arrow" data-ng-click="goToDCR()">&nbsp;</i>
+            <div class="back-head-content">
+                <span>{{locale.ExpenseStatement}}</span>
+            </div>
+        </div>
+        <div class="expenseStatement-wrapper content-wrapper" data-ng-init="init()">
+            <div class="top-statement-date">
+                <div class="left-statement">
+                    <p class="statementOne">{{locale.Employee}} &nbsp; {{employeeCode}} | {{userDesignation}}</p>
+                    <p class="statementTwo">{{dcrMonth}} &nbsp; {{dcrYear}}</p>
+                </div>
+                <div class="right-statement">
+                    <img src="img/icons/calendar.png">
+                </div>
+            </div>
+            <div class="statement-contents">
+                <div class="statement-details">
+                    <div class="row">
+                        <div class="col-xs-12 statement-inside-contents">
+                            <div class="col-xs-6 statement-txts">
+                                <p class="statement-head-txt">{{expenseDate}}</p>
+                                <p class="statement-subHead-txt">{{dcrDay}}</p>
+                            </div>
+                            <!-- <div class="col-xs-4 statement-txts">
+                          <p class="statement-head-txt">Paldi</p>
+                            <p class="statement-subHead-txt">Memnagar</p>
+                        </div>-->
+                            <div class="col-xs-6 statement-txts">
+                                <p class="statement-last-txt">{{(totalClaimed) ? totalClaimed : '-'}}</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!--<div class="statement-center-lines">
+                    <p>Thane, Mulund</p>
+                </div>-->
+
+                    <div class="statement-amount" ng-repeat="fares in marketList">
+                        <div class="row">
+                            <div class="col-xs-12 statement-amount-contents">
+                                <div class="col-xs-4 statement-amount-txts">
+                                    <p class="statement-head-txt">{{locale.Activity}}</p>
+                                    <p class="statement-subHead-txt">{{activityName}}</p>
+                                </div>
+                                <div class="col-xs-4 statement-amount-txts">
+                                    <p class="statement-head-txt">{{locale.Doctors}}</p>
+                                    <p class="statement-subHead-txt">{{fares.DoctorCount}}</p>
+                                </div>
+                                <div class="col-xs-4 statement-amount-txts">
+                                    <p class="statement-head-txt">{{locale.Chemists}}</p>
+                                    <p class="statement-subHead-txt">{{fares.ChemistCount}}</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-12 statement-amount-contents">
+                                <div class="col-xs-4 statement-amount-txts">
+                                    <p class="statement-head-txt">{{fares.MarketType}}</p>
+                                    <p class="statement-subHead-txt"> {{fares.Allowance | number:2}} </p>
+                                </div>
+                                <div class="col-xs-4 statement-amount-txts">
+                                    <p class="statement-head-txt">{{locale.Fares}}</p>
+                                    <p class="statement-subHead-txt">{{(fares.FareClaimed)? fares.FareClaimed : '--'}}</p>
+                                </div>
+                                <div class="col-xs-4 statement-amount-txts">
+                                    <p class="statement-head-txt">{{locale.Misc}}</p>
+                                    <p class="statement-subHead-txt">{{(fares.MiscClaimed) ? fares.MiscClaimed : '--'}}</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-12 statement-amount-contents">
+                                <div class="col-xs-4 statement-amount-txts">
+                                    <p class="statement-head-txt">{{locale.TotalClaimed}}</p>
+                                    <p class="statement-subHead-txt">{{(fares.TotalClaimed) ? fares.TotalClaimed : '--'}}</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="detailState">
+                        <div class="state-details">
+                            <!-- <p>{{locale.Details}}</p>-->
+                        </div>
+                        <div class="state-details-image" ng-click="removeExpense()">
+                        </div>
+                    </div>
+                    <div class="statement-arrow-wrap">
+                        <!-- Allowance -->
+                        <div class="state-list-item">
+                            <div class="state-side">
+                                <div class="state-item-two">
+                                    <p class="state-list-desc">
+                                        {{locale.AllowanceDetails}}
+                                    </p>
+                                </div>
+                                <div class="state-item-three">
+                                    <span class="accordion-toggle" data-toggle="collapse" data-target="#allowance">
+                                    <img src="img/icons/rightarrow.png">
+                                 </span>
+                                </div>
+                            </div>
+                            <div class="statement-amount collapse" id="allowance">
+                                <div class="row" ng-repeat="fares in marketList">
+                                    <div class="col-xs-12 statement-amount-contents">
+                                        <div class="col-xs-4 statement-amount-txts">
+                                            <p class="statement-head-txt">{{locale.MarketType}}</p>
+                                            <p class="statement-subHead-txt">{{fares.MarketType}}</p>
+                                        </div>
+                                        <div class="col-xs-4 statement-amount-txts">
+                                            <p class="statement-head-txt">{{locale.Allowance}}</p>
+                                            <p class="statement-subHead-txt"> {{fares.Allowance | number:2}}</p>
+                                        </div>
+                                        <div class="col-xs-4 statement-amount-txts" ng-if="flagHillStation">
+                                            <p class="statement-head-txt"> {{locale.HillStationAllowance}}</p>
+                                            <p class="statement-subHead-txt"> {{fares.HillStationAllowance | number:2}}</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Standard Fares -->
+                        <div class="state-list-item">
+                            <div class="state-side">
+                                <div class="state-item-two">
+                                    <p class="state-list-desc">{{locale.FareDetails}}</p>
+                                </div>
+                                <div class="state-item-three">
+                                    <span class="accordion-toggle" data-toggle="collapse" data-target="#fares">
+                                    <img src="img/icons/rightarrow.png">
+                                 </span>
+                                </div>
+                            </div>
+                            <div class="statement-amount collapse" id="fares">
+                                <div ng-repeat="fareDetails in expenseDetailsFareList">
+                                    <div class="row">
+                                        <div class="col-xs-12 statement-amount-contents">
+                                            <div class="col-xs-4 statement-amount-txts">
+                                                <p class="statement-head-txt">{{locale.FromMarket}}</p>
+                                                <p class="statement-subHead-txt"> {{fareDetails.From_Market__c}}</p>
+                                            </div>
+                                            <div class="col-xs-4 statement-amount-txts">
+                                                <p class="statement-head-txt">{{locale.ToMarket}}</p>
+                                                <p class="statement-subHead-txt">{{fareDetails.To_Market__c}}</p>
+                                            </div>
+                                            <div class="col-xs-4 statement-amount-txts">
+                                                <p class="statement-head-txt">{{locale.Fare}}</p>
+                                                <p class="statement-subHead-txt">{{fareDetails.Fare_Amount__c}}</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-xs-12 statement-amount-contents">
+                                            <div class="col-xs-4 statement-amount-txts">
+                                                <p class="statement-head-txt"> {{locale.ModeOfTravel}}</p>
+                                                <p class="statement-subHead-txt">{{fareDetails.Mode_of_Travel__c}}</p>
+                                            </div>
+                                            <div class="col-xs-4 statement-amount-txts">
+                                                <p class="statement-head-txt">{{locale.Distance}}</p>
+                                                <p class="statement-subHead-txt"> {{fareDetails.Distance_One_Way__c}}</p>
+                                            </div>
+                                            <div class="col-xs-4 statement-amount-txts">
+                                                <p class="statement-head-txt">{{locale.FareClaimed}}</p>
+                                                <p class="statement-subHead-txt">{{fareDetails.Fare_Claimed__c}}</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--Misc Details -->
+                        <div class="state-list-item">
+                            <div class="state-side">
+                                <div class="state-item-two">
+                                    <p class="state-list-desc">{{locale.MiscelleneousDetails}}</p>
+                                </div>
+                                <div class="state-item-three">
+                                    <span class="accordion-toggle" data-toggle="collapse" data-target="#misc">
+                                    <img src="img/icons/rightarrow.png">
+                                 </span>
+                                </div>
+                            </div>
+                            <div class="statement-amount collapse" id="misc">
+                                <div class="row" ng-repeat="miscFares in expenseDetailsMiscList">
+                                    <div class="col-xs-12 statement-amount-contents">
+                                        <div class="col-xs-4 statement-amount-txts">
+                                            <p class="statement-head-txt">{{locale.Description}}</p>
+                                            <p class="statement-subHead-txt">{{miscFares.Misc_Description__c}}</p>
+                                        </div>
+                                        <div class="col-xs-4 statement-amount-txts">
+                                            <p class="statement-head-txt">{{locale.Amount}}</p>
+                                            <p class="statement-subHead-txt">{{miscFares.Misc_Amount__c}}</p>
+                                        </div>
+                                        <div class="col-xs-4 statement-amount-txts">
+                                            <p class="statement-head-txt">{{locale.DetailedRemarks}}</p>
+                                            <p class="statement-subHead-txt"> {{miscFares.Misc_Detailed_Remarks__c}}</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row" ng-repeat="miscFares in expenseDetailsHotelExpenseList">
+                                    <div class="col-xs-12 statement-amount-contents">
+                                        <div class="col-xs-4 statement-amount-txts">
+                                            <p class="statement-head-txt">{{locale.HotelExpDescription}}</p>
+                                            <p class="statement-subHead-txt">{{miscFares.Misc_Description__c}}</p>
+                                        </div>
+                                        <div class="col-xs-4 statement-amount-txts">
+                                            <p class="statement-head-txt">{{locale.HotelExpAmount}}</p>
+                                            <p class="statement-subHead-txt">{{miscFares.Misc_Amount__c}}</p>
+                                        </div>
+                                        <div class="col-xs-4 statement-amount-txts">
+                                            <p class="statement-head-txt">{{locale.HotelExpDetailedRemarks}}</p>
+                                            <p class="statement-subHead-txt"> {{miscFares.Misc_Detailed_Remarks__c}}</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row" ng-repeat="miscFares in expenseDetailsMobileExpenseList">
+                                    <div class="col-xs-12 statement-amount-contents">
+                                        <div class="col-xs-4 statement-amount-txts">
+                                            <p class="statement-head-txt">{{locale.MobileExpDescription}}</p>
+                                            <p class="statement-subHead-txt">{{miscFares.Misc_Description__c}}</p>
+                                        </div>
+                                        <div class="col-xs-4 statement-amount-txts">
+                                            <p class="statement-head-txt">{{locale.MobileExpAmount}}</p>
+                                            <p class="statement-subHead-txt">{{miscFares.Misc_Amount__c}}</p>
+                                        </div>
+                                        <div class="col-xs-4 statement-amount-txts">
+                                            <p class="statement-head-txt">{{locale.MobileExpDetailedRemarks}}</p>
+                                            <p class="statement-subHead-txt"> {{miscFares.Misc_Detailed_Remarks__c}}</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Doctor details -->
+                        <!--<div class="state-list-item">
+                        <div class="state-side">
+                            <div class="state-item-two">
+                                <p class="state-list-desc">{{locale.DoctorDetails}}</p>
+                            </div>
+                            <div class="state-item-three">
+                                <span class="accordion-toggle" data-toggle="collapse" data-target="#docdetail">
+                                    <img src="img/icons/rightarrow.png">
+                                </span>
+                            </div>
+                        </div>
+                    </div>-->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

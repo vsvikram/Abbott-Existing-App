@@ -1,0 +1,469 @@
+.activity-subheader {
+	height: 13%;
+	color:#666666;
+	font-size:0.875em;
+}
+
+.activity-type-subheader {
+	background-color: #666666;
+	height: 20%;
+	padding: 0.5% 0;
+}
+
+.activity-custmaterial-header {
+	background-color: #666666;
+	height: 2.5em;
+}
+.activity-content {
+	height:72%; 
+	padding: 0 5%;
+}
+
+.activity-jointfieldwrk-txt {
+	float:right;
+	color: #ffffff;
+	font-size: 0.75em;
+	padding-right: 0.5em;
+}
+
+.activity-jointfieldwrk-select {
+	float:right;
+}
+
+.activity-type {
+	font-size: 0.8125em;
+	color: #ffffff;
+}
+
+.activity-select {
+	height:2em !important;
+}
+
+.activity-brand-row {
+	overflow: auto;
+	width:100%;
+}
+
+.activity-addcustomer {
+	font-size: 0.8125em;
+    color: #ffffff;
+}
+
+.activity-customer-tablehd {
+	background-color:#ededed; 
+	color: #5c5d5d;
+	font-size: 0.75em;
+	
+}
+
+
+
+/*********** Add Material section *******************/
+.activity-material-col {
+	width:60%;
+	padding-left: 10px;
+}
+
+.activity-quantity-col {
+	width:30%;
+}
+
+.activity-patch-col {
+	width:30%;
+	padding-left: 10px;
+}
+
+.activity-action-col {
+	width:10%;
+}
+
+
+.activity-remarks-section {
+	background-color: #ededed;
+    padding: 0.5em;
+    font-size: 0.9em;
+    color: #666666;
+}
+
+.activity-doctors-count {
+	width:2.5em;
+}
+
+.activity-speaker-name {
+	width:50%;
+}
+
+.activity-corporate-text {
+	vertical-align:top;
+	font-size: 0.9em;
+    color: #666666;
+    padding-left:2vw;
+}
+
+.activity-brand-column {
+	padding:0.5em;
+}
+
+.activity-corporate-column {
+	padding:0.5em;
+	border-left:1px solid #ededed;
+}
+
+.activity-prev-arrow {
+	float:left;
+	width: 1.5625em;
+	position: absolute;
+	left: 0em;
+	top:50%;
+}
+
+.activity-next-arrow {
+	float:right;
+	width: 1.5625em;
+	position: absolute;
+	right: 0em;
+	top:50%;
+}
+
+.activity-jfwcont {
+	display:table-cell;
+    vertical-align:middle;
+    line-height:2.25em;
+}
+
+
+
+.mainContentActivity{
+	padding: 0em;
+}
+
+.mainContentActivity .dateAndDoc .row{
+	margin-top: .3em;
+	line-height: 2.25em;
+}
+
+.mainContentActivity .bottomPart{
+	height: :20%;
+	
+}
+
+
+.mainContentActivity .bottomPart .prevArrow{
+	float:left;
+	width: 1.5625em;
+	position: absolute;
+	left: 0em;
+	top:50%;
+}
+
+
+.mainContentActivity .dateAndDoc .row .createDCRForDate{
+	font-size: 0.875em;
+	color:#666666;
+	line-height:2.55;
+	display: inline-block;
+	vertical-align: middle;
+	padding-left: 2em;
+
+}
+.mainContentActivity .dateAndDoc .row .docEdit{
+	height: 2.25em;
+	float:right;
+	padding-right: 2em;
+}
+
+.mainContentActivity .dateAndDoc .row .docEdit .add,.mainContentActivity .dateAndDoc .row .docEdit .remove,.mainContentActivity .dateAndDoc .row .docEdit .removeText{
+	float:right;
+    padding: 0em 0.5em;
+
+}
+
+.mainContentActivity .dateAndDoc .row .docEdit .remove{
+	border-left: solid thin #CDCBCB;
+	border-right: solid thin #CDCBCB;
+}
+
+
+.mainContentActivity .dateAndDoc .row .docEdit .add .addDoctor,.mainContentActivity .dateAndDoc .row .docEdit .remove .removeDoctor{
+	display:inline-block;
+	vertical-align:middle;
+	
+}
+
+.mainContentActivity .dateAndDoc .row .docEdit .add .addDoctor label,.mainContentActivity .dateAndDoc .row .docEdit .remove .removeDoctor label{
+	padding: 0em;
+	margin:0em;
+	height: 1.9em;
+    width: 1.9em;
+
+}
+
+.mainContentActivity .dateAndDoc .row .docEdit .add .addDoctorText,.mainContentActivity .dateAndDoc .row .docEdit .remove .removeDoctorText{
+	float:right;
+	display:inline-block;
+	vertical-align:middle;
+	font-size: 0.75em;
+	color:#666666;
+
+}
+
+.mainContentActivity .blockTableCell{
+	float:left;
+	position: absolute;
+	top:8.2em;
+	bottom:7em;
+	left:1.5625em;
+	right:1.5625em;
+	border-style:solid;
+	border-width: thin;
+	border-left-color: #E5E4E4;
+	border-right-color: #E5E4E4;
+	border-bottom: none;
+	border-top: none;
+	background-color: #EDEDED;
+}
+
+.mainContentActivity .broadTableHeader{
+	border-style:solid;
+	border-width: thin;
+	border-left-color: #E5E4E4;
+	border-right-color: #E5E4E4;
+	border-bottom: none;
+	border-top: none;
+}
+
+.mainContentActivity .broadTableHeader .row{
+	margin:0em;
+	
+}
+
+.mainContentActivity .broadTableHeader{
+	background-color: #666666;
+}
+
+.mainContentActivity .broadTableHeader .row .docAll{
+	padding: 0em;
+}
+
+.mainContentActivity .broadTableHeader .row .pageNumber{
+	float:left;
+	line-height:2.55em;
+	padding-left: 0.5em;
+	padding-right: 0.4em;
+	border-right-style: solid;
+	border-width:thin;
+	border-color:#cdcbcb;
+	color:#FFFFFF;
+	margin-right: 1em;
+}
+
+.mainContentActivity .broadTableHeader .row .pageNumber .currentPageNo{
+	font-size: 2.5em;
+	display: inline-block;
+	vertical-align: middle;
+}
+
+.mainContentActivity .broadTableHeader .row .pageNumber .totalNoOfPages{
+	font-size: 0.8125em;
+	display: inline-block;
+	vertical-align: bottom;
+	line-height: 1.55em;
+}
+
+
+.mainContentActivity .broadTableHeader .docDetails{
+	float: left;
+	height: 2.55em;
+	padding: 0em;
+	margin:0em;
+	display: table;
+	
+}
+
+.mainContentActivity .broadTableHeader .docDetails .misnomer{
+	display: table-cell;
+	vertical-align: middle;
+}
+
+.mainContentActivity .broadTableHeader .docDetails .docName{
+	font-size: 0.8125em;
+	color: #ffffff;
+}
+
+.mainContentActivity .broadTableHeader .docDetails .docDesignation{
+	font-size: 0.6875em;
+	color: #ffffff;
+}
+
+
+.mainContentActivity .broadTableHeader .supDetails{
+	line-height:2.55em;
+	padding: 0em;
+	margin:0em;
+
+}
+
+.mainContentActivity .broadTableHeader .supDetails .jointFieldWork{
+	float:right;
+	display: inline-block;
+	vertical-align: middle;
+	color: #ffffff;
+	font-size: 0.75em;
+	padding-right: 1em;
+}
+
+.mainContentActivity .broadTableHeader .supDetails .supSelection{
+	float:right;
+	display: inline-block;
+	vertical-align: middle;
+}
+
+.supSelect{
+	float:left;
+	/*padding:0.5em 0em 0 0em;*/
+	width: 100%;
+	/*border-style:solid;
+	border-width: thin;
+	border-left-color: #E5E4E4;
+	border-right-color: #E5E4E4;*/
+	border-bottom: none;
+	border-top: none;
+	
+}
+
+
+
+
+
+.supSelect > div{
+	padding:0em .2em 0em 0.2em;
+}
+
+.supSelect .cross{ 
+	float: right;
+	width: 1.5em;
+	height: 1.5em;
+	padding:0em;
+	margin:0em;
+	display:inline-block;
+	vertical-align: middle;
+	
+
+}
+
+.supSelect .supText{
+	font-size: 0.75em;
+	float:left;
+	color:#666666;
+	display:inline-block;
+	vertical-align: middle;
+	width: 80%;
+	overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+
+.supSelect div{
+	max-height:100%;
+	line-height:1.5em;
+	/*background-color: #eef9f8;
+	border-radius:0.75em;
+	border: thin solid #d3eae8;
+	margin: 0em;*/
+}
+
+
+
+.mainContentActivity .bottomPart .nextArrow{
+	float:right;
+	width: 1.5625em;
+	position: absolute;
+	right: 0em;
+	top:50%;
+}
+
+.textArea{
+	width: 100%;
+    position: absolute;
+    bottom: -6em;
+    top: 0em;
+    left: -1em;
+}
+
+.activity-doc-details {
+	font-size:0.9em;
+}
+
+.activity-doc-remarks {
+	font-size:0.9em;
+}
+
+.activity-remarks-table {
+	width:100%;
+}
+
+.dcractivity-bottom-footer {
+	background-color:white;
+	border:none;
+	height:15%;
+	min-height:0px;
+}
+
+.activity-details-contaier {
+	border: 1px solid #e5e4e4;
+	height:80%;
+	overflow-y: scroll;
+	overflow-x: hidden;
+}
+
+.activity-padding {
+	padding-bottom: 1em !important;
+}
+
+/* Laboratory CR */
+.activityTextWidth {
+	width: 100%;
+}
+
+.laboratory-additionalFields {
+	width:10%;
+}
+
+.laboratory-field {
+	width: 20%;
+}
+
+.laboratory-type {
+	width:10%;
+}
+
+.laboratory-name {
+	width: 20%;
+}
+
+.laboratory-patch {
+	width:10%;
+}
+
+.campaignActivityLaboratory {
+	display: block;
+	word-break: break-word;
+}
+.iCare-content-wrapper .activity-jointfieldwrk-select {
+    float: none;
+}
+.supSelect{width: 98.7%;}
+.supSelect div{margin-bottom: 2vw;margin-top:2vw;}
+.supSelect > div > span {
+font-size:0.625rem;
+font-family: openSans;
+}
+.campClinic-content .dropName {
+    margin-bottom: 2vw;
+    float: left;
+}
+.addBtns{float: left; padding: 2.5vw 0;}
+.adBtn {
+    margin-left: 2vw;
+}

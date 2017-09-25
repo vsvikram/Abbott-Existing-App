@@ -1,0 +1,156 @@
+.icon1 {
+    width: 50%;
+    display: table;
+}
+.nav-icons {
+    margin-right: 4.07vw;
+}
+.point-txt {
+    display: table-cell;
+    vertical-align: middle;
+}
+.point-txt p {
+    font-family: OpenSans;
+    font-size: 0.833rem;
+    font-weight: 500;
+}
+.support-side,
+.log-side {
+    display: inline-block;
+}
+.support-side p,
+.log-side p {
+    font-size: 0.729rem;
+    font-family: OpenSans;
+    font-weight: 500;
+}
+.point-head-section {
+    text-align: center;
+}
+.point-wrapper {
+    float: left;
+    width: 100%;
+}
+.point-section {
+    float: left;
+    width: 100%;
+    padding-bottom: 12.78vw;
+}
+
+.point-support-side {
+    float: left;
+    width: 35%;
+}
+.point-log-side {
+    float: left;
+    padding-left: 4.5vw;
+    width: 65%;
+}
+.point-support-side p,
+.point-log-side p {
+    font-size: 0.729rem;
+    font-family: OpenSans;
+    font-weight: 500;
+}
+.point-log-side p {
+    color: #9c2756;
+}
+.point-support-side p {
+    color: #414042;
+}
+.point-full-section {
+    width: 100%;
+    padding-top: 7.59vw;
+    padding-left: 5.93vw;
+    padding-right: 4.44vw;
+    float: left;
+}
+.point-log-side .grey-color {
+    font-size: 0.729rem;
+    font-family: OpenSans;
+    font-weight: 400;
+    color: #8a8a8b;
+    letter-spacing: -0.15px;
+}
+.head-section-txt {
+    display: inline-block;
+    display: table-cell;
+    text-align: center;
+    margin: 0 auto;
+    vertical-align: middle;
+}
+.head-section-txt span {
+    display: inline-block;
+    font-size: 0.688rem;
+    font-weight: 700;
+}
+.head-section-txt span:first-of-type {
+    border-right: 1px solid #000;
+    padding-right: 5.56vw;
+}
+.head-section-txt span:last-child {
+    padding-left: 5.56vw;
+}
+.point-head-section {
+    height: 15vw;
+    border-bottom: 1px solid #c2c2c2;
+    text-align: center;
+    display: table;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-position: 4%;
+    background-size: 4.63vw;
+}
+.point-head-section img {
+    width: 4.44vw;
+    height: 4.54vw;
+    vertical-align: top;
+}
+.back-button {
+    padding-top: 5.74vw;
+    padding-left: 2.59vw;
+    padding-bottom: 4.44vw;
+}
+.version-details p {
+    font-size: 0.729rem;
+    font-family: OpenSans;
+    font-weight: 500;
+    padding-bottom: 4.44vw;
+}
+.confimation-logs {
+    float: left;
+    width: 100%;
+    padding-right: 2.43vw;
+    padding-bottom: 6.67vw;
+}
+.version-details p:last-child {
+    padding-bottom: 13.7vw;
+}
+.confimation-logs button {
+    width: 38.7vw;
+    height: 13.89vw;
+    font-size: 4.63vw;
+    font-family: OpenSans;
+    font-weight: 400;
+    border: 1px solid rgba(156, 39, 87, 0.41);
+}
+.sendLogs {
+    background: #9c2757;
+    color: #fff;
+    float: left;
+}
+.clrLogs {
+    background: #fff;
+    color: #9c2757;
+    float: right;
+}
+.log-wrapper {
+    float: left;
+    width: 100%;
+}
+.head-section-txt .supportScr.active {
+    color: #9c2756;
+}
+.head-section-txt .logScr.active {
+    color: #9c2756;
+}

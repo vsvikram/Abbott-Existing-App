@@ -1,0 +1,61 @@
+<div class="common-height" ng-controller="DCROthersCompetitorInfoController">
+	<div ng-init="init()" class="compInfo-table-headcont zPositionAbove">
+		<table class="compInfo-table">
+			<tr class="fontRobotoRegular compInfo-header-row">
+				<td class="others-brandCol">{{locale.Brand}}</td>
+				<td class="others-compSelCol"><span class="others-leftcolhdr">{{locale.Competitor1}}</span><span class="others-rightcolhdr">{{locale.RxMonth}}</span></td>
+				<td class="others-compSelCol"><span class="others-leftcolhdr">{{locale.Competitor2}}</span><span class="others-rightcolhdr">{{locale.RxMonth}}</span></td>
+				<td class="others-compSelCol"><span class="others-leftcolhdr">{{locale.Competitor3}}</span><span class="others-rightcolhdr">{{locale.RxMonth}}</span></td>
+				<td class="others-compSelCol"><span class="others-leftcolhdr">{{locale.Others}}</span><span class="others-rightcolhdr">{{locale.RxMonth}}</span></td>
+			</tr>
+		</table>
+	</div>
+
+	<div class="compInfo-table-listcont">
+		<table class="compInfo-table">
+			<tr class="others-rheight fontRobotoLight" ng-repeat="item in submitOtherCompInfo">
+				<td class="others-cmnbrandborder others-brandCol">
+				<div ng-model="submitOtherCompInfo[$index].item" class="others-brandlbl">
+					{{item.brandName}}
+				</div></td>
+				<td class="others-cmnborder others-compSelCol">
+				<select class="others-compselect entercall-inputfields dropDownIcon"  ng-model="item.comp1" ng-options="i.Name as i.Name for i in (compInfoDetails | filter: {Divisionwise_Brand__c: item.brandId})">
+					<option value=""></option>
+				</select>
+				<input scroll-page-up="compInfo-table-listcont" class="entercall-inputfields" only-digits type="text" pattern="\d*" ng-model="item.rx1"/>
+				</td>
+				<td class="others-cmnborder others-compSelCol">
+				<select class="others-compselect entercall-inputfields dropDownIcon"  ng-model="item.comp2" ng-options="i.Name as i.Name for i in compInfoDetails | filter: {Divisionwise_Brand__c: item.brandId}">
+					<option value=""></option>
+				</select>
+				<input scroll-page-up="compInfo-table-listcont" class="entercall-inputfields" only-digits type="text" pattern="\d*" ng-model="item.rx2"/>
+				</td>
+				<td class="others-cmnborder others-compSelCol">
+				<select class="others-compselect entercall-inputfields dropDownIcon"  ng-model="item.comp3" ng-options="i.Name as i.Name for i in compInfoDetails | filter: {Divisionwise_Brand__c: item.brandId}">
+					<option value=""></option>
+				</select>
+				<input scroll-page-up="compInfo-table-listcont" class="entercall-inputfields" only-digits type="text" pattern="\d*" ng-model="item.rx3"/>
+				</td>
+				<td class="others-cmnborder others-compSelCol">
+				<input scroll-page-up="compInfo-table-listcont" class="others-compselect entercall-inputfields" type="text" ng-model="item.comp4"/>
+				<input scroll-page-up="compInfo-table-listcont" class="entercall-inputfields" only-digits type="text" pattern="\d*" ng-model="item.rx4" />
+				</td>
+			</tr>
+		</table>
+	</div>
+
+	<nav class="navbar navbar-default pob-footer">
+		<div class="col-xs-6 col-sm-6 v-center">
+			<div class="content fontRobotoLight common-lstvisit">
+				{{docInfoText}}
+			</div>
+		</div>
+		<div class="col-xs-6 col-sm-6 rightContent v-center">
+			<div class="content">
+				<button ng-click="saveCompInfo();" class="compInfo-footer-savebtn">
+					{{locale.Save}}
+				</button>
+			</div>
+		</div>
+	</nav>
+</div>

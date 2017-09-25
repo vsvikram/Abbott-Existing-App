@@ -1,0 +1,183 @@
+<!--<transparent-screen></transparent-screen>
+<navigation-bar is-hidden=false header-title="{{locale.performanceMatrics}}" left-side-icon="back" previous-screen-name="{{locale.SFE}}"  is-display-header-title=true is-display-logged-in-user=true></navigation-bar>
+<div class="fullDiv appContent" ng-init="init()">
+	<div class="row noRightMargin midDivFull">
+		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 performnaceMatrixCont" ng-class="{'userSelectCont': userDesigntion=='ZBM' || userDesigntion=='ABM'}">
+			<div ng-if="userDesigntion=='ZBM'" class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+				<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 noPadding rightAlign"><label class="userSelectLabel"> {{locale.ABMUser}} </label></div>
+				<div class="col-xs-8 col-sm-8 col-md-8 col-lg-8"><select  ng-init="$parent.selectedABM = ABMUsers[0]" class="dropDownIcon userDropdown fontRobotoMedium noOutline full-width" ng-model="$parent.selectedABM"
+						 ng-options="user as user|formatter for user in ABMUsers" ng-change="onSelectABMChange()">
+				</select></div>
+			</div>
+			<div ng-if="TBMUsers.length>0" class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+				<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 noPadding rightAlign"><label class="userSelectLabel"> {{locale.TBMUser}} </label></div>
+				<div class="col-xs-8 col-sm-8 col-md-8 col-lg-8"><select  ng-init="$parent.selectedTBM = TBMUsers[0]" class="dropDownIcon userDropdown fontRobotoMedium noOutline full-width"  ng-model="$parent.selectedTBM"
+						 ng-options="user as user|formatter for user in TBMUsers" ng-change="onSelectTBMChange()">
+				</select></div>
+			</div>
+		</div>
+
+		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 userRankScoreCont">
+			<div class="col-xs-5 col-sm-5 col-md-5 col-lg-5">
+				<label class="userRankScoreLabel">{{locale.Rank}}</label>: {{performanceMatrixObj.FINAL_RANK__c}}
+			</div> -->
+<!-- <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+				<span class="userRankScoreLabel">{{locale.Score}}</span>: {{performanceMatrixObj.score}}
+			</div> -->
+<!-- <div class="col-xs-7 col-sm-7 col-md-7 col-lg-7">
+				<div class="userScoreCont" ng-class="(performanceMatrixObj.LEAGUE_SCORE__c < 40) ? 'red' : ((performanceMatrixObj.LEAGUE_SCORE__c >= 80) ? 'green' : 'black')"><div>{{locale.Score}}</div><div>{{(performanceMatrixObj.LEAGUE_SCORE__c)?performanceMatrixObj.LEAGUE_SCORE__c.toFixed(2):0}}</div></div> -->
+<!-- <div class="userScoreArrow"></div> -->
+<!-- </div>
+		</div>
+
+		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 performnaceMatrixCont">
+			<table class="full-width">
+				<tr class="fontRobotoRegular performanceValuesCol">
+					<th>{{locale.OverAllSales}}</th>
+					<th>{{locale.P1SalesAch}}</th>
+					<th>{{locale.P2SalesAch}}</th>
+					<th ng-show="designation=='TBM' && ['MR', 'TBD', 'PSM', 'AS'].indexOf(userType)!=-1 && (divisionName==='vaccine' ||  divisionName==='GenNexr')">{{locale.P3SalesAch}}</th>
+					<th ng-show="designation=='ZBM'">{{locale.DSO}}</th>
+					<th ng-show="designation!='TBM'">{{locale.PPlDevelopment}}</th>
+					<th ng-show="designation!='TBM'">{{locale.ProcessCompliance}}</th>
+					<th ng-show="designation!='TBM'">{{locale.FieldWorkDays}}</th>
+					<th ng-show="designation=='TBM'">{{locale.CallAvg}}</th>
+					<th ng-show="designation=='TBM' && ['AS'].indexOf(userType)==-1 && divisionName!='Hepatic'">{{locale.PcCoverage}}</th>
+					<th ng-show="designation=='TBM'">{{locale.TotalCoverage}}</th>
+					<th ng-hide="designation=='ZBM' || (designation=='TBM' && ['MR', 'TBD', 'PSM', 'AS'].indexOf(userType)!=-1 && (divisionName==='vaccine' ||  divisionName==='GenNexr'))">{{locale.ELearningModule}}</th>
+					<th>{{locale.WasteReduction}}</th>
+
+				</tr>
+				<tr class="fontRobotoLight performanceValues">
+					<td ng-class="(performanceMatrixObj.Overall_Sales_Ach_Points__c_Percentage < 40) ? 'red' : ((performanceMatrixObj.Overall_Sales_Ach_Points__c_Percentage >= 80) ? 'green' : 'black')">{{(performanceMatrixObj.Overall_Sales_Ach_Points__c)?performanceMatrixObj.Overall_Sales_Ach_Points__c.toFixed(2):0}}</td>
+					<td ng-class="(performanceMatrixObj.P1_Sales_Ach_Points__c_Percentage < 40) ? 'red' : ((performanceMatrixObj.P1_Sales_Ach_Points__c_Percentage >= 80) ? 'green' : 'black')">{{(performanceMatrixObj.P1_Sales_Ach_Points__c)?performanceMatrixObj.P1_Sales_Ach_Points__c.toFixed(2):0}}</td>
+					<td ng-class="(performanceMatrixObj.P2_Sales_Ach_Points__c_Percentage < 40) ? 'red' : ((performanceMatrixObj.P2_Sales_Ach_Points__c_Percentage >= 80) ? 'green' : 'black')">{{(performanceMatrixObj.P2_Sales_Ach_Points__c)?performanceMatrixObj.P2_Sales_Ach_Points__c.toFixed(2):0}}</td>
+					<td ng-show="designation=='TBM' && ['MR', 'TBD', 'PSM', 'AS'].indexOf(userType)!=-1 && (divisionName==='vaccine' ||  divisionName==='GenNexr')" ng-class="(performanceMatrixObj.P3_Sales_Ach_Points__c_Percentage < 40) ? 'red' : ((performanceMatrixObj.P3_Sales_Ach_Points__c_Percentage >= 80) ? 'green' : 'black')">{{(performanceMatrixObj.P3_Sales_Ach_Points__c)?performanceMatrixObj.P3_Sales_Ach_Points__c.toFixed(2):0}}</td>
+					<td ng-show="designation=='ZBM'" ng-class="(performanceMatrixObj.DSO_score__c_Percentage < 40) ? 'red' : ((performanceMatrixObj.DSO_score__c_Percentage >= 80) ? 'green' : 'black')">{{(performanceMatrixObj.DSO_score__c)?performanceMatrixObj.DSO_score__c.toFixed(2):0}}</td>
+					<td ng-show="designation!='TBM'" ng-class="(performanceMatrixObj.PEOPLE_DEVELOPMENT__c_Percentage < 40) ? 'red' : ((performanceMatrixObj.PEOPLE_DEVELOPMENT__c_Percentage >= 80) ? 'green' : 'black')">{{(performanceMatrixObj.PEOPLE_DEVELOPMENT__c)?performanceMatrixObj.PEOPLE_DEVELOPMENT__c.toFixed(2):0}}</td>
+					<td ng-show="designation!='TBM'" ng-class="(performanceMatrixObj.PROCESS_COMPLIANCE__c_Percentage < 40) ? 'red' : ((performanceMatrixObj.PROCESS_COMPLIANCE__c_Percentage >= 80) ? 'green' : 'black')">{{(performanceMatrixObj.PROCESS_COMPLIANCE__c)?performanceMatrixObj.PROCESS_COMPLIANCE__c.toFixed(2):0}}</td>
+					<td ng-show="designation!='TBM'" ng-class="(performanceMatrixObj.Field_Work_Points__c_Percentage < 40) ? 'red' : ((performanceMatrixObj.Field_Work_Points__c_Percentage >= 80) ? 'green' : 'black')">{{(performanceMatrixObj.Field_Work_Points__c)?performanceMatrixObj.Field_Work_Points__c.toFixed(2):0}}</td>
+					<td ng-show="designation=='TBM'" ng-class="(performanceMatrixObj.DOC_CALL_FW_Score__c_Percentage < 40) ? 'red' : ((performanceMatrixObj.DOC_CALL_FW_Score__c_Percentage >= 80) ? 'green' : 'black')">{{(performanceMatrixObj.DOC_CALL_FW_Score__c)?performanceMatrixObj.DOC_CALL_FW_Score__c.toFixed(2):0}}</td>
+					<td ng-show="designation=='TBM' && ['AS'].indexOf(userType)==-1 && divisionName!='Hepatic'" ng-class="(performanceMatrixObj.COV_2PC_Score__c_Percentage < 40) ? 'red' : ((performanceMatrixObj.COV_2PC_Score__c_Percentage >= 80) ? 'green' : 'black')">{{(performanceMatrixObj.COV_2PC_Score__c)?performanceMatrixObj.COV_2PC_Score__c.toFixed(2):0}}</td>
+					<td ng-show="designation=='TBM'" ng-class="(performanceMatrixObj.TOTAL_COV_Score__c_Percentage < 40) ? 'red' : ((performanceMatrixObj.TOTAL_COV_Score__c_Percentage >= 80) ? 'green' : 'black')">{{(performanceMatrixObj.TOTAL_COV_Score__c)?performanceMatrixObj.TOTAL_COV_Score__c.toFixed(2):0}}</td>
+					<td ng-hide="designation=='ZBM' || (designation=='TBM' && ['MR', 'TBD', 'PSM', 'AS'].indexOf(userType)!=-1 && (divisionName==='vaccine' ||  divisionName==='GenNexr'))" ng-class="(performanceMatrixObj.ELEARNING_MODULE__c_Percentage < 40) ? 'red' : ((performanceMatrixObj.ELEARNING_MODULE__c_Percentage >= 80) ? 'green' : 'black')">{{(performanceMatrixObj.ELEARNING_MODULE__c) ? performanceMatrixObj.ELEARNING_MODULE__c.toFixed(2):0}}</td>
+					<td ng-class="(performanceMatrixObj.WASTE_REDUCTION_score__c_Percentage < 40) ? 'red' : ((performanceMatrixObj.WASTE_REDUCTION_score__c_Percentage >= 80) ? 'green' : 'black')">{{(performanceMatrixObj.WASTE_REDUCTION_score__c)?performanceMatrixObj.WASTE_REDUCTION_score__c.toFixed(2):0}}</td>
+
+				</tr>
+			</table>
+
+			<table>
+				<tr class="fontRobotoRegular performanceValuesCol">
+					<th ng-show="designation=='ZBM'">{{locale.ESecondary}}</th>
+					<th ng-show="designation=='ZBM'">{{locale.ForecastAccuracy}}</th>
+					<th ng-show="designation=='ZBM'">{{locale.Coaching}}</th>
+
+				</tr>
+				<tr class="fontRobotoLight performanceValues">
+					<td ng-show="designation=='ZBM'" ng-class="(performanceMatrixObj.E_Secondary_Points__c_Percentage < 40) ? 'red' : ((performanceMatrixObj.E_Secondary_Points__c_Percentage >= 80) ? 'green' : 'black')">{{(performanceMatrixObj.E_Secondary_Points__c)?performanceMatrixObj.E_Secondary_Points__c.toFixed(2):0}}</td>
+					<td ng-show="designation=='ZBM'" ng-class="(performanceMatrixObj.Forecast_Accuracy_Points__c_Percentage < 40) ? 'red' : ((performanceMatrixObj.Forecast_Accuracy_Points__c_Percentage >= 80) ? 'green' : 'black')">{{(performanceMatrixObj.Forecast_Accuracy_Points__c)?performanceMatrixObj.Forecast_Accuracy_Points__c.toFixed(2):0}}</td>
+					<td ng-show="designation=='ZBM'" ng-class="(performanceMatrixObj.COACHING_Score__c_Percentage < 40) ? 'red' : ((performanceMatrixObj.COACHING_Score__c_Percentage >= 80) ? 'green' : 'black')">{{(performanceMatrixObj.COACHING_Score__c)?performanceMatrixObj.COACHING_Score__c.toFixed(2):0}}</td>
+				</tr>
+			</table>
+			<div class="text-center">{{locale.performanceTableName}}</div>
+		</div>
+	</div>
+</div> -->
+<!--New Changes Starts Here-->
+<div class="row">
+	<div class="mob-header">
+		<abw-header data-abwheader-config="abwheaderConfig"></abw-header>
+	</div>
+	<transparent-screen></transparent-screen>
+	<div class="view-container">
+		<module-nav config='config'></module-nav>
+		<div class="performance-wrapper page-wrap" ng-init="init()">
+			<div class="performance-lists content-wrapper">
+				<div class="row">
+					<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 performnaceMatrixCont" ng-class="{'userSelectCont': userDesigntion=='ZBM' || userDesigntion=='ABM'}">
+						<div ng-if="userDesigntion=='ZBM'" class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+							<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 noPadding rightAlign">
+								<label class="userSelectLabel"> {{locale.ABMUser}} </label>
+							</div>
+							<div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
+								<select ng-init="$parent.selectedABM = ABMUsers[0]" class="dropDownIcon userDropdown fontRobotoMedium noOutline full-width" ng-model="$parent.selectedABM" ng-options="user as user|formatter for user in ABMUsers" ng-change="onSelectABMChange()">
+								</select>
+							</div>
+						</div>
+						<div ng-if="TBMUsers.length>0" class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+							<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 noPadding ">
+								<label class="userSelectLabel"> {{locale.TBMUser}} </label>
+							</div>
+							<div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
+								<select ng-init="$parent.selectedTBM = TBMUsers[0]" class="dropDownIcon userDropdown fontRobotoMedium noOutline full-width" ng-model="$parent.selectedTBM" ng-options="user as user|formatter for user in TBMUsers" ng-change="onSelectTBMChange()">
+								</select>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="expenseGes-content">
+					<p class="gescode">{{locale.Rank}}
+						<label>: {{performanceMatrixObj.FINAL_RANK__c}}</label>
+					</p>
+					<div class="scoreRange">
+						<span>Score</span>
+						<br/>
+						<span> <label>{{(performanceMatrixObj.LEAGUE_SCORE__c)?performanceMatrixObj.LEAGUE_SCORE__c.toFixed(2):0}}</label></span>
+					</div>
+					<div class="select-summary">
+						<h4 class="summary-head">{{locale.performanceTableName}}</h4>
+						<p>{{locale.OverAllSales}}
+							<label>{{(performanceMatrixObj.Overall_Sales_Ach_Points__c)?performanceMatrixObj.Overall_Sales_Ach_Points__c.toFixed(2):0}}</label>
+						</p>
+						<p>{{locale.P1SalesAch}}
+							<label>{{(performanceMatrixObj.P1_Sales_Ach_Points__c)?performanceMatrixObj.P1_Sales_Ach_Points__c.toFixed(2):0}}</label>
+						</p>
+						<p>{{locale.P2SalesAch}}
+							<label>{{(performanceMatrixObj.P2_Sales_Ach_Points__c)?performanceMatrixObj.P2_Sales_Ach_Points__c.toFixed(2):0}}</label>
+						</p>
+						<p ng-show="designation=='TBM' && ['MR', 'TBD', 'PSM', 'AS'].indexOf(userType)!=-1 && (divisionName==='vaccine' ||  divisionName==='GenNexr')">{{locale.P3SalesAch}}
+							<label ng-class="(performanceMatrixObj.P3_Sales_Ach_Points__c_Percentage < 40) ? 'red' : ((performanceMatrixObj.P3_Sales_Ach_Points__c_Percentage >= 80) ? 'green' : 'black')">{{(performanceMatrixObj.P3_Sales_Ach_Points__c)?performanceMatrixObj.P3_Sales_Ach_Points__c.toFixed(2):0}}</label>
+						</p>
+						<p ng-show="designation=='ZBM'">{{locale.DSO}}
+							<label ng-class="(performanceMatrixObj.DSO_score__c_Percentage < 40) ? 'red' : ((performanceMatrixObj.DSO_score__c_Percentage >= 80) ? 'green' : 'black')">{{(performanceMatrixObj.DSO_score__c)?performanceMatrixObj.DSO_score__c.toFixed(2):0}}</label>
+						</p>
+						<p ng-show="designation!='TBM'">{{locale.PPlDevelopment}}
+							<label ng-class="(performanceMatrixObj.PEOPLE_DEVELOPMENT__c_Percentage < 40) ? 'red' : ((performanceMatrixObj.PEOPLE_DEVELOPMENT__c_Percentage >= 80) ? 'green' : 'black')">{{(performanceMatrixObj.PEOPLE_DEVELOPMENT__c)?performanceMatrixObj.PEOPLE_DEVELOPMENT__c.toFixed(2):0}}</label>
+						</p>
+						<p ng-show="designation!='TBM'">{{locale.ProcessCompliance}}
+							<label ng-class="(performanceMatrixObj.PROCESS_COMPLIANCE__c_Percentage < 40) ? 'red' : ((performanceMatrixObj.PROCESS_COMPLIANCE__c_Percentage >= 80) ? 'green' : 'black')">{{(performanceMatrixObj.PROCESS_COMPLIANCE__c)?performanceMatrixObj.PROCESS_COMPLIANCE__c.toFixed(2):0}}</label>
+						</p>
+						<p ng-show="designation!='TBM'">{{locale.FieldWorkDays}}
+							<label ng-class="(performanceMatrixObj.Field_Work_Points__c_Percentage < 40) ? 'red' : ((performanceMatrixObj.Field_Work_Points__c_Percentage >= 80) ? 'green' : 'black')">{{(performanceMatrixObj.Field_Work_Points__c)?performanceMatrixObj.Field_Work_Points__c.toFixed(2):0}}</label>
+						</p>
+						<p ng-show="designation=='TBM'">{{locale.CallAvg}}
+							<label>{{(performanceMatrixObj.DOC_CALL_FW_Score__c)?performanceMatrixObj.DOC_CALL_FW_Score__c.toFixed(2):0}}</label>
+						</p>
+						<p ng-show="designation=='TBM' && ['AS'].indexOf(userType)==-1 && divisionName!='Hepatic'">{{locale.PcCoverage}}
+							<label>{{(performanceMatrixObj.COV_2PC_Score__c)?performanceMatrixObj.COV_2PC_Score__c.toFixed(2):0}}</label>
+						</p>
+						<p ng-show="designation=='TBM'">{{locale.TotalCoverage}}
+							<label ng-class="(performanceMatrixObj.TOTAL_COV_Score__c_Percentage < 40) ? 'red' : ((performanceMatrixObj.TOTAL_COV_Score__c_Percentage >= 80) ? 'green' : 'black')">{{(performanceMatrixObj.TOTAL_COV_Score__c)?performanceMatrixObj.TOTAL_COV_Score__c.toFixed(2):0}}</label>
+						</p>
+						<p ng-hide="designation=='ZBM' || (designation=='TBM' && ['MR', 'TBD', 'PSM', 'AS'].indexOf(userType)!=-1 && (divisionName==='vaccine' ||  divisionName==='GenNexr'))">{{locale.ELearningModule}}
+							<label ng-class="(performanceMatrixObj.ELEARNING_MODULE__c_Percentage < 40) ? 'red' : ((performanceMatrixObj.ELEARNING_MODULE__c_Percentage >= 80) ? 'green' : 'black')">{{(performanceMatrixObj.ELEARNING_MODULE__c) ? performanceMatrixObj.ELEARNING_MODULE__c.toFixed(2):0}}</label>
+						</p>
+						<p>{{locale.WasteReduction}}
+							<label ng-class="(performanceMatrixObj.WASTE_REDUCTION_score__c_Percentage < 40) ? 'red' : ((performanceMatrixObj.WASTE_REDUCTION_score__c_Percentage >= 80) ? 'green' : 'black')">{{(performanceMatrixObj.WASTE_REDUCTION_score__c)?performanceMatrixObj.WASTE_REDUCTION_score__c.toFixed(2):0}}</label>
+						</p>
+						<p ng-show="designation=='ZBM'">{{locale.ESecondary}}
+							<label ng-class="(performanceMatrixObj.E_Secondary_Points__c_Percentage < 40) ? 'red' : ((performanceMatrixObj.E_Secondary_Points__c_Percentage >= 80) ? 'green' : 'black')">{{(performanceMatrixObj.E_Secondary_Points__c)?performanceMatrixObj.E_Secondary_Points__c.toFixed(2):0}}</label>
+						</p>
+						<p ng-show="designation=='ZBM'">{{locale.ForecastAccuracy}}
+							<label ng-class="(performanceMatrixObj.Forecast_Accuracy_Points__c_Percentage < 40) ? 'red' : ((performanceMatrixObj.Forecast_Accuracy_Points__c_Percentage >= 80) ? 'green' : 'black')">{{(performanceMatrixObj.Forecast_Accuracy_Points__c)?performanceMatrixObj.Forecast_Accuracy_Points__c.toFixed(2):0}}</label>
+						</p>
+						<p ng-show="designation=='ZBM'">{{locale.Coaching}}
+							<label ng-class="(performanceMatrixObj.COACHING_Score__c_Percentage < 40) ? 'red' : ((performanceMatrixObj.COACHING_Score__c_Percentage >= 80) ? 'green' : 'black')">{{(performanceMatrixObj.COACHING_Score__c)?performanceMatrixObj.COACHING_Score__c.toFixed(2):0}}</label>
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!--New Changes Starts Here-->

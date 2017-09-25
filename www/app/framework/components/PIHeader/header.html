@@ -1,0 +1,22 @@
+<nav class="row header">
+    <div class="col-xs-2 nav-icon-wrap">
+        <div class="nav-icon animated" ng-if="!headerConfig.isDashboard" ng-click="prevScreen();">
+            <img src="img/icons/back.png" alt="back-icon" />
+        </div>
+        <div class="nav-icon animated" ng-if="headerConfig.isDashboard" ng-click="navigateToHome()">
+            <img src="img/icons/abbott-logo-2.png" alt="back-icon" />
+        </div>
+    </div>
+    <div class="col-xs-6 nav-title-wrap">
+        <span class="screen-title" ng-if="headerConfig.isDashboard">
+            {{headerConfig.userName}}
+            <small ng-if="headerConfig.subUserDetail">{{headerConfig.subUserDetail}}</small>
+        </span>
+        <span class="screen-title" ng-if="!headerConfig.isDashboard">{{headerConfig.prevHeading}}</span>
+    </div>
+    <div class="col-xs-4 nav-claims-zone" ng-if="!headerConfig.isDashboard && headerConfig.zoneData">
+        <span class="zone-title" ng-repeat="item in headerConfig.zoneData">
+         <i ng-if="$index === 0"> ( </i>{{item.names}}<i ng-if="!$last"> |</i><i ng-if="$last"> ) </i>
+        </span>
+    </div>
+</nav>

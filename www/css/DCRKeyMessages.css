@@ -1,0 +1,172 @@
+.keymsg-table-headcont {
+	height: 13%;
+}
+
+.keymsg-table {
+	height:100%;
+	width:100%;
+}
+
+.keymsg-header-row {
+	background-color: #0EB4D6;
+	height: 100%;
+	color:#FFFFFF;
+	font-size:0.813em;
+}
+
+.keymsg-header-row td {
+	padding-left:0.5em;
+}
+
+.keyMsgBrandCol{
+	width:20%;
+}
+.keyMsgCol{
+	width:80%;
+}
+
+.keyMsgTableBrandCol{
+	width:20%;
+}
+.keyMsgTableCol{
+	width:70%;
+	padding-bottom: 0.5em;
+}
+
+.keyMsgAddCol{
+	width:10%;
+	padding-left: 1em;
+}
+
+.keymsg-footer {
+	background-color:white;
+	border:none;
+	height: 15%;
+	min-height:0px;
+}
+
+.keymsg-footer-savebtn {
+	background: #0EB4D6;
+    border-radius: 0.4em;
+    border: none;
+    color: #ffffff;
+    width: 50%;
+    float:right;
+    height: 2.5em;
+    margin-left: 0.2em;
+    margin-right: 0.2em;
+    font-size: 0.813em;
+}
+
+.keymsg-table-listcont {
+	height:72%;
+	overflow-y: auto;
+	width:100%
+}
+
+.keymsg-table {
+	height:100%;
+	width:100%;
+}
+
+.keymsg-table-row {
+   font-size: .9em;
+   border-bottom: 1px solid #EDEDED;
+   color: #666666;
+   height: 3em;
+}
+
+.keyMsgDataCol {
+	background-color:#ededed;  
+	display: table; 
+	margin-top: 0.5em;
+}
+
+.keyMsgRemoveIcon {
+	background-size: cover;
+	height: 1.4em;
+	width: 1.4em; 
+	float:left; 
+	vertical-align: middle;
+	display: table-cell;  
+	margin: 50% 0.5em;
+}
+
+.keyMsgTextCol {
+	color:#666666;
+	vertical-align: middle; 
+	display: table-cell;
+}
+
+.DCRKeyMessagebrandRowWidth{
+	width:30%;
+}
+
+.borders{
+	border-width: 1px;
+    border-right-style: solid;
+    color: #ededed;
+    border-bottom-style: solid;
+}
+
+.keyMessagebrandRowFloat{
+	float:left;
+}
+
+.keyMessagemessageRowFloat{
+	width:70%;
+}
+
+.addIconRightShift{
+	float:right;
+}
+
+.keyMessagePicSize{
+	height:1.5em;
+	width:1.5em;
+	background-size:cover;
+}
+
+.keymsg-table-row td {
+	padding-left:0.5em;
+}
+
+.brandsPlacement{
+	    height: 3em;
+    vertical-align: middle;
+}
+
+.table-nomargin {
+	margin-bottom:0px;
+}
+
+
+/****** Key Messages Popup *******/
+.keymsgpopup-header {
+	background-color:#EDEDED;
+	padding-top: 0.5em;
+	border-top-left-radius: 10px;
+	border-top-right-radius: 10px;
+	text-align: center;
+	font-size: 1em;
+	font-weight: bold;
+}
+
+.keymsgpopup-subheader {
+	font-weight:normal;
+}
+
+.keymsgpopup-maincontent {
+	height:7em;
+	overflow-y:scroll;
+}
+
+.keymsgpopup-mainsubcontent {
+	padding: 0.5em;
+	text-align: left;
+	border-bottom: 1px solid #e6e6e6;
+}
+
+.keymsgpopup-checkbox {
+	padding: 0em 0.3em;
+}

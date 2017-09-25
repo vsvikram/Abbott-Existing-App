@@ -1,0 +1,177 @@
+<div class="row">
+    <div class="mob-header">
+        <abw-header data-abwheader-config="abwheaderConfig"></abw-header>
+    </div>
+    <div class="tab-header">
+        <!-- header tab goes here-->
+    </div>
+    <div class="landing-wrapper page-wrap" ng-init="init()">
+        <div class="searchIcon">
+            <img src="img/search.png">
+            <input type="text" class="search-query" placeholder="Search">
+        </div>
+        <div class="top-icon">
+            <img src="img/abbworld.png">
+        </div>
+        <div class="user-detail">
+            <img src="img/yashround.png">
+            <p class="welcome-user">Welcome {{$root.loggedUserName}},</p>
+            <p class="welcome-user-name">Welcome Neeraj,</p>
+            <p class="welcome-user-details">Last sync: <span>21 Mar,2017</span> |<span> 231mb</span></p>
+        </div>
+        <div class="landing-lists">
+            <div class="list-item list-item-border" ng-click="onMTPClick()">
+                <div class="left-side">
+                    <div class="item-one">
+                        <img src="img/monthlytour.png">
+                    </div>
+                </div>
+                <div class="right-side">
+                    <div class="item-two">
+                        <p class="list-desc">Monthly Tour Plan</p>
+                        <p class="list-subtext">View your day wise plan
+                            <br/>for the month</p>
+                    </div>
+                    <div class="item-three">
+                        <img src="img/icons/rightarrow.png">
+                    </div>
+                </div>
+            </div>
+            <!--<div class="list-item list-item-border" ng-click="onDCRClick()">-->
+            <div class="list-item list-item-border" ng-click="onDCRClick()">
+                <div class="left-side">
+                    <div class="item-one">
+                        <img src="img/dailycall.png">
+                    </div>
+                </div>
+                <div class="right-side">
+                    <div class="item-two">
+                        <p class="list-desc">Daily Call Reporting</p>
+                        <p class="list-subtext">Report your daily calls
+                            <br/>and activities</p>
+                    </div>
+                    <div class="item-three">
+                        <img src="img/icons/rightarrow.png">
+                    </div>
+                </div>
+            </div>
+            <!--<div class="list-item" ng-click="navigateToExpense()">-->
+          <!--  <div class="list-item list-item-border" ng-click="navigateToExpense()">
+                <div class="left-side">
+                    <div class="item-one">
+                        <img src="img/expense.png">
+                    </div>
+                </div>
+                <div class="right-side">
+                    <div class="item-two">
+                        <p class="list-desc">Expense</p>
+                        <p class="list-subtext">File your expenses</p>
+                    </div>
+                    <div class="item-three">
+                        <img src="img/icons/rightarrow.png">
+                    </div>
+                </div>
+            </div>-->
+            <div class="list-item list-item-tab list-item-border">
+                <div class="left-side">
+                    <div class="item-one">
+                        <img src="img/media.png">
+                    </div>
+                </div>
+                <div class="right-side">
+                    <div class="item-two">
+                        <p class="list-desc">Media</p>
+                        <p class="list-subtext">Digital content
+                            <br/>(CLM)</p>
+                    </div>
+                    <div class="item-three">
+                        <img src="img/icons/rightarrow.png">
+                    </div>
+                </div>
+            </div>
+            <!--<div class="list-item" ng-click="navigateToSFE()">
+                <div class="left-side">
+                    <div class="item-one">
+                        <img src="img/media.png">
+                    </div>
+                </div>
+                <div class="right-side">
+                    <div class="item-two">
+                        <p class="list-desc">SFE</p>
+                        <p class="list-subtext">SFE
+                            <br/>(CLM)</p>
+                    </div>
+                    <div class="item-three">
+                        <img src="img/icons/rightarrow.png">
+                    </div>
+                </div>
+            </div>-->
+            <!--<div class="list-item list-item-border" ng-click="navigateToMyLeave()">-->
+            <div class="list-item list-item-border" ng-click="navigateToMyLeave()">
+            <div class="left-side">
+                    <div class="item-one">
+                        <img src="img/leaves.png">
+                    </div>
+                </div>
+                <div class="right-side">
+                    <div class="item-two">
+                        <p class="list-desc">Leave</p>
+                        <p class="list-subtext">Manage your leaves</p>
+                    </div>
+                    <div class="item-three">
+                        <img src="img/icons/rightarrow.png">
+                    </div>
+                </div>
+            </div>
+            <div class="list-item"  ng-click="navigateToPI()">
+                <div class="left-side">
+                    <div class="item-one">
+                        <img src="img/performance.png">
+                    </div>
+                </div>
+                <div class="right-side">
+                    <div class="item-two">
+                        <p class="list-desc">Performance Insight (Pi)</p>
+                        <p class="list-subtext">Track all the insights and data through this management app</p>
+                    </div>
+                    <div class="item-three">
+                        <img src="img/icons/rightarrow.png">
+                    </div>
+                </div>
+            </div>
+            <div class="list-item" ng-click="navigateToSFE()">
+                <div class="left-side">
+                    <div class="item-one">
+                        <img src="img/Insights.png">
+                    </div>
+                </div>
+                <div class="right-side">
+                    <div class="item-two">
+                        <p class="list-desc">SFE</p>
+                        <p class="list-subtext">SFE content
+                            <br/>(CLM)</p>
+                    </div>
+                    <div class="item-three">
+                        <img src="img/icons/rightarrow.png">
+                    </div>
+                </div>
+            </div>
+            <div class="list-item" ng-click="navigateToHelpdesk()">
+                <div class="left-side">
+                    <div class="item-one">
+                        <img src="img/1point.png">
+                    </div>
+                </div>
+                <div class="right-side">
+                    <div class="item-two">
+                        <p class="list-desc">1Point</p>
+                        <p class="list-subtext">Reach out to 1point for support</p>
+                    </div>
+                    <div class="item-three">
+                        <img src="img/icons/rightarrow.png">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

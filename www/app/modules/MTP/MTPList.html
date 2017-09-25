@@ -1,0 +1,50 @@
+
+<transparent-screen></transparent-screen>
+<div class="row">
+	<div class="mob-header">
+		<abw-header data-abwheader-config="abwheaderConfig"></abw-header>
+	</div>
+	<div class="tab-header">
+		<!-- header tab goes here-->
+	</div>
+	<div class="view-container container-fluid">
+		<div class="mtp-wrapper page-wrap" ng-init="init()">
+			<mtp-Month-Header data-plan-months='2'></mtp-Month-Header>
+			<div class="mtp-content-wrapper content-wrapper">
+				<day-Calendar data-plan-months='2' data-day-details='getDayData'></day-Calendar>
+
+				<div class="mtp-info-wrapper">
+					<div class="mtp-info">
+						<div class="mtp-total"><span>{{callsToGo}}</span><span>Calls</span></div>
+						<div class="mtp-place"><span>{{patchDetails}}</span><span>Patch</span></div>
+					</div>
+					<div class="mtp-content-wrapper">
+						<div class="mtp-content" ng-repeat="index in mtpDetails">
+							<div class="mtp-name">{{ index.name }}</div>
+							<div class="mtp-file" ng-click="goToDcr(index)" ng-if="isGoToDcrAvailable()">FILE DCR</div>
+							<div class="mtp-details">
+								<span>{{ ((index.speciality != null || index.speciality == '') ? index.speciality : locale.NotFound) }} </span>
+								<span>{{ ((index.personMobilePhone != null || index.personMobilePhone == '') ? index.personMobilePhone : locale.NotFound) }}</span>
+							</div>
+							<div class="mtp-location">
+								<span>{{ ((index.patch != null || index.patch == '') ? index.patch : locale.NotFound) }}</span>
+								<span>Last Visited: </span><span><b>{{ index.last_Visit_Date }}</b></span>
+							</div>
+						</div>						
+						<div ng-if="!transperantConfig.display && !nonFieldActivityName && mtpDetails.length==0"
+							 style="text-align:center">
+							{{locale.NoDataAvailable}}
+						</div>
+						<div ng-if="!transperantConfig.display && nonFieldActivityName" style="text-align:center">
+							<span class="fontRobotoLight">{{locale.Activity}} {{locale.Name}}:</span>
+							<span class="fontRobotoMedium">{{nonFieldActivityName}}</span>
+						</div>
+					</div>
+					<div class="app-card-count">
+						<div class="app-count">Total  <span>{{mtpDetails.length}}</span> </div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

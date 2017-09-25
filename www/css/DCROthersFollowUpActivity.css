@@ -1,0 +1,187 @@
+.followup-table-headcont {
+	height: 13%;
+}
+
+.followup-table {
+	height:100%;
+	width:100%;
+}
+
+.followup-header-row {
+	background-color: #0EB4D6;
+	height: 100%;
+	color:#FFFFFF;
+	font-size:0.813em;
+}
+
+.followup-header-row td, .followup-listheader-row td {
+	padding-left:0.5em;
+	padding-rights:0.5em;
+}
+
+.followup-subject-col {
+	width:25%;
+}
+.followup-date-col {
+	width:25%;
+}
+.followup-comment-col {
+	width:38%;
+}
+.followup-action-col {
+	width:12%;
+}
+
+.followup-table-listcont {
+	height:72%;
+	width:100%;
+}
+
+.followup-table-listcont {
+	height:72%;
+	width:100%;
+}
+
+.followup-listheader {
+	width: 100%;
+	height: 21%;
+}
+
+.followup-list {
+	height: 79%;
+	overflow: auto;
+}
+
+.followup-listheader-row {
+	font-size: 0.9em;
+	background-color: #fbfbfb;
+	color:#666666;
+}
+
+.followup-listtable {
+	width: 100%;
+}
+
+.followup-addicon {
+	float:left; 
+	width: 2em; 
+	height: 2em; 
+	background-size: cover;
+}
+
+.followup-deleteicon {
+	margin-right: 7%;
+	float:right; 
+	width: 2em; 
+	height: 2em; 
+	background-size: cover;
+}
+
+.followup-removeicon {
+	float: left;
+	width: 2em;
+	height: 2em;
+	background-size: cover;
+}
+
+.followup-footer {
+	background-color:white;
+	border:none;
+	height: 15%;
+	min-height:0px;
+}
+
+.followup-savebtn {
+	background: #0EB4D6;
+    border-radius: 0.4em;
+    border: none;
+    color: #ffffff;
+    width: 50%;
+    float:right;
+    height: 2.5em;
+    margin-left: 0.2em;
+    margin-right: 0.2em;
+    font-size: 0.813em;
+}
+
+.followup-date {
+	line-height:inherit !important;
+}
+
+.tabulation1 {
+       width: 100%;
+       background-color: rgba(57, 185, 212, 0.92);
+       height: 2em;
+       font-size: 0.813em;
+}
+
+.tabulation2 {
+		padding-top: .2em;
+       width: 100%;
+}
+
+.dist {
+       padding: 0em;
+}
+
+.tabtext1 {
+       padding-left: 0.5em;
+       color: white;
+}
+
+.inputbox1 {
+       width: 92%;
+}
+
+.inputbox2 {
+       width: 4em;
+}
+
+.inputbox3 {
+       width: 95%;
+}
+
+.press {
+       border-bottom: 0.1em solid rgba(0, 0, 0, 0.08);
+}
+
+.row1 {
+	background-color: rgba(109, 167, 171, 0.32);
+    border-bottom: 0.1em solid rgba(0, 0, 0, 0.08);
+       height: 2em;
+       font-size: 0.813em;
+}
+
+.datecontrol, input[type="date"] {
+       background: url("../resources/images/1x/Calender.png") right no-repeat;
+       -webkit-appearance: none;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator, input[type="date"]::-webkit-inner-spin-button
+{
+       z-index: 2000;
+       -webkit-appearance: none;
+}
+
+
+.listOfActivitiesDiv{
+
+overflow-y:scroll;
+height:7em;
+}
+
+.listOfActivitiesTable{
+
+}
+.date-div{
+	width:10em;
+	height:18px;
+	padding: 1px;
+        border-bottom-style: inset;
+        border-width: 1px;
+        border-collapse: collapse;
+    color: grey;
+        border-style: inset;
+
+        border-color: rgb(238, 238, 238);
+}

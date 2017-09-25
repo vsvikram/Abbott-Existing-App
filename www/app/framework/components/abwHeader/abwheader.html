@@ -1,0 +1,126 @@
+<div>
+    <header class="header col-xs-12" >
+        <nav class="row">
+            <div class="nav-icon-wrapper" ng-class="{searchSelect: searchHandler}">
+                <div class="disclaimer-note" ng-class="{'show-header-title':abwheaderConfig.headerText}">
+                    <div class="nav-icons-container" ng-show="iconHandler">
+                        <div class="icon1">
+                            <div class="nav-icons" ng-click="toggleSideMenu(true)"></div>
+                            <div class="abbottLogo" ng-show="abwheaderConfig.applogoFlag" ng-click="navigateToHome()"></div>
+                            <div ng-show="abwheaderConfig.headerText" class="header-title">{{abwheaderConfig.headerText}}</div>
+                            <div class="point-txt" ng-show="abwheaderConfig.textFlag"><p>1Point (Helpdesk)</p></div>
+                        </div>
+                        <div class="icon2">
+                            <div class="refresh-icon" ng-show="abwheaderConfig.syncFlag" ng-click="sync()">
+                            </div>
+                            <div class="notify-icon" ng-click="notificationPopup()">
+                                <div class="notifing">
+                                    <span ng-if="unread<10">0{{unread}}</span>
+                                    <span ng-if="unread>=10">{{unread}}</span>
+                                </div>
+                            </div>
+                            <div class="search-icon" ng-click="showSearchHandler()">
+                            </div>
+                        </div>
+                        <div class="disclaimer-txt">
+
+                            <p>DISCLAIMER</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="search-section" ng-show="searchHandler">
+                    <input type="text" name="search" placeholder="Search" ng-model="test" autocomplete="off" ng-focus="recentStorage()" ng-click="recentStorage()" ng-keyup="showSuggestions()" />
+                    <a href="javascript:void(0)" ng-click="hideSearchHandler()">Cancel</a>
+                </div>
+            </div>
+            <div class="suggestion" ng-show="showSuggestion">
+                <h4>Suggestion</h4>
+                <ul>
+                    <li class="suggestion-list" ng-repeat="list in appCards | searchFilter : 'Name' : test | limitTo: 3">
+                        <p ng-click="appendSearch(list)">{{list}}</p>
+                    </li>
+                </ul>
+            </div>
+            <div class="recent-search" ng-show="showRecentSearch">
+                <h4>Recent searches<span ng-show="showRecentClear" ng-click="clearSearch()">Clear</span></h4>
+                <ul>
+                    <li class="search-content" ng-repeat="list in appList | unique:'list'">
+                        <p ng-click="appendSearch(list)">{{list}}<span ng-click="deleteList($index, list)">X</span></p>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <!-- <link rel="stylesheet" type="text/css" href="app/components/notification/notification.css">
+             <ng-include src="'./app/components/notification/notification.html'"></ng-include> -->
+
+        <div class="notification-wrapper animated" ng-show="showNotification" ng-class="{'slideInDown':notificationToggle,'slideOutUp':!notificationToggle}" >
+            <div class="top-contents">
+                <div class="txt-left">
+                    <p>Notifications</p>
+                </div>
+                <div class="txt-right">
+                    <p ng-click="markAsRead()">Mark all as read</p>
+                </div>
+            </div>
+
+            <div class="content-wrapper">
+                <div ng-repeat="item in $root.notificationData">
+                    <div ng-if="item.Category__c == 'App' && item.Operation_Type__c == 'Update'"
+                    ng-class="{changeWhite:$root.changeColor,read:item.isRead=='true'}" ng-click="changeRead(item,$index);openUpdatePopup(item)" class="notify-contents">
+
+                        <div class="left-txt">
+                            <img src="img/pink-icon.png">
+                        </div>
+                        <div class="center-txt">
+                            <p ng-bind-html="item.message"></p>
+                        </div>
+                        <div align="right" class="right-txt">
+                            <p am-time-ago="item.CreatedDate" class="remain-txt">
+                            </p>
+                        </div>
+                    </div>
+
+
+                    <div ng-if="item.Category__c == 'App' && item.Operation_Type__c == 'Create'"
+                     ng-class="{changeWhite:$root.changeColor,read:item.isRead=='true'}" ng-click="changeRead(item,$index);openAddPopup(item)" class="notify-contents">
+
+                        <div class="left-txt">
+                            <img src="img/pink-icon.png">
+                        </div>
+                        <div class="center-txt">
+                            <p ng-bind-html="item.message"></p>
+                        </div>
+                        <div align="right" class="right-txt">
+                            <p am-time-ago="item.CreatedDate" class="remain-txt">
+                            </p>
+                        </div>
+                    </div>
+
+
+                    <div ng-if="item.Category__c == 'SMS'"
+                     ng-class="{changeWhite:$root.changeColor,read:item.isRead=='true'}" ng-click="changeRead(item,$index);openSMSPopup(item.SMS_Engine_Message__c)" class="notify-contents">
+
+                        <div class="left-txt">
+                           <img src="img/checklist-icon.png">
+                        </div>
+                        <div class="center-txt">
+                            <p class="bottom-txt">
+                            {{item.message}}
+                            </p>
+                        </div>
+                        <div align="right" class="right-txt">
+                            <p am-time-ago="item.CreatedDate" class="remain-txt">
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div ng-class="{'search-overlay': overlayActive}"></div>
+    </header>
+    <!--
+         <ng-include src="'./app/components/side-menu/side-menu.html'"></ng-include>
+         <navigation-panel status='toggleSideMenu' data-ng-show='toggleSideMenu'></navigation-panel>
+    -->
+    <side-panel data-hide-side-menu='hideSideMenu' data-show-side-menu='showSideMenu' data-toggle-side-menu='toggleSideMenu'></side-panel>
+</div>

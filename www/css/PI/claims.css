@@ -1,0 +1,223 @@
+.grid g line,
+.grid path {
+    stroke: #ececec;
+}
+
+g.axis.axis--y .tick line {
+    stroke: #ececec;
+}
+
+g.axis.axis--y path,
+g.axis.axis--x path,
+.grid path,
+.axis--x .tick line {
+    display: none;
+}
+
+.axis--x .tick text {
+    font-size: 0.563rem;
+    font-weight: bold;
+    fill: #828080;
+    text-transform: uppercase;
+}
+
+.rect-g text {
+    fill: #f7ca39;
+    font-size: 0.563rem;
+    font-weight: 700;
+}
+
+.rect-g rect {
+    fill: #f7ca39;
+}
+
+g.axis.axis--y>g:first-of-type>text {
+    display: none;
+}
+
+g.axis.axis--y>text {
+    font-size: 0.500rem;
+    fill: #000;
+    font-weight: normal;
+}
+
+.chart-bar-line .bg-rect-g rect.bar-bg {
+    fill: #f7f7f7;
+}
+
+.tick text {
+    font-size: 0.563rem;
+    fill: #c6c6c6;
+}
+
+.chartWrapper {
+    margin-top: 4.07vw;
+}
+
+.chart-title {
+    font-size: 0.750rem;
+    color: #a44067;
+    margin-left: 4.07vw;
+    font-weight: bold;
+    padding-top: 2.41vw;
+}
+
+.line {
+    fill: none;
+    stroke: #9c2757;
+    stroke-width: 0.83vw;
+}
+
+.dots>circle {
+    stroke: #fff;
+    stroke-width: 0.56vw;
+    fill: #9c2757;
+}
+/*.x-grid g.grid-box.grid-box-x rect{
+    fill: #fff;
+}*/
+
+.x-grid g.grid-box.grid-box-x:nth-of-type(even) rect {
+    fill: #fff;
+}
+
+.x-grid g.grid-box.grid-box-x:nth-of-type(odd) rect {
+    fill: #f7f8f9;
+}
+
+.chart-bar-line .rect-g text {
+    fill: #ffffff;
+}
+
+.chart-bar-line .rect-g rect {
+    fill: #a44067;
+}
+
+.chart-bar-line .dots>circle {
+    fill: #f7ca39;
+}
+
+.chart-bar-line .line {
+    stroke: #f7ca39;
+}
+
+.chart-bar-line g.axis.axis--y.axis-right>.tick>line {
+    display: none;
+}
+
+.chart-bar-line .axis.axis--y g.tick:last-of-type>text {
+    display: none;
+}
+.rect-g text.bar-text{
+    font-weight: normal;
+}
+.rect-g rect.bar.bar-0
+{
+    fill:#395b77;
+}
+.rect-g text.bar-text.bar-text-0{
+    fill: #395b77;
+}
+.rect-g rect.bar.bar-1
+{
+    fill:#cf2d6e;
+}
+.rect-g text.bar-text.bar-text-1{
+    fill: #cf2d6e;
+}
+
+
+.data-chart text {
+    font-size: 0.563rem;
+    fill: #fff;
+}
+.chart-bar-line .data-chart text {
+    fill: #000;
+}
+.progress-bar {
+    width: 80.93vw;
+    float: none;
+    border-radius: 5px;
+    display: block;
+    margin: 0 auto;
+    background-color: #ddd;
+    margin-bottom: 5.74vw;
+    box-shadow: none;
+}
+
+.progression {
+    width: 0;
+    height: 2.22vw;
+    border-radius: 5px;
+    background-color: #f7ca39;
+    text-align: center;
+    color: white;
+    position: relative;
+}
+
+.progress-value {
+    position: absolute;
+    color: rgba(37, 37, 37, .7);
+    font-size: 0.563rem;
+    top: -3.305vw;
+    right: -4.305vw;
+    border: 0.56vw solid #fff;
+    /* padding: 5px; */
+    background-color: #f7ca39;
+    border-radius: 50%;
+    width: 8.61vw;
+    height: 8.61vw;
+    line-height: 7.61vw;
+    font-weight: 700;
+}
+
+.content-box.progress {
+    padding-bottom: 7.41vw;
+    float: left;
+    height: auto;
+}
+
+.progress .chart-title {
+    margin-bottom: 9.63vw;
+}
+
+.progress-title {
+    margin-bottom: 0;
+    text-align: center;
+    color: rgba(37, 37, 37, .7);
+    font-size: 0.750rem;
+    margin-top: 5.74vw;
+    font-weight: 700;
+}
+rect.data-mid ,.text-mid{
+    fill: #828080;
+}
+.sales .progression,.sales .progress-value{
+    background-color: #9c2757;
+}
+.sales .progress-value{color:#fff;}
+g.rect-g.sales-rect rect,g.rect-g.sales-rect text {
+    fill: #828080;
+}
+g.rect-g.sales-rect:last-child rect,g.rect-g.sales-rect:last-child text {
+    fill: #f7ca39;
+}
+#median-text {
+    font-size: 0.56rem;
+    fill: #7f7f7f;
+}
+.median-border {
+    height: 15;
+    width: 50;
+    fill:transparent;
+    stroke: #666;
+    stroke-width: 0.5;    
+}
+.axis--x.trans .tick text {
+    transform: rotate(-45deg);
+    text-anchor: end;
+}
+
+.bar-line {
+    fill: #000 !important;
+}

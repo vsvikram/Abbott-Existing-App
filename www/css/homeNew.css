@@ -1,0 +1,56 @@
+/* Home Mobile */
+.page-home { background-color: #f4f4f4; }
+.banner-section { height: 69.44vw; background-size: contain; background-repeat: no-repeat; }
+.banner-section .banner-logo { width: 36.11vw; margin-left: 7.41vw; margin-top: 12.78vw; }
+.banner-text { font-size: 0.625rem; margin-left: 7.41vw; margin-top: 5.19vw; color: #414042; font-weight: 400; }
+.view-container { padding: 0; }
+.module { height: 34.26vw; width: 32.43vw; background: #fff; position: relative; display: inline-block; }
+.module-content { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 100%; text-align: center; padding-left: 7.96vw; padding-right: 7.96vw; }
+.module-img { max-width: 100%; display: block; margin: 0 auto; }
+.module-text { font-size: 0.813rem; margin-top: 4.63vw; font-weight: bold; color: #414042; }
+.module-wrapper { margin-top: -17.59vw; width:100%; display:block; }
+.apps-title { font-size: 0.820rem; font-weight: 500; display: inline-block; float: left; color: #414042;padding: 2vw 1vw; }
+.apps-wrapper-title span { font-size: 0.750rem; text-decoration: underline; color: #9c2757; font-weight: 500; }
+.apps-wrapper-title span:last-of-type { margin-right: 5.37vw; float: left; }
+.apps-wrapper-title span:first-of-type { margin-right: 1.37vw; float: right; }
+.apps-wrapper { padding: 7.78vw 2.34vw 3.33vw; float: left; width: 100%; }
+.module-button-tab { display: none; }
+.banner-section .search-field { display: none; }
+.links-wrapper { display: inline-block; float: right; }
+
+/*Home Tablet*/
+@media screen
+and (min-width:980px) {
+    .banner-section { height: 39.84vw; background-size: cover; background-repeat: no-repeat; position: relative; }
+    .header { position: fixed; width: 5.95vw; height: 100vw; z-index: 99;}
+    .view-container { height: calc(100vh); padding-left: 5.55vw; }
+    .banner-section .banner-logo { margin-top: 10.63vw; margin-left: 6.67vw; width: 20vw; }
+    .banner-text { font-size: 1.125rem; margin-top: 2.81vw; font-weight: normal; margin-left: 6.17vw; }
+    .banner-text br { display: none; }
+    .module { height: 13.28vw; width: 18.75vw; margin-right: 0.3vw; }
+    .module-wrapper { display: block; text-align: center; margin-top: -11.3vw; }
+    .module-content { padding-left: 2.5vw; padding-right: 2.5vw; top: 42%; }
+    .module-img { width: 40%; display: inline-block; float: left; }
+    .module-text { font-size: 1.313rem; margin-top: 1.69vw; }
+    .module:nth-of-type(3) .module-text { padding-left: 6.5vw; }
+    .module-button-tab { background-repeat: no-repeat; background-position: 94%; display: block; text-align: left; font-size: 1rem; position: absolute; bottom: 0; background-color: #9c2757; color: #fff; width: 100%; padding-bottom: 0.83vw; padding-top: 0.53vw; padding-left: 1.25vw; }
+    .module-button-tab img { position: absolute; right: 0; top: 0.8vw; width: 1vw; padding: 0.2vw; margin-right: 1vw; }
+    .apps-title { font-size: 1.5rem; font-weight:600; }
+    .apps-wrapper-title span { font-size: 0.95rem; }
+    .links-wrapper { padding-right: 3.91vw; margin-top: 0.83vw;}
+    .apps-wrapper { padding: 4.14vw 0 0 3.91vw; float:none;}
+    .apps-wrapper-title span:first-of-type { margin-right: 2.19vw; }
+    .apps-wrapper-title span { float: none; }
+    .apps-wrapper-title span:first-of-type { float: left; }
+    .apps-wrapper-title span:last-of-type { margin-right: 0; }
+    .banner-section .search-field { display: block; background-repeat: no-repeat; background-color: transparent; background-position: left; outline: none; padding-left: 2.23vw; border: none; position: absolute; font-size: 1rem; margin-left: 2.03vw; margin-top: 2.03vw; }
+    .banner-section .search-field.inputFocus { width: 84.53vw; border-bottom: 1px solid #9b9b9c; margin: 0; }
+    .banner-section .search-field.inputFocus::-webkit-input-placeholder { font-weight: lighter; font-size: 1.25vw; color: #444; }
+    .banner-section .input-field span { font-weight: lighter; font-size: 1.25vw; color: #444; float: right; }
+    .input-field { width: 100%; float: left; }
+    .input-field.focusedField { background-color: #fff; -webkit-box-shadow: inset -2px -10px 36px #d5d5d5, inset 0px -1px 5px #d5d5d5; box-shadow: inset -2px -10px 36px #d5d5d5, inset 0px -1px 5px #d5d5d5; padding: 2.7vw 1.64vw 2.7vw 2.11vw; }
+    .input-field.focusedField:before { content: ''; width: 1.8vw; height: 1.8vw; background-size: 100%; background-image: url(../../../assets/img/icons/search.png); background-repeat: no-repeat; }
+    .recent-search { top: 16%; padding: 1.56vw 7.81vw 1.56vw 5.08vw; -webkit-box-shadow: 0px 10px 11px -4px rgba(215, 215, 215, 1); -moz-box-shadow: 0px 10px 11px -4px rgba(215, 215, 215, 1); box-shadow: 0px 10px 11px -4px rgba(215, 215, 215, 1); }
+    .recent-search h4 { color: #444; font-size: 1.25vw; }
+    .recent-search ul li { list-style-type: none; font-size: 1.64vw; color: #444; padding-top: 2.34vw; }
+}

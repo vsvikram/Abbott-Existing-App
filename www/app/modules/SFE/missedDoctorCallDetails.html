@@ -1,0 +1,18 @@
+<div class="row">
+	<div class="mob-header">
+		<abw-header data-abwheader-config="abwheaderConfig"></abw-header>
+	</div>
+	<div class="view-container">
+		<module-nav config='config'></module-nav>
+
+	<div class="missedDoc-content content-wrapper" >
+		<div class="table">
+			<div data-ng-repeat="doc in missedDoctorDetails track by $index" ng-class-even="'even-row'">
+				<div class="col-xs-2 col-lg-2 col-sm-2 col-md-2 missCal-num">{{$index + 1}}</div>
+				<div class="col-xs-9 col-lg-9 col-sm-9 col-md-9 missCal-name">{{doc}}</div>
+				<div class="col-xs-1 col-lg-1 col-sm-1 col-md-1">&nbsp;</div>
+			</div>
+		</div>
+	</div>
+	</div>
+</div>

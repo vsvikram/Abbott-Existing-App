@@ -1,0 +1,114 @@
+.side-menu-wrap{
+    position: fixed;
+    height: 100vh;
+    width: 100vw;
+    background-color: rgba(0,0,0,0.6);
+    z-index: 999;
+    display: none;
+}
+.mobile-menu {
+    height: 100vh;
+    background: #f0f0f0;
+    width: 77.8vw;
+    float: left;
+    overflow: auto;
+    /*position: absolute;
+    left: -77.8vw;
+    top: 0;
+    transition: 0.5s;*/
+}
+
+.mobile-menu img {
+    width: 8.83vw;
+    float: left;
+}
+
+.user-profile-menu img {
+    width: 13.33vw;
+    float: left;
+}
+
+.user-profile-menu {
+    padding: 4.83vw 4.5vw 5.33vw;
+    background: #fff;
+    float: left;
+    width: 100%;
+}
+
+.user-details .name-text {
+    font-size: 3.33vw;
+    font-family: OpenSans;
+    font-weight: bold;
+}
+
+.user-details .name-desc {
+    font-size: 2.83vw;
+    font-family: OpenSans;
+    font-weight: normal;
+}
+
+.user-details {
+    padding-left: 5.67vw;
+    padding-top: 2.763vw;
+    float: left;
+}
+
+.side-menu-one,
+.side-menu-two,
+.side-menu-three {
+    padding: 4.63vw 5.09vw 5.09vw 5.09vw;
+    display: block;
+    float: left;
+    width: 100%;
+}
+.side-menu-two, .side-menu-three{
+padding-top: 0;
+}
+
+.side-menus {
+    width: 100%;
+    float: left;
+    background: #f0f0f0;
+}
+
+
+.border-line {
+    width: 100%;
+    border-bottom: 1px solid #c4c4c4;
+    float: left;
+    padding-bottom:4.81vw;
+    display: table;
+}
+
+.side-menu-wrap.showMenu {
+    display: block;
+}
+
+/*.side-menu-wrap.showMenu .mobile-menu{
+    left: 0;
+}*/
+.menu-close {
+    height: 100vh;
+    background: transparent;
+    width: 22.2vw;
+    float: right;
+    overflow: auto;
+}
+
+.imgIcon {
+    width: 5vw;
+    display: table-cell;
+    vertical-align: middle;
+    float: none;
+    }
+.imgIcon img {
+    width: 100%;
+    }
+.side-text {
+    display: table-cell;
+    vertical-align: middle;
+    float: none;
+    padding-left: 6.94vw;
+    font-weight: 500;
+    color: #414042;
+    }

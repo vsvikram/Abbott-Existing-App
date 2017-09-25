@@ -1,0 +1,136 @@
+<div class="row" ng-init="init()">
+    <div class="mob-header">
+        <abw-header data-abwheader-config="abwheaderConfig"></abw-header>
+    </div>
+    <transparent-screen></transparent-screen>
+    <div class="view-container scrollable">
+        <module-nav config='config'></module-nav>
+        <div class="leave-details page-leave"  >
+            <h3>CLOSING {{prependZeroOnSingleDigits(selectedModel.closing_balance)}}</h3>
+            <div class="detail-module" ng-repeat="detail in selectedModel.details">
+                <ul class="status-row">
+                    <li><span class="det-num">{{prependZeroOnSingleDigits(detail.number_of_days)}}</span><span>Days</span></li>
+                    <li>
+                        <span class="det-type">{{selectedLabel}}</span>
+                        <span>{{convertDateFormat(detail.from_date).replace("/", ".").replace("/",".")}} to {{convertDateFormat(detail.to_date).replace("/", ".").replace("/",".")}}</span></li>
+                    <li><span>Status</span><span class="det-status" ng-class="{approved: detail.leave_status=='Approved'}">{{detail.leave_status}}</span></li>
+                </ul>
+                <ul class="date-row">
+                    <li><h4>Applied on</h4><span>{{convertDateFormat(detail.applied_date).replace("/", ".").replace("/",".")}}</span></li>
+                    <li><h4>Approver</h4><span>{{allModel.approver.name}}</span></li>
+                    <li><h4>Place</h4><span>{{detail.place}}</span></li>
+                </ul>
+                <div class="reason-section">
+                    <h4>Reason</h4>
+                    <p>{{detail.reason}}</p>
+                </div>
+                <div class="checkbox-section">
+                    <h4>Leaving HQ</h4>
+                    <div class="radio-btn">
+                        <label class="ng-binding">
+                            <input type="checkbox" name="Yes" id="leavingHq"
+                                   ng-checked="detail.leaving_hq" disabled /><i></i>Yes
+                        </label>
+                    </div>
+                    <div class="radio-btn">
+                        <label class="ng-binding">
+                            <input type="checkbox" name="No" id="notLeavingHq"
+                                   ng-checked="!detail.leaving_hq" disabled /><i></i>No
+                        </label>
+                    </div>
+                    <div class="delete-section" ng-show="checkCancelValidity(detail)"> <!--  -->
+                        <img src="{{iconsPath}}delete.png" ng-click="cancelLeaveClick(detail)" >
+                    </div>
+                </div>
+            </div>
+            <div class="cancel-wrapper">
+                <div class="butn-wrapper">
+                    <button ng-click="cancelInvoked = !cancelInvoked"
+                            class="butn"
+                            ng-class="{cancelInvoked: cancelInvoked == true}">CANCEL LEAVE</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="popup" ng-show="showPopup">
+        <div class="popup-body">
+            <span ng-click="showPopup = !showPopup" class="popup-close">
+                <img src="{{iconsPath}}close-button-filter.png">
+            </span>
+            <div class="popup-content">
+                <p>Are you sure <span>you want to cancel?</span></p>
+                <button class="ok-btn" ng-click="cancelLeave()">OK</button>
+                <button class="cancel-btn"  ng-click="showPopup = !showPopup">Cancel</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--<div class="page-leave page-wrap">-->
+    <!--<div class="leave-wrapper">-->
+        <!--<div class="leave-head">-->
+            <!--<span onclick="javascript:window.history.back()"><img src="resources/images/1x/icons/arrow.png"></span>-->
+            <!--<h3>MY LEAVE SUMMARY</h3>-->
+        <!--</div>-->
+        <!--<div class="leave-details" >-->
+            <!--<h3>CLOSING {{prependZeroOnSingleDigits(selectedModel.closing_balance)}}</h3>-->
+            <!--<div class="detail-module" ng-repeat="detail in selectedModel.details">-->
+                <!--<ul class="status-row">-->
+                    <!--<li>-->
+                        <!--<span class="det-num">{{prependZeroOnSingleDigits(detail.number_of_days)}}</span>-->
+                        <!--<span>Days</span>-->
+                    <!--</li>-->
+                    <!--<li>-->
+                        <!--<span class="det-type">{{selectedLabel}}</span>-->
+                        <!--<span>{{convertDateFormat(detail.from_date)}} to {{convertDateFormat(detail.to_date)}}</span></li>-->
+                    <!--<li>-->
+                        <!--<span>Status</span>-->
+                        <!--<span class="det-status" ng-class="{approved: detail.leave_status=='Approved'}">{{detail.leave_status}}</span>-->
+                    <!--</li>-->
+                <!--</ul>-->
+                <!--<ul class="date-row">-->
+                    <!--<li><h4>Applied on</h4><span>{{convertDateFormat(detail.applied_date)}}</span></li>-->
+                    <!--<li><h4>Approver</h4><span>{{allModel.approver.name}}</span></li>-->
+                    <!--<li ng-show="detail.place"><h4>place</h4><span>{{detail.place}}</span></li>-->
+                <!--</ul>-->
+                <!--<div class="reason-section">-->
+                    <!--<h4>Reason</h4>-->
+                    <!--<p>{{detail.reason}}</p>-->
+                <!--</div>-->
+                <!--<div class="checkbox-section">-->
+                    <!--<h4>Leaving HQ</h4>-->
+                    <!--<input type="checkbox"-->
+                           <!--ng-checked="detail.leaving_hq"-->
+                           <!--name="yes" id="yes" disabled>-->
+                    <!--<label for="yes">Yes</label>-->
+                    <!--<input type="checkbox"-->
+                           <!--ng-checked="!detail.leaving_hq"-->
+                           <!--name="no" id="no" disabled>-->
+                    <!--<label for="no">No</label>-->
+                <!--</div>-->
+                <!--<div class="delete-section" ng-show="cancelInvoked">-->
+                    <!--<img src="resources/images/1x/icons/delete.png" ng-click="cancelLeaveClick(detail)" >-->
+                <!--</div>-->
+            <!--</div>-->
+
+            <!--<div class="cancel-wrapper">-->
+                <!--<div class="butn-wrapper">-->
+                    <!--<button ng-click="cancelInvoked = !cancelInvoked"-->
+                    <!--ng-class="{cancelInvoked: cancelInvoked == true}">CANCEL LEAVE</button>-->
+                <!--</div>-->
+            <!--</div>-->
+        <!--</div>-->
+    <!--</div>-->
+    <!--<div class="popup" ng-show="showPopup">-->
+        <!--<div class="popup-body">-->
+            <!--<span ng-click="showPopup = !showPopup" class="popup-close">-->
+                <!--<img src="resources/images/1x/icons/close-button-filter.png">-->
+            <!--</span>-->
+            <!--<div class="popup-content">-->
+                <!--<p>Are you sure <span>you want to cancel?</span></p>-->
+                <!--<button class="ok-btn" ng-click="cancelLeave()">OK</button>-->
+                <!--<button class="cancel-btn"  ng-click="showPopup = !showPopup">Cancel</button>-->
+            <!--</div>-->
+        <!--</div>-->
+    <!--</div>-->
+<!--</div>-->

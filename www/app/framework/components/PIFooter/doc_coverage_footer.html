@@ -1,0 +1,23 @@
+<footer class="footer" ng-class="{ 'footer-no-home' : hideFooterHome}">
+    <nav class="row">    
+        <div class="footer-nav-col" ng-if="!hideFooterHome">
+            <div class="footer-nav-content footer-nav-home" ng-click="navigateToHome()">
+                <a ui-sref="piDashboard"><img src="img/icons/home.png" alt="footer home" /></a>
+            </div>
+        </div>
+        <div class="footer-nav-col">
+            <div class="footer-nav-content footer-nav-overview footer-nav-active" ng-click="updateSelected(defaultSelection)">
+                {{defaultSelection.Description}}
+            </div>
+        </div>
+        <div class="footer-nav-scroller">
+            <div class="nav-scroller-wrap scrollbar-dynamic" ng-scrollable="{scrollX:'bottom', scrollY:'none'}">
+                <div class="footer-ns-col" ng-repeat="object in ZAT_Obj">
+                    <div class="footer-nav-content" ng-click="updateSelected(object)">
+                        {{object.Description}}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+</footer>

@@ -1,0 +1,46 @@
+<!-- <transparent-screen></transparent-screen>
+<navigation-bar is-hidden=false
+	header-title="{{locale.incentiveCalculator}}" left-side-icon="back"
+	previous-screen-name="{{locale.SFE}}" is-display-header-title=true
+	is-display-logged-in-user=true></navigation-bar>
+<div class="fullDiv appContent" ng-init="init()">
+	<div class="row midDivFull">
+		<div class="container-fluid">
+			<abb-slider slider="slider"></abb-slider> 
+			<abb-slider slider="slider1"></abb-slider> 
+			<abb-slider slider="slider2"></abb-slider> 
+			<abb-slider slider="slider3"></abb-slider>
+			<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 noPadding center-align">
+			<label>{{employeeName}} {{locale.totalIncentive}} {{totalIncentive  | currency: locale.currency+' ':0}}</label>
+			</div>
+		</div>
+	</div>
+</div> -->
+<!--New Changes starts here-->
+<div class="row">
+	<div class="mob-header">
+		<abw-header data-abwheader-config="abwheaderConfig"></abw-header>
+	</div>
+	<transparent-screen></transparent-screen>
+	<div class="view-container">
+		<module-nav config='config'></module-nav>
+		<div class="incentiveCal-wrapper page-wrap" ng-init="init()">
+			<div class="incentiveCal-lists content-wrapper">
+				<div class="expenseGes-content">
+					<abb-slider slider="slider"></abb-slider>
+				</div>
+				<div class="expenseGes-content">
+					<abb-slider slider="slider1"></abb-slider>
+				</div>
+				<div class="expenseGes-content">
+					<abb-slider slider="slider2"></abb-slider>
+				</div>
+				<div class="expenseGes-content">
+					<abb-slider slider="slider3"></abb-slider>
+				</div>
+
+			</div>
+		</div>
+	</div>
+</div>
+<!--New Changes Ends Here-->

@@ -1,0 +1,9 @@
+<div class="ngdialog-message progress-sync">
+    <div class="popup-header">{{locale['SyncPopupHeader']}}</div>
+    <p class="collection-name">{{progress.message}}</p>
+    <div class="progress">
+        <div class="progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" ng-style="{width:progress.value + '%'}">
+            <span class="download-progress" ng-bind="progress.value"></span>%
+        </div>
+    </div>
+</div>

@@ -1,0 +1,29 @@
+<form novalidate name="frmDCRUnlock">
+<div class="ngdialog-message lock-screen-popup">
+  <div class="popup-header"
+    ng-bind="locale.RequestDCRUnlock"
+  >
+  </div>
+  <select
+      class="dropDownStyleChange dropDownIcon ng-required"
+      ng-model="lockSvc.selectedReason"
+      ng-options="reason for reason in lockSvc.reasons" required
+  >
+    <option value="" disabled selected ng-bind="locale.Reason"></option>
+  </select>
+  <textarea placeholder="{{locale.PleaseEnterYourComment}}" class="ng-required" required ng-model="lockSvc.comment" maxlength="255"></textarea>
+  {{locale.SyncMessageForDCRUnlockPopup}}
+  <div class="ngdialog-buttons">
+    <button type="button" class="ngdialog-button ngdialog-button-primary confirmation-popup-button"
+            ng-click="lockSvc.closeModalPopup()"
+            ng-bind="locale.Cancel"
+    >
+    </button>
+    <button type="submit" class="ngdialog-button ngdialog-button-secondary confirmation-popup-button"
+            ng-click="lockSvc.syncUnlockRequest(frmDCRUnlock.$valid)"
+            ng-bind="locale.Sync"
+    >
+    </button>
+  </div>
+</div>
+</form>

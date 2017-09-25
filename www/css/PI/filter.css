@@ -1,0 +1,133 @@
+.filter-section {
+    position: fixed;
+    overflow: hidden;
+    width: 100%;
+    z-index: 999;
+    background-color: #ffffff;
+    top: 0;
+    left: 0;
+    height: calc(100vh - 13.89vw);
+}
+
+.filter-content-wrapper{
+    height: calc(100vh - 35.89vw);
+overflow: auto;
+width: 100vw;
+position: relative;
+}
+.filter-content-wrapper.ps>.ps__scrollbar-y-rail{
+    opacity: 0.6;
+    display: block;
+}
+
+.filter-head-wrapper .filter-head h3 {
+    color: #9c2757;
+    font-size: 1rem;
+}
+
+.filter-head-wrapper .filter-head .select-filter {
+    font-size: 0.750rem;
+}
+
+.filter-close {
+    float: right;
+}
+
+.filter-head select {
+    border: none;
+    outline: none;
+}
+
+.filter-head-wrapper {
+    display: block;
+    float: left;
+    width: 100%;
+    border-bottom: 1px solid #aaaaaa;
+    padding: 5.74vw 5.83vw 4.63vw 9.81vw;
+}
+
+.filter-head {
+    float: left;
+}
+
+.filter-close {
+    height: 5.83vw;
+    width: 5.83vw;
+}
+
+.filter-close img {
+    max-width: 100%;
+}
+
+.filter-content {
+    border-bottom: 1px solid #aaaaaa;
+    padding: 4.63vw 5.83vw 9.07vw 9.81vw;
+    display: block;
+    float: left;
+    width: 100%;
+}
+
+.filter-title h4,
+.filter-title p {
+    font-size: 0.750rem;
+    color: #9c2757;
+}
+
+.filter-title h4 {
+    float: left;
+    font-weight: bold;
+}
+
+.filter-title p {
+    float: right;
+    text-decoration: underline;
+    font-weight: bold;
+}
+
+.filter-title {
+    float: left;
+    width: 100%;
+    margin-bottom: 2.59vw;
+}
+
+.filter-unit {
+    width: 32.63vw;
+    float: left;
+    padding-right: 2vw;
+}
+
+.filter-unit label {
+    line-height: 1;
+    font-size: 0.750rem;
+    border: 1px solid #aaaaaa;
+    border-radius: 13px;
+    color: #6e6e6e;
+    margin-bottom: 0;
+    margin-bottom: 2.59vw;
+    padding: 2.22vw 3.89vw;
+}
+
+.filter-unit input[type=checkbox] {
+    display: none;
+}
+
+.filter-unit input[type=checkbox]:checked+label {
+    border: 1px solid #9c2757;
+    color: #9c2757;
+}
+
+.filter-head label select {
+    font-weight: normal;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-image: url(../img/icons/dropdown-arrow-filter.png);
+    background-position: center right;
+    padding-right: 5vw;
+    background-size: auto 2.22vw;
+    background-repeat: no-repeat;
+    background-color: #ffffff;
+}
+
+.filter-head label select::-ms-expand {
+    display: none;
+}

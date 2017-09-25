@@ -1,0 +1,80 @@
+.disclaimer-popup .disclaimer-wrapper {
+  background-color: #fff;
+}
+.disclaimer-popup .disclaimer-text {
+    overflow: scroll;
+    height: 120vw;
+   padding: 9.26vw 6.11vw;
+}
+.disclaimer-popup .disclaimer-text p{
+    font-size:0.833rem;
+}
+.disclaimer-popup .disclaimer-text ul {
+    margin: 0;
+    padding: 5.19vw 0 0 1.11vw;
+}
+
+.disclaimer-popup .signin-button {
+    width: 100%;
+    background: #9c2757;
+    padding: 5.19vw 0;
+    color: #fff;
+    font-size: 1rem;
+    font-family: OpenSans;
+    font-weight: 600;
+    border: none;
+}
+.disclaimer-popup .disclaimer-text {
+    font-family: openSans;
+    font-weight: 500;
+    color: #414042;
+}
+.disclaimer-popup .disclaimer-text ul li:before {
+    content: "•";
+    content: '\25CF';
+    font-size: 11px;
+        display: inline-block;
+        position: relative;
+        top: -0.07em;
+        margin-right: 0.2em;
+}
+
+
+.disclaimer-popup .disclaimer-text ul li  {
+     list-style: none;
+    font-family: OpenSans;
+        font-size: 0.833rem;
+}
+
+.disclaimer-popup .disclaimer-text ul li:first-child {
+    padding-bottom: 7.5vw;
+}
+
+.disclaimer-popup .disclaimer-text h1 {
+    display: none;
+}
+
+.disclaimer-popup .button-background {
+    background: #fff;
+    padding: 9.26vw 6.11vw;
+}
+.disclaimer-popup .nav-icons{
+    display: none;
+}
+.disclaimer-popup .abbottLogo{
+    margin-left: 3.98vw;
+}
+.disclaimer-popup .icon2{
+        display: none;
+    }
+   .disclaimer-popup  .nav-icons-container{
+        display: table;
+    width: 100%;
+    float: left;
+    }
+   .disclaimer-popup  .disclaimer-txt p{
+        margin-left: 14vw;
+    }
+
+.disclaimer-popup .disclaimer-txt{display: table-cell;
+    vertical-align: middle;}

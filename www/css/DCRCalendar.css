@@ -1,0 +1,185 @@
+/*Calendar toolbar*/
+.fc-toolbar {
+	height: 2.75em;
+	margin-bottom: 0em;
+	padding: 0.46em;
+}
+
+.calendarTitle {
+	font-size: 0.938em;
+	color: #666666;
+	line-height: 2.2em;
+	margin-left: 1.563em !important;
+}
+
+.calendarBackText {
+	font-size: 0.875em;
+	color: #666666;
+	line-height: 2.5em;
+	margin: 0 1em 0 2em;
+}
+
+.fc-back-cls {
+	border: none;
+	outline:none;	
+}
+
+.fc-prev-button, .fc-next-button {
+	box-shadow: none;
+	background-color: transparent;
+	border: none;
+	padding: 0 !important;
+	outline:none;
+	margin-left: 1em !important;
+}
+
+.fc-icon-left-single-arrow:after, .fc-icon-right-single-arrow:after {
+	content: "";
+}
+
+/*Calendar column header*/
+.fc-row th {
+	height: 2.25em;
+	vertical-align: middle;
+	background-color: #9c2757;
+	border: none;
+	color: #ffffff;
+	    font-size: 0.667rem;
+        font-weight: 700;
+}
+
+/*Calendar day number columns*/
+.fc-today {
+	color: #ffffff !important
+}
+
+.fc-day-number {
+	height: 2.5em;
+	background-color: #FFFFFF;
+	font-size: 1.25em;
+	color: #5c5d5d;
+	padding: 0 !important;
+	vertical-align: bottom !important;
+}
+
+/*Calendar grey out other month's day columns*/
+.fc-other-month {
+	background-color: #eef9f8 !important;
+}
+
+/* Colored appoinments css*/
+.eventImg {
+	height: 2.5em;
+	width: 2.5em;
+}
+
+.event-count {
+    float: right;
+    position: absolute;
+    padding-right: 1.5vw;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 0.375rem;
+        font-weight: 600;
+        font-style: italic;
+        color: #414042;
+}
+
+.greenEvent {
+	background: #00FF00;
+}
+
+.blueEvent {
+	background: #33CCCC;
+}
+
+.redEvent {
+	background: #FF0000;
+}
+
+.purpleEvent {
+	background: #800080;
+}
+
+.yellowEvent {
+	background:#FFCC00;
+}
+
+.pinkEvent {
+	background: #FF99CC;
+}
+
+.orangeEvent {
+	background: #FF6600;
+}
+
+.greenEvent, .blueEvent , .redEvent, .purpleEvent, .yellowEvent, .pinkEvent, .orangeEvent {
+    padding: 1vw;
+    border-radius: 50%;
+
+
+}
+
+.fc-ltr .fc-basic-view .fc-day-number {
+    vertical-align: middle !important;
+        position: relative;
+        z-index: 200;
+        line-height: 7.4vw;
+        height: auto !important;
+        font-size: 0.729rem;
+            font-weight: 600;
+            color: #414042;
+
+}
+.fc-ltr .fc-basic-view .fc-day-number::before {
+ content: ' ';
+     border-radius: 50%;
+     font-size: 0.722em;
+     padding: 3.15vw;
+     background-color: #f4f4f4;
+     position: absolute;
+     border: 1px solid #e8e8e8;
+     z-index: -1;
+     left: 0;
+     right: 0;
+     margin: 0 auto;
+     width: 0.67vw !important;
+ }
+ .fc-ltr .fc-basic-view .fc-today::before {
+    background-color: #9c2747;
+ }
+ .fc th, .fc td {
+    border: none;
+ }
+
+.fc-basic-view .fc-body .fc-row {
+    height: auto !important;
+    padding: 4vw 0;
+}
+.fc-event-container {
+    text-align: center;
+}
+.fc-day-grid-event {
+    top: 0px;
+    float: right;
+    display: inline-block;
+    position: absolute;
+    z-index: 200;
+    margin-left: 2vw;
+    }
+
+ .fc-other-month {
+     visibility: hidden;
+ }
+ td.fc-day {
+     position: relative;
+ }
+ .fc-unthemed .fc-today {
+     background: transparent;
+ }
+ .fc td.fc-today {
+     border-style: none;
+ }
+ tbody.fc-body {
+     background: #f8f8f8;
+ }

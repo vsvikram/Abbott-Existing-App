@@ -1,0 +1,22 @@
+
+<navigation-panel status='menuStatus' data-ng-show=menuStatus></navigation-panel>
+<div class="navbar-static-top navbar-height" ng-hide="isHidden == 'true'">
+    <!-- Nav -->
+    <div class="navbarHeader">
+        <!-- <div class="headerRow"> -->
+        <span class="headerLeftSideIconContainer">
+            <span class="headerIconsbase"
+                  data-ng-class="{'syncIcon': leftSideIcon == 'sync', 'backIcon': leftSideIcon == 'back', 'menuIcon': leftSideIcon == 'menu'}"
+                  ng-click="onleftSideHeaderIconClicked()">
+
+            </span>
+        </span>
+        <span ng-if="leftSideIcon != 'back'" class="headerLogoParent headerlogo" ng-click="navigateToHome()"></span>
+        <span ng-if="leftSideIcon == 'back'" class="headerBackScreenName" ng-click="onleftSideHeaderIconClicked()">{{previousScreenName}}</span>
+        <span class="logoutIconContainer"><span class="headerIconsbase logoutIcon" ng-click="onLogoutIconClicked()"></span></span>
+        <!-- <span ng-show="false" class="lockIconContainer"><span class="headerIconsbase lockIcon" ng-click="onLockIconClicked()"></span></span> -->
+        <span ng-show="isDisplayLoggedInUser == 'true'" class="headerLoggedInUserContainer"><span class="fontRobotoRegular headerLoggedInUserLabel">{{getLocale().LoggedInAs}}</span> <span class="fontRobotoRegular headerLoggedInUserName" style="margin-top: 1.2em;">{{$root.loggedUserName}}</span></span>
+        <span ng-show="isDisplayHeaderTitle == 'true'" class="headerTitle">{{headerTitle}}</span>
+        <!-- </div> -->
+    </div>
+</div>

@@ -1,0 +1,88 @@
+/*Header*/
+.header { background-color: #9c2757; color: #ffffff; box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.13); position: relative }
+.nav-icon-wrapper { display: table; height: 18vw; }
+.nav-icon-wrapper { padding-top: 2.93vw; padding-left: 2.78vw; padding-right: 3.61vw; padding-bottom: 2.73vw; width: 100%; float: left; }
+.nav-icons, .abbottLogo, .refresh-icon, .notify-icon, .search-icon { width: 8.11vw; display: inline-block; vertical-align: middle; height: 10.33vw; background-size: 85%; background-repeat: no-repeat; background-position: center; }
+.nav-icons img, .abbottLogo img, .refresh-icon img, .notify-icon img, .search-icon img { display: block; max-width: 100%; }
+.nav-icons, .abbottLogo { float: left; }
+.refresh-icon, .notify-icon, .search-icon { float: left; }
+.nav-icons { margin-right: 5vw; }
+.notify-icon { margin-left: 6.48vw; }
+.search-icon { margin-left: 6.67vw; }
+.notifing { position: absolute;height: 5.5vw; width: 5.5vw; right: 17vw; top: 6vw; z-index: 999; background: #f7ca39; border-radius: 50%; }
+.notifing span { line-height: 1; position: absolute; top: 55%; left: 50%; transform: translate(-50%, -50%); font-family: OpenSans-Extrabold; font-size: 0.675rem; color: #9c2757; font-weight: 900; }
+::-webkit-scrollbar { display: none; }
+.icon1 { float: left; width: 25%; }
+.icon2 { float: right; width: 40%; }
+.tab-header { display: none; }
+.search-section input {background-image:url('../img/icons/search-icon.png'); background-repeat: no-repeat; background-color: #5f061e; background-size: 5.56vw; background-position: 2.78vw; border: none; outline: none; color: #fff; width: 78vw; height: 11.3vw; padding-left: 12.04vw; font-size: 3.7vw; }
+.search-section a { color: #fff; font-size: 3.7vw; padding-left: 1.38vw; }
+.search-section::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+color: #9a2a58; text-decoration: underline; }
+.recent-search { padding: 6.85vw 6.39vw 1.48vw; background-color: #fff; width: 100%; float: left; position: absolute; top: 100%; z-index:501;  }
+.recent-search h4 { font-size: 3.24vw; color: #2b2b2b; opacity: 0.5; }
+.recent-search span { float: right; text-decoration: underline; }
+.recent-search ul { padding-left: 0; }
+.suggestion { padding: 6.85vw 6.39vw 1.48vw; background-color: #fff; width: 100%; float: left; position: absolute; top: 100%; z-index:501;  }
+.suggestion h4 { font-size: 3.24vw; color: #2b2b2b; opacity: 0.5; }
+.suggestion span { float: right; text-decoration: underline; }
+.suggestion ul { padding-left: 0; }
+.search-content { border-bottom: 1px solid #e1e1e1; padding: 4.07vw 0; }
+.suggestion-list { border-bottom: 1px solid #e1e1e1; padding: 4.07vw 0; }
+.recent-search .search-content:last-of-type { border-bottom: none; }
+.suggestion .suggestion-list:last-of-type { border-bottom: none; }
+.search-content p { color: #414042; font-size: 3.24vw; font-family: OpenSans; font-weight: bold; }
+.search-content p span { font-weight: 500; text-decoration: none; }
+.suggestion-list p { color: #414042; font-size: 3.24vw; font-family: OpenSans; font-weight: bold; }
+.suggestion-list p span { font-weight: 500; text-decoration: none; }
+.disclaimer-txt, .point-txt{display: none;}
+.show-header-title .nav-icons, .show-header-title .abbottLogo {
+    float: none;
+}
+.show-header-title .icon1{
+    width: 57%;
+}
+.show-header-title .header-title {
+    vertical-align: middle;
+    display: inline-block;
+    width: 41vw;
+    float: none;
+    font-size: 0.813rem;
+    font-weight: 600;
+}
+.search-section input::-webkit-input-placeholder {
+    text-decoration:underline;
+}
+.search-overlay{
+                        position: fixed;
+                        height: calc(100vh - 17.75vw);
+                        width: 100%;
+                        background: rgba(0, 0, 0, 0.68);
+                        z-index: 400;
+                        margin-left:-15px;
+                    }​
+
+@media screen and (min-width:980px) {
+    .tab-header { display: block; }
+    .mob-header { display: none; }
+    .header { position: fixed; width: 5.92vw; height: 100vh; }
+    .nav-icons, .abbottLogo, .refresh-icon, .notify-icon, .search-icon, .user-icon, .logout-icon { width: 2.83vw; height: 4vw; margin: 0 auto; float: none; text-align: center; }
+    .icon1, .icon2, .icon3, .icon4, .icon5 { width: 100%; float: left; }
+    .icon1 { padding: 20px; background: #fff; }
+    .icon2 { padding: 0; margin: 0; width: 100%; height: 7vw; }
+    .icon2 .user-icon { width: 100%; }
+    .icon2 .user-icon img { display: block; width: 100%; }
+    .nav-icon-wrapper { text-align: center; padding: 0; width: 100%; float: left; position: absolute; }
+    .icon3 { padding-top: 0.5vw; padding-bottom: 1.3vw; border-bottom: 1px solid; }
+    .icon4 { padding-top: 0.5vw; padding-bottom: 1.3vw; border-bottom: 1px solid; }
+    .icon4 .alerts { line-height: 2; }
+    .icon3 p, .icon4 p, .icon5 p { font-size: 0.663rem; font-family: OpenSans; font-weight: 400; }
+    .icon5 { position: relative ; top: 27.5vw; padding-left: 1vw; padding-right: 1vw; }
+    .icon5 p { font-size: 0.675rem; }
+    .icon4 .notifing { position: absolute; height: 2vw; width: 2vw; top: 0.7vw; left: 1.3vw; z-index: 999; background: #f7ca39; border-radius: 50%;}   .icon4 .notify-icon { position: relative; }
+    .logout-icon{height: 3.5vw;}
+    .nav-icons, .abbottLogo, .refresh-icon, .notify-icon, .search-icon { background-size: 75%; }
+    .abbottLogo.logo { background-image: url('../../img/icons/arrow.png'); }
+    .disclaimer-txt, .point-txt{display: none;}
+
+}

@@ -1,0 +1,127 @@
+
+<div class="row">
+    <div class="mob-header">
+        <abw-header data-abwheader-config="abwheaderConfig"></abw-header>
+    </div>
+    <div class="tab-header">
+        <!-- header tab goes here-->
+    </div>
+    <div class="page-wrap page-abbExchange">
+        <div class="abb-exchange-search">
+            <input type="search" placeholder="Search"></input>
+        </div>
+        <div class="abb-exchange-wrapper" ng-class="{noScroll:showFilterSettings}">
+            <div class="abb-exchange-head">
+                <p class="apps-title">Abb Exchange</p>
+                <div class="fs-wrapper">
+                    <div class="filter-wrapper" ng-class="{filterPage:fPage}">
+                        <div ng-click="filterSettings()"><span>Filter by</span></div>
+                        <div><span class="filterType">{{displayFilter}}</span></div>
+                        <div class="filter-settings" ng-if="showFilterSettings">
+                            <div class="filter-head">
+                                <i class="back-head-arrow" ng-click="prevFilterScreen()">&nbsp;</i>
+                                <p class="app-title">Filters</p>
+                                <div class="links-wrapper">
+                                    <span ng-click="sortAcc('None')">Reset</span>
+                                </div>
+                            </div>
+                            <div class="panel">
+                                <div class="panel-head" ng-click="sortAcc('myApp')" ng-class="{active: status == 'myApp'}">
+                                    <h4>My apps</h4>
+                                </div>
+                                <div class="panel-content">
+                                    <ul ng-repeat="appcard in appCards | filter:{isInstalled:true}">
+                                        <li>{{appcard.Name}}</li>
+                                    </ul>
+
+                                </div>
+                            </div>
+                            <div class="panel">
+                                <div class="panel-head" ng-click="sortAcc('category')" ng-class="{active: status == 'category'}">
+                                    <h4>Category</h4>
+                                </div>
+                                <div class="panel-content">
+                                    <ul ng-repeat="appcard in appCards | orderBy:'Category__c' | filter:filtering | uniquewithkey : 'Category__c' | limitTo : 3">
+                                        <li>{{appcard.Category__c}}</li>
+                                    </ul>​
+                                </div>
+                            </div>
+                            <div class="panel">
+                                <div class="panel-head" ng-click="sortAcc('fileSize')" ng-class="{active: status == 'fileSize'}">
+                                    <h4>File Size</h4>
+                                </div>
+                                <div class="panel-content">
+                                    <ul ng-repeat="appcard in appCards | orderBy:'Filesize__c' | filter:filtering | limitTo:3">
+                                        <li>{{appcard.Name}}</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="apply-btn-wrapper" ng-click="applyFilter()">
+                                <div class="apply-btn bttn">Apply</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="sort-wrapper" ng-class="{sortPage:sPage}">
+                        <div ng-click="sortSettings()" ng-show="!sPage"><span>Sort by</span></div>
+                        <div ng-show="!sPage"><span>{{sorting}}</span></div>
+                        <div class="sort-settings" ng-if="showSortSettings">
+                            <div>
+                                <i class="back-head-arrow" ng-click="prevFilterScreen()">&nbsp;</i>
+                                <span>Sort by</span>
+                            </div>
+                            <div class="sort-head" ng-class ="{'sort-head-active' : sorting == 'Latest'}"  ng-click="latest()">
+                                Latest
+                            </div>
+                            <div class="sort-head" ng-class ="{'sort-head-active' : sorting == 'A-Z'}" ng-click="asc()">A-Z</div>
+                            <div class="sort-head" ng-class ="{'sort-head-active' : sorting == 'Z-A'}" ng-click="desc()">Z-A</div>
+                            <div class="sort-head" ng-class ="{'sort-head-active' : sorting == 'Popular'}" ng-click="popularRating()">Popular</div>
+                            <div class="sort-head" ng-class ="{'sort-head-active' : sorting == 'Recommended'}" ng-click="recommended()">Recommended</div>
+                            <div class="apply-btn-wrapper" ng-click="applySort()">
+                                <div class="apply-btn bttn">Apply</div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="app-card-wrapper">
+                    <div class="app-card-toggle app-card" ng-class="{active: status == 'toggle'}" ng-click="hideSettings()"></div>
+                    <div class="clear-fix"></div>
+                    <div class="app-card" ng-repeat="appcard in filtered = (appCards | orderBy: sort | filter:filtering)">
+                        <div class="card-img" ng-click="cardSettings(appcard,false)">
+                            <img ng-src={{appcard.Icon__c}} class="app-card-img">
+                        </div>
+                        <div class="card-details">
+                            <p class="app-name" ng-click="openPopup(appcard)">{{appcard.Name}}</p>
+                            <p class="app-date">{{appcard.Date__c}}</p>
+                            <i class="dot-img" ng-click="cardSettings(appcard,true)">&nbsp;</i>
+                           <span class="star-ratings" ng-repeat="i in getNumber(appcard)">
+
+                          <span class="rated-star">&nbsp;</span>
+                            </span>
+                            <span class="star-ratings" ng-repeat="i in getHalfRating(appcard)">
+                          <span class="half-rated-star">&nbsp;</span>
+                            </span>
+                            <span class="star-ratings" ng-repeat="i in getCount(appcard)">
+
+                        <span class="rating-star">&nbsp;</span>
+                            </span>
+
+                            <div class="status">
+                                <p class="app-status" ng-if="appcard.isInstalled">INSTALLED</p>
+                            </div>
+                            <div class="dots-menu" ng-if="appcard.showSettings" ng-show="showKnowMore">
+                                <div ng-if="appcard.isInstalled"><a ng-href="{{appcard.Playstore_url__c}}"><span>Uninstall</span></a></div>
+                                <div ng-if="!appcard.isInstalled"><a ng-href="{{appcard.Playstore_url__c}}"><span>Install</span></a></div>
+                                <div><span ng-click="openPopup(appcard)">Know More</span></div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="app-card-count">
+                        <div class="app-count">Total <span>{{filtered.length}}</span> </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

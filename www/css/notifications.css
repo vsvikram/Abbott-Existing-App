@@ -1,0 +1,82 @@
+.vertical-center-header{
+	line-height: 3.5em;
+}
+
+.horizontal-center {
+     width: 17em;
+     margin: 0 auto;
+     display: block;
+}
+
+.icon-height-width{
+	height: 3em;
+	width: 3em;
+}
+
+.notification-line-height{
+	line-height: 1.5em;
+}
+
+.description-line-height{
+	line-height: 1.5em;
+}
+
+.padding{
+	    padding-top: 0.8em;
+        margin: 0.2em 0;
+        padding-bottom: 0.8em;
+}
+
+.readColor{
+	background-color: #E8E5E5;
+
+}
+
+.unreadColor{
+	background-color: #eef9f8;
+}
+
+.video{
+	height: 3em;
+	width: 3em;
+}
+
+.video-full{
+	height: 20em;
+	width: 95%;
+}
+
+.button-full{
+	width: 95%;
+}
+
+
+.notification-font{
+	font-weight:bold;
+}
+
+.full-height-width{
+	height: 100%;
+	width: 100%;
+}
+
+.notification-container {
+    height: 100% ;
+    overflow: scroll;
+}
+
+.notification-fullscreen{
+    height: calc(100% + 3em);
+    margin: 0 auto;
+    padding: 0;
+}
+
+.notification-fullFill{
+    height: 100%;
+    width: 100%;
+    position: fixed;
+}
+
+.back-color{
+	background-color: #eef9f8;
+}

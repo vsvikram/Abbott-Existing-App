@@ -1,0 +1,28 @@
+<div class="popup">
+    <div class="popup-body">
+       <!-- <span ng-click="closeThisDialog('button')" class="popup-close"><img src="img/icons/close-button-filter.png"></span>-->
+        <div class="popup-content">
+            <div class="popWraps">
+                <p>{{ngDialogData.headerText}}<span>{{ngDialogData.bodyText}}</span></p>
+            </div>
+            <div class="popBtns">
+                <button class="ok-btn" ng-click="confirm()">{{ngDialogData.positiveButton}}</button>
+                <button class="cancel-btn" ng-click="closeThisDialog('button')">{{ngDialogData.negativeButton}}</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!--
+
+<div class="ngdialog-message">
+    <div class="popup-header">{{ngDialogData.headerText}}</div>
+    <div class="confirmation-popup-body">{{ngDialogData.bodyText}}</div>
+</div>
+<div class="ngdialog-buttons" style="display: inline;">
+    <button type="button" class="ngdialog-button ngdialog-button-primary confirmation-popup-button" ng-click="closeThisDialog('button')">{{ngDialogData.negativeButton}}</button>
+    <button type="button" class="ngdialog-button ngdialog-button-secondary confirmation-popup-button" ng-click="confirm()">{{ngDialogData.positiveButton}}</button>
+</div>
+
+-->

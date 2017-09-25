@@ -1,0 +1,134 @@
+<transparent-screen></transparent-screen>
+<div class="row">
+    <div class="mob-header">
+        <abw-header data-abwheader-config="abwheaderConfig"></abw-header>
+    </div>
+    <div class="tab-header">
+        <!-- header tab goes here-->
+    </div>
+    <div class="expense-wrapper page-wrap" ng-init="init()">
+        <form name="expenseSubmission" role="form" novalidate class="form-noborder">
+            <div class="back-head-wrapper">
+                <i class="back-head-arrow" data-ng-click="goToLanding()">&nbsp;</i>
+                <div class="back-head-content">
+                    <span>{{locale.FileExpense}}</span>
+                    <span>{{dcrDate | date : 'dd'}} {{dcrDate | date : 'MMM' | uppercase}} {{dcrDate | date : 'yyyy'}}</span>
+                </div>
+            </div>
+            <div class="expense-content-wrapper content-wrapper">
+                <div class="allowance-wrapper">
+                    <h3>{{locale.DailyAllowance}}</h3>
+                    <div class="allowance-box">
+                        <div class="check" ng-repeat="fares in fareList | unique:'MarketType'">
+                            <input type="radio" id="allowance{{$index}}" name="marketTypeSelection" ng-checked="stationSelected == fares" ng-model="stationSelected" ng-value="fares" ng-click="standardFareSelection(fares)" />
+                            <label for="allowance{{$index}}"><span></span>{{fares.MarketType}}<b>{{fares.Allowance | number:2}}</b></label>
+                        </div>
+                    </div>
+                </div>
+                <div class="fare-wrapper" ng-if="!expenseStatus && !expenseDetailStatus && sfcFlag">
+                    <h3>{{locale.StandardFareChart}}</h3>
+                    <div class="fare-chart add-more-content" ng-if="(userDetail.Designation__c == locale.TBM)" ng-repeat="sfc in SFCData">
+                        <div class="chart-head">{{sfc.fromMarket}}-{{sfc.toMarket}}</div>
+                        <div class="chart-info">
+                            <div class="fare">
+                                <span>{{locale.Fare}}</span>
+                                <span>{{sfc.fare}}</span>
+                            </div>
+                            <div class="distance">
+                                <span>{{locale.Distance}}</span>
+                                <span>{{sfc.distance}}</span>
+                            </div>
+                            <div class="mode">
+                                <span>{{locale.Mode}}</span>
+                                <span>{{sfc.modeOfTravel}}</span>
+                            </div>
+                        </div>
+                        <div class="chart-radio">
+                            <div class="check">
+                                <input type="radio" id="fare1{{$index}}" ng-model="sfc.fareClaimedBool" ng-value="'One Way'" name="SFC_{{$index}}" class="customSelection" required/>
+                                <label for="fare1{{$index}}"><span></span>{{locale.OneWay}}</label>
+                            </div>
+                            <div class="check">
+                                <input type="radio" id="fare2{{$index}}" ng-model="sfc.fareClaimedBool" ng-value="'Two Way'" name="SFC_{{$index}}" class="customSelection" required />
+                                <label for="fare2{{$index}}"><span></span>{{locale.TwoWay}}</label>
+                            </div>
+                            <div class="check">
+                                <input type="radio" id="fare3{{$index}}" ng-model="sfc.fareClaimedBool" ng-value="'NA'" name="SFC_{{$index}}" class="customSelection" required />
+                                <label for="fare3{{$index}}"><span></span>{{locale.NotApplicable}}</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div ng-if="(userDetail.Designation__c == locale.ABM)">
+                        <div class="fare-chart choose-fare add-more-content" ng-repeat="sfc in SFCData">
+                            <div class="chart-head">
+                                <div class="fare-select">
+                                    <label>{{locale.From}}</label>
+                                    <select name="fromMarket-{{$index}}" ng-model="SFCData[$index].fromMarket" ng-change="fromMarketChanged($index)" ng-options="fromMarket as fromMarket for fromMarket in finalFromMarketList | unique:'fromMarket'" data-ng-required="!!(SFCData[$index].toMarket || SFCData[$index].fareClaimedBool)">
+                                        <option value="">{{locale.NONE}}</option>
+                                    </select>
+                                </div>
+                                <div class="fare-select">
+                                    <label>{{locale.To}}</label>
+                                    <select name="toMarket-{{$index}}" ng-model="SFCData[$index].toMarket" ng-show="SFCData[$index].fromMarket !=''" ng-change="toMarketChanged($index)" ng-options="toMarket.toRoute as toMarket.toRoute for toMarket in finalRouteList | toMarketFilter:SFCData[$index].fromMarket | unique:'toRoute'" data-ng-required="!!(SFCData[$index].fromMarket || SFCData[$index].fareClaimedBool)">
+                                        <option value="">{{locale.NONE}}</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="chart-info">
+                                <div class="fare">
+                                    <span>{{locale.Fare}}</span>
+                                    <span>{{SFCData[$index].fare}}</span>
+                                </div>
+                                <div class="distance">
+                                    <span>{{locale.Distance}}</span>
+                                    <span>{{SFCData[$index].distance}}</span>
+                                </div>
+                                <div class="mode">
+                                    <span>{{locale.Mode}}</span>
+                                    <span>{{SFCData[$index].modeOfTravel}}</span>
+                                </div>
+                            </div>
+                            <div class="chart-radio">
+                                <div class="check">
+                                    <input type="radio" id="fare4{{$index}}" ng-model="SFCData[$index].fareClaimedBool" ng-value="'One Way'" name="SFC_{{$index}}" class="customSelection" data-ng-required="!!(SFCData[$index].toMarket || SFCData[$index].fromMarket || SFCData[$index].fare || SFCData[$index].modeOfTravel || SFCData[$index].distance)" />
+                                    <label for="fare4{{$index}}"><span></span>One Way</label>
+                                </div>
+                                <div class="check">
+                                    <input type="radio" id="fare5{{$index}}" ng-model="SFCData[$index].fareClaimedBool" ng-value="'Two Way'" name="SFC_{{$index}}" class="customSelection" data-ng-required="!!(SFCData[$index].toMarket || SFCData[$index].fromMarket || SFCData[$index].fare || SFCData[$index].modeOfTravel || SFCData[$index].distance)" />
+                                    <label for="fare5{{$index}}"><span></span>Two Way</label>
+                                </div>
+                            </div>
+                        </div>
+                        <i class="add-icon" ng-click="addSFCFare($index)">&nbsp;</i>
+                        <i class="remove-icon" ng-show="SFCData.length > 1" aria-hidden="true" ng-click="removeSFCFare($index)">&nbsp;</i>
+                    </div>
+                </div>
+
+                <div class="misc-wrapper" ng-if="!expenseStatus && !expenseDetailStatus && miscFlag">
+                    <h3>{{locale.Miscellaneous}}</h3>
+                    <div class="misc-content add-more-content" ng-repeat="data in miscData">
+                        <div class="desc-group">
+                            <label>{{locale.Description}}</label>
+                            <select ng-model="miscData[$index].description" name="description-{{$index}}" data-ng-required="!!(miscData[$index].amount || miscData[$index].detailedRemarks)" ng-options="otherExp.Expense_Name__c as otherExp.Name for otherExp in descriptionList | unique:'Name'">
+                                <option value="">{{locale.NONE}}</option>
+                            </select>
+                        </div>
+                        <div class="amount-group">
+                            <label>{{locale.Amount}}</label>
+                            <input class="expenseInfo" name="miscAmount-{{$index}}" type="number" min=0 oninput="validity.valid||(value='');" data-ng-required="!!(miscData[$index].description || miscData[$index].detailedRemarks)" data-ng-init="miscData[$index].amount = miscamount" ng-model="miscData[$index].amount" maxlength="6" />
+                        </div>
+                        <div class="reason-group">
+                            <label>{{locale.Reason}}</label>
+                            <textarea rows="2" cols="10" maxlength="120" name="detailedRemarks-{{$index}}" type="text" data-ng-required="!!(miscData[$index].description || miscData[$index].amount)" ng-model="miscData[$index].detailedRemarks"></textarea>
+                        </div>
+                    </div>
+                    <i class="add-icon" ng-click="addMiscData($index)">&nbsp;</i>
+                    <i class="remove-icon" ng-show="miscData.length > 1" ng-click="removeMiscData($index)">&nbsp;</i>
+                </div>
+                <div class="butn-wrapper"><button ng-if="!expenseStatus && stationSelected" ng-disabled="buttonDisabled" type="submit" ng-click="submitExpenseForApproval($event)">SUBMIT</button></div>
+                <div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

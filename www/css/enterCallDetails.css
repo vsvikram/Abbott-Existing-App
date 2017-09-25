@@ -1,0 +1,323 @@
+.entrCall-height {
+	height:87%;
+}
+.entrcall-subheader {
+	background-color:#ededed;
+	height: 13%;
+	color:#666666;
+	font-size:0.75em;
+}
+
+.entrcall-table-header {
+	height: 13%;
+}
+
+.entrcall-header-table {
+	height:100%;
+	width:100%;
+}
+
+.entrcall-desg {
+	font-size:0.75em;
+	line-height: 0.7;
+}
+
+.v-center {
+    display:table;
+    height: 100%;
+}
+
+.rightContent {
+	text-align:right;
+}
+
+.content {
+    display:table-cell;
+    vertical-align:middle;
+}
+
+.entercall-deletebrand {
+	margin-left:1em;
+	float: right;
+}
+
+.entercall-addbrand {
+	float:right;
+}
+
+/* Table Grid*/
+.entrcall-table {
+	width:100%;
+	/*height: 62%;  dont add this property*/
+}
+
+.entrcall-table-scroll {
+	overflow-y: auto;
+    display: block;
+    overflow-x: hidden;
+    height: 61%;
+}
+
+.entercall-trows {
+	border-bottom:1px solid #ededed;
+}
+
+.campaignBtmBorder {
+	padding: 0.3em 0.5em 0.5em;
+}
+
+.labortoryCampaignSeparator {
+	border-bottom:1px solid #ededed;
+}
+
+.entercall-trows td {
+	padding-top: 0.3em;
+}
+
+.entrcall-table.table-striped>tbody>tr:nth-of-type(even) {
+    background-color: #ededed;
+}
+
+.entrcall-table.table-striped>tbody>tr:nth-of-type(odd) {
+    background-color: #ffffff;
+}
+
+.entrcall-theader {
+	background-color: #0EB4D6;
+	height: 100%;
+	color:#FFFFFF;
+	font-size:0.813em;
+}
+
+/* CSS for footer*/
+.entrcall-footer {
+    width: 100%;
+    bottom: 0;
+    position: fixed;
+    padding: 0.75em;
+    background-color:white;
+}
+
+.entrcall-savebtn {
+	background: #0EB4D6;
+    border-radius: 0.4em;
+    border: none;
+    color: #ffffff;
+    padding-left: 1em;
+    padding-right: 1em;
+    float:right;
+    height: 2.5em;
+    margin-left: 0.2em;
+    margin-right: 0.2em;
+    font-size: 0.813em;
+}
+
+.entrcall-lstvisit {
+	color:#5c5d5d;
+	font-size:0.75em;
+	vertical-align: bottom;
+    line-height: 0;
+}
+
+/*Select non editable class*/
+.entrcall-nonEditsel {
+	background:none;
+	border: none !important;
+	-webkit-appearance: none;
+    appearance: none;
+    background-color: transparent !important;
+}
+
+/*Icon  for Delete material or campaign rows*/
+.entercall-delrow {
+	float:right;
+}
+
+/*Icon for add material or campaign rows*/
+.entercall-material {
+	float:right;
+}
+
+/*Rx/Month and Quantity input fields*/
+.entercall-inputfields {
+	width:2.25em;
+    height: 1.6em;
+    border-radius: 0.25em;
+    border: 1px solid #c8c6c6;
+    color:#666666;
+	font-size:0.813em;
+	/*margin: 0em 0.3em 0.3em;*/
+	text-align:center;
+	-webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-color: #FFFFFF;
+ }
+ 
+.brandSelWidth {
+	width:70%;
+	position: relative;
+	background: #f7ca39;
+    margin-bottom: 5vw;
+    height: 5vh;
+    padding-left: 2vw;
+    text-align: center;
+
+}
+
+.campaignSelWidth {
+	width:62%;
+	padding-right: 15px; /*added to prevent overflow of text below selectfield*/
+	text-align:left;
+}
+
+.materialSelWidth {
+	width:72%;
+	float:left;
+	padding-right: 15px;
+}
+
+.entercall-rxmonth {
+	padding-left:2px;
+	width:100%;
+}
+
+.entercall-qnty {
+	width:15%;
+	float: right;
+}
+
+
+/*Header Columns CSS*/
+/*Column width*/
+.entrcall-brandCol {
+	width: 26%;
+	padding-left:10px;
+}
+
+.entrcall-campCol {
+	width: 24%;
+	padding: 0 !important;
+}
+
+.entrcall-rxCol {
+	width: 10%;
+	text-align: center;
+}
+
+.entrcall-matQuanCol {
+	width: 40%;
+}
+
+.entrcall-hMatCol {
+	float: left;
+	width: 75%;
+}
+
+.entrcall-hQuantCol {
+	float: right;
+	width: 25%;
+}	
+/** Header columns css end**/
+	
+.addEditBtns {
+    text-align: left;
+    padding-left: 2em;
+    border: none;
+    background-size: contain !important;
+    width: auto;
+    height:auto;
+}
+
+.editBtns {
+	height:2em;
+}
+
+.entrcall-colborder {
+	padding: 0.3em 0.3em 0em;
+    border: solid #e8e8e8;
+    border-width: 1px;
+}
+
+.entrcall-rightcolhdr {
+	float:right;
+	padding-right:8%;
+}
+
+.entrcall-bottom-footer {
+	background-color:white;
+	border:none;
+	height:13%;
+	min-height:0px;
+}
+
+.common-lstvisit {
+	color:#5c5d5d;
+	font-size:0.75em;
+}
+
+.footer-save-button {
+	background: #0EB4D6;
+    border-radius: 0.4em;
+    border: none;
+    color: #ffffff;
+    width: 50%;
+    float:right;
+    height: 2.5em;
+    margin-left: 0.2em;
+    margin-right: 0.2em;
+    font-size: 0.813em;
+}
+
+
+/******* Chemist Add Input *******/
+.chemist-starterpack {
+	float: left;
+    padding-left: 6%;
+    width: 60%;
+}
+
+.chemist-quantity {
+	float: left;
+    padding-left: 6%;
+    width: 40%;
+}
+
+.chemistAddIcon {
+	margin:0% 3%;
+}
+
+.entrcall-materialName {
+	width:82%;
+	font-size: 0.813em;
+	color: #666666;
+	float: left;
+	padding-bottom: 0.5em;
+}
+
+.entrcall-campaignName {
+	width:100%;
+	font-size: 0.813em;
+	color: #666666;
+	float: left;
+	padding-bottom: 0.5em;
+}
+
+.addicon-container {
+	width:10%;
+	float: right;
+}
+
+.material-container {
+	width:90%;
+	float: left;
+}
+
+.material-innercontainer {
+	width:10%;
+	float: left;
+}
+
+.entrcall-starterwidth {
+	width:74% !important;
+}

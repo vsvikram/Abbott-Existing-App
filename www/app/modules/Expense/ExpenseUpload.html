@@ -1,0 +1,50 @@
+<div class="row">
+    <div class="mob-header">
+        <abw-header data-abwheader-config="abwheaderConfig"></abw-header>
+    </div>
+    <div class="tab-header">
+        <!-- header tab goes here-->
+    </div>
+
+    <div class="expense-wrapper page-wrap" data-ng-init="init()">
+        <form name="expenseUpload" role="form" novalidate class="form-noborder">
+            <div class="back-head-wrapper">
+                <i class="back-head-arrow" data-ng-click="goToLanding()">&nbsp;</i>
+                <div class="back-head-content">
+                    <span>{{locale.FileHotelExpense}}</span>
+                    <span>{{dcrDate | date : 'dd'}} {{dcrDate | date : 'MMM' | uppercase}} {{dcrDate | date : 'yyyy'}}</span>
+                </div>
+            </div>
+            <div class="expenseFile-content-wrapper content-wrapper">
+                <h3>{{locale.EnterExpenses}}</h3>
+                <div class="expenseFile-wrapper" ng-repeat="hotelData in hotelExpenseList">
+                    <div class="amount-group">
+                        <label>{{locale.DescriptionAmount}}</label>
+                        <input type="number" name="hotelAmount" min=0 oninput="validity.valid||(value='');" data-ng-required="!!(hotelExpenseList[$index].Attachment.Body || hotelExpenseList[$index].remarks)" ng-model="hotelExpenseList[$index].amount" maxlength="6" />
+                    </div>
+                    <div class="reason-group">
+                        <label>{{locale.Reason}}</label>
+                        <textarea name="hotelRemarks" data-ng-required="!!(hotelExpenseList[$index].amount || hotelExpenseList[$index].Attachment.Body)" ng-model="hotelExpenseList[$index].remarks" maxlength="255"></textarea>
+                    </div>
+                    <div class="upload-group">
+                        <label>{{locale.BrowseFile}}</label>
+                        <label for="inputFile">
+                            <input type="file" id="inputFile" accept="application/pdf;image/*" data-ng-required="!!(hotelExpenseList[$index].amount || hotelExpenseList[$index].remarks)"
+                                   ng-model="hotelExpenseList[$index].Attachment.Body" capture file-reader name="hotelreceipt" >
+                            <div class="upload-box">{{locale.AttachYourFile}}
+                                <div class="upload-btn">{{locale.upload}}</div>
+                            </div>
+                            <p>{{locale.NoFileChosen}}</p>
+                            <div class="col-xs-12 col-md-12 col-lg-12 col-sm-12 no-padding-margin text-center img-container" ng-if="hotelExpenseList[$index].Attachment.Body">
+                                <img class="col-xs-12 col-md-12 col-lg-12 col-sm-12 no-padding-margin" ng-src="{{hotelExpenseList[$index].Attachment.Body}}" />
+                            </div>
+                        </label>
+                    </div>
+                </div>
+                <div class="apply-btn-wrapper">
+                    <div class="apply-btn bttn" ng-disabled="buttonDisabled" ng-click="uploadHotelAttachment($event)">{{locale.SUBMIT}}</div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

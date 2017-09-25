@@ -1,0 +1,81 @@
+.presentation-item{
+  display: -webkit-flex;
+  -webkit-align-items: center;
+  border-radius: none;
+  border-left: none;
+  border-right: none;
+  overflow: hidden;
+  font-size: 15px;
+  position: relative;
+}
+.presentation-item.pseudo-active:after{
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  pointer-events: none;
+  background-color: rgba(0,0,0,0.1);
+}
+.presentation-item .cropped{
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  overflow: hidden;
+  word-break: break-all;
+}
+.presentation-item .presentation-thumb{
+  width: 48px;
+  height: 48px;
+  margin: 0;
+  border: none;
+}
+.presentation-item .presentation-thumb span{
+  font-size: 32px;
+}
+.presentation-item .presentation-detail{
+  -webkit-flex: 1;
+  display: -webkit-flex;
+  -webkit-align-items: center;
+  margin: 0 1em;
+}
+.presentation-item .detail{
+  -webkit-flex: 1;
+}
+.presentation-item .detail h4{
+  margin: 0;
+  -webkit-user-select: auto;
+  line-height: 1.2em;
+}
+.presentation-item .detail p{
+  margin-bottom: 0;
+  line-height: 1.2em;
+}
+.presentation-item .progress{
+  width: 60%;
+  margin: 0 0 0 1em;
+}
+.presentation-item .progress-bar{
+  min-width: 2em;
+}
+.presentation-item .total-size{
+  width: 15%;
+  margin-bottom: 0;
+  padding-left: 1em;
+}
+.presentation-item .done{
+  width: 32px;
+  height: 32px;
+  background: url('../../../../resources/images/2x/media/done-icon.png') no-repeat;
+  background-size: contain;
+}
+.presentation-item .action-status-holder{
+  display: -webkit-flex;
+  -webkit-justify-content: center;
+  font-size: 14px;
+  width: 8em;
+}
+.presentation-item .btn{
+  width: inherit;
+}

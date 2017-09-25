@@ -1,0 +1,27 @@
+<transparent-screen></transparent-screen>
+<div class="row">
+    <div class="mob-header">
+        <abw-header data-abwheader-config="abwheaderConfig"></abw-header>
+    </div>
+    <div class="tab-header">
+        <!-- header tab goes here -->
+    </div>
+    <div class="view-container container-fluid">
+        <div class="point-wrapper page-wrap">
+            <div class="back-head-wrapper">
+                <i class="back-head-arrow" ng-click="backButton()">&nbsp;</i>
+                <div class="back-head-content">
+                    <span>{{currentCalenderDate|date:"d MMM y"}}</span>
+                    <span>Summary</span>
+                </div>
+            </div>
+            <div class="dcrSection content-wrapper">
+                <div class="common-height" ng-init="init()">
+                    <div class="common-height">
+                        <div class="common-height" ng-include="'app/modules/DCR/summary.html'"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

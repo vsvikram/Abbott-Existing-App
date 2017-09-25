@@ -1,0 +1,101 @@
+/*Others competitor info header tab*/
+.compInfo-table-headcont {
+	height: 13%;
+}
+
+.compInfo-table {
+	height:100%;
+	width:100%;
+}
+
+.compInfo-header-row {
+	background-color: #0EB4D6;
+	height: 100%;
+	color:#FFFFFF;
+	font-size:0.813em;
+}
+
+.compInfo-footer {
+	background-color:white;
+	border:none;
+	height: 15%;
+	min-height:0px;
+}
+
+.compInfo-footer-savebtn {
+	background: #0EB4D6;
+    border-radius: 0.4em;
+    border: none;
+    color: #ffffff;
+    width: 50%;
+    float:right;
+    height: 2.5em;
+    margin-left: 0.2em;
+    margin-right: 0.2em;
+    font-size: 0.813em;
+}
+
+.compInfo-table-listcont {
+	height:72%;
+	overflow-y: auto;
+	width:100%
+}
+
+.others-brandCol {
+	width: 16%;
+}
+
+.others-brandCol {
+	padding-left:0.5em;
+}
+
+.others-compSelCol {
+	width: 21%;
+}
+
+.others-leftcolhdr {
+	float:left;
+	padding-left:3%;
+}
+
+.others-rightcolhdr {
+	float:right;
+	padding-right:3%;
+}
+
+.others-rheight {
+	height:2.57em;
+}
+
+.others-brandlbl {
+	font-size:0.813em;
+	color:#666666;
+	float: left;
+	margin:0;
+}
+
+.others-compselect {
+	height:1.563em;
+	width:65%;
+	margin:0;
+	-webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+.others-compinput {
+	height:1.563em;
+	width:20%;
+	margin:0;
+}
+
+.others-cmnborder {
+	padding: 0.2em;
+	border:1px solid #e6e6e6;
+	text-align: center;
+}
+
+.others-cmnbrandborder {
+	border:1px solid #e6e6e6;
+	text-align: left;
+}

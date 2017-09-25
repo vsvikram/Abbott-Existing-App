@@ -1,0 +1,11 @@
+<div class="common-height" ng-init="init()">
+	<div class="common-height" ng-if="tabTabType==tabType.CUSTOMERS">
+		<dcr-tabulars class="common-height"></dcr-tabulars>
+	</div>
+	<div class="common-height" ng-if="tabTabType==tabType.ACTIVITIES">
+		<div class="common-height" ng-include="'app/modules/DCR/DCRActivity.html'"></div>
+	</div>
+	<div class="common-height" ng-if="tabTabType==tabType.SUMMARY">
+		<div class="common-height" ng-include="'app/modules/DCR/summary.html'"></div>
+	</div>
+</div>

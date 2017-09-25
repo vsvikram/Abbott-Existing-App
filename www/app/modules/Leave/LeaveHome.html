@@ -1,0 +1,35 @@
+<div class="row" ng-init="init()">
+    <div class="mob-header">
+        <abw-header data-abwheader-config="abwheaderConfig"></abw-header>
+    </div>
+    <transparent-screen></transparent-screen>
+
+    <div class="view-container container-fluid ">
+        <div class="page-leave page-wrap">
+            <module-nav config='config'></module-nav>
+            <div class="leave-wrapper content-wrapper" >
+                <div class="leave-content">
+                    <div class="leave-module" ng-click="onLeaveSummaryClick()">
+                        <img src="{{iconsPath}}leave-summary.png">
+                        <h4>{{locale.MyLeaveSummary}}</h4>
+                    </div>
+                    <div class="leave-module" ng-click="onApplyLeaveClick()">
+                        <img src="{{iconsPath}}apply-leave.png">
+                        <h4>{{locale.ApplyForLeave}}</h4>
+                    </div>
+                    <div class="leave-module" ng-click="onLeavePolicyClick()">
+                        <img src="{{iconsPath}}leave-policy.png">
+                        <h4>{{locale.LeavePolicyDocument}}</h4>
+                    </div>
+                    <div class="leave-module" ng-click="onOrganizationalLeaveClick()">
+                        <img src="{{iconsPath}}organisational-leave.png">
+                        <h4>{{locale.OrganisationalLeaves}}</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+

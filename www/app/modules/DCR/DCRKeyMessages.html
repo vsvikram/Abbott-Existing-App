@@ -1,0 +1,41 @@
+<div class="common-height" ng-controller="DCRKeyMessagesController">
+	<div ng-init="init()" class="keymsg-table-headcont">
+		<table class="keymsg-table">
+			<tr class="fontRobotoRegular keymsg-header-row">
+				<td class="keyMsgBrandCol">{{locale.Brand}}</th> <td class="keyMsgCol">{{locale.KeyMessages}}</th>
+			</tr>
+		</table>
+	</div>
+
+	<div class="keymsg-table-listcont">
+		<table  class="keymsg-table">
+			<tr class="keymsg-table-row fontRobotoLight" ng-repeat="row in dcrKeyMessagesLayoutObj">
+				<td class="keyMsgTableBrandCol"> {{row.brandName}} </td>
+				<td class="keyMsgTableCol">
+				<div ng-show="row.data.length > 0" class="keyMsgDataCol" ng-repeat="message in row.data">
+					<span class="removeIcon keyMsgRemoveIcon" ng-click="removeThis($index,$parent.$index)"></span>
+					<span class="keyMsgTextCol">{{message.Key_Message__c}}</span>
+				</div>
+				<div ng-show="row.data == 0">
+					{{locale.NoMessages}}
+				</div></td>
+				<td class="keyMsgAddCol"><div class="addIcon keyMessagePicSize"  ng-disabled="disableEdit" ng-click="disableEdit || openSelectPopup($index)"></div></td>
+			</tr>
+		</table>
+	</div>
+
+	<nav class="navbar navbar-default keymsg-footer">
+		<div class="col-xs-6 col-sm-6 v-center">
+			<div class="content fontRobotoLight common-lstvisit">
+				{{docInfoText}}
+			</div>
+		</div>
+		<div class="col-xs-6 col-sm-6 rightContent v-center">
+			<div class="content">
+				<button ng-click="save()" class="keymsg-footer-savebtn">
+					{{locale.Save}}
+				</button>
+			</div>
+		</div>
+	</nav>
+</div>

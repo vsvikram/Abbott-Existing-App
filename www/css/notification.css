@@ -1,0 +1,122 @@
+.top-contents .txt-left{
+display: inline-block;
+padding: 6.48vw 4.63vw 5.56vw;
+}
+.top-contents .txt-left p{
+font-size: 0.833rem;
+    font-family: OpenSans;
+    font-weight: 500;
+    color: #414042;
+}
+.top-contents .txt-right{
+display: inline-block;
+    float: right;
+    padding-top: 6.85vw;
+    padding-right: 4.63vw;
+}
+.top-contents .txt-right p{
+font-size: 0.729rem;
+ font-family: OpenSans;
+    font-weight: 500;
+     color: #9c2756;
+     text-decoration: underline;
+}
+.notify-contents{
+        padding: 4.63vw;
+        display: table;
+}
+.notify-contents-wrp{
+        padding: 4.63vw;
+        display: table;
+}
+.left-txt img{
+    width: 12.41vw;
+    height: 12.22vw;
+}
+.center-txt{
+    display: table-cell;
+    vertical-align: middle;
+}
+.notification-wrapper:before{
+    position: absolute;
+    content: '';
+    bottom: 100%;
+    top: -2.6vw;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    right: 19vw;
+    border-width: 0 12px 11px 12px;
+    border-color: transparent transparent #ffffff transparent;
+}
+.center-txt strong{
+    font-size: 0.833rem;
+ font-family: OpenSans;
+    font-weight: 500;
+    color: #414042;
+}
+.center-txt p{
+    font-size: 0.833rem;
+ font-family: OpenSans;
+    font-weight: normal;
+    color: #414042;
+}
+.center-txt{
+padding-left: 4.17vw;
+padding-right:11.17vw;
+}
+.notify-contents{
+        background-color: #f2f2f2;
+        border-top: 1px solid  #f2f2f2;
+        border-bottom: 1px solid  #f2f2f2;
+}
+.changeWhite, .read
+{
+background-color: #ffffff;
+}
+.scroll
+{
+overflow-y:scroll;
+}
+.notify-contents-wrp{
+    background-color: #f2f2f2;
+    border-top: 1px solid  #f2f2f2;
+        border-bottom: 1px solid  #f2f2f2;
+}
+.right-txt .remain-txt{
+font-size: 0.708rem;
+    font-family: OpenSans;
+    font-weight: 400;
+    color: #adadad;
+}
+.right-txt{
+display: table-cell;
+vertical-align: top;
+padding-top: 1vw;
+ }
+.center-txt span{
+ margin-right: 5.56vw;
+}
+.center-txt .bottom-txt{
+    padding-bottom: 5.56vw;
+}
+
+ .bottom-links span{
+font-size: 0.729rem;
+ font-family: OpenSans;
+    font-weight: 500;
+     color: #9c2756;
+     text-decoration: underline;
+}
+.notify-contents, .notify-contents-wrp{
+    width: 100%;}
+.notification-wrapper {
+    position: absolute;
+    z-index: 99;
+    top: 100%;
+    left: 0;
+    width: 100vw;
+    height: calc(100vh - 18vw);
+    background-color: #fff;
+    z-index: 999;
+}

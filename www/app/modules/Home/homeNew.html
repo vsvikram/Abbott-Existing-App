@@ -1,0 +1,84 @@
+<div class="row">
+<div class="mob-header">
+    <abw-header data-abwheader-config="abwheaderConfig"></abw-header>
+</div>
+<div class="tab-header">
+    <!-- header tab goes here-->
+</div>
+<div class="page-wrap page-home">
+    <div class="banner-section">
+        <div class="input-field" ng-class="{ focusedField: focus}">
+            <input class="search-field" type="search" placeholder="Search" ng-focus="showSearch()" ng-class="{ inputFocus: focus}"/>
+            <span ng-hide="hideSearch" ng-click="cancelSearch">Cancel</span></div>
+        <div class="recent-search" ng-show="showRecentSearch">
+            <h4>Recent Search<span>Clear</span></h4>
+            <ul>
+                <li ng-repeat="list in lists">
+                    <p>{{list.name}}</p>
+                </li>
+            </ul>
+        </div>
+        <img src="img/banner-logo.png" class="banner-logo">
+        <p class="banner-text">One stop solution to Abbworld <br> and all other Abbworld apps</p>
+    </div>
+    <div class="module-wrapper">
+        <div class="module">
+            <div class="module-content">
+                <img src="img/mtp-img.png" class="module-img" ng-click="onMTPClick()">
+                <p class="module-text">MTP</p>
+            </div>
+            <div class="module-button-tab">Monthy Tour Plan</div>
+        </div>
+        <div class="module">
+            <div class="module-content">
+                <!--<img src="img/dcr-img.png" class="module-img" ng-click="onDCRClick()">-->
+                <img src="img/dcr-img.png" class="module-img" ng-click="onDCRClick()">
+                <p class="module-text">DCR</p>
+            </div>
+            <div class="module-button-tab">Daily Call Reporting</div>
+        </div>
+        <div class="module">
+            <div class="module-content">
+                <img src="img/abbworld-img.png" class="module-img" ng-click="onABBWorldClick()">
+                <p class="module-text">Abbworld</p>
+            </div>
+            <div class="module-button-tab">GO to Abbworld</div>
+        </div>
+    </div>
+    <div class="apps-wrapper">
+        <div class="apps-wrapper-title">
+            <p class="apps-title">Abb Exchange</p>
+            <p class="links-wrapper">
+                <span ng-click="abbExchangeViewInstalled()">View installed</span>
+                <span ng-click="onAbbExchangeClick()">View all</span>
+            </p>
+        </div>
+        <div class="clear-fix"></div>
+        <div class="app-card-wrapper">
+            <div class="app-card-toggle" ng-class="{active: status == 'toggle'}" ng-click="hideSettings()"></div>
+            <div class="clear-fix"></div>
+            <div class="app-card" ng-repeat="appcard in appCards | orderBy: sort | filter:filtering | limitTo : 4">
+                <div class="card-img" ng-click="cardSettings(appcard,false)">
+                    <img ng-src={{appcard.Icon__c}} class="app-card-img">
+                </div>
+                <div class="card-details">
+                    <p class="app-name" ng-click="openPopup(appcard)">{{appcard.Name}}</p>
+                    <p class="app-date">{{appcard.Date__c}}</p>
+                    <i class="dot-img" ng-click="cardSettings(appcard,true)">&nbsp;</i>
+                    <span class="star-ratings">
+                        <i class="rated-star" ng-repeat="i in getNumber(appcard)">&nbsp;</i>
+                        <i class="half-rated-star" ng-repeat="i in getHalfRating(appcard)">&nbsp;</i>
+                        <i class="rating-star" ng-repeat="i in getCount(appcard)">&nbsp;</i>
+                    </span>
+                    <div class="status"><p class="app-status" ng-if="appcard.isInstalled">INSTALLED</p></div>
+                    <div class="dots-menu" ng-if="appcard.showSettings" ng-show="showKnowMore">
+                        <div ng-if="appcard.isInstalled"><a ng-href="{{appcard.Playstore_url__c}}"><span>Uninstall</span></a></div>
+                        <div ng-if="!appcard.isInstalled"><a ng-href="{{appcard.Playstore_url__c}}"><span>Install</span></a></div>
+                        <div><span ng-click="openPopup(appcard)">Know More</span></div>
+                    </div>
+                </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

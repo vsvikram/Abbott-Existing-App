@@ -1,0 +1,178 @@
+<!-- <transparent-screen></transparent-screen>
+<navigation-bar is-hidden=false
+header-title="{{locale.doctorCallMatrics}}" left-side-icon="back"
+previous-screen-name="{{locale.SFE}}" is-display-header-title=true
+is-display-logged-in-user=true></navigation-bar>
+<div class="fullDiv appContent" ng-init="init()">
+	<div class="fullHeight">
+		<div class="container-fluid">
+			<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 noPadding userSelectCont"
+			ng-class="{'userSelectCont': userType=='ZBM' || userType=='ABM'}">
+				<div ng-if="userType=='ZBM'"
+				class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+					<div
+					class="col-xs-4 col-sm-4 col-md-4 col-lg-4 noPadding rightAlign">
+						<label> {{locale.ABMUser}} </label>
+					</div>
+					<div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
+						<select ng-init="$parent.selectedABM = ABMUsers[0]"
+							class="dropDownIcon userDropdown fontRobotoMedium noOutline performanceTable full-width"
+							ng-model="$parent.selectedABM"
+							ng-options="user as user|formatter for user in ABMUsers"
+							ng-change="onSelectABMChange()"></select>
+					</div>
+				</div>
+				<div ng-if="TBMUsers.length>0"
+				class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+					<div
+					class="col-xs-4 col-sm-4 col-md-4 col-lg-4 noPadding rightAlign">
+						<label>{{locale.TBMUser}} </label>
+					</div>
+					<div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
+						<select ng-init="$parent.selectedTBM = TBMUsers[0]"
+							class="dropDownIcon userDropdown fontRobotoMedium noOutline performanceTable  full-width"
+							ng-model="$parent.selectedTBM"
+							ng-options="user as user|formatter for user in TBMUsers"
+							ng-change="onSelectTBMChange()"></select>
+					</div>
+				</div>
+			</div>	
+			<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 dcrContainerHeight">
+				<div class="fullHeight">
+					<div class="halfHeight">
+						<button class="btn pmButtonColor noOutline sfeBtn dcmBtnMargin">
+							<div>
+								<label>{{locale.callAverage}}</label>
+							</div>
+							<p class="MTP">
+								{{callAverage}}
+							</p>
+						</button>
+						<button class="btn dcmButtonColor noOutline sfeBtn dcmBtnMargin" >
+							<div>
+								<label>{{locale.totalCoverage}}</label>
+							</div>
+							<p>
+								{{totalCoverageForMonth}}
+							</p>
+						</button>
+					</div>
+					<div class="halfHeight">
+						<button class="btn imButtonColor noOutline sfeBtn dcmBtnMargin"  >
+							<div>
+								<label>{{locale.doctorsVisited}}</label>
+							</div>
+							<p>
+								{{doctorsVisited}}
+							</p>
+						</button>
+
+						<button class="btn smButtonColor noOutline sfeBtn dcmBtnMargin" data-ng-click="displayMissedDoctor()" >
+
+							<div>
+								<label>{{locale.missedDoctors}}</label>
+							</div>
+							<p>
+								{{missedDoctors > 0 ? missedDoctors : 0}}
+							</p>
+						</button>
+
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+			<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 disclaimer">
+				{{locale.doctorCallDisclaimer}}
+			</div>
+		</div>
+	</div> -->
+
+<!--New Ui Changes Starts Here-->
+<div class="row">
+    <div class="mob-header">
+        <abw-header data-abwheader-config="abwheaderConfig"></abw-header>
+    </div>
+    <transparent-screen></transparent-screen>
+    <div class="view-container">
+        <module-nav config='config'></module-nav>
+        <div class="incentive-wrapper page-wrap content-wrapper" ng-init="init()">
+            <div class="expenseGes-content">
+                <div class="selSummary" ng-if="userType=='ZBM'">
+                    <div class="row">
+                        <div class="col-xs-4 left-content">
+                            <p>{{locale.ABMUser}}</p>
+                        </div>
+                        <div class="col-xs-8 right-content">
+                            <label>
+                                <select ng-init="$parent.selectedABM = ABMUsers[0]" class="dropDownIcon userDropdown fontRobotoMedium noOutline performanceTable full-width" ng-model="$parent.selectedABM" ng-options="user as user|formatter for user in ABMUsers" ng-change="onSelectABMChange()"></select>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <div class="selSummary" ng-if="TBMUsers.length>0">
+                    <div class="row">
+                        <div class="col-xs-4 left-content">
+                            <p>{{locale.TBMUser}}</p>
+                        </div>
+                        <div class="col-xs-8 right-content">
+                            <label>
+                                <select ng-init="$parent.selectedTBM = TBMUsers[0]" class="dropDownIcon userDropdown fontRobotoMedium noOutline performanceTable  full-width" ng-model="$parent.selectedTBM" ng-options="user as user|formatter for user in TBMUsers" ng-change="onSelectTBMChange()"></select>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <div class="selSummary">
+                    <div class="row">
+                        <div class="col-xs-6 left-content">
+                            <p>{{locale.callAverage}}</p>
+                        </div>
+                        <div class="col-xs-6 right-content">
+                            <label>{{callAverage}}</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="selSummary">
+                    <div class="row">
+                        <div class="col-xs-6 left-content">
+                            <p>{{locale.totalCoverage}}</p>
+                        </div>
+                        <div class="col-xs-6 right-content">
+                            <label>{{totalCoverageForMonth}}</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="selSummary">
+                    <div class="row">
+                        <div class="col-xs-6 left-content">
+                            <p>{{locale.doctorsVisited}}</p>
+                        </div>
+                        <div class="col-xs-6 right-content">
+                            <label> {{doctorsVisited}}</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="selSummary" data-ng-click="displayMissedDoctor()">
+                    <div class="row">
+                        <div class="col-xs-6 left-content">
+                            <p>{{locale.missedDoctors}}</p>
+                        </div>
+                        <div class="col-xs-6 right-content">
+                            <label> {{missedDoctors > 0 ? missedDoctors : 0}}</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="selSummary">
+                    <div class="row">
+                        <div class="col-xs-12 left-content">
+                            <p>{{locale.doctorCallDisclaimer}}</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--New Ui Changes Starts Here-->

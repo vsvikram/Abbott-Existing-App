@@ -1,0 +1,38 @@
+<div class="common-height" ng-controller="DCROthersMedicalController" ng-init="init()">
+	<div class="medquery-container">
+		<table class="medquery-table">
+			<tr class="medquery-table-row fontRobotoLight">
+				<td class="medquery-textCol"> {{locale.MedicalQuery}} </td>
+				<td class="medquery-inputCol">
+				<input scroll-page-up="medquery-container" type="text" name="Medical Query" ng-model="compInfoDetail[0].Medical_Query__c" placeholder="{{!disableEdit && locale.freeTextPlaceholder || locale.blank}}" />
+				</td>
+			</tr>
+			<tr class="medquery-table-row fontRobotoLight">
+				<td class="medquery-textCol"> {{locale.PostCallNotes}} </td>
+				<td class="medquery-inputCol">
+				<input scroll-page-up="medquery-container" type="text" name="Post Call Notes" ng-model="compInfoDetail[0].Post_call_Note__c" placeholder="{{!disableEdit && locale.freeTextPlaceholder || locale.blank}}" />
+				</td>
+			</tr>
+			<tr class="medquery-table-row fontRobotoLight">
+				<td class="medquery-textCol"> {{locale.NewCallObjectives}} </td>
+				<td class="medquery-inputCol">
+				<input scroll-page-up="medquery-container" type="text" name="New Call Objective" ng-model="compInfoDetail[0].Next_Call_Objective__c" placeholder="{{!disableEdit && locale.freeTextPlaceholder || locale.blank}}" />
+				</td>
+			</tr>
+		</table>
+	</div>
+	<nav class="navbar navbar-default medquery-footer">
+		<div class="col-xs-6 col-sm-6 v-center">
+			<div class="content fontRobotoLight common-lstvisit">
+				{{docInfoText}}
+			</div>
+		</div>
+		<div class="col-xs-6 col-sm-6 rightContent v-center">
+			<div class="content">
+				<button ng-click="saveCompInfo()" class="medquery-footer-savebtn">
+					{{locale.Save}}
+				</button>
+			</div>
+		</div>
+	</nav>
+</div>

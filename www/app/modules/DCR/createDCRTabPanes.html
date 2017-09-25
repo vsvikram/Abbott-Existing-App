@@ -1,0 +1,145 @@
+<div class="dcrDoctorList-wrapper page-wrap content-wrapper" ng-controller="createDCRTabPanes" ng-init="init()"  overflow-scroll="true">
+    <div class="plusMinus-icons">
+        <i class="plus-button" ng-class="{'dcrRemoveDocList-wrapper':myClass}" ng-click="disableEdit || navigateToAddCustomer()" ng-disabled="disableEdit">&nbsp;</i>
+        <i class="minus-button" ng-class="{'dcrRemoveDocList-wrapper':myClass}" ng-click="disableEdit || docAndDetailsLength == 0 || navigateToRemoveCustomer($event)" ng-disabled="disableEdit || docAndDetailsLength == 0">&nbsp;</i>
+    </div>
+    <div class="dcrDoc-wrpper">
+        <div class="DocSpace" ng-repeat="doctor in docAndDetails">
+            <div class="collapseList-wrap">
+                <div class="collapseList-list-item">
+                    <div class="collapseList-side">
+                        <div class="collapseList-item-two">
+                            <p ng-if="customerType=='Doctor' && docAndDetailsLength!=0" class="collapseList-list-desc">Dr. {{doctor.name}}</p>
+                            <div ng-if="customerType=='Doctor'" class="collapseList-list-sub">
+                                <span>{{doctor.designation}}</span>
+                                <span>{{doctor.mobileNumber}}</span>
+                            </div>
+                            <p ng-if="(customerType=='Chemist'  || customerType=='Stockist') && docAndDetailsLength!=0" class="collapseList-list-desc"> {{doctor.name}}</p>
+                            <div ng-if="(customerType=='Chemist' || customerType=='Stockist') && docAndDetailsLength!=0" class="collapseList-list-sub">
+                                <span class="spanHide">Patch Name:{{formatPatch(doctor.patch)}}</span>
+                            </div>
+                        </div>
+                        <div class="collapseList-item-check" ng-show="!removeFlag">
+                            <div class="check-btn">
+                                <label>
+                                    <input type="checkbox" ng-if="customerType=='Doctor'" ng-checked="doctor.dcrJFWs.length>0 ||  doctor.dcrJunction.JFW_None_Check__c==true"> <input ng-if="(customerType=='Chemist'  || customerType=='Stockist')" type="checkbox" ng-checked="doctor.DCR_Junction__c!=null"><i></i>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="RemoveDoctorsLists-item-check delete-item" ng-show="removeFlag">
+                            <div class="check-btn">
+                                <label>
+                                    <input type="checkbox" ng-model="doctor.isTicked" id="data{{$index}}" ng-change="removedDoc($index)"/><i></i>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="collapseList-item-check">
+                            <div ng-repeat="val in checkbtn" class="{{val.class}}">
+                                <label>
+                                    <input type="{{val.type}}" name="{{val.checkName}}" ng-checked="val.checked" ng-change="handleRadioClick(val)" ng-model="selectedValue.value" value="{{val.value}}"><i></i>{{val.name}}
+                                </label>
+                            </div>
+                        </div>
+                        <div ng-controller="DCREnterCallDetailsController">
+                            <div class="collapseList-image" ng-click="collapseClick($index)">
+                                <i ng-class="{'icon-resize-small': isCollapsed, 'icon-fullscreen': !isCollapsed}"></i>
+                            </div>
+                            <div class="moreBtn" uib-collapse="isCollapsed">
+                                <a href ng-if="customerType=='Doctor' && docAndDetailsLength!=0 && (doctor.dcrJFWs.length>0  ||  doctor.dcrJunction.JFW_None_Check__c==true)" class="pinkMore" ng-click="navigateToEnterCallDetails($index)">MORE</a>
+                                <div class="collapse-wrapper">
+                                    <dropdown-multiselect model="$parent.$parent.selectedSupervisorIds[$index]" class="dcrlanding-dropdown" options="$parent.listOfSupervisors" customer-type="customerType" translation-texts="$parent.dropdownDefault"></dropdown-multiselect>
+                                    <div class="brand-section">
+                                        <!-- <button ng-click="addBrand()">abcd</button>  -->
+                                        <div ng-if="customerType=='Doctor' && docAndDetailsLength!=0" ng-repeat="r in rows | filter:{ status_b: '!d' }" class="brand">
+                                            <div ng-show="r.show">
+                                                <div class="brand-content">
+                                                    <span>{{r.brandName}} 
+
+<!-- <select
+class="brandSelWidth entercall-inputfields dropDownIcon" ng-model="r.brandName"
+ng-change="getMaterialCampaign(r,'{{r.brandName}}')" ng-options="b.Name as b.Name for b in $parent.$parent.Brands"
+ng-class="{'entrcall-nonEditsel': isEditable}" ng-disabled="isEditable">
+<option value=""></option>
+</select>
+ --> </span>
+                                                    <input scroll-page-up="entrcall-table-scroll" ng-disabled="isEditable" class="entercall-rxmonth entercall-inputfields" only-digits type="text" pattern="\d*" ng-model="r.rx" ng-class="{'entrcall-nonEditsel': isEditable}" />
+                                                </div>
+                                                <div ng-show="$parent.showDelete" class="brand-close" ng-click="brandChecked(this,r,r.checked)">
+                                                    <i class="bg-close">&nbsp;</i>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div ng-if="customerType=='Doctor' && docAndDetailsLength!=0" class="addDel">
+                                            <i class="add-more-button" ng-click="addBrandPopup()">&nbsp;</i>
+                                            <i class="minus-button" ng-click="$parent.showDelete=true">&nbsp;</i>
+                                        </div>
+                                        <div ng-if="customerType=='Doctor' && docAndDetailsLength!=0" class="form-section">
+                                            <div class="doc-save-button saveBtn">
+                                                <button class="save-Btns" ng-hide="customerType == 'Doctor' && clmEnabled" ng-click="saveEnterCallDetails($index)" ng-disabled="docAndDetailsLength == 0 || disableEdit == true">SAVE</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-section" ng-if="customerType=='Chemist' || customerType=='Stockist'">
+                                        <form>
+                                            <div class="input-group">
+                                                <label class="pobSpace"> {{locale.POB}}</label>
+                                                <input scroll-page-up="ngdialog" class="pob" only-digits type="text" pattern="\d*" ng-model="$parent.doctor.POB__c">
+                                            </div>
+                                            <!--   <div class="input-group">
+                                      <label>Comment</label>
+                                      <input type="text">
+                                    </div> -->
+                                        </form>
+                                    </div>
+                                    <div class="chemistWrapper" ng-if="customerType=='Chemist' || customerType=='Stockist'">
+                                        <div class="brandLists" ng-if="customerType=='Chemist' && docAndDetailsLength!=0" ng-repeat="r in rows | filter:{ status_b: '!d' }">
+                                            <div class="inputSelect-group">
+                                                <div class="inputSelect-select">
+                                                    <select class="brandSelWidth entercall-inputfields dropDownIcon" ng-model="r.brandName" ng-change="getMaterialCampaign(r,'{{r.brandName}}')" ng-options="b.Name as b.Name for b in $parent.$parent.Brands" ng-class="{'entrcall-nonEditsel': isEditable}" ng-disabled="isEditable">
+                                                        <option value=""></option>
+                                                    </select>
+                                                </div>
+                                                <i class="addIcon enterCallIcon entercall-material" ng-hide="isEditable" ng-click="addMaterialRow(r)">&nbsp;</i>
+                                                <div ng-show="$parent.showDelete" class="brand-close" ng-click="brandChecked(this,r,r.checked)">
+                                                    <i class="bg-close">&nbsp;</i>
+                                                </div>
+                                            </div>
+                                            <div class="chemistItems">
+                                                <div class="inputSelect-group" ng-repeat="mr in r.materialRows | filter:{ status_m: '!d' }">
+                                                    <div class="inputSelect-wrap">
+                                                        <div class="inputSelect-select">
+                                                            <select ng-disabled="isEditable" ng-hide="isEditable" ng-model="mr.materialCode" ng-options="m.Id as (m.Material_Name__c+'(Qty:'+m.In_Hand_Quantity__c+')') for m in Materials[r.brandName] | filter: (!disableEdit || '') && {Active__c: true}" ng-change="onMaterialChange(r, mr,'{{mr.materialCode}}')">
+                                                                <option value=""></option>
+                                                            </select>
+
+                                                        <input scroll-page-up="entrcall-table-scroll" ng-disabled="!mr.materialCode" ng-class="{'entrcall-nonEditsel': isEditable}" class="entercall-qnty entercall-inputfields" only-digits type="text" pattern="\d*" ng-model="mr.Quantity" />
+                                                        <i class="delete-row-button" ng-hide="isEditable" ng-click="delMaterialRow(r,mr)">&nbsp;</i>
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="plusMinus-icons" ng-if="customerType=='Chemist'">
+                                            <i ng-click="addBrand(); addBrandClick = true" class="plus-button">&nbsp;</i>
+                                            <i ng-click="$parent.showDelete=true" class="minus-button">&nbsp;</i>
+                                        </div>
+                                        <div class="butn-wrapper">
+                                            <button ng-hide="customerType == 'Doctor' && clmEnabled" ng-click="saveEnterCallDetails($index)" ng-disabled="docAndDetailsLength == 0 || disableEdit == true">{{locale.Save}}</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+         <div class="doc-save-button" ng-show="!removeFlag">
+            <button ng-click="navigateToFieldWork()">SAVE</button>
+        </div>
+        <div class="doc-save-button" ng-show="removeFlag">
+            <button ng-click="removeDoctor()">REMOVE</button>
+        </div>
+    </div>
+</div>

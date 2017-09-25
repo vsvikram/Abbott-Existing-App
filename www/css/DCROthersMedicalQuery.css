@@ -1,0 +1,90 @@
+.medquery-container {
+	height:85%;
+	width:100%
+}
+
+.medquery-footer {
+	background-color:white;
+	border:none;
+	height: 15%;
+	min-height:0px;
+}
+
+.medquery-footer-savebtn {
+	background: #0EB4D6;
+    border-radius: 0.4em;
+    border: none;
+    color: #ffffff;
+    width: 50%;
+    float:right;
+    height: 2.5em;
+    margin-left: 0.2em;
+    margin-right: 0.2em;
+    font-size: 0.813em;
+}
+
+.medquery-table {
+	width:100%;
+}
+
+.medquery-table-row {
+   font-size: .9em;
+   border-bottom: 1px solid #EDEDED;
+   color: #666666;
+   background-color: #FBFBFB !important;
+   height: 3em;
+}
+
+.medquery-table-row td {
+   padding: 0.5em 1em;
+}
+
+.medquery-textCol {
+	width:30%;
+}
+
+.medquery-inputCol {
+	width:70%;
+}
+
+.medquery-inputCol input {
+	width:100%;
+}
+
+.fullDiv{
+	width: 100%;
+}
+
+.rowMedicalQuery{
+	border-top-style: hidden;
+	height: 2.5em;
+}
+
+.data
+{
+font-size:0.813em;
+padding-left:0.8em;
+}
+
+.row1
+{
+border-bottom: 0.1em solid rgba(0, 0, 0, 0.08);
+height:2em;
+
+}
+.box
+{
+width:99%;
+height:1.5em;
+
+}
+#click
+{
+
+background-color: #0eb4d6;
+color: white;
+position:absolute;
+bottom: 3em;
+right:2%;
+width:10em;
+}

@@ -1,0 +1,44 @@
+<div class="list-group-item presentation-item highlight-element"
+     ng-click="presentation.openPresentation()">
+  <img class="thumbnail presentation-thumb"
+       src="resources/images/2x/media/icon.png"
+       ng-src="{{presentation.thumbPath}}"
+  />
+  <div class="presentation-detail">
+    <div class="detail">
+      <h4 class="cropped"
+          ng-bind="presentation.data.Name">
+      </h4>
+      <p class="cropped"
+         ng-bind="presentation.getLoadedVersionText()">
+      </p>
+    </div>
+    <div class="progress"
+         ng-if="presentation.isDownloading()">
+      <div class="progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" ng-style="{width:presentation.getDownloadPercentage() + '%'}">
+        <span class="download-progress"ng-bind="presentation.getDownloadPercentage()"></span>%
+      </div>
+    </div>
+    <p class="total-size cropped"
+       ng-if="presentation.isDownloading()"
+       ng-bind="presentation.getTotalSize()">
+    </p>
+  </div>
+  <div class="action-status-holder">
+    <button type="button" class="btn btn-primary"
+            ng-if="presentation.isRedyToDownload()"
+            ng-bind="presentation.getDownloadText()"
+            ng-click="presentation.onDownloadClick($event)"
+    >
+    </button>
+    <button type="button" class="btn btn-danger"
+            ng-if="presentation.isCanCancel()"
+            ng-bind="presentation.locale.Cancel"
+            ng-click="presentation.onCancelClick($event)"
+    >
+    </button>
+    <div class="done"
+         ng-if="presentation.isFinished()">
+    </div>
+  </div>
+</div>

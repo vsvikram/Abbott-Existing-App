@@ -1,0 +1,16 @@
+<div class="log-wrapper" ng-controller="ViewLastLogController" ng-init="init()">
+    <div class="version-details" ng-if="listOfLogs.length!=0">
+        <p ng-repeat="log in listOfLogs">{{log}}</p>
+    </div>
+    <div class="confimation-logs">
+        <!--<button class="sendLogs" ng-click="sendLogsToSupport()" ng-hide="platform === 'iOS'">
+            <a>{{locale.SendSystemLogs}}</a>
+        </button> -->
+        <button type="submit" class="sendLogs" ng-click="sendLogsToSupport()">
+            <a style="color:#fff" ng-href="mailto:1point@abbott.co.in?subject=Logs For Admin&body={{listOfLogs}}" target="_top">
+                <!--{{locale.SendTransactionLogs}}--> SEND LOGS
+            </a>
+        </button>
+        <button type="submit" class="clrLogs" ng-click="clearDataBase()" ng-disabled="listOfLogs.length==0"><!--{{locale.ClearDatabase}}-->CLEAR ALL</button>        
+    </div>
+</div>

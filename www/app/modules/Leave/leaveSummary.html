@@ -1,0 +1,42 @@
+<div class="row" ng-init="init()">
+    <div class="mob-header">
+        <abw-header data-abwheader-config="abwheaderConfig"></abw-header>
+    </div>
+    <transparent-screen></transparent-screen>
+    <div class="view-container container-fluid ">
+        <div class="page-leave page-wrap">
+            <module-nav config='config'></module-nav>
+            <div class="leave-wrapper content-wrapper">
+                <div class="leave-summary" ng-show="selectedModel">
+                    <div class="select-wrap">
+                        <select ng-model="selectedLabel" ng-change="changeLeaveGroup()"> <!-- ng-model="selectedModel" -->
+                            <option ng-repeat="label in allModel.labels"
+                                    value = {{label}}>{{label == "Overall"? "Select type of leave" : label.replace(" Leave", "") }}</option>
+                        </select>
+                    </div>
+                    <div class="select-summary" ng-class="{'select-view': selectedLabel != 'Overall'}">
+                        <h4 class="summary-head" ng-hide = "selectedLabel == 'Overall'" ng-if="selectedLabel">{{selectedLabel.toUpperCase()}}</h4>
+                        <p>Leave occured as date
+                            <span>{{prependZeroOnSingleDigits(selectedModel.leave_occured_as_date)}}</span>
+                        </p>
+                        <p>Opening balance<span>{{prependZeroOnSingleDigits(selectedModel.opening_balance)}}</span></p>
+                        <p>Leaves claimed<span>{{prependZeroOnSingleDigits(selectedModel.leaves_claimed)}}</span></p>
+                        <p>Leave encashment<span>{{prependZeroOnSingleDigits(selectedModel.leaves_encashment)}}</span></p>
+                        <p>Pending for approval<span>{{prependZeroOnSingleDigits(selectedModel.pending_for_approval)}}</span></p>
+                        <p>Closing balance<span>{{prependZeroOnSingleDigits(selectedModel.closing_balance)}}</span></p>
+                    </div>
+                    <div class="view-wrapper">
+                        <div class="butn-wrapper" ng-show="selectedLabel == 'Overall'">
+                            <button ng-click="onApplyLeaveClick()">APPLY LEAVE</button>
+                        </div>
+                        <div class="butn-wrapper" ng-show="selectedLabel != 'Overall' && selectedModel.details.length > 0">
+                            <button ng-click="onDetailsClick()">VIEW ALL DETAILS</button>
+                        </div>
+                        <span ng-click="onApplyLeaveClick()"
+                              ng-show="selectedModel.closing_balance > 0 && selectedLabel != 'Overall'">Apply Leave</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

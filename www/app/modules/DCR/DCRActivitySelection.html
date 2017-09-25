@@ -1,0 +1,251 @@
+<!--
+<transparent-screen></transparent-screen>
+<navigation-bar is-hidden=false header-title="My DCR" left-side-icon="menu"
+                is-display-header-title=true is-display-logged-in-user=true></navigation-bar>
+<div ng-init="init()" class="container-fluid" style="padding:0%">
+    <header class="mainHeader">
+        <div class="dateHeader">
+            <div class="selectActivity fontRobotoLight">
+                <div>
+                    {{locale.SelectActivity}}
+                </div>
+            </div>
+            <div class="currentDate">
+
+                <div class="today">
+                    <span class="currentDayAndMonth fontRobotoLight"> {{displayDate}}, </span>
+                    <span class="currentYear fontRobotoRegular"> {{displayYear}} </span>
+                    <span class="calendarIcon" ng-click="navigateToDCRCalendar()"> <label class="homeModuleIcons calIcon calendarIcon"></label> </span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="container-fluid mainContent">
+
+        <div class="fullDayHalfDay">
+            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 fontRobotoLight fullDayActivity">
+                <div ng-click="fullDayView()">
+                                        <span class="dcrModuleIcons dcrRadioButtonActive optionButton"
+                                              ng-show="dcrRadioButtonActiveFullDay"></span>
+                                        <span class="dcrModuleIcons dcrRadioButtonInactive optionButton"
+                                              ng-show="dcrRadioButtonInactiveFullDay"></span>
+                    <span class="fullDayActivityText">&nbsp;{{locale.FullDayActivity}}</span>
+                </div>
+            </div>
+            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 fontRobotoLight halfDayActivity">
+                <div ng-click="halfDayView()">
+                                        <span class="dcrModuleIcons dcrRadioButtonActive optionButton"
+                                              ng-show="dcrRadioButtonActiveHalfDay"></span>
+                                        <span class="dcrModuleIcons dcrRadioButtonInactive optionButton"
+                                              ng-show="dcrRadioButtonInactiveHalfDay"></span>
+                    <span class="halfDayActivityText">&nbsp;{{locale.HalfDayActivity}}</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6" ng-show="fullDayViewShow">
+            <div class="fullDayView fontRobotoLight">
+                {{locale.Activity}} &nbsp;
+                <select class="dropDownIcon" ng-model="selectedActivityForFullDay"
+                        ng-options="activity.Name for activity in listOfActivitiesForFullDayActivity"
+                >
+                    <option value=""></option>
+                </select>
+            </div>
+        </div>
+
+        <div ng-show="halfDayViewShow">
+            <div class="halfDayView">
+                <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 firstHalf fontRobotoLight">
+                    {{locale.FirstHalf}} &nbsp;
+                    <select class="dropDownIcon" ng-model="selectedActivityForHalfDayFirstHalf"
+                            ng-options="activity.Name for activity in listOfActivitiesForHalfDayActivity"
+                    >
+                        <option value=""></option>
+                    </select>
+                </div>
+                <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 secondHalf fontRobotoLight">
+                    {{locale.SecondHalf}} &nbsp;
+                    <select class="dropDownIcon" ng-model="selectedActivityForHalfDaySecondHalf"
+                            ng-options="activity.Name for activity in listOfActivitiesForHalfDayActivity">
+                        <option value=""></option>
+                    </select>
+                </div>
+            </div>
+        </div>
+
+        <footer class="entrcall-footer">
+            <button ng-click="submitClick()" ng-disabled="buttonStatusDisabled"
+                    class="fontRobotoMedium entrcall-savebtn noOutline">
+                {{locale.Submit}}
+            </button>
+        </footer>
+    </div>
+
+</div>
+-->
+
+
+<transparent-screen></transparent-screen>
+<!--<link rel="stylesheet" type="text/css" href="dcrActivity.css">-->
+<!--<link rel="stylesheet" type="text/css" href="back-head.css">-->
+<div class="row">
+    <div class="mob-header">
+        <abw-header data-abwheader-config="abwheaderConfig"></abw-header>
+    </div>
+    <div class="tab-header">
+        <!-- header tab goes here-->
+    </div>
+    <div class="view-container container-fluid">
+    
+<div class="dcr-wrapper page-wrap pink-color">
+    <div class="dcr-wrapper dcr-activity-wrapper page-wrap" ng-init="init()">
+
+        <div>
+            <div class="back-head-wrapper">
+                <a href  ng-click="navigateToDCRCalendar()"><i class="back-head-arrow">&nbsp;</i></a>
+                <div class="back-head-content">
+                    <span ng-class="{active:leftActive}" >{{displayDate}}</span>
+                    <span ng-class="{active:rightActive}" >{{locale.SelectActivity}}</span>
+                </div>
+            </div>
+        </div>
+
+
+
+
+        <div class="tab">
+            <button class="tablinks" ng-click="fullDayView()" ng-class="{active:activeFirstTab}" id="defaultOpen" ng-disabled="firstHalfButtonDisabled">{{locale.FullDayActivity}}</button>
+            <button class="tablinks" ng-click="halfDayView()" ng-class="{active:activeSecondTab}" ng-disabled="secondHalfButtonDisabled">{{locale.HalfDayActivity}}</button>
+        </div>
+        <div id="dcr-fullDay" class="col-xs-12 tabcontent" ng-show="fullDayViewShow">
+
+            <!--radio checked disabled example-->
+            <!--    <div class="row" >
+
+               <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6  left-innerContent">
+
+                                   <input id="radioc-0" class="radio-custom" type="radio" ng-model="field.selectedActivityForFullDay" ng-value="ad" ng-change="selectActivity('asdf')" style="display:block" disabled="disabled" checked="checked"><label for="radioc-0" class="radio-custom-label">avcd</label>
+                           </div>
+                           <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6" >
+
+                           </div>
+                           </div>  -->
+
+
+
+
+            <div ng-repeat="activity in listOfActivitiesForFullDayActivity">
+                <div class="row" ng-if="$even">
+
+                    <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6  left-innerContent">
+
+                        <input id="radio-{{$index}}" class="radio-custom" type="radio" ng-model="field.selectedActivityForFullDay" ng-value="listOfActivitiesForFullDayActivity[$index]" ng-change="selectActivity(listOfActivitiesForFullDayActivity[$index])" style="display:block" ><label for="radio-{{$index}}" class="radio-custom-label">{{listOfActivitiesForFullDayActivity[$index].Name}} </label>
+                    </div>
+                    <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6" ng-if="listOfActivitiesForFullDayActivity[$index+1]!==undefined">
+
+                        <input id="radio-{{$index+1}}" class="radio-custom" type="radio"   ng-model="field.selectedActivityForFullDay" ng-value="listOfActivitiesForFullDayActivity[$index+1]" ng-change="selectActivity(listOfActivitiesForFullDayActivity[$index+1])" style="display:block"><label for="radio-{{$index+1}}" class="radio-custom-label">{{listOfActivitiesForFullDayActivity[$index+1].Name}} </label>
+                    </div>
+                </div>
+            </div>
+            <div class="dcr-button">
+                <div class="butn-wrapper"><button class="butn" ng-click="submitClick()" >{{locale.Submit}}</button></div>
+            </div>
+        </div>
+        <div id="dcr-halfDay" class="col-xs-12 tabcontent" ng-show="halfDayViewShow">
+            <!--<div class="radio">-->
+            <!--<label><input type="radio" name="rdoResult" ng-model="changedVal" value="pass" ng-click="getVal()">pass</label>-->
+            <!--</div>-->
+            <!--<div class="radio">-->
+            <!--<label><input type="radio" name="rdoResult" ng-model="changedVal" value="fail" ng-click="getVal()">fail</label>-->
+            <!--</div>-->
+            <div ng-show="halfDaySelectWindow">
+                <div class="row">
+                    <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 left-innerContent">
+                        <div>
+
+                            <input id="radioHalf-{{$index}}" class="radio-custom" type="radio"  ng-model="field.halfActivityChoosed" value="first"   style="display:block"> <label for="radioHalf-{{$index+1}}" class="radio-custom-label">{{locale.FirstHalf}} </label>
+                        </div>
+                    </div>
+                    <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                        <div>
+
+                            <input  id="radioHalf-{{$index}}" class="radio-custom" type="radio"  ng-model="field.halfActivityChoosed" value="second"  style="display:block"> <label for="radioHalf-{{$index+1}}" class="radio-custom-label">{{locale.SecondHalf}} </label>
+                        </div>
+                    </div>
+                </div>
+                <div class="dcr-button">
+                    <div class="butn-wrapper"><button class="butn" ng-click="selectedHalfDay(field.halfActivityChoosed)"  >{{locale.Submit}}</button> </div>
+                </div>
+            </div>
+            <div ng-if="firstHalfActivityWindow">
+                <!--                 <div class="row">
+                                    <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                                        <p>First Half</p>
+                                    </div>
+                                </div> -->
+                <div ng-repeat="activity in listOfActivitiesForHalfDayActivity">
+                    <div class="row" ng-if="$even">
+                        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 left-innerContent">
+                            <div>
+                                <input ng-if="listOfActivitiesForHalfDayActivity[$index].Name==field.selectedActivityForHalfDaySecondHalf.Name" id="radioHalfFirst-{{$index}}" class="radio-custom" type="radio"  ng-model="field.visualselectedActivityForHalfDayFirstHalf"   style="display:block" disabled="disabled" checked="checked">
+
+
+                                <input ng-if="listOfActivitiesForHalfDayActivity[$index].Name!=field.selectedActivityForHalfDaySecondHalf.Name" id="radioHalfFirst-{{$index}}" class="radio-custom" type="radio"  ng-model="field.selectedActivityForHalfDayFirstHalf" ng-value="listOfActivitiesForHalfDayActivity[$index]"  style="display:block"><label for="radioHalfFirst-{{$index}}" class="radio-custom-label">{{listOfActivitiesForHalfDayActivity[$index].Name}} </label>
+                            </div>
+                        </div>
+                        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6"  ng-if="listOfActivitiesForHalfDayActivity[$index+1]!==undefined">
+                            <div>
+                                <label>
+
+                                    <input ng-if="listOfActivitiesForHalfDayActivity[$index+1].Name==field.selectedActivityForHalfDaySecondHalf.Name" id="radioHalfFirst-{{$index}}" class="radio-custom" type="radio"  ng-model="field.visualselectedActivityForHalfDayFirstHalf"   style="display:block" disabled="disabled" checked="checked">
+
+                                    <input ng-if="listOfActivitiesForHalfDayActivity[$index+1].Name!=field.selectedActivityForHalfDaySecondHalf.Name" id="radioHalfFirst-{{$index+1}}" class="radio-custom" type="radio"  ng-model="field.selectedActivityForHalfDayFirstHalf" ng-value="listOfActivitiesForHalfDayActivity[$index+1]"  style="display:block"><label for="radioHalfFirst-{{$index+1}}" class="radio-custom-label">{{listOfActivitiesForHalfDayActivity[$index+1].Name}} </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="dcr-button">
+                    <div class="butn-wrapper"><button class="butn" ng-click="halfActivitySubmit('first')" >{{locale.Submit}}</button> </div>
+                </div>
+            </div>
+            <div ng-if="secondHalfActivityWindow">
+                <!--                 <div class="row">
+                                    <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                                        <p>Second Half</p>
+                                    </div>
+                                </div> -->
+                <div ng-repeat="activity in listOfActivitiesForHalfDayActivity">
+                    <div class="row" ng-if="$even">
+                        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 left-innerContent">
+                            <div>
+                                <input ng-if="listOfActivitiesForHalfDayActivity[$index].Name==field.selectedActivityForHalfDayFirstHalf.Name" id="radioHalfSecond-{{$index}}" class="radio-custom" type="radio"   ng-model="field.visualselectedActivityForHalfDayFirstHalf"    style="display:block" disabled="disabled" checked="checked">
+                                <input ng-if="listOfActivitiesForHalfDayActivity[$index].Name!=field.selectedActivityForHalfDayFirstHalf.Name" id="radioHalfSecond-{{$index}}" class="radio-custom" type="radio"   ng-model="field.selectedActivityForHalfDaySecondHalf" ng-value="listOfActivitiesForHalfDayActivity[$index]" ng-click="selectActivity(listOfActivitiesForHalfDayActivity[$index])" style="display:block"><label for="radioHalfSecond-{{$index}}" class="radio-custom-label">{{listOfActivitiesForHalfDayActivity[$index].Name}} </label>
+                            </div>
+                        </div>
+                        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6" ng-if="listOfActivitiesForHalfDayActivity[$index+1]!==undefined">
+                            <div>
+
+                                <input ng-if="listOfActivitiesForHalfDayActivity[$index+1].Name==field.selectedActivityForHalfDayFirstHalf.Name" id="radioHalfSecond-{{$index+1}}" class="radio-custom" type="radio"   ng-model="field.visualselectedActivityForHalfDayFirstHalf"  style="display:block" disabled="disabled" checked="checked">
+
+                                <input  ng-if="listOfActivitiesForHalfDayActivity[$index+1].Name!=field.selectedActivityForHalfDayFirstHalf.Name" id="radioHalfSecond-{{$index+1}}" class="radio-custom" type="radio"   ng-model="field.selectedActivityForHalfDaySecondHalf" ng-value="listOfActivitiesForHalfDayActivity[$index+1]"  style="display:block"><label for="radioHalfSecond-{{$index+1}}" class="radio-custom-label">{{listOfActivitiesForHalfDayActivity[$index+1].Name}} </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="dcr-button">
+                    <div class="butn-wrapper"><button class="butn" ng-click="halfActivitySubmit('second')" >{{locale.Submit}}</button> </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+</div>
+
+ </div>
+
+
+</div>

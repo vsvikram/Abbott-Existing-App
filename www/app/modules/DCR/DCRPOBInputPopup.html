@@ -1,0 +1,38 @@
+<div ng-if="!disableEdit">
+	<div class="ngdialog-message">
+		<div class="popup-header">
+			{{locale.Add}} {{locale.POB}}
+		</div>
+		<div class="confirmation-popup-body">
+			<span>
+				<input scroll-page-up="ngdialog" class="pob" only-digits type="text" pattern="\d*" ng-model="currentDocAndDetails.POB__c">
+			</span>
+		</div>
+	</div>
+	<div class="ngdialog-buttons" style="display: inline;">
+		<button type="button" class="ngdialog-button ngdialog-button-primary confirmation-popup-button" ng-click="closeThisDialog('button')">
+			{{locale.Cancel}}
+		</button>
+		<button type="button" class="ngdialog-button ngdialog-button-secondary confirmation-popup-button" ng-click="save(true)">
+			{{locale.Save}}
+		</button>
+	</div>
+</div>
+
+<div ng-if="disableEdit">
+	<div class="ngdialog-message">
+		<div class="popup-header">
+			{{locale.POB}}
+		</div>
+		<div class="normal-popup-body">
+			<span>
+				<input scroll-page-up="ngdialog" class="pob" only-digits type="text" pattern="\d*" ng-model="currentDocAndDetails.POB__c">
+			</span>
+		</div>
+	</div>
+	<div class="ngdialog-buttons">
+		<button type="button" class="ngdialog-button ngdialog-button-primary normal-popup-button" ng-click="closeThisDialog('button')">
+			{{locale.OK}}
+		</button>
+	</div>
+</div>

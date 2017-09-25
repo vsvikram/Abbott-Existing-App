@@ -1,0 +1,73 @@
+
+.support .tabulation2
+{
+
+background-color: rgba(109, 167, 171, 0.32);
+width:100%;
+height:2.5em;
+border-collapse: collapse;
+border-spacing:0;
+
+}
+.support .space1
+{
+width:50%;
+padding-left:10em;
+color:white;
+
+}
+.support .click
+{
+width:9em;
+height:2em;
+background-color: #0eb4d6;
+border-radius: 0.5em;
+padding:0em;
+color:white;
+
+
+}
+.support .module
+{
+	width:100%;
+}
+.support .data
+{
+width:100%;
+border-collapse:collapse;
+
+}
+.support .no
+{
+font-size:1em;
+  color:#0eb4d6;
+
+  padding-left:0.5em;
+}
+.support .rowtext
+{
+ border-bottom: 0.1em solid rgba(0, 0, 0, 0.08);
+ height:2.5em;
+}
+.support .tabdata
+{
+  padding-left:0.5em;
+ border-bottom: 0.1em solid rgba(0, 0, 0, 0.08);
+
+}
+
+
+.support .stat{
+
+ padding:1em;
+ 
+}
+.support .tag
+{
+color:#0eb4d6;
+text-decoration:none
+}
+
+.helpdeskNavBar {
+	height:2.5em !important;
+}

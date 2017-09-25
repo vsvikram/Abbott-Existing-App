@@ -1,0 +1,14 @@
+<div class="Error-popup">
+    <div class="ExpenseError-wrapper">
+        <div class="background-wrap">
+            <div class="Error-text">
+                <button type="button" class="close" data-ng-click="closeSFCFares()">
+                    <span class="glyphicon glyphicon-remove"></span>
+                </button>
+                <p ng-repeat="message in errorMessages track by $index">
+                    {{message}}
+                </p>
+            </div>
+        </div>
+    </div>
+</div>

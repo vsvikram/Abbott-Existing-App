@@ -1,0 +1,83 @@
+.dbc-up .dbc-trend-icon { background-image: url('../img/icons/trend-up.png'); }
+.dbc-down .dbc-trend-icon { background-image: url('../img/icons/trend-down.png'); }
+.banner-section { background-image: url('../img/mob-banner.png'); }
+.abbottLogo { background-image: url('../img/icons/abbott-logo-2.png'); }
+.nav-icons { background-image: url('../img/icons/menu.png'); }
+.refresh-icon { background-image: url('../img/icons/refresh.png'); }
+.notify-icon { background-image: url('../img/icons/notify-bell.png'); }
+.search-icon { background-image: url('../img/icons/search-icon.png'); }
+.dot-img { background-image: url('../img/icons/card-settings.png'); }
+.rated-star { background-image: url('../img/icons/rated-star.png') }
+.rating-star { background-image: url('../img/icons/rating-star.png') }
+.half-rated-star { background-image: url('../img/icons/half-star-img.png') }
+.filter-wrapper { background-image: url('../img/icons/filter-by.png') }
+.sort-wrapper { background-image: url('../img/icons/sort-by.png') }
+.filter-settings .panel-head { background-image: url('../img/icons/downarrow.png'); }
+.filter-settings .panel-head.active { background-image: url('../img/icons/uparrow.png'); }
+.mtp-dp-month { background-image: url('../img/icons/arrow.png'); }
+.expenseGes-months{background-image: url('../img/icons/down-arrow.png');}
+.dcrChemistList-wrapper .inputSelect-group .inputSelect-select:after{background-image: url('../img/icons/dropdown-arrow-filter.png');}
+.back-head-arrow { background-image: url('../img/icons/arrow.png'); }
+.expenseStatement-wrapper .statement-contents .state-details-image { background-image: url('../img/icons/delete.png'); }
+.expenseStatement-wrapper .statement-contents .arrow-wrap:after { background-image: url('../img/icons/uparrow.png'); }
+.allowance-box  input[type="radio"] + label span, .fare-chart  input[type="radio"] + label span { background-image: url('../img/icons/checkbox.png'); }
+.allowance-box  input[type="radio"]:checked + label span, .fare-chart  input[type="radio"]:checked + label span { background-image: url('../img/icons/checkbox-checked.png'); }
+.add-more-button { background-image: url('../img/icons/add-more.png'); }
+.add-icon { background-image: url('../img/icons/add-more.png'); }
+.desc-group::before, .select-group::before, .inputSelect-select::before, .fare-select::before { background-image: url('../img/icons/dropdown-arrow-filter.png'); }
+.allowance-box  input[type="radio"] + label span, .fare-chart  input[type="radio"] + label span { background-image: url('../img/icons/checkbox.png'); }
+.allowance-box  input[type="radio"]:checked + label span, .fare-chart  input[type="radio"]:checked + label span { background-image: url('../img/icons/checkbox-checked.png'); }
+.select-wrap:after { background-image: url('../img/icons/dropdown-arrow-filter.png'); }
+.comment-group textarea { background-image: url('../img/textArea-white-bg.png'); }
+.leave-reason .glyphicon-calendar:before { background-image: url('../img/icons/calendar.png'); }
+.place-select:after { background-image: url('../img/icons/dropdown-arrow-filter.png'); }
+input[type="radio"]:checked + i, input[type="checkbox"]:checked + i { background-image: url('../img/icons/tick.png'); }
+.expenseFile-wrapper .upload-box { background-image: url('../img/icons/attach-bg.png'); }
+.plus-button { background-image: url('../img/icons/pink-plus.png');}
+.minus-button { background-image: url('../img/icons/pink-minus.png');}
+.dcrChemist-image, .dcrStockist-image, .collapseList-image i.icon-resize-small  { background-image: url('../img/icons/down-Arrows.png');}
+.collapseList-image i.icon-fullscreen  { background-image: url('../img/icons/up-arrow.png');}
+.month-picker i{ background-image: url('../img/icons/dropdown-arrow-filter.png');}
+.dcrDoc-item-three input[type="checkbox"] + i{background-image: url('../img/icons/black-tick.png');}
+.dcrDoc-item-three input[type="checkbox"]:checked + i{background-image: url('../img/icons/green-tick.png');}
+.dcrChemistList-wrapper .popup-body input[type="checkbox"] + i{background-image: url('../img/icons/black-tick.png');}
+.dcrChemistList-wrapper .popup-body input[type="checkbox"]:checked + i{background-image: url('../img/icons/green-tick.png');}
+.dcrStockistList-wrapper .popup-body input[type="checkbox"] + i{background-image: url('../img/icons/black-tick.png');}
+.dcrStockistList-wrapper .popup-body input[type="checkbox"]:checked + i{background-image: url('../img/icons/green-tick.png');}
+.collapseList-item-check input[type="checkbox"] + i{background-image: url('../img/icons/white-tick.png');}
+.dcrChemistList-item-check input[type="checkbox"] + i{background-image: url('../img/icons/white-tick.png');}
+.dcrStockistList-item-check input[type="checkbox"] + i{background-image: url('../img/icons/white-tick.png');}
+.RemoveDoctorsLists-item-check input[type="checkbox"]:checked + i,.delete-section input[type="checkbox"]:checked + i{background-image: url('../img/icons/pink-delete.png');}
+.RemoveDoctorsLists-item-check input[type="checkbox"] + i,.delete-section input[type="checkbox"] + i{background-image: url('../img/icons/delete.png');}
+.dcrRemoveDocList-wrapper .plus-button { background-image: url('../img/icons/add-more.png');}
+.dcrRemoveDocList-wrapper .minus-button { background-image: url('../img/icons/pink-circle-minus.png');}
+.plus-button { background-image: url('../img/icons/pink-plus.png'); }
+.minus-button, .delete-row-button { background-image: url('../img/icons/pink-minus.png'); }
+.dcrChemist-image, .dcrStockist-image, .dcrDocList-image { background-image: url('../img/icons/down-Arrows.png'); }
+.month-picker i { background-image: url('../img/icons/dropdown-arrow-filter.png'); }
+.dcrDoc-item-three input[type="checkbox"] + i { background-image: url('../img/icons/black-tick.png'); }
+.dcrDoc-item-three input[type="checkbox"]:checked + i { background-image: url('../img/icons/green-tick.png'); }
+.dcrDoctorList-item-check input[type="checkbox"] + i { background-image: url('../img/icons/white-tick.png'); }
+.dcrChemistList-item-check input[type="checkbox"] + i { background-image: url('../img/icons/white-tick.png'); }
+.dcrStockistList-item-check input[type="checkbox"] + i { background-image: url('../img/icons/white-tick.png'); }
+.RemoveDoctorsLists-item-check input[type="checkbox"]:checked + i { background-image: url('../img/icons/pink-delete.png'); }
+.RemoveDoctorsLists-item-check input[type="checkbox"] + i { background-image: url('../img/icons/delete.png'); }
+.dcrRemoveDocList-wrapper.plus-button { background-image: url('../img/icons/add-more.png'); }
+.dcrRemoveDocList-wrapper.minus-button { background-image: url('../img/icons/pink-circle-minus.png'); }
+.bg-close { background-image: url('../img/icons/grey-close.png');}
+.remove-icon { background-image: url('../img/icons/pink-minus.png'); }
+@media screen and (min-width:980px) {
+    .banner-section { background-image: url('../img/tab-banner.png'); }
+    .nav-icons { background: none; }
+    .abbottLogo { background-image: url('../img/icons/abbott-blue.png'); }
+    .refresh-icon { background-image: url('../img/icons/refresh.png'); }
+    .notify-icon { background-image: url('../img/icons/notify-bell.png'); }
+    .search-icon { background: none; url('../img/icons/search.png.png');}
+    .banner-section { background-image: url('../img/tab-banner.png'); }
+    .module-button-tab { background-image: url('../img/icons/arrow-go.png') }
+    .banner-section .search-field, .abb-exchange-search { background-image: url('../img/icons/search.png'); }
+    .filter-settings .panel-head { background-image: url('../img/icons/downarrow.png'); }
+    .filter-settings .panel-head.active { background-image: url('../img/icons/uparrow.png'); }
+}
+.dcrDoc-wrpper .delete-item input[type="checkbox"]:checked + i,.delete-section input[type="checkbox"]:checked + i{background-image: url('../img/icons/red-delete.png');}
+.dcrDoc-wrpper .delete-item input[type="checkbox"] + i,.delete-section input[type="checkbox"] + i{background-image: url('../img/icons/delete.png');}

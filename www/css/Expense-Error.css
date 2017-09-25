@@ -1,0 +1,28 @@
+/*.Error-popup .ExpenseError-wrapper {
+  background-color: #fff;
+  height: 500px;
+  margin: 80px 10px 0 10px;
+  padding: 50px 10px 0 10px;
+}
+*/
+
+.Error-popup .ExpenseError-wrapper {
+    background-color: #fff;
+    height: auto;
+    margin: 50vw 10px 0 10px;
+    padding: 15px 10px 20px 10px;
+}
+
+.Error-popup .Error-text p{
+    font-size:0.833rem;
+    font-family: openSans;
+    font-weight: 500;
+    color: #414042;
+    padding: 10px 10px 0 10px;
+}
+
+.Error-text .close {
+    position: absolute;
+    right: 20px;
+    top: 8px;
+}

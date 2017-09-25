@@ -1,0 +1,67 @@
+.table{
+width:100%;
+table-layout:absolute;
+border-collapse: collapse; 
+}
+.id
+{
+height:2em;
+border-bottom: 0.1em solid rgba(0, 0, 0, 0.08);
+width:absolute;
+
+}
+.type{
+height:2em;
+background-color: rgba(20, 20, 21, 0.17);
+}
+
+.tableRow .tableRow1{
+	width:20%;
+}
+
+.tableRow .tableRow2{
+	width:30%;
+}
+
+.tableRow .tableRow3{
+	width:20%;
+}
+
+.tableRow .tableRow4{
+	width:30%;
+}
+
+.activityDetailsCol {
+	width:33%;
+}
+
+.commentsSummary{
+	padding-left:2em;
+	padding-right:2em;
+}
+
+.textSummary{
+	padding-left:2em;
+	padding-right:2em;
+}
+
+.summary-save-button {
+	background: #0EB4D6;
+    border-radius: 0.4em;
+    border: none;
+    color: #ffffff !important;
+    padding-left: 1em;
+    padding-right: 1em;
+    float:right;
+    height: 2.5em;
+    margin-left: 0.2em;
+    margin-right: 0.2em;
+    font-size: 0.813em;
+}
+
+.summary-bottom-footer {
+	background-color:white;
+	border:none;
+	height:15%;
+	min-height:0px;
+}

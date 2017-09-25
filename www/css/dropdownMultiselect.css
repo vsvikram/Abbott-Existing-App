@@ -1,0 +1,119 @@
+ul.dropdown-menu li {
+    cursor: pointer;
+    padding: 1vw 2vw;
+}
+
+ul.dropdown-menu li span.red {
+    color: red;
+}
+
+ul.dropdown-menu li span.green {
+    color: green;
+}
+
+.selectMainHead{
+	background-color:white !important;
+	border-radius: 0.75em; 
+	height: 2em;
+	padding:0em;
+	margin-left: 0.5em;
+	width: 7.3em;
+	color:#666666;
+	
+}
+
+.fontSizeAdjustment{
+	font-size:0.75em;
+	padding-left: 1em;
+}
+
+.dropdownIcon{
+	background-color:white !important;
+	border-radius: 0.75em; 
+	height: 2em;
+	padding:0em;
+	width:1.875em;
+}
+
+.none{
+	padding: 0em !important;
+	padding-left: 0.5em !important;
+	padding-top: 0.5em !important;
+	padding-bottom: 0.2em !important;
+	color:#666666; !important;
+	font-size: 0.75em !important;
+}
+
+.selectMainHead .select{
+	float: left;
+	font-size:0.765rem;
+	font-family: OpenSans;
+	
+}
+
+.dropdownAdjustment{
+    max-width: 0em;
+    min-width:9em;
+    padding: 0em;
+    line-height: 0em;
+    margin:0em;
+    height: 9em;
+    overflow: auto;
+    font-size:1em;
+}
+
+.optionNames{
+	/*color:#666666; !important;*/
+	font-size: 0.625rem;
+	padding-left:2vw;
+}
+.seperator{
+	height:0.05em;
+	margin-left: 0.2em;
+	margin-right: 0.2em;
+
+}
+
+.selectOptions{
+	padding:0em !important;
+}
+
+.imageAdjustment{
+	width: 1.5em;
+    height: 1.5em;
+    line-height: 1.5em;
+    float: left;
+    background-size: cover !important;
+}
+
+.jfwSelectField {
+	border: 1px solid red;
+	border-radius: 12px;
+}
+
+
+.jfwSelectField .btn {
+	font-size:1em;
+}
+
+.selectMainHead {
+    width: 80.9vw;
+    background-color: #f7ca39 !important;
+    border-radius: 3px;
+    font-size: 0.625rem;
+    font-family: OpenSans;
+        height: 6.4vh;
+}
+.btn-group.open .dropdown-toggle, .btn-group .dropdown-toggle {
+    background-color: #f7ca39 !important;
+    border-radius: 3px;
+    box-shadow: none;
+    height: 6.4vh;
+ }
+ .dropdownAdjustment {
+     width: 87vw !important;
+     max-width: 100%;
+     font-size:0.625rem;
+     font-family: OpenSans;
+ }
+ .dropdown-menu>li>a{line-height: 1.7 !important;}

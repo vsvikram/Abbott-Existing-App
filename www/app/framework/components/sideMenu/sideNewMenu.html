@@ -1,0 +1,38 @@
+<div class="side-menu-wrap" ng-class="{'showMenu':!hideSideMenu}">
+    <div class="mobile-menu animated" ng-class="{'slideInLeft':showSideMenu,'slideOutLeft':!showSideMenu}">
+        <div class="user-profile-menu">
+            <img src="img/yash.png" alt="yash" />
+            <div class="user-details">
+                <p class="name-text">{{$root.loggedUserName}}</p>
+                <p class="name-desc">{{$root.loggedUserDesignation}} - {{$root.division}}</p>
+            </div>
+        </div>
+        <div class="side-menus">
+            <div class="side-menu-one">
+                <div class="border-line">
+                    <div class="imgIcon">
+                        <img src="img/settings.png" alt="settings-icon" />
+                    </div>
+                    <p class="side-text">Settings</p>
+                </div>
+            </div>
+            <div class="side-menu-two" ng-click="navigateToHelpdesk()">
+                <div class="border-line">
+                    <div class="imgIcon">
+                        <img src="img/point.png" alt="point-icon" />
+                    </div>
+                    <p class="side-text">1Point</p>
+                </div>
+            </div>
+            <div class="side-menu-three" ng-click="onLogoutIconClicked()">
+                <div class="imgIcon">
+                    <img src="img/logout.png" alt="logout-icon" />
+                </div>
+                <p class="side-text">Log Out</p>
+            </div>
+        </div>
+    </div>
+    <div class="menu-close" ng-click="toggleSideMenu(false)">
+
+    </div>
+</div>

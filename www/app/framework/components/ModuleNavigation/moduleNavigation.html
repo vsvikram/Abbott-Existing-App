@@ -1,0 +1,13 @@
+<div>
+    <div class="back-head-wrapper">
+        <i class="back-head-arrow" ng-click="backButton()">&nbsp;</i>
+        <div class="back-head-content">
+            <span ng-class="{active:dirConfig.left.active}"
+                  ng-click="leftTabClick()"
+                  ng-show="dirConfig.left.text">{{dirConfig.left.text}}</span>
+            <span ng-class="{active:dirConfig.right.active}"
+                  ng-click="rightTabClick()"
+                  ng-show="dirConfig.right.text">{{dirConfig.right.text}}</span>
+        </div>
+    </div>
+</div>

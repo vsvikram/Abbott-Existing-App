@@ -1,0 +1,21 @@
+<div class="row">
+    <div class="mob-header">
+        <abw-header data-abwheader-config="abwheaderConfig"></abw-header>
+    </div>
+    <div class="tab-header">
+        <!-- header tab goes here-->
+    </div>
+    <div class="view-container container-fluid" ng-init="init()">
+        <div class="point-wrapper page-wrap">
+            <div class="back-head-wrapper">
+                <i class="back-head-arrow" ng-click="backButton()">&nbsp;</i>
+                <div class="back-head-content">
+                    <span class="" ng-repeat="tab in listOfTabs" ng-click="defaultSelection(tab.title,$index)" ng-class="($index==tabIndex||($index==0 && firstTimeEntry==true))?'active':''">{{tab.title}}</span>
+                </div>
+            </div>
+            <div class="point-full-section content-wrapper" ng-repeat="tab in listOfTabs" ng-if="tab.title==tabTitleHelp">
+                <div ui-view></div>
+            </div>
+        </div>
+    </div>
+</div>

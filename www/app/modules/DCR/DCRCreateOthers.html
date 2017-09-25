@@ -1,0 +1,20 @@
+<div class="common-height" ng-controller="DCRCreateOthersController">
+  <div class="common-height" ng-if="tabTitle=='POB'">
+    <div class="common-height" ng-include="'app/modules/DCR/DCROthersPOB.html'"></div>
+  </div>
+  <div class="common-height" ng-if="tabTitle=='Competitor Info'">
+    <div class="common-height" ng-include="'app/modules/DCR/DCROthersCompetitorInfo.html'"></div>
+  </div>
+  <div class="common-height" ng-if="tabTitle=='Key Messages'">
+    <div class="common-height" ng-include="'app/modules/DCR/DCRKeyMessages.html'"></div>
+  </div>
+  <div class="common-height" ng-if="tabTitle=='Follow-up Activity'">
+    <div class="common-height" ng-include="'app/modules/DCR/DCROthersFollowUpActivity.html'"></div>
+  </div>
+  <div class="common-height" ng-if="tabTitle=='Corporate Initiative'">
+    <div class="common-height" ng-include="'app/modules/DCR/DCROthersCorporateInitiative.html'"></div>
+  </div>
+  <div class="common-height" ng-if="tabTitle=='Medical Query/PCN/NCO'">
+    <div class="common-height" ng-include="'app/modules/DCR/DCROthersMedicalQuery.html'"></div>
+  </div>
+</div>

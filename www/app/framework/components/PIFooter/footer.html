@@ -1,0 +1,23 @@
+<footer class="footer" ng-class="{ 'footer-no-home' : hideFooterHome}">
+    <nav class="row">
+        <div class="footer-nav-col" ng-if="!hideFooterHome">
+            <div class="footer-nav-content footer-nav-home" ng-click="navigateToHome()">
+                <a ui-sref="piDashboard"><img src="img/icons/home.png" alt="footer home" /></a>
+            </div>
+        </div>
+        <div class="footer-nav-col">
+            <div class="footer-nav-content footer-nav-overview" ng-class="{'footer-nav-active' : currentSelection[0]}" ng-click="updateBrand(overAllBrand,0)">
+                {{overAllBrand.EBRAND_NAME__c}}
+            </div>
+        </div>
+        <div class="footer-nav-scroller">
+            <div class="nav-scroller-wrap scrollbar-dynamic" ng-scrollable="{scrollX:'bottom', scrollY:'none'}">
+                <div class="footer-ns-col" ng-repeat="brand in brandArr" ng-if="brand.EBRAND_CD__c !== 'TOTAL'">
+                    <div class="footer-nav-content" ng-init="currentSelection[$index + 1] = false" ng-class="{'footer-nav-active' : currentSelection[$index + 1]}" ng-click="updateBrand(brand, $index + 1)">
+                        {{brand.EBRAND_NAME__c}}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+</footer>

@@ -1,0 +1,55 @@
+<div class="product-presentation-popup-shatter">
+
+  <div class="product-presentation-popup-content">
+    <div class="product-popup-wrapper"
+         ng-hide="productPresentationPopup.selectedProduct"
+    >
+      <h3
+          ng-bind="locale.Brands"
+      ></h3>
+      <div class="product-popup-content product-presentation-scroll-content">
+        <div class="product-popup-item-placeholder hide"
+             ng-bind="locale.NoProducts"
+        >
+        </div>
+        <div class="product-popup-item"
+             ng-repeat="product in productPresentationPopup.products"
+             ng-click="productPresentationPopup.selectProduct(product)"
+             ng-init="$last ? productPresentationPopup.updateProductPopupSize() : null"
+        >
+          <span>{{product.Name}}</span>
+          <div class="arrow-icon arrowRightIcon"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="presentation-popup-wrapper"
+         ng-show="productPresentationPopup.selectedProduct"
+    >
+      <header>
+        <div class="back-button" ng-click="productPresentationPopup.showProducts()">
+          <div class="arrow-icon arrowLeftIcon"></div>
+                    <span
+                        ng-bind="locale.Back"
+                    ></span>
+        </div>
+        <h3
+            ng-bind="productPresentationPopup.selectedProduct.Name"
+        >
+        </h3>
+      </header>
+
+      <div class="presentation-popup-content product-presentation-scroll-content">
+        <div class="presentation-popup-item"
+             ng-repeat="presentation in productPresentationPopup.selectedProduct.presentations"
+             ng-click="productPresentationPopup.selectPresentation(presentation)"
+             ng-init="$last ? productPresentationPopup.updatePresentationPopupSize() : null"
+        >
+          <span>{{presentation.Name}}</span>
+          <div class="arrow-icon arrowRightIcon"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>

@@ -1,0 +1,39 @@
+<div class="row">
+    <div class="mob-header">
+        <abw-header data-abwheader-config="abwheaderConfig"></abw-header>
+    </div>
+    <div class="tab-header">
+        <!-- header tab goes here-->
+    </div>
+    <div class="view-container container-fluid">
+        <div class="pink-color">
+            <div>
+                <div class="back-head-wrapper">
+                    <i class="back-head-arrow" ng-click="backButton()">&nbsp;</i>
+                    <div class="back-head-content">
+                        <span ng-class="{active:leftActive}" >{{currentCalenderDate|date:"d MMM y"}}</span>
+                        <span ng-class="{active:rightActive}" >{{locale.FieldWork}}</span>
+                    </div>
+                </div>
+                <div class="dcrList-wrapper page-wrap content-wrapper" ng-init="init()">
+                    <div class="arrow-wrap">
+                        <div   class="dcrList-list-item" >
+                            <ul class="dcrCards">
+                                <li ng-repeat="tab in listOfTabs" class="dcrCardsList">
+                                    <a href class="dcrList-side" ng-click=onNavigateClick(tab.url,tab.index)>
+                                        <div class="dcrList-item-two">
+                                            <p class="dcrList-list-desc" >{{tab.title}}</p>
+                                        </div>
+                                        <div class="dcrList-item-three">
+                                            <img src="img/icons/rightarrow.png">
+                                        </div>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

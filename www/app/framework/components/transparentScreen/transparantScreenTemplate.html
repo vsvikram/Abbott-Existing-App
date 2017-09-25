@@ -1,0 +1,5 @@
+<div data-ng-show=transparentConfig.display class="col-xs-12 col-sm-12 col-md-12 col-lg-12 side-menu-container">
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" ng-class="{'nav-blur-div': transperantConfig.showTransparancy == true}"></div>
+    <div data-ng-show=transparentConfig.showBusyIndicator style="position:absolute;left:40%;right:40%;top:40%;bottom:40% !important" class="loaderImg"></div>
+    <div data-ng-show="transparentConfig.busyIndicatorText && transparentConfig.busyIndicatorText.length > 0" class="busyIndicatorText"><span>{{transparentConfig.busyIndicatorText}}</span></div>
+</div>

@@ -1,0 +1,22 @@
+<navigation-bar is-hidden=false left-side-icon="back" header-title="Other Details" is-display-header-title=true
+                is-display-logged-in-user=true></navigation-bar>
+<div ng-controller="DCRCreateOthersLandingController" class="dcr-others-height" ng-init="init()">
+  <header class="mainHeader common-height">
+    <div class="container common-height">
+      <ul class="nav nav-pills navigationBar zPositionAbove">
+        <li ng-repeat="tab in listOfTabs" ng-style="{'width':'{{100/listOfTabs.length}}%'}">
+          <a ui-sref="dcrCreateOthers" ng-click="defaultSelection(tab.title,$index)"
+             ng-class="($index==tabIndex||($index==0 && firstTimeEntry==true))?'defaultSelection':''"
+             class="fontRobotoLight">
+            {{tab.title}}
+          </a>
+        </li>
+      </ul>
+      <fieldset class="dcr-others-height" ng-disabled="disableEdit">
+        <div class="common-height" ng-repeat="tab in listOfTabs" ng-if="tab.title==tabTitle">
+          <div ui-view class="common-height"></div>
+        </div>
+      </fieldset>
+    </div>
+  </header>
+</div>

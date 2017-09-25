@@ -1,0 +1,11 @@
+ <div class="mtp-dp-day">
+    <div class="mtp-day" ng-repeat="cal in days" ng-class="{'active' : selectedDate == cal.day.toString()+cal.month.toString()+ cal.Year.toString() }" data-date="{{cal.day}}" data-cdate="{{currentDayNum}}" data-dayNum="{{cal.dayNum}}" ng-click="showDate(cal)">
+        <span class="day">{{cal.weekDay | limitTo: 3}}</span>
+        <span class="date">{{cal.day}}</span>
+        <span class="off" ng-if="cal.weekOff">Weekly Off</span>
+        <span class="orangeHol" ng-if="cal.orangeColorLeaveRequestHoliday">Holiday</span>
+        <span class="pinkPend" ng-if="cal.pinkColorLeaveRequestPending">Pending</span>
+        <span class="purpleApp" ng-if="cal.purpleColorLeaveRequestApproved">Approved</span>
+        <a href="#" class="hide-input-for-focus" ng-focus-if="currentDayNum == cal.day && currentDate.getMonth() == cal.month"></a>
+    </div>
+</div>

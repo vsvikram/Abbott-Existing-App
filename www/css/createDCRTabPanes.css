@@ -1,0 +1,481 @@
+/* main body */
+html,body{
+	height:100%;
+}
+
+.common-height {
+	height:100%;
+}
+
+.mainContent{
+	padding: 0em;
+}
+
+.mainContent .dateAndDoc {
+	height: 14%;
+	display: table;
+	width: 100%;
+}
+
+.mainContent .dateAndDoc .row{
+	/*padding-top: .3em;
+	line-height: 2.25em;*/
+	display: table-cell;
+	vertical-align: middle;
+	line-height: 2em;
+	font-size: 0.875em;
+}
+
+.mainContent .bottomPart{
+	height: 86%;
+	padding: 0 5%;
+}
+
+
+.mainContent .bottomPart .prevArrow{
+	float:left;
+	width: 1.5625em;
+	position: absolute;
+	left: 1%;
+	top:50%;
+}
+
+
+.mainContent .dateAndDoc .row .createDCRForDate{
+	/*font-size: 0.875em;*/
+	color:#666666;
+	/*line-height:2.55;*/
+	display: inline-block;
+	vertical-align: middle;
+	/*padding-left: 2em;*/
+
+}
+.mainContent .dateAndDoc .row .docEdit{
+	/*height: 2.25em;*/
+	float:right;
+}
+
+.mainContent .dateAndDoc .row .docEdit .add,
+.mainContent .dateAndDoc .row .docEdit .remove,
+.mainContent .dateAndDoc .row .docEdit .presentations,
+.mainContent .dateAndDoc .row .docEdit .removeText{
+	float:right;
+    padding: 0em 0.5em;
+
+}
+
+.mainContent .dateAndDoc .row .docEdit .remove,
+.mainContent .dateAndDoc .row .docEdit .add,
+.mainContent .dateAndDoc .row .docEdit .presentations{
+	border-left: solid thin #CDCBCB;
+	border-right: solid thin #CDCBCB;
+}
+
+
+.mainContent .dateAndDoc .row .docEdit .add .addDoctor,
+.mainContent .dateAndDoc .row .docEdit .remove .removeDoctor,
+.mainContent .dateAndDoc .row .docEdit .presentations .showPresentations{
+	display:inline-block;
+	vertical-align:middle;
+	
+}
+
+.mainContent .dateAndDoc .row .docEdit .add .addDoctor label,
+.mainContent .dateAndDoc .row .docEdit .remove .removeDoctor label,
+.mainContent .dateAndDoc .row .docEdit .presentations .showPresentations label{
+	padding: 0em;
+	margin:0em;
+	height: 1.9em;
+    width: 1.9em;
+
+}
+
+.mainContent .dateAndDoc .row .docEdit .add .addDoctorText,
+.mainContent .dateAndDoc .row .docEdit .remove .removeDoctorText{
+	float:right;
+	display:inline-block;
+	vertical-align:middle;
+	font-size: 0.75em;
+	color:#666666;
+
+}
+
+.mainContent .blockTableCell{
+	float:left;
+	height: 100%;
+	position: relative!important;
+	border-style:solid;
+	border-width: thin;
+	border-left-color: #E5E4E4;
+	border-right-color: #E5E4E4;
+	border-bottom: none;
+	border-top: none;
+	width:100%;
+}
+
+.mainContent .broadTableHeader .row{
+	margin:0em;
+	height:100%;
+}
+
+.mainContent .broadTableHeader{
+	background-color: #666666;
+	height: 17%;
+	width: 100%;
+}
+
+.mainContent .broadTableHeader .row .docAll{
+	padding: 0em;
+	height: 100%;
+}
+
+.mainContent .broadTableHeader .row .pageNumber{
+	float:left;
+	padding-left: 0.5em;
+	padding-right: 0.4em;
+	border-right-style: solid;
+	border-width:thin;
+	border-color:#cdcbcb;
+	color:#FFFFFF;
+	width: 28%;
+	text-align:center;
+	height:100%;
+	display: table;
+}
+
+.mainContent .broadTableHeader .row .pageNumber .currentPageNo{
+	font-size: 2em;
+	display: table-cell;
+	vertical-align: middle;
+	text-align: right;
+}
+
+.mainContent .broadTableHeader .row .pageNumber .totalNoOfPages{
+	font-size: 0.8125em;
+	display: table-cell;
+	vertical-align: middle;
+	text-align: left;
+	padding-top: 1em;
+}
+
+
+.mainContent .broadTableHeader .docDetails{
+	word-break: break-all;
+	float: left;
+	height: 2.55em;
+	padding: 0em;
+	margin:0em;
+	display: table;
+	width: 71%;
+	padding-left: 1%;
+	height:100%;
+}
+
+.mainContent .broadTableHeader .docDetails .misnomer{
+	display: table-cell;
+	vertical-align: middle;
+	width:80%;
+}
+
+.mainContent .broadTableHeader .docDetails .docName{
+	font-size: 0.8125em;
+	color: #ffffff;
+	float: left;
+  	width: 100%;
+  	display: block;
+}
+
+.mainContent .broadTableHeader .docDetails .docDesignation{
+	font-size: 0.6875em;
+	color: #ffffff;
+}
+
+
+.mainContent .broadTableHeader .supDetails{
+	padding: 0em 0.2em;
+	height: 100%;
+}
+
+.mainContent .broadTableHeader .supDetails .jointFieldWork{
+	float:right;
+	color: #ffffff;
+	font-size: 0.75em;
+	padding-right: 0.5em !important;
+	height: 100%;
+	padding: 2% 0;
+	display: table;
+}
+
+.mainContent .broadTableHeader .supDetails .jointFieldWork span {
+	display: table-cell;
+	vertical-align: middle;
+}
+
+.mainContent .broadTableHeader .supDetails .supSelection{
+	float:right;
+	height:100%;
+	display:table;
+}
+
+.mainContent .blockTableCell .supSelect{
+	float:left;
+	padding:0em;
+	width: 100%;
+	border-style:solid;
+	border-width: thin;
+	border-left-color: #E5E4E4;
+	border-right-color: #E5E4E4;
+	border-bottom: none;
+	border-top: none;
+	
+}
+
+.mainContent .blockTableCell .supSelect > div{
+	padding:0em .2em 0em 0.2em;
+}
+
+.mainContent .blockTableCell .supSelect .cross{ 
+	float: right;
+	width: 1.5em;
+	height: 1.5em;
+	padding:0em;
+	margin:0em;
+	display:inline-block;
+	vertical-align: middle;
+	
+
+}
+
+.mainContent .blockTableCell .supSelect .supText{
+	font-size: 0.75em;
+	float:left;
+	color:#666666;
+	display:inline-block;
+	vertical-align: middle;
+	width: 75%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+
+.mainContent .blockTableCell .supSelect div{
+	max-height:100%;
+	background-color: #eef9f8;
+	border-radius:0.75em; 
+	line-height:1.5em;
+	border: thin solid #d3eae8;
+	margin: 0.5% 0 0 0.5%;
+}
+
+
+.mainContent .blockTableCell .brands{
+	height: 66%;
+	overflow-y: auto;
+}
+
+.customerTableHeader {
+	height: 15%;
+}
+
+.customerTableList {
+	height: 85%;
+}
+
+.pob {
+	width:4em;
+}
+
+.mainContent .blockTableCell table{
+	width: 100%;
+	
+}
+
+.mainContent .blockTableCell .brands .brandTableHeader{
+	background-color:#ededed; 
+	color: #5c5d5d;
+	font-size: 0.75em;
+	
+}
+
+
+.mainContent .blockTableCell .brands .brandTableBody{
+	color: #5c5d5d;
+	font-size: 0.75em;
+}
+
+.mainContent .blockTableCell .brands .brandTableHeader td {
+	padding-left: 1em !important;
+}
+
+.blockTableCell .brands .brandTableBody td {
+	padding: 1em 0em 0em 1em !important;
+}
+
+.mainContent .blockTableCell .brands .brandTableHeader .brand{
+	width: 10em;
+}
+
+.mainContent .blockTableCell .brands .brandTableHeader .material{
+	width:17em;
+}
+
+.mainContent .blockTableCell .brands .brandTableHeader .quality{
+	width:7em;
+
+}
+
+.mainContent .blockTableCell .brands .brandTableHeader .rxMonth{
+	width:7em;
+}
+
+.brandCol{
+	width: 10em;
+}
+
+.materialCol{
+	width:17em;
+}
+
+.qualityCol{
+	width:7em;
+
+}
+
+.rxMonthCol{
+	width:7em;
+}
+
+
+
+
+.mainContent .bottomPart .nextArrow{
+	float:right;
+	width: 1.5625em;
+	position: absolute;
+	right: 1%;
+	top:50%;
+}
+
+
+/*.mainContent .brandTableFooter .absoluteAdjustment{
+	/*position: absolute;
+    bottom: 0.15em;
+    right: 1.5625em;
+    left: 1.5625em;
+    border-style:solid;
+	border-width: thin;
+	border-left-color: #E5E4E4;
+	border-right-color:#E5E4E4;
+	border-bottom-color: #E5E4E4;
+	border-top: none;
+	background-color:#EDEDED;
+
+}*/
+
+.mainContent .brandTableFooter {
+	height: 17%;
+	background-color: #EDEDED;
+	display: table;
+	width: 100%;
+}
+
+.mainContent .brandTableFooter .lastVisit{
+	padding-left: 0.1vw;
+	font-size: 0.9em;
+	color:#666666;
+	display: table-cell;
+	vertical-align: middle;
+	
+}
+
+.mainContent .brandTableFooter .endButtons{
+	text-align:right;
+	line-height:2.5em;
+	padding-right: 0.1em;
+	font-size: 0.875em;
+	color:#666666;
+	display: table-cell;
+	vertical-align: middle;
+}
+
+
+
+.mainContent .brandTableFooter .endButtons > span{
+	display: inline-block;
+	vertical-align: middle;	
+}
+
+.mainContent .brandTableFooter .endButtons button{
+	margin:0em;
+	padding:0em;
+	height:2.5em;
+	background-color: #0EB4D6;
+	border-radius: 0.75em;
+	font-size: 0.8125em;
+	color:#FFFFFF;
+	
+}
+
+.mainContent .brandTableFooter .endButtons .footerBigButtons {
+	padding-left: 0.5em;
+	padding-right: 0.5em;
+}
+
+.mainContent .brandTableFooter .endButtons .footerSmallButtons {
+	padding-left: 0.5em;
+	padding-right: 0.5em;
+}
+
+.dcrCreateTextEllipsis {
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	display: inline-block;
+	float: left;
+	max-width: 50%;
+}
+
+.chemistCustomerListSection {
+	width: 80%;
+	border-right: 1px solid #ededed;
+	float: left;
+}
+
+.chemistPOBSection {
+	width: 20%;
+	float: right;
+	text-align: center;
+	display: table;
+	height: 66%;
+}
+
+.chemistPOBSection span {
+	display: table-cell;
+	vertical-align: middle;
+}
+
+.chemistBrandCol {
+	width:20%;
+}
+
+.chemistInputCol {
+	width:60%;
+}
+
+.chemistQuantityCol {
+	width:20%;
+}
+
+.stockistBrandCol {
+	width:50%
+}
+
+.jfw-feildset {
+	height:100%;
+}
+
+.dcrlanding-dropdown {
+	display:table-cell;
+	vertical-align:middle;
+}

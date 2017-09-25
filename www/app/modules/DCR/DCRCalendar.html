@@ -1,0 +1,77 @@
+<transparent-screen></transparent-screen>
+<div class="row">
+    <div class="mob-header">
+        <abw-header data-abwheader-config="abwheaderConfig"></abw-header>
+    </div>
+    <div class="tab-header">
+        <!-- header tab goes here-->
+    </div>
+    <div class="view-container container-fluid">
+        <div class="dcr-wrapper page-wrap pink-color" ng-init="init()">
+            <div>
+                <div class="back-head-wrapper dcrSheduler">
+                    <div class="left"> <a href="" ng-click="navigateToHome()"><i class="back-head-arrow">&nbsp;</i></a></div>
+                    <div class="fc right">
+                        <div style="float: left;">
+                            <div class="fc-toolbar">
+                                <div class="fc-left">
+                                    <button ng-click="prev()" ng-show="prevButton" type="button" class="fc-prev-button fc-button fc-state-default fc-corner-left fc-corner-right"><span class="fc-icon fc-icon-left-single-arrow"></span></button>
+                                </div>
+                                <div class="fc-right">
+                                    <button  ng-click="next()" ng-show="nextButton" type="button" class="fc-next-button fc-button fc-state-default fc-corner-left fc-corner-right"><span class="fc-icon fc-icon-right-single-arrow"></span></button>
+                                </div>
+                                <div class="fc-center">
+                                    <h2 class="calendarTitle fontRobotoLight">{{calenderTitle | date : 'MMMM yyyy'}}</h2></div>
+                                <div class="fc-clear"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="content-wrapper dcr-content">
+                <div>
+                    <div class="scroll-month">
+                        <div class="date-cal">
+                            <div id='calendar' class="span8"></div>
+                        </div>
+                    </div>
+                    <div class="imprtnt-date">
+                        <ul>
+                            <li><span class="blue-point">weekly off</span></li>
+                            <li><span class="purple-point">approved leave</span></li>
+                            <li><span class="green-point">DCR submitted</span></li>
+                            <li><span class="orange-point">DCR not submitted</span></li>
+                        </ul>
+                    </div>
+                    <div class="log-wrapper">
+                        <div class="log-list">
+                            <ul class="call-log">
+                                <li><span class="bold-log">{{callsDone}}</span><span>Calls</span></li>
+                                <li><span class="out-log">out of</span></li>
+                                <li><span class="bold-log">{{callsPlanned}}</span></li>
+                            </ul>
+                            <ul class="dctr-log">
+                                <li><span class="bold-log">{{doctorsDone}}</span><span>Doctors</span></li>
+                                <li><span class="out-log">out of</span></li>
+                                <li><span class="bold-log">{{doctorsPlanned}}</span></li>
+                            </ul>
+                            <ul class="day-log">
+                                <li><span class="bold-log">{{totalCallDays}}</span><span>Days</span></li>
+                                <li><span class="out-log">out of</span></li>
+                                <li><span class="bold-log">{{callDays}}</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="dcr-buttons">
+                        <div class="butn-wrapper">
+                            <button class="file-dcr" ng-click="navigateToFileDCR()">FILE DCR</button>
+                        </div>
+                        <div class="butn-wrapper">
+                            <button class="dcr-list" ng-click="navigateToDCRListing()">DCR LISTING</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

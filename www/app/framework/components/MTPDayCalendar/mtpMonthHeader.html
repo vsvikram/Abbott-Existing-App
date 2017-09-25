@@ -1,0 +1,8 @@
+ <div class="back-head-wrapper">
+        <i class="back-head-arrow" data-ng-click="backButton()">&nbsp;</i>
+        <div class="back-head-content">
+            <span ng-class="{'active': selectedMonth === month.monthNumber.toString() + month.Year.toString() }" ng-repeat="month in monthData"  ng-click="setMonth(month.monthNumber,month.Year)">
+                {{month.monthText | limitTo:3 }} {{month.Year}}
+            </span>
+        </div>
+ </div>

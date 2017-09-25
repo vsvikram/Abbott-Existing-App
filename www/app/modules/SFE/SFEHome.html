@@ -1,0 +1,131 @@
+<!--<transparent-screen></transparent-screen>
+<navigation-bar is-hidden=false header-title="Salesforce Excellence" left-side-icon="back" previous-screen-name="Home"  is-display-header-title=true is-display-logged-in-user=true></navigation-bar>
+<div class="fullDiv appContent" ng-init="init()">
+	<div class="fullHeight">
+		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 sfeContainerHeight">
+			<div class="sfePadding fullHeight">
+				<div class="halfHeight">
+					<button type="button" class="btn pmButtonColor noOutline sfeBtn" ng-click="navigateToPerformance()" >
+						<div class="homeModuleIcons pmIcon"></div>
+						<p class="MTP">
+							{{locale.performanceMatrics}}
+						</p>
+					</button>
+					<button type="button" class="btn dcmButtonColor noOutline sfeBtn" ng-click="navigateToDoctorcall()">
+						<div class="homeModuleIcons dcmIcon"></div>
+						<p>
+							{{locale.doctorCallMatrics}}
+						</p>
+					</button>
+				</div>
+				<div class="halfHeight">
+					<button type="button" class="btn imButtonColor noOutline sfeBtn"  ng-click="navigateToIncentive()">
+						<div class="homeModuleIcons imIcon"></div>
+						<p>
+							{{locale.incentiveMatrics}}
+						</p>
+					</button>
+
+				<button type="button" class="btn smButtonColor noOutline sfeBtn" ng-click="navigateToSale()">
+					<div class="homeModuleIcons smIcon"></div>
+					<p>
+						{{locale.salesMatrics}}
+					</p>
+				</button>
+
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="footerFull">
+		<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 currentDateHome fontRobotoLight">
+			<div>
+				<span class="month_HomePage fontRobotoLight">{{date|date:"MMMM"}}</span><span class="date_HomePage fontRobotoLight"> {{date|date:"dd"}}{{", "}}</span><span class="day_HomePage fontRobotoLight">{{date|date:"EEEE"}}</span>
+			</div>
+		</div>
+		<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 DCRUpdateStatus" >
+
+		</div>
+	</div>
+</div>-->
+<!--New Ui Changes Starts Here-->
+<div class="row">
+	<div class="mob-header">
+		<abw-header data-abwheader-config="abwheaderConfig"></abw-header>
+	</div>
+	<transparent-screen></transparent-screen>
+	<div class="view-container">
+		<module-nav config='config'></module-nav>
+		<div class="salesForceExcellence-wrapper page-wrap" ng-init="init()">
+			<div class="landing-lists content-wrapper">
+				<div class="list-item list-item-border" ng-click="navigateToPerformance()">
+					<div class="left-side">
+						<div class="item-one">
+							<img src="img/icons/icon.png">
+						</div>
+					</div>
+					<div class="right-side">
+						<div class="item-two">
+							<p class="list-desc">{{locale.performanceMatrics}}</p>
+							<p class="list-subtext">View your day wise plan
+								<br/>for the month</p>
+						</div>
+						<div class="item-three">
+							<img src="img/icons/rightarrow.png">
+						</div>
+					</div>
+				</div>
+				<div class="list-item list-item-border" ng-click="navigateToDoctorcall()">
+					<div class="left-side">
+						<div class="item-one">
+							<img src="img/dailycall.png">
+						</div>
+					</div>
+					<div class="right-side">
+						<div class="item-two">
+							<p class="list-desc">{{locale.doctorCallMatrics}}</p>
+							<p class="list-subtext">Report your daily calls
+								<br/>and activities</p>
+						</div>
+						<div class="item-three">
+							<img src="img/icons/rightarrow.png">
+						</div>
+					</div>
+				</div>
+				<div class="list-item" ng-click="navigateToIncentive()">
+					<div class="left-side">
+						<div class="item-one">
+							<img src="img/icons/rupee-indian.png">
+						</div>
+					</div>
+					<div class="right-side">
+						<div class="item-two">
+							<p class="list-desc">{{locale.incentiveMatrics}}</p>
+							<p class="list-subtext">File your expenses</p>
+						</div>
+						<div class="item-three">
+							<img src="img/icons/rightarrow.png">
+						</div>
+					</div>
+				</div>
+				<div class="list-item" ng-click="navigateToSale()">
+					<div class="left-side">
+						<div class="item-one">
+							<img src="img/line-chart.png">
+						</div>
+					</div>
+					<div class="right-side">
+						<div class="item-two">
+							<p class="list-desc">{{locale.salesMatrics}}</p>
+							<p class="list-subtext">File your expenses</p>
+						</div>
+						<div class="item-three">
+							<img src="img/icons/rightarrow.png">
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!--New Ui Changes Starts Here-->

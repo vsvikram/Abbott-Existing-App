@@ -1,0 +1,22 @@
+<!-- <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 noPadding">
+    <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+        <label>{{slider.label}}</label>
+    </div>
+    <div class="col-xs-10 col-sm-10 col-md-10 col-lg-10 noPadding">
+        <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 ">
+            <rzslider rz-slider-model="slider.value"
+                      rz-slider-options="slider.options"
+                      rz-ticks="slider.ticks"></rzslider>
+        </div>
+        <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 noPadding">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">{{locale.currency}} <label>{{slider.displayValue}} </label></div>
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">{{locale.incentiveMatrics}}: {{slider.incentive  | currency: locale.currency+' ':0}} </div>
+        </div>
+    </div>
+</div> -->
+<div class="slideSummary">
+    <h2>{{slider.label}}</h2>
+    <rzslider class="custom-slider" rz-slider-model="slider.value"  rz-slider-options="slider.options"></rzslider>
+    <p class="cValue">{{locale.currency}} <label>{{slider.displayValue}}</label></p>
+    <p class="incValue">{{locale.incentiveMatrics}}: <label>{{slider.incentive  | currency: locale.currency+' ':0}}</label></p>
+</div>
